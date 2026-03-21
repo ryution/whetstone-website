@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Whetstone Admissions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+  <header class="header scrolled" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">Whetstone</a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a href="#" class="nav-link">Our Services <span class="caret">▾</span></a>
+          <div class="dropdown-menu">
+            <a href="/admissions/">Admissions Counseling</a>
+            <a href="/sat/">Test Prep &amp; Tutoring</a>
+            <a href="/capstone/">Extracurricular Mentorship</a>
+            <a href="/essay-writing/">Essay Writing</a>
+          </div>
+        </div>
+        <a href="/about-us/" class="nav-link">Our Team</a>
+        <a href="/resources/" class="nav-link">Resources</a>
+        <a href="/contact/" class="nav-link">Contact</a>
+      </nav>
+      <a href="/contact/" class="btn btn-primary">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="/admissions/">Admissions Counseling</a>
+      <a href="/sat/">Test Prep &amp; Tutoring</a>
+      <a href="/capstone/">Extracurricular Mentorship</a>
+      <a href="/essay-writing/">Essay Writing</a>
+      <a href="/about-us/">Our Team</a>
+      <a href="/resources/">Resources</a>
+      <a href="/contact/">Contact</a>
+      <a href="/contact/" class="btn btn-primary">Get Started</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('../Contact-blue-bg.png')"></div>
+    <div class="container">
+      <p class="section-label">Contact Us</p>
+      <h1>Get Started With<br><em style="color:var(--gold);font-style:italic">Whetstone</em></h1>
+      <p>Fill out the form and we will be in touch to book a free meeting with one of our expert advisors.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT MAIN -->
+  <section class="page-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <h2>What Happens in a Consultation?</h2>
+          <p>A consultation is your first opportunity to discuss admissions objectives with an expert.</p>
+          <div class="contact-steps">
+            <div class="contact-step">
+              <span class="contact-step-num">1</span>
+              <div class="contact-step-text">
+                <h4>Candidacy Assessment</h4>
+                <p>Get a clear picture of where you stand today — your academic profile, extracurriculars, and positioning as a competitive applicant.</p>
+              </div>
+            </div>
+            <div class="contact-step">
+              <span class="contact-step-num">2</span>
+              <div class="contact-step-text">
+                <h4>Strengths &amp; Gaps Review</h4>
+                <p>Uncover what sets you apart and what needs work, with a frank analysis of what it will take to reach your target schools.</p>
+              </div>
+            </div>
+            <div class="contact-step">
+              <span class="contact-step-num">3</span>
+              <div class="contact-step-text">
+                <h4>Roadmap Formation</h4>
+                <p>Understand how Whetstone works and the admissions roadmap we will create for you.</p>
+              </div>
+            </div>
+            <div class="contact-step">
+              <span class="contact-step-num">4</span>
+              <div class="contact-step-text">
+                <h4>Support Options</h4>
+                <p>Explore 2–3 customized options for guidance that align with your goals, needs, and budget.</p>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:40px;padding-top:32px;border-top:1px solid var(--border);">
+            <p style="font-size:15px;color:var(--text-muted);margin-bottom:8px;"><strong style="color:var(--navy);">Email:</strong> hello@whetstoneadmissions.com</p>
+            <p style="font-size:15px;color:var(--text-muted);"><strong style="color:var(--navy);">Phone:</strong> 917-562-5668</p>
+          </div>
+        </div>
+
+        <div class="contact-form-box">
+          <h3 style="font-family:var(--font-serif);font-size:24px;color:var(--navy);margin-bottom:24px;">Book Your Free Consultation</h3>
+          <form id="contact-form">
+            <div class="form-step active" id="step-1">
+              <p class="form-question">Are you a student or a guardian?</p>
+              <div class="form-radio-group">
+                <label class="radio-label"><input type="radio" name="type" value="student"> Student</label>
+                <label class="radio-label"><input type="radio" name="type" value="guardian"> Guardian</label>
+              </div>
+              <button type="button" class="btn btn-gold next-btn" onclick="nextStep(1)">Continue →</button>
+            </div>
+            <div class="form-step" id="step-2">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input type="text" placeholder="First name">
+                </div>
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input type="text" placeholder="Last name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="your@email.com">
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="+1 (555) 000-0000">
+              </div>
+              <div class="form-group">
+                <label>State</label>
+                <input type="text" placeholder="Your state">
+              </div>
+              <button type="button" class="btn btn-gold next-btn" onclick="nextStep(2)">Continue →</button>
+            </div>
+            <div class="form-step" id="step-3">
+              <div class="form-group">
+                <label>School Name</label>
+                <input type="text" placeholder="Your high school">
+              </div>
+              <div class="form-group">
+                <label>High School Graduation Year</label>
+                <select>
+                  <option value="">Select year</option>
+                  <option>2024</option><option>2025</option><option>2026</option>
+                  <option>2027</option><option>2028</option><option>2029</option>
+                  <option>2030</option><option>2031</option><option>2032</option>
+                </select>
+              </div>
+              <label class="checkbox-label">
+                <input type="checkbox"> I agree to the <a href="#">privacy policy</a>
+              </label>
+              <button type="submit" class="btn btn-gold">Book My Free Consultation</button>
+            </div>
+            <div class="form-step" id="step-thanks">
+              <h3 style="font-family:var(--font-serif);color:var(--navy);margin-bottom:16px;">Thank you!</h3>
+              <p style="color:var(--text-muted);margin-bottom:16px;">An expert Academic Advisor will be in touch to set up your consultation. During the consultation, you will:</p>
+              <ul class="service-list">
+                <li>Get an assessment of your current academic candidacy</li>
+                <li>Discuss strengths, weaknesses, and target schools</li>
+                <li>Understand how Whetstone works</li>
+                <li>Formulate a plan that suits your needs and budget</li>
+              </ul>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo logo-light">Whetstone</a>
+        <p>Refined Method. Proven Results.</p>
+        <p class="footer-contact">hello@whetstoneadmissions.com<br>917-562-5668</p>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <a href="/admissions/">Admissions Consulting</a>
+        <a href="/capstone/">Capstone &amp; Extracurriculars</a>
+        <a href="/essay-writing/">College Essay Writing</a>
+        <a href="/sat/">SAT Tutoring</a>
+        <a href="/sat/">Test Prep &amp; Tutoring</a>
+      </div>
+      <div class="footer-col">
+        <h4>About Us</h4>
+        <a href="/about-us/">Our Team</a>
+        <a href="/#reviews">Our Reviews</a>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="/resources/">University Profiles</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-legal">Whetstone Advisory LLC is not affiliated or associated with any university, college, or education institution mentioned on this website.</p>
+        <div class="footer-links">
+          <a href="#">Cookie Preferences</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
+    });
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobile-nav').classList.toggle('open');
+    });
+    function nextStep(step) {
+      document.getElementById('step-' + step).classList.remove('active');
+      document.getElementById('step-' + (step + 1)).classList.add('active');
+    }
+    document.getElementById('contact-form').addEventListener('submit', e => {
+      e.preventDefault();
+      document.getElementById('step-3').classList.remove('active');
+      document.getElementById('step-thanks').classList.add('active');
+    });
+  </script>
+</body>
+</html>
