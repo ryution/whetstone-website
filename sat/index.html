@@ -3,22 +3,119 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SAT Test Prep &amp; Tutoring - Whetstone Admissions</title>
+  <title>SAT &amp; ACT Tutoring NYC — Private Test Prep in Manhattan, Brooklyn &amp; Westchester | Whetstone</title>
+  <meta name="description" content="Private SAT and ACT tutoring in New York City. Expert 1-on-1 test prep for students at Dalton, Collegiate, Spence, Horace Mann, Riverdale, Scarsdale, and beyond. In-person in Manhattan, Brooklyn, and Westchester — or online. Score guarantee included.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles.css?v=4">
   <style>
+    /* ── Program table ──────────────────────────── */
     .program-table { width: 100%; border-collapse: collapse; margin-top: 32px; }
-    .program-table th { background: var(--navy); color: var(--white); padding: 14px 20px; text-align: left; font-size: 14px; font-weight: 600; letter-spacing: 0.05em; }
-    .program-table td { padding: 16px 20px; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--text-muted); }
+    .program-table th { background: var(--navy); color: var(--white); padding: 14px 20px; text-align: left; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+    .program-table td { padding: 18px 20px; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--text-muted); vertical-align: top; }
+    .program-table tr:last-child td { border-bottom: none; }
     .program-table tr:nth-child(even) td { background: var(--cream); }
-    .program-table td:first-child { font-weight: 600; color: var(--navy); }
-    .program-table td .guarantee { color: var(--gold); font-weight: 600; font-size: 13px; display: block; margin-top: 4px; }
-    .subjects-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
-    .subject-tag { background: var(--white); border: 2px solid var(--border); border-radius: 8px; padding: 14px 16px; text-align: center; font-size: 14px; font-weight: 600; color: var(--navy); transition: all 0.2s; }
-    .subject-tag:hover { border-color: var(--navy); background: var(--navy); color: var(--white); }
-    @media (max-width: 700px) { .subjects-grid { grid-template-columns: repeat(2,1fr); } }
+    .program-table td:first-child { font-family: 'Libre Caslon Text', serif; font-weight: 700; color: var(--navy); font-size: 16px; }
+    .program-table td .guarantee { color: var(--gold); font-weight: 700; font-size: 13px; display: block; margin-top: 5px; font-family: 'Libre Franklin', sans-serif; }
+
+    /* ── Schools mosaic ─────────────────────────── */
+    .schools-mosaic {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+    .school-pill {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--navy);
+      white-space: nowrap;
+    }
+
+    /* ── Geo grid ───────────────────────────────── */
+    .geo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .geo-card {
+      border-top: 3px solid var(--gold);
+      padding-top: 20px;
+    }
+    .geo-card h3 {
+      font-size: 18px;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+    .geo-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .geo-card ul li {
+      font-size: 14px;
+      color: var(--text-muted);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.4;
+    }
+    .geo-card ul li:last-child { border-bottom: none; }
+    @media (max-width: 700px) {
+      .geo-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Stat strip ─────────────────────────────── */
+    .stat-strip {
+      background: var(--navy);
+      padding: 48px 0;
+    }
+    .stat-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      text-align: center;
+    }
+    .stat-item .stat-num {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+    }
+    .stat-item .stat-label {
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      margin-top: 8px;
+      display: block;
+      letter-spacing: 0.02em;
+    }
+    @media (max-width: 600px) {
+      .stat-strip-inner { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* ── Context callout ─────────────────────────── */
+    .context-callout {
+      border-left: 4px solid var(--gold);
+      padding: 20px 28px;
+      background: var(--cream);
+      margin: 32px 0 0;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .context-callout p {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--text);
+    }
+    .context-callout strong { color: var(--navy); }
   </style>
 </head>
 <body>
@@ -28,7 +125,7 @@
       <a href="/" class="logo">Whetstone</a>
       <nav class="nav">
         <div class="nav-dropdown">
-          <a href="#" class="nav-link">Our Services <span class="caret">▾</span></a>
+          <a href="/#services" class="nav-link">Our Services <span class="caret">▾</span></a>
           <div class="dropdown-menu">
             <a href="/sat/">SAT / ACT Prep</a>
             <a href="/language-learning/">Language Learning</a>
@@ -63,9 +160,9 @@
   <section class="page-hero">
     <div class="page-hero-bg" style="background-image: url('../SAT-banner-bg.png')"></div>
     <div class="container">
-      <p class="section-label">Test Prep &amp; Tutoring</p>
-      <h1>SAT Test Prep<br>&amp; <em style="color:var(--gold);font-style:italic">Tutoring</em></h1>
-      <p>Practice doesn't make perfect — <strong style="color:var(--white)">perfect practice does.</strong> Every hour counts with a proven system built by top-scoring tutors.</p>
+      <p class="section-label">SAT &amp; ACT Prep · New York City</p>
+      <h1>The Private SAT Tutor<br><em style="color:var(--gold);font-style:italic">NYC Families Trust.</em></h1>
+      <p>1-on-1 SAT and ACT tutoring for students in Manhattan, Brooklyn, and Westchester. Our tutors scored in the 99th percentile — and our score guarantee means we keep working with you until you hit your target.</p>
       <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;">
         <a href="/contact/" class="btn btn-gold">Book a Free Consultation</a>
         <a href="#programs" class="btn btn-outline-white">View Programs</a>
@@ -73,41 +170,125 @@
     </div>
   </section>
 
-  <!-- GUARANTEE -->
+  <!-- STAT STRIP -->
+  <div class="stat-strip">
+    <div class="container">
+      <div class="stat-strip-inner">
+        <div class="stat-item">
+          <span class="stat-num">99th</span>
+          <span class="stat-label">Percentile — every tutor, every subject</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">+200</span>
+          <span class="stat-label">Average point gain, Collegiate program</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">1500+</span>
+          <span class="stat-label">Target score, our top-tier program</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NYC CONTEXT -->
   <section class="page-section-alt">
     <div class="container">
       <div class="two-col">
         <div class="two-col-text">
-          <p class="section-label">Our Guarantee</p>
-          <h2>Hit Your Target Score — or We Work With You Free Until You Do</h2>
-          <p>Our tutors have scored in the 99th percentile or higher. Using strategies like active recall and accountability cohorts, we make a promise: follow our method and hit your target score, or we'll keep working with you at no additional cost.</p>
-          <div class="feature-list">
-            <div class="feature-item">
-              <span class="feature-icon">✓</span>
-              <div>
-                <h4>99th Percentile Tutors</h4>
-                <p>Every tutor has personally scored in the top 1% of the SAT.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">✓</span>
-              <div>
-                <h4>In-Person or Online</h4>
-                <p>Sessions at the Harvard Club in NYC, or anywhere in the world via video.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">✓</span>
-              <div>
-                <h4>Score Guarantee</h4>
-                <p>Reach your target or we work with you free until you do.</p>
-              </div>
-            </div>
+          <p class="section-label">The NYC Standard</p>
+          <h2>In New York, a Good Score Isn't Enough.</h2>
+          <p>Students at Manhattan's top independent schools and Westchester's most competitive districts aren't competing against the national average — they're competing against each other. At Dalton, Collegiate, Spence, and Horace Mann, a 1400 is the floor, not the ceiling.</p>
+          <p>Generic test prep centers weren't designed for this environment. They run students through the same course regardless of baseline, assign rotating instructors who don't know the student, and offer no real accountability when scores plateau.</p>
+          <div class="context-callout">
+            <p><strong>Whetstone was built differently.</strong> Every engagement begins with a full diagnostic, pairs the student with a single dedicated tutor for the duration, and doesn't end until the target score is reached — or we extend the program at no additional cost.</p>
           </div>
         </div>
         <div class="two-col-img">
-          <img src="../guarntee-img.png" alt="Score guarantee">
+          <img src="../guarntee-img.png" alt="Private SAT tutoring in New York City">
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE WE SERVE -->
+  <section class="page-section">
+    <div class="container">
+      <p class="section-label">Where We Work</p>
+      <h2 class="section-title">In-Person Across New York City &amp; Westchester</h2>
+      <p class="section-sub">Sessions are available in person across Manhattan, Brooklyn, and Westchester — as well as online for students studying anywhere in the world.</p>
+      <div class="geo-grid">
+
+        <div class="geo-card">
+          <h3>Manhattan</h3>
+          <ul>
+            <li>Upper East Side</li>
+            <li>Upper West Side</li>
+            <li>Midtown &amp; Murray Hill</li>
+            <li>Tribeca &amp; SoHo</li>
+            <li>Greenwich Village</li>
+            <li>Carnegie Hill</li>
+            <li>Harvard Club (group sessions)</li>
+          </ul>
+        </div>
+
+        <div class="geo-card">
+          <h3>Brooklyn</h3>
+          <ul>
+            <li>Brooklyn Heights</li>
+            <li>Park Slope</li>
+            <li>Cobble Hill &amp; Carroll Gardens</li>
+            <li>DUMBO</li>
+            <li>Prospect Heights</li>
+            <li>Williamsburg</li>
+          </ul>
+        </div>
+
+        <div class="geo-card">
+          <h3>Westchester</h3>
+          <ul>
+            <li>Scarsdale</li>
+            <li>Bronxville</li>
+            <li>Rye &amp; Rye Brook</li>
+            <li>Larchmont &amp; Mamaroneck</li>
+            <li>Chappaqua</li>
+            <li>Ardsley &amp; Dobbs Ferry</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHOOLS WE SERVE -->
+  <section class="page-section-alt">
+    <div class="container">
+      <p class="section-label">Schools We Serve</p>
+      <h2 class="section-title">Built for New York's Most Competitive Students</h2>
+      <p class="section-sub">Our students come from New York City's top independent schools, specialized public schools, and competitive suburban districts — where the bar is already exceptionally high.</p>
+      <div class="schools-mosaic">
+        <span class="school-pill">Dalton</span>
+        <span class="school-pill">Collegiate</span>
+        <span class="school-pill">Trinity</span>
+        <span class="school-pill">Spence</span>
+        <span class="school-pill">Brearley</span>
+        <span class="school-pill">Chapin</span>
+        <span class="school-pill">Nightingale-Bamford</span>
+        <span class="school-pill">Sacred Heart</span>
+        <span class="school-pill">Horace Mann</span>
+        <span class="school-pill">Riverdale Country School</span>
+        <span class="school-pill">Ethical Culture Fieldston</span>
+        <span class="school-pill">Poly Prep</span>
+        <span class="school-pill">St. Ann's</span>
+        <span class="school-pill">Packer Collegiate</span>
+        <span class="school-pill">Stuyvesant</span>
+        <span class="school-pill">Bronx Science</span>
+        <span class="school-pill">Brooklyn Tech</span>
+        <span class="school-pill">Hunter College HS</span>
+        <span class="school-pill">Scarsdale High School</span>
+        <span class="school-pill">Bronxville School</span>
+        <span class="school-pill">Rye Country Day</span>
+        <span class="school-pill">Hackley</span>
+        <span class="school-pill">Masters School</span>
       </div>
     </div>
   </section>
@@ -116,8 +297,8 @@
   <section class="page-section" id="programs">
     <div class="container">
       <p class="section-label">Programs</p>
-      <h2 class="section-title">Choose Your Path</h2>
-      <p class="section-sub">Three tiers to match your timeline and goals — each with a score guarantee.</p>
+      <h2 class="section-title">Choose Your Program</h2>
+      <p class="section-sub">Three tiers built for different timelines and score targets — each with a score guarantee and a single dedicated tutor for the full duration.</p>
       <table class="program-table">
         <thead>
           <tr>
@@ -129,83 +310,82 @@
         </thead>
         <tbody>
           <tr>
-            <td>Foundations</td>
+            <td>Foundations
+              <span class="guarantee">Best for: starting baseline</span>
+            </td>
             <td>8 weeks</td>
-            <td><span class="guarantee">1350+ or +120 points</span></td>
-            <td>Harvard Club blitzes, targeted homework, office hours, parent sessions</td>
+            <td><span class="guarantee">1350+ or +120 pts</span></td>
+            <td>Full diagnostic, targeted weekly sessions, homework review, office hours, parent progress updates</td>
           </tr>
           <tr>
-            <td>Scholar</td>
+            <td>Scholar
+              <span class="guarantee">Best for: strong students pushing higher</span>
+            </td>
             <td>12 weeks</td>
-            <td><span class="guarantee">1425+ or +160 points</span></td>
-            <td>Everything in Foundations + concierge admissions counseling, Great Books curriculum</td>
+            <td><span class="guarantee">1425+ or +160 pts</span></td>
+            <td>Everything in Foundations + concierge admissions guidance, Harvard Club blitz sessions, Great Books curriculum</td>
           </tr>
           <tr>
-            <td>Collegiate</td>
+            <td>Collegiate
+              <span class="guarantee">Best for: elite score targets</span>
+            </td>
             <td>16 weeks</td>
-            <td><span class="guarantee">1500+ or +200 points</span></td>
-            <td>Everything in Scholar + priority scheduling, extended office hours, full application review</td>
+            <td><span class="guarantee">1500+ or +200 pts</span></td>
+            <td>Everything in Scholar + priority scheduling, extended office hours, full college application review</td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
+  <!-- METHOD -->
   <section class="page-section-alt">
     <div class="container">
       <p class="section-label">Our Method</p>
       <h2 class="section-title">Perfect Practice Makes Perfect</h2>
-      <p class="section-sub">Most students practice ineffectively — repetition without correction. We fix that from day one.</p>
+      <p class="section-sub">Most students practice ineffectively — repetition without correction. We fix that from session one.</p>
       <div class="steps-grid">
         <div class="step-card">
           <span class="step-num">1</span>
-          <h3>Diagnostic Assessment</h3>
-          <p>We identify exactly where you're losing points with a full-length practice test and detailed error analysis.</p>
+          <h3>Full Diagnostic</h3>
+          <p>A complete practice test followed by detailed error analysis reveals exactly where points are being lost — by question type, timing, and error pattern.</p>
         </div>
         <div class="step-card">
           <span class="step-num">2</span>
           <h3>Custom Study Plan</h3>
-          <p>Your tutor builds a targeted plan focusing on high-impact skills using active recall and spaced repetition.</p>
+          <p>Your dedicated tutor builds a plan targeting the highest-leverage skills — using active recall and spaced repetition, not volume drilling.</p>
         </div>
         <div class="step-card">
           <span class="step-num">3</span>
-          <h3>Accountability Sessions</h3>
-          <p>Weekly 1:1 sessions with homework review, timed drills, and office hours to stay on pace for your target score.</p>
+          <h3>Accountable Progress</h3>
+          <p>Weekly 1:1 sessions, homework review, and monthly score projections keep the student on pace. Parents receive regular updates throughout.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUBJECTS -->
-  <section class="page-section">
-    <div class="container">
-      <p class="section-label">Subject Tutoring</p>
-      <h2 class="section-title">Every Subject. Every Level.</h2>
-      <p class="section-sub">Beyond the SAT, our tutors cover AP, IB, and advanced coursework across all disciplines.</p>
-      <div class="subjects-grid">
-        <div class="subject-tag">Mathematics</div>
-        <div class="subject-tag">Physics</div>
-        <div class="subject-tag">Chemistry</div>
-        <div class="subject-tag">Biology</div>
-        <div class="subject-tag">English &amp; Writing</div>
-        <div class="subject-tag">History</div>
-        <div class="subject-tag">Latin</div>
-        <div class="subject-tag">Ancient Greek</div>
-        <div class="subject-tag">Spanish</div>
-        <div class="subject-tag">French</div>
-        <div class="subject-tag">TOEFL</div>
-        <div class="subject-tag">Economics</div>
       </div>
     </div>
   </section>
 
   <!-- SCORE CHART -->
-  <section class="page-section-alt">
+  <section class="page-section">
     <div class="container" style="text-align:center">
       <p class="section-label">Results</p>
       <h2 class="section-title">Our Students' Score Gains</h2>
-      <img src="../score-bar.png" alt="SAT score improvement chart" style="max-width:600px;margin:0 auto;border-radius:var(--radius);">
+      <img src="../score-bar.png" alt="SAT score improvement chart — Whetstone students average 120–200+ point gains" style="max-width:600px;width:100%;margin:32px auto 0;display:block;border-radius:var(--radius);">
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews">
+    <div class="container">
+      <p class="section-label">Student Results</p>
+      <h2 class="section-title" style="color:var(--white)">What NYC Families Say</h2>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"Cole worked with my son for twelve weeks before his SAT. The structure was unlike anything we'd tried before — every session had a purpose, and the homework was actually reviewed. He went from a 1310 to a 1520 and was admitted Early Decision to his first-choice school."</blockquote>
+        <div class="reviewer-info">
+          <strong>Parent of a Dalton School graduate</strong>
+          <span>Admitted Early Decision — Top 10 University</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -231,7 +411,7 @@
         <a href="/academic-tutoring/">Academic Tutoring</a>
         <a href="/essay-writing/">Essay Writing</a>
         <a href="/extracurricular/">Extracurricular &amp; Leadership</a>
-      <a href="/graduate-admissions/">Graduate Admissions</a>
+        <a href="/graduate-admissions/">Graduate Admissions</a>
       </div>
       <div class="footer-col">
         <h4>About Us</h4>
@@ -259,22 +439,20 @@
     window.addEventListener('scroll', () => {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
     });
-    // Dropdown toggle
     document.querySelectorAll('.nav-dropdown > a').forEach(function(a) {
       a.addEventListener('click', function(e) {
         e.preventDefault();
         var dd = this.parentElement;
         var isOpen = dd.classList.contains('open');
         document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.classList.remove('open'); });
-        if (\!isOpen) dd.classList.add('open');
+        if (!isOpen) dd.classList.add('open');
       });
     });
     document.addEventListener('click', function(e) {
-      if (\!e.target.closest('.nav-dropdown')) {
+      if (!e.target.closest('.nav-dropdown')) {
         document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.classList.remove('open'); });
       }
     });
-
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobile-nav').classList.toggle('open');
     });
