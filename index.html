@@ -48,35 +48,17 @@
     @media (max-width: 820px) { .local-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
     @media (max-width: 480px) { .local-grid { grid-template-columns: 1fr; } }
 
-    .hero-admits {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
+    .hero-content-centered {
+      text-align: center;
     }
-    .admit-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.25);
-      border-radius: 100px;
-      padding: 6px 14px;
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(255,255,255,0.92);
-      backdrop-filter: blur(4px);
-      white-space: nowrap;
+    .hero-content-centered .hero-sub {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 640px;
     }
-    .admit-pill .admit-dot {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      flex-shrink: 0;
+    .hero-content-centered .hero-cta {
+      justify-content: center;
     }
-    @media (max-width: 600px) { .hero-admits { display: none; } }
   </style>
 </head>
 <body>
@@ -134,21 +116,13 @@
       <source src="hero.mp4" type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
-    <div class="container hero-content">
+    <div class="container hero-content hero-content-centered">
       <p class="hero-eyebrow">Whetstone Admissions · New York City</p>
-      <h1 class="hero-headline">College Admissions Counseling in New York City.</h1>
-      <p class="hero-sub">Expert 1:1 advising for students in Manhattan, Brooklyn, and Westchester — and online worldwide. Essays, SAT prep, extracurricular strategy, and a complete application roadmap.</p>
+      <h1 class="hero-headline">Where Exceptional Students<br>Become Undeniable Candidates.</h1>
+      <p class="hero-sub">We partner with a select group of New York's most ambitious students — and families around the world — to build applications that reflect the full measure of who they are.</p>
       <div class="hero-cta">
         <a href="#form" class="btn btn-gold">Book a Free Consultation</a>
         <a href="/results/" class="btn btn-outline-white">See Our Results</a>
-      </div>
-      <div class="hero-admits">
-        <span class="admit-pill"><span class="admit-dot"></span>Drew · Columbia ED</span>
-        <span class="admit-pill"><span class="admit-dot"></span>Valerie · Harvard</span>
-        <span class="admit-pill"><span class="admit-dot"></span>Claire · UCLA</span>
-        <span class="admit-pill"><span class="admit-dot"></span>Marcus · Penn Wharton</span>
-        <span class="admit-pill"><span class="admit-dot"></span>Sofia · Princeton EA</span>
-        <span class="admit-pill"><span class="admit-dot"></span>James · Yale</span>
       </div>
     </div>
   </section>
