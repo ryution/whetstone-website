@@ -112,21 +112,20 @@
       var national = [3.4, 3.5, 3.9, 3.7, 6.2, 7.3, 5.9, 5.4];
       var whetstone = [21, 23, 31, 26, 37, 41, 33, 22];
 
-      // Custom plugin: draw W above gold bars
+      // Pre-load W logo image
+      var wImg = new Image();
+      wImg.src = '/w-marker.png';
+
       var wPlugin = {
         id: 'wPlugin',
         afterDatasetsDraw: function(chart) {
-          var ctx = chart.ctx;
-          var ds = chart.data.datasets[1];
-          var meta = chart.getDatasetMeta(1);
-          ctx.save();
-          ctx.font = 'bold 13px serif';
-          ctx.fillStyle = '#FFC247';
-          ctx.textAlign = 'center';
-          meta.data.forEach(function(bar, i) {
-            ctx.fillText('𝕎', bar.x, bar.y - 6);
+          if (!wImg.complete) return;
+          var c = chart.ctx;
+          var meta = chart.getDatasetMeta(1); // gold bars
+          var sz = 22;
+          meta.data.forEach(function(bar) {
+            c.drawImage(wImg, bar.x - sz/2, bar.y - sz - 4, sz, sz);
           });
-          ctx.restore();
         }
       };
 
@@ -140,39 +139,41 @@
               label: 'Non-Whetstone',
               data: national,
               backgroundColor: '#b0b8d0',
-              borderRadius: 4,
-              barPercentage: 0.4,
-              categoryPercentage: 0.75
+              borderRadius: 3,
+              barPercentage: 0.38,
+              categoryPercentage: 0.7
             },
             {
               label: 'Whetstone',
               data: whetstone,
               backgroundColor: '#FFC247',
-              borderRadius: 4,
-              barPercentage: 0.4,
-              categoryPercentage: 0.75
+              borderRadius: 3,
+              barPercentage: 0.38,
+              categoryPercentage: 0.7
             }
           ]
         },
         options: {
           responsive: true,
           maintainAspectRatio: true,
+          layout: { padding: { top: 28 } },
           plugins: {
             legend: { display: false },
             tooltip: {
               callbacks: {
-                label: function(ctx) { return ctx.dataset.label + ': ' + ctx.raw + '%'; }
+                label: function(c) { return c.dataset.label + ': ' + c.raw + '%'; }
               }
             }
           },
           scales: {
             x: {
               grid: { display: false },
-              ticks: { font: { size: 12, weight: '600' }, color: '#191970' }
+              ticks: { font: { size: 11, weight: '700' }, color: '#191970' }
             },
             y: {
               beginAtZero: true,
-              max: 55,
+              min: 0,
+              max: 50,
               ticks: {
                 callback: function(v) { return v + '%'; },
                 stepSize: 5,
@@ -184,6 +185,11 @@
           }
         }
       });
+
+      // Redraw once W image loads
+      wImg.onload = function() {
+        Chart.getChart('ivyChart') && Chart.getChart('ivyChart').draw();
+      };
     })();
   </script>
 
