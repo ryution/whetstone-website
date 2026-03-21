@@ -6,7 +6,7 @@
   <title>Whetstone Admissions - Refined Method. Proven Results.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -19,13 +19,14 @@
         <div class="nav-dropdown">
           <a href="#services" class="nav-link">Our Services <span class="caret">▾</span></a>
           <div class="dropdown-menu">
-            <a href="/admissions/">Admissions Counseling</a>
-            <a href="/sat-prep/">Test Prep &amp; Tutoring</a>
-            <a href="/capstone/">Extracurricular Mentorship</a>
+            <a href="/sat/">SAT / ACT Prep</a>
+            <a href="/language-learning/">Language Learning</a>
+            <a href="/academic-tutoring/">Academic Tutoring</a>
             <a href="/essay-writing/">Essay Writing</a>
+            <a href="/extracurricular/">Extracurricular &amp; Leadership</a>
           </div>
         </div>
-        <a href="/team/" class="nav-link">Our Team</a>
+        <a href="/about-us/" class="nav-link">Our Team</a>
         <a href="/resources/" class="nav-link">Resources</a>
         <a href="/contact/" class="nav-link">Contact</a>
       </nav>
@@ -35,11 +36,12 @@
       </button>
     </div>
     <div class="mobile-nav" id="mobile-nav">
-      <a href="/admissions/">Admissions Counseling</a>
-      <a href="/sat-prep/">Test Prep &amp; Tutoring</a>
-      <a href="/capstone/">Extracurricular Mentorship</a>
+      <a href="/sat/">SAT / ACT Prep</a>
+      <a href="/language-learning/">Language Learning</a>
+      <a href="/academic-tutoring/">Academic Tutoring</a>
       <a href="/essay-writing/">Essay Writing</a>
-      <a href="/team/">Our Team</a>
+      <a href="/extracurricular/">Extracurricular &amp; Leadership</a>
+      <a href="/about-us/">Our Team</a>
       <a href="/resources/">Resources</a>
       <a href="/contact/">Contact</a>
       <a href="/contact/" class="btn btn-primary">Get Started</a>
@@ -263,96 +265,87 @@
   <!-- CONSULTATION FORM -->
   <section class="form-section" id="form">
     <div class="container">
-      <div class="form-wrap">
-        <div class="form-intro">
-          <h2>Book a free consultation today and get access to our e-book bundle</h2>
-          <p>You'll receive:</p>
-          <ul>
-            <li>10 Successful Essays and Activity Lists</li>
-            <li>A Capstone Project Case Study</li>
-            <li>An Admissions Roadmap from alumni of the world's most selective universities</li>
-          </ul>
-        </div>
-        <form class="consult-form" id="consult-form">
-          <div class="form-step active" id="step-1">
-            <p class="form-question">Are you a student or a guardian?</p>
-            <div class="form-radio-group">
-              <label class="radio-label">
-                <input type="radio" name="type" value="student"> Student
-              </label>
-              <label class="radio-label">
-                <input type="radio" name="type" value="guardian"> Guardian
-              </label>
+      <div class="cform-wrap">
+        <h2 class="cform-title">Book a free consultation today and<br>get access to our e-book bundle</h2>
+        <p class="cform-sub">You'll receive: 10 Successful Essays and Activity Lists, a Capstone Project Case Study, and an Admissions Roadmap from alumni of the world's most selective universities.</p>
+
+        <form id="consult-form" onsubmit="return false;">
+
+          <!-- STEP 1: Who + Basic Info -->
+          <div class="cform-step active" id="cstep-1">
+            <p class="cform-qlabel">Are you a student or a guardian?</p>
+            <div class="cform-toggle">
+              <button type="button" class="cform-toggle-btn active" id="btn-student" onclick="selectType('student')">Student</button>
+              <button type="button" class="cform-toggle-btn" id="btn-guardian" onclick="selectType('guardian')">Guardian</button>
             </div>
-            <button type="button" class="btn btn-gold next-btn" onclick="nextStep(1)">Continue →</button>
+            <div class="cform-group">
+              <label class="cform-field-label">First Name</label>
+              <input type="text" class="cform-input" id="cf-first" placeholder="First Name">
+            </div>
+            <div class="cform-group">
+              <label class="cform-field-label">Last Name</label>
+              <input type="text" class="cform-input" id="cf-last" placeholder="Last Name">
+            </div>
+            <div class="cform-group">
+              <label class="cform-field-label">Email Address</label>
+              <input type="email" class="cform-input" id="cf-email" placeholder="Email Address">
+            </div>
+            <button type="button" class="btn btn-gold cform-submit-btn" onclick="goToStep2()">SUBMIT</button>
+            <div class="cform-dots">
+              <span class="cdot active"></span><span class="cdot"></span><span class="cdot"></span>
+            </div>
           </div>
-          <div class="form-step" id="step-2">
-            <div class="form-row">
-              <div class="form-group">
-                <label>First Name</label>
-                <input type="text" placeholder="First name">
-              </div>
-              <div class="form-group">
-                <label>Last Name</label>
-                <input type="text" placeholder="Last name">
-              </div>
+
+          <!-- STEP 2: Details (wording adapts to student/guardian) -->
+          <div class="cform-step" id="cstep-2">
+            <p class="cform-qlabel">What is your phone number?</p>
+            <div class="cform-phone-wrap">
+              <span class="cform-flag">🇺🇸 +1</span>
+              <input type="tel" class="cform-input cform-phone-input" id="cf-phone" placeholder="">
             </div>
-            <div class="form-group">
-              <label>Email Address</label>
-              <input type="email" placeholder="your@email.com">
-            </div>
-            <div class="form-group">
-              <label>Phone Number</label>
-              <input type="tel" placeholder="+1 (555) 000-0000">
-            </div>
-            <div class="form-group">
-              <label>Country</label>
-              <select>
-                <option value="">Select country</option>
-                <option>USA</option>
-                <option>UK</option>
-                <option>Canada</option>
-                <option>Australia</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <button type="button" class="btn btn-gold next-btn" onclick="nextStep(2)">Continue →</button>
-          </div>
-          <div class="form-step" id="step-3">
-            <div class="form-group">
-              <label>School Name</label>
-              <input type="text" placeholder="Your high school">
-            </div>
-            <div class="form-group">
-              <label>High School Graduation Year</label>
-              <select>
-                <option value="">Select year</option>
-                <option>2024</option>
-                <option>2025</option>
-                <option>2026</option>
-                <option>2027</option>
-                <option>2028</option>
-                <option>2029</option>
-                <option>2030</option>
-                <option>2031</option>
-                <option>2032</option>
-              </select>
-            </div>
-            <label class="checkbox-label">
-              <input type="checkbox"> I agree to the <a href="#">privacy policy</a>
+            <p class="cform-qlabel">What country do you live in?</p>
+            <select class="cform-input cform-select" id="cf-country">
+              <option value="USA">USA</option>
+              <option value="Canada">Canada</option>
+              <option value="UK">United Kingdom</option>
+              <option value="Australia">Australia</option>
+              <option value="China">China</option>
+              <option value="South Korea">South Korea</option>
+              <option value="India">India</option>
+              <option value="Other">Other</option>
+            </select>
+            <p class="cform-qlabel" id="school-label">What school do you go to?</p>
+            <input type="text" class="cform-input" id="cf-school" placeholder="Current school">
+            <p class="cform-qlabel" id="grad-label">What year did/will you graduate from high school?</p>
+            <select class="cform-input cform-select" id="cf-grad">
+              <option value="">High school graduation year</option>
+              <option>2025</option><option>2026</option><option>2027</option>
+              <option>2028</option><option>2029</option><option>2030</option>
+              <option>2031</option><option>2032</option>
+            </select>
+            <label class="cform-privacy-label">
+              <input type="checkbox" id="cf-privacy"> I agree to the <a href="#">privacy policy</a>
             </label>
-            <button type="submit" class="btn btn-gold">Book My Free Consultation</button>
+            <div class="cform-actions">
+              <button type="button" class="cform-back-btn" onclick="backToStep1()">BACK</button>
+              <button type="button" class="btn btn-gold cform-submit-btn" onclick="submitCForm()">SUBMIT</button>
+            </div>
+            <div class="cform-dots">
+              <span class="cdot"></span><span class="cdot active"></span><span class="cdot"></span>
+            </div>
           </div>
-          <div class="form-step" id="step-thanks">
-            <h3>Thank you for your interest!</h3>
-            <p>An expert Academic Advisor from our team will be in touch with you to set up a time and date for your consultation. During the consultation, you will:</p>
-            <ul>
-              <li>Get an assessment of your child's current academic candidacy</li>
-              <li>Discuss academic and extracurricular strengths and weaknesses</li>
-              <li>Gain an understanding of how Whetstone works</li>
-              <li>Formulate a plan with a range of support options that suit your family's budget</li>
-            </ul>
+
+          <!-- THANK YOU -->
+          <div class="cform-step" id="cstep-thanks">
+            <div class="cform-thanks">
+              <h3>Thank you!</h3>
+              <p>An expert advisor will be in touch shortly to set up your free consultation. We look forward to speaking with you.</p>
+            </div>
+            <div class="cform-dots">
+              <span class="cdot"></span><span class="cdot"></span><span class="cdot active"></span>
+            </div>
           </div>
+
         </form>
       </div>
     </div>
@@ -474,11 +467,11 @@
       </div>
       <div class="footer-col">
         <h4>Our Services</h4>
-        <a href="#">Admissions Consulting</a>
-        <a href="#">Capstone &amp; Extracurriculars</a>
-        <a href="#">College Essay Writing</a>
-        <a href="#">SAT Tutoring</a>
-        <a href="#">Test Prep &amp; Tutoring</a>
+        <a href="/sat/">SAT / ACT Prep</a>
+        <a href="/language-learning/">Language Learning</a>
+        <a href="/academic-tutoring/">Academic Tutoring</a>
+        <a href="/essay-writing/">Essay Writing</a>
+        <a href="/extracurricular/">Extracurricular &amp; Leadership</a>
       </div>
       <div class="footer-col">
         <h4>About Us</h4>
@@ -523,17 +516,31 @@
       if (!isOpen) item.classList.add('open');
     }
 
-    // Multi-step form
-    function nextStep(step) {
-      document.getElementById('step-' + step).classList.remove('active');
-      document.getElementById('step-' + (step + 1)).classList.add('active');
+    // New consultation form
+    let userType = 'student';
+    function selectType(type) {
+      userType = type;
+      document.getElementById('btn-student').classList.toggle('active', type === 'student');
+      document.getElementById('btn-guardian').classList.toggle('active', type === 'guardian');
+      document.getElementById('school-label').textContent = type === 'guardian'
+        ? 'What school is your child currently attending?'
+        : 'What school do you go to?';
+      document.getElementById('grad-label').textContent = type === 'guardian'
+        ? 'What year did/will your child graduate from high school?'
+        : 'What year did/will you graduate from high school?';
     }
-
-    document.getElementById('consult-form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      document.getElementById('step-3').classList.remove('active');
-      document.getElementById('step-thanks').classList.add('active');
-    });
+    function goToStep2() {
+      document.getElementById('cstep-1').classList.remove('active');
+      document.getElementById('cstep-2').classList.add('active');
+    }
+    function backToStep1() {
+      document.getElementById('cstep-2').classList.remove('active');
+      document.getElementById('cstep-1').classList.add('active');
+    }
+    function submitCForm() {
+      document.getElementById('cstep-2').classList.remove('active');
+      document.getElementById('cstep-thanks').classList.add('active');
+    }
 
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
