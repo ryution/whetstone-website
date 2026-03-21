@@ -15,7 +15,7 @@
   --border: #e2e2ea;
   --font-serif: 'Libre Caslon Text', Georgia, serif;
   --font-sans: 'Libre Franklin', system-ui, sans-serif;
-  --radius: 12px;
+  --radius: 6px;
   --shadow: 0 4px 24px rgba(25,25,112,0.10);
   --shadow-lg: 0 12px 48px rgba(25,25,112,0.16);
 }
@@ -44,7 +44,7 @@ img { max-width: 100%; height: auto; display: block; }
 .btn {
   display: inline-block;
   padding: 14px 32px;
-  border-radius: 6px;
+  border-radius: 3px;
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 15px;
@@ -220,7 +220,7 @@ img { max-width: 100%; height: auto; display: block; }
   z-index: 2;
   padding-top: 0;
   padding-bottom: 80px;
-  max-width: 700px;
+  max-width: none;
 }
 
 .hero-eyebrow {
@@ -236,11 +236,15 @@ img { max-width: 100%; height: auto; display: block; }
 
 .hero-headline {
   font-family: var(--font-serif);
-  font-size: clamp(44px, 6vw, 74px);
-  font-weight: 700;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 400;
   color: var(--white);
-  line-height: 1.1;
+  line-height: 1.05;
   margin-bottom: 24px;
+}
+
+@media (min-width: 860px) {
+  .hero-headline { white-space: nowrap; }
 }
 
 .hero-headline em { color: var(--gold); font-style: italic; }
@@ -1288,7 +1292,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .team-card {
   background: var(--white);
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow);
   text-decoration: none;
@@ -1358,7 +1362,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: var(--navy);
   color: var(--white) !important;
   padding: 12px 24px;
-  border-radius: 6px;
+  border-radius: 3px;
   font-family: var(--font-sans);
   font-weight: 700;
   font-size: 14px;
