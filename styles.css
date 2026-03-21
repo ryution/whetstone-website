@@ -3,20 +3,21 @@
    ========================================= */
 
 :root {
-  --navy: #0f1e3c;
-  --navy-light: #1a3160;
-  --gold: #c9a84c;
-  --gold-light: #e2c56e;
-  --cream: #f7f5f0;
+  --navy: #191970;
+  --navy-light: #2a2a9a;
+  --gold: #FFC247;
+  --gold-light: #ffd07a;
+  --cream: #F6F6F9;
+  --slate: #6A7A90;
   --white: #ffffff;
-  --text: #1a1a2e;
-  --text-muted: #5a6478;
-  --border: #e0ddd5;
+  --text: #191970;
+  --text-muted: #6A7A90;
+  --border: #e2e2ea;
   --font-serif: 'Libre Caslon Text', Georgia, serif;
   --font-sans: 'Libre Franklin', system-ui, sans-serif;
   --radius: 12px;
-  --shadow: 0 4px 24px rgba(15,30,60,0.10);
-  --shadow-lg: 0 12px 48px rgba(15,30,60,0.16);
+  --shadow: 0 4px 24px rgba(25,25,112,0.10);
+  --shadow-lg: 0 12px 48px rgba(25,25,112,0.16);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -44,20 +45,20 @@ img { max-width: 100%; height: auto; display: block; }
   display: inline-block;
   padding: 14px 32px;
   border-radius: 6px;
-  font-family: var(--font-sans);
-  font-weight: 600;
+  font-family: var(--font-serif);
+  font-weight: 700;
   font-size: 15px;
   text-decoration: none;
   cursor: pointer;
   border: none;
   transition: all 0.2s;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
 }
 
 .btn-primary { background: var(--white); color: var(--navy); }
 .btn-primary:hover { background: rgba(255,255,255,0.88); }
 
-.btn-gold { background: var(--gold); color: var(--white); }
+.btn-gold { background: var(--gold); color: var(--navy); }
 .btn-gold:hover { background: var(--gold-light); color: var(--navy); }
 
 .btn-outline-white { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.6); }
