@@ -460,6 +460,17 @@ img { max-width: 100%; height: auto; display: block; }
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: var(--radius);
   padding: 48px;
+  margin-bottom: 24px;
+}
+
+.review-card--featured {
+  background: rgba(255,255,255,0.10);
+  border-color: rgba(255,194,71,0.3);
+}
+
+.review-card--placeholder {
+  opacity: 0.45;
+  font-style: italic;
 }
 
 .stars { color: var(--gold); font-size: 20px; letter-spacing: 4px; margin-bottom: 24px; }
