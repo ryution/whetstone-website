@@ -328,7 +328,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .service-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.service-card-wrap { position: relative; z-index: 1; }
+.service-card-wrap { position: relative; z-index: 1; max-width: 420px; }
 
 .service-num {
   display: inline-block;
@@ -376,7 +376,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* Photo card with overlapping checklist */
-.service-card-wrap { padding-bottom: 56px; }
+.service-card-wrap { padding-bottom: 0; }
 
 .service-photo-card {
   position: relative;
@@ -386,8 +386,9 @@ img { max-width: 100%; height: auto; display: block; }
 
 .student-photo {
   width: 100%;
-  height: auto;
+  max-height: 460px;
   object-fit: contain;
+  object-position: top;
   border-radius: var(--radius);
   display: block;
   background: var(--cream);
@@ -410,13 +411,13 @@ img { max-width: 100%; height: auto; display: block; }
 
 .service-checklist-card {
   position: absolute;
-  bottom: -48px;
+  bottom: 20px;
   left: -24px;
   background: var(--white);
-  padding: 24px 28px;
+  padding: 20px 24px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
-  min-width: 280px;
+  min-width: 260px;
   z-index: 2;
 }
 
@@ -785,6 +786,15 @@ img { max-width: 100%; height: auto; display: block; }
   .stats-grid { flex-direction: column; }
   .stat-divider { width: 80%; height: 1px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .service-card-wrap { max-width: 100%; padding-bottom: 0; }
+  .service-checklist-card {
+    position: static;
+    margin-top: 16px;
+    left: auto; right: auto; bottom: auto;
+    box-shadow: var(--shadow);
+    min-width: unset;
+    width: 100%;
+  }
 }
 
 @media (max-width: 600px) {
