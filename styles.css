@@ -321,9 +321,9 @@ img { max-width: 100%; height: auto; display: block; }
   display: grid;
   grid-template-columns: 2fr 3fr;
   gap: 80px;
-  align-items: center;
+  align-items: start;
   margin-bottom: 96px;
-  padding-bottom: 96px;
+  padding-bottom: 120px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -411,7 +411,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .service-checklist-card {
   position: absolute;
-  bottom: 20px;
+  bottom: -60px;
   left: -24px;
   background: var(--white);
   padding: 20px 24px;
@@ -431,7 +431,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .service-sentence-card {
   position: absolute;
-  bottom: 20px;
+  bottom: -60px;
   left: -24px;
   background: var(--white);
   padding: 20px 24px;
@@ -840,7 +840,8 @@ img { max-width: 100%; height: auto; display: block; }
   .stat-divider { width: 80%; height: 1px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .service-card-wrap { max-width: 100%; padding-bottom: 0; }
-  .service-checklist-card {
+  .service-checklist-card,
+  .service-sentence-card {
     position: static;
     margin-top: 16px;
     left: auto; right: auto; bottom: auto;
@@ -848,6 +849,7 @@ img { max-width: 100%; height: auto; display: block; }
     min-width: unset;
     width: 100%;
   }
+  .service-row { padding-bottom: 48px; }
 }
 
 @media (max-width: 600px) {
