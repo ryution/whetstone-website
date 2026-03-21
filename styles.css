@@ -54,8 +54,8 @@ img { max-width: 100%; height: auto; display: block; }
   letter-spacing: 0.02em;
 }
 
-.btn-primary { background: var(--navy); color: var(--white); }
-.btn-primary:hover { background: var(--navy-light); }
+.btn-primary { background: var(--white); color: var(--navy); }
+.btn-primary:hover { background: rgba(255,255,255,0.88); }
 
 .btn-gold { background: var(--gold); color: var(--white); }
 .btn-gold:hover { background: var(--gold-light); color: var(--navy); }
@@ -192,7 +192,7 @@ img { max-width: 100%; height: auto; display: block; }
   position: relative;
   min-height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   background: var(--navy);
   overflow: hidden;
 }
@@ -216,18 +216,20 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-content {
   position: relative;
   z-index: 2;
-  padding-top: 100px;
+  padding-top: 0;
   padding-bottom: 80px;
   max-width: 700px;
 }
 
 .hero-eyebrow {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 20px;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--white);
+  margin-bottom: 12px;
 }
 
 .hero-headline {
@@ -315,18 +317,15 @@ img { max-width: 100%; height: auto; display: block; }
 
 .service-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: 2fr 3fr;
+  gap: 80px;
   align-items: center;
-  margin-bottom: 80px;
-  padding-bottom: 80px;
+  margin-bottom: 96px;
+  padding-bottom: 96px;
   border-bottom: 1px solid var(--border);
 }
 
 .service-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-
-.service-row-reverse { direction: rtl; }
-.service-row-reverse > * { direction: ltr; }
 .service-card-wrap { position: relative; z-index: 1; }
 
 .service-num {
@@ -340,12 +339,12 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .service-content h3 {
-  font-family: var(--font-serif);
-  font-size: 30px;
+  font-family: var(--font-sans);
+  font-size: 36px;
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 16px;
-  line-height: 1.25;
+  line-height: 1.2;
 }
 
 .service-content p { color: var(--text-muted); font-size: 17px; margin-bottom: 20px; }
@@ -659,7 +658,8 @@ img { max-width: 100%; height: auto; display: block; }
   .nav { display: none; }
   .header-inner .btn-primary { display: none; }
   .hamburger { display: flex; }
-  .service-row, .service-row-reverse { grid-template-columns: 1fr; direction: ltr; gap: 32px; }
+  .service-row { grid-template-columns: 1fr; gap: 32px; }
+  .service-content h3 { font-size: 28px; }
   .form-wrap { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .stats-grid { flex-direction: column; }
