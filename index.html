@@ -68,26 +68,124 @@
   <!-- STATS / TRACK RECORD -->
   <section class="stats" id="track-record">
     <div class="container">
-      <p class="section-label">Our Track Record</p>
-      <h2 class="section-title">Proof in Every Acceptance</h2>
-      <p class="section-sub">Whetstone students achieve 6.3x higher Ivy League acceptance rates and 97% admission to their top 5 colleges—results that few can match.</p>
-      <div class="stats-grid">
-        <div class="stat-card">
-          <span class="stat-num">6.3x</span>
-          <span class="stat-label">Higher Ivy League &amp; Top 15 acceptance rates for Whetstone students</span>
+      <div class="stats-layout">
+
+        <!-- Left: label + headline + two stat cards -->
+        <div class="stats-left">
+          <p class="section-label" style="text-align:left;">Proof in Every Acceptance.</p>
+          <h2 class="section-title" style="text-align:left; margin-bottom:12px;">Our Track Record</h2>
+          <p style="font-size:15px; color:var(--text-muted); margin-bottom:32px; line-height:1.6;">Whetstone students achieve <strong>6.3x</strong> higher Ivy League acceptance rates and <strong>97%</strong> admission to their top 5 colleges—results that few can match.</p>
+
+          <div class="stat-card-v2">
+            <span class="stat-num-v2">6.3x</span>
+            <p class="stat-desc-v2">Whetstone student's chances to get into the Ivy League and Top 15 colleges.</p>
+          </div>
+
+          <div class="stat-card-v2">
+            <span class="stat-num-v2">97%</span>
+            <p class="stat-desc-v2">Of Whetstone students are admitted to a school in their Top 5.</p>
+          </div>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-card">
-          <span class="stat-num">97%</span>
-          <span class="stat-label">Of Whetstone students admitted to a school in their Top 5</span>
+
+        <!-- Right: bar chart -->
+        <div class="stats-right">
+          <div class="chart-card">
+            <p class="chart-card-title">Whetstone students acceptance rates into the Ivy League</p>
+            <div class="chart-legend">
+              <span class="legend-dot legend-dot--gray"></span><span>Non-Whetstone Admission Rates</span>
+              <span class="legend-dot legend-dot--gold"></span><span>Whetstone Admission Rates</span>
+            </div>
+            <div class="chart-wrap">
+              <canvas id="ivyChart"></canvas>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="chart-container">
-        <img src="garph-bar.jpg" alt="Whetstone vs national Ivy League acceptance rates" class="chart-img">
-        <p class="chart-caption">Whetstone students' acceptance rates into the Ivy League</p>
+
       </div>
     </div>
   </section>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script>
+    (function() {
+      var ctx = document.getElementById('ivyChart').getContext('2d');
+      var schools = ['Harvard','Princeton','Columbia','Yale','Dartmouth','Cornell','UPenn','Brown'];
+      var national = [3.4, 3.5, 3.9, 3.7, 6.2, 7.3, 5.9, 5.4];
+      var whetstone = [21, 23, 31, 26, 37, 41, 33, 22];
+
+      // Custom plugin: draw W above gold bars
+      var wPlugin = {
+        id: 'wPlugin',
+        afterDatasetsDraw: function(chart) {
+          var ctx = chart.ctx;
+          var ds = chart.data.datasets[1];
+          var meta = chart.getDatasetMeta(1);
+          ctx.save();
+          ctx.font = 'bold 13px serif';
+          ctx.fillStyle = '#FFC247';
+          ctx.textAlign = 'center';
+          meta.data.forEach(function(bar, i) {
+            ctx.fillText('𝕎', bar.x, bar.y - 6);
+          });
+          ctx.restore();
+        }
+      };
+
+      new Chart(ctx, {
+        type: 'bar',
+        plugins: [wPlugin],
+        data: {
+          labels: schools,
+          datasets: [
+            {
+              label: 'Non-Whetstone',
+              data: national,
+              backgroundColor: '#b0b8d0',
+              borderRadius: 4,
+              barPercentage: 0.4,
+              categoryPercentage: 0.75
+            },
+            {
+              label: 'Whetstone',
+              data: whetstone,
+              backgroundColor: '#FFC247',
+              borderRadius: 4,
+              barPercentage: 0.4,
+              categoryPercentage: 0.75
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: true,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: function(ctx) { return ctx.dataset.label + ': ' + ctx.raw + '%'; }
+              }
+            }
+          },
+          scales: {
+            x: {
+              grid: { display: false },
+              ticks: { font: { size: 12, weight: '600' }, color: '#191970' }
+            },
+            y: {
+              beginAtZero: true,
+              max: 55,
+              ticks: {
+                callback: function(v) { return v + '%'; },
+                stepSize: 5,
+                font: { size: 11 },
+                color: '#6A7A90'
+              },
+              grid: { color: 'rgba(0,0,0,0.06)' }
+            }
+          }
+        }
+      });
+    })();
+  </script>
 
   <!-- COMPANY LOGOS -->
   <section class="logos">
