@@ -434,17 +434,23 @@ img { max-width: 100%; height: auto; display: block; }
   bottom: 20px;
   left: -24px;
   background: var(--white);
-  padding: 22px 26px;
+  padding: 20px 24px;
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
-  min-width: 240px;
-  max-width: 280px;
+  width: 260px;
   z-index: 2;
   font-family: var(--font-sans);
   font-size: 15px;
   color: var(--navy);
   line-height: 1.55;
-  text-align: center;
+}
+
+.service-sentence-card .score-chart img {
+  width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+  margin-top: 12px;
+  display: block;
 }
 
 /* ============================================
