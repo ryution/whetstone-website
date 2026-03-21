@@ -15,20 +15,14 @@
     <div class="header-inner">
       <a href="/" class="logo">Whetstone</a>
       <nav class="nav">
-        <div class="nav-dropdown">
-          <a href="/#services" class="nav-link">Our Services <span class="caret">▾</span></a>
-          <div class="dropdown-menu">
-            <a href="/sat/">SAT / ACT Prep</a>
-            <a href="/language-learning/">Language Learning</a>
-            <a href="/academic-tutoring/">Academic Tutoring</a>
-            <a href="/essay-writing/">Essay Writing</a>
-            <a href="/extracurricular/">Extracurricular &amp; Leadership</a>
-            <a href="/graduate-admissions/">Graduate Admissions</a>
-          </div>
-        </div>
-        <a href="/about-us/" class="nav-link">Our Team</a>
-        <a href="/resources/" class="nav-link">Resources</a>
-        <a href="/contact/" class="nav-link">Contact</a>
+      <a href="/college-admissions-counseling/" class="nav-link">Admissions</a>
+      <a href="/college-essay-coaching/" class="nav-link">Essays</a>
+      <a href="/sat-tutoring/" class="nav-link">SAT / ACT</a>
+      <a href="/extracurricular-mentorship/" class="nav-link">Extracurriculars</a>
+      <a href="/about/" class="nav-link">About</a>
+      <a href="/results/" class="nav-link">Results</a>
+      <a href="/resources/" class="nav-link">Resources</a>
+      <a href="/contact/" class="nav-link">Contact</a>
       </nav>
       <a href="/contact/" class="btn btn-primary">Get Started</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -36,13 +30,12 @@
       </button>
     </div>
     <div class="mobile-nav" id="mobile-nav">
-      <a href="/sat/">SAT / ACT Prep</a>
-      <a href="/language-learning/">Language Learning</a>
-      <a href="/academic-tutoring/">Academic Tutoring</a>
-      <a href="/essay-writing/">Essay Writing</a>
-      <a href="/extracurricular/">Extracurricular &amp; Leadership</a>
-      <a href="/graduate-admissions/">Graduate Admissions</a>
-      <a href="/about-us/">Our Team</a>
+      <a href="/college-admissions-counseling/">Admissions Counseling</a>
+      <a href="/college-essay-coaching/">Essay Coaching</a>
+      <a href="/sat-tutoring/">SAT / ACT Prep</a>
+      <a href="/extracurricular-mentorship/">Extracurriculars</a>
+      <a href="/about/">About</a>
+      <a href="/results/">Results</a>
       <a href="/resources/">Resources</a>
       <a href="/contact/">Contact</a>
       <a href="/contact/" class="btn btn-primary">Get Started</a>
@@ -88,23 +81,30 @@
         <p>Refined Method. Proven Results.</p>
         <p class="footer-contact">hello@whetstoneadmissions.com<br>917-562-5668</p>
       </div>
-      <div class="footer-col">
-        <h4>Our Services</h4>
-        <a href="/sat/">SAT / ACT Prep</a>
-        <a href="/language-learning/">Language Learning</a>
+            <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/college-admissions-counseling/">Admissions Counseling</a>
+        <a href="/college-essay-coaching/">Essay Coaching</a>
+        <a href="/sat-tutoring/">SAT / ACT Prep</a>
+        <a href="/extracurricular-mentorship/">Extracurriculars</a>
         <a href="/academic-tutoring/">Academic Tutoring</a>
-        <a href="/essay-writing/">Essay Writing</a>
-        <a href="/extracurricular/">Extracurricular &amp; Leadership</a>
-      <a href="/graduate-admissions/">Graduate Admissions</a>
+        <a href="/graduate-admissions/">Graduate Admissions</a>
       </div>
       <div class="footer-col">
-        <h4>About Us</h4>
-        <a href="/about-us/">Our Team</a>
-        <a href="#">Our Reviews</a>
+        <h4>Company</h4>
+        <a href="/about/">About</a>
+        <a href="/results/">Results</a>
+        <a href="/reviews/">Reviews</a>
+        <a href="/resources/">Resources</a>
+        <a href="/contact/">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="#">University Profiles</a>
+        <h4>Locations</h4>
+        <a href="/new-york-city-college-admissions-counseling/">New York City</a>
+        <a href="/manhattan-college-admissions-counseling/">Manhattan</a>
+        <a href="/brooklyn-college-admissions-counseling/">Brooklyn</a>
+        <a href="/westchester-college-admissions-counseling/">Westchester</a>
+        <a href="/scarsdale-college-admissions-counseling/">Scarsdale</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -123,20 +123,6 @@
     document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
     window.addEventListener('scroll', () => {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
-    });
-    document.querySelectorAll('.nav-dropdown > a').forEach(function(a) {
-      a.addEventListener('click', function(e) {
-        e.preventDefault();
-        var dd = this.parentElement;
-        var isOpen = dd.classList.contains('open');
-        document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.classList.remove('open'); });
-        if (!isOpen) dd.classList.add('open');
-      });
-    });
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.nav-dropdown')) {
-        document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.classList.remove('open'); });
-      }
     });
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobile-nav').classList.toggle('open');

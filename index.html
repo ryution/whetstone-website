@@ -3,11 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Whetstone Admissions - Refined Method. Proven Results.</title>
+  <title>College Admissions Counseling in New York City | Whetstone Admissions</title>
+  <meta name="description" content="Personalized college admissions counseling for students in NYC, Westchester, and remotely. Essays, SAT prep, extracurricular strategy, and premium 1:1 advising from Harvard and Oxford-trained advisors.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=4">
+  <style>
+    .services-4-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .service-card-new {
+      display: block;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 32px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .service-card-new:hover { border-color: var(--navy); box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    .service-card-num { font-family: 'Libre Franklin', sans-serif; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 10px; }
+    .service-card-new h3 { font-size: 20px; color: var(--navy); margin: 0 0 12px; }
+    .service-card-new p { color: var(--text-muted); font-size: 15px; line-height: 1.7; margin: 0 0 18px; }
+    .service-card-arrow { font-size: 14px; font-weight: 600; color: var(--navy); }
+    @media (max-width: 680px) { .services-4-grid { grid-template-columns: 1fr; } }
+
+    .local-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .local-card {
+      border-top: 3px solid var(--gold);
+      padding-top: 20px;
+      text-decoration: none;
+    }
+    .local-card h3 { font-size: 18px; color: var(--navy); margin-bottom: 10px; }
+    .local-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin: 0; }
+    @media (max-width: 820px) { .local-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } }
+    @media (max-width: 480px) { .local-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
 
@@ -16,18 +56,12 @@
     <div class="header-inner">
       <a href="/" class="logo">Whetstone</a>
       <nav class="nav">
-        <div class="nav-dropdown">
-          <a href="#services" class="nav-link">Our Services <span class="caret">▾</span></a>
-          <div class="dropdown-menu">
-            <a href="/sat/">SAT / ACT Prep</a>
-            <a href="/language-learning/">Language Learning</a>
-            <a href="/academic-tutoring/">Academic Tutoring</a>
-            <a href="/essay-writing/">Essay Writing</a>
-            <a href="/extracurricular/">Extracurricular &amp; Leadership</a>
-            <a href="/graduate-admissions/">Graduate Admissions</a>
-          </div>
-        </div>
-        <a href="/about-us/" class="nav-link">Our Team</a>
+        <a href="/college-admissions-counseling/" class="nav-link">Admissions</a>
+        <a href="/college-essay-coaching/" class="nav-link">Essays</a>
+        <a href="/sat-tutoring/" class="nav-link">SAT / ACT</a>
+        <a href="/extracurricular-mentorship/" class="nav-link">Extracurriculars</a>
+        <a href="/about/" class="nav-link">About</a>
+        <a href="/results/" class="nav-link">Results</a>
         <a href="/resources/" class="nav-link">Resources</a>
         <a href="/contact/" class="nav-link">Contact</a>
       </nav>
@@ -37,13 +71,12 @@
       </button>
     </div>
     <div class="mobile-nav" id="mobile-nav">
-      <a href="/sat/">SAT / ACT Prep</a>
-      <a href="/language-learning/">Language Learning</a>
-      <a href="/academic-tutoring/">Academic Tutoring</a>
-      <a href="/essay-writing/">Essay Writing</a>
-      <a href="/extracurricular/">Extracurricular &amp; Leadership</a>
-      <a href="/graduate-admissions/">Graduate Admissions</a>
-      <a href="/about-us/">Our Team</a>
+      <a href="/college-admissions-counseling/">Admissions Counseling</a>
+      <a href="/college-essay-coaching/">Essay Coaching</a>
+      <a href="/sat-tutoring/">SAT / ACT Prep</a>
+      <a href="/extracurricular-mentorship/">Extracurriculars</a>
+      <a href="/about/">About</a>
+      <a href="/results/">Results</a>
       <a href="/resources/">Resources</a>
       <a href="/contact/">Contact</a>
       <a href="/contact/" class="btn btn-primary">Get Started</a>
@@ -57,12 +90,12 @@
     </video>
     <div class="hero-overlay"></div>
     <div class="container hero-content">
-      <p class="hero-eyebrow">Whetstone Admissions</p>
-      <h1 class="hero-headline">Refined Method. Proven Results.</h1>
-      <p class="hero-sub">Our proven process transforms potential into acceptance letters from the world's most selective universities.</p>
+      <p class="hero-eyebrow">Whetstone Admissions · New York City</p>
+      <h1 class="hero-headline">College Admissions Counseling in New York City.</h1>
+      <p class="hero-sub">Expert 1:1 advising for students in Manhattan, Brooklyn, and Westchester — and online worldwide. Essays, SAT prep, extracurricular strategy, and a complete application roadmap.</p>
       <div class="hero-cta">
         <a href="#form" class="btn btn-gold">Book a Free Consultation</a>
-        <a href="#method" class="btn btn-outline-white">See Our Method</a>
+        <a href="/results/" class="btn btn-outline-white">See Our Results</a>
       </div>
     </div>
   </section>
@@ -70,18 +103,12 @@
   <!-- STATS / TRACK RECORD -->
   <section class="stats" id="track-record">
     <div class="container">
-
-      <!-- Header row: full width -->
       <div class="stats-header">
         <p class="section-label" style="text-align:left;">Proof in Every Acceptance.</p>
         <h2 class="section-title" style="text-align:left; margin-bottom:12px;">Our Track Record</h2>
         <p class="stats-subtitle">Whetstone students achieve <strong>6.3x</strong> higher Ivy League acceptance rates and <strong>97%</strong> admission to their top 5 colleges—results that few can match.</p>
       </div>
-
-      <!-- Bottom row: stat cards left, chart right — equal height -->
       <div class="stats-layout">
-
-        <!-- Left: two stat cards stacked, filling full height -->
         <div class="stats-left">
           <div class="stat-card-v2">
             <span class="stat-num-v2">6.3x</span>
@@ -92,8 +119,6 @@
             <p class="stat-desc-v2">Of Whetstone students are admitted to a school in their Top 5.</p>
           </div>
         </div>
-
-        <!-- Right: chart card — same height as left column -->
         <div class="stats-right">
           <div class="chart-card">
             <p class="chart-card-title">Whetstone students acceptance rates into the Ivy League</p>
@@ -106,7 +131,6 @@
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -117,46 +141,28 @@
       var schools = ['Harvard','Princeton','Columbia','Yale','Dartmouth','Cornell','UPenn','Brown'];
       var national = [3.4, 3.5, 3.9, 3.7, 6.2, 7.3, 5.9, 5.4];
       var whetstone = [21, 23, 31, 26, 37, 41, 33, 22];
-
-      // Pre-load W logo image
       var wImg = new Image();
       wImg.src = '/whetstone_iconY.png';
-
       var wPlugin = {
         id: 'wPlugin',
         afterDatasetsDraw: function(chart) {
           if (!wImg.complete) return;
           var c = chart.ctx;
-          var meta = chart.getDatasetMeta(1); // gold bars
+          var meta = chart.getDatasetMeta(1);
           var sz = 22;
           meta.data.forEach(function(bar) {
             c.drawImage(wImg, bar.x - sz/2, bar.y - sz - 4, sz, sz);
           });
         }
       };
-
       new Chart(ctx, {
         type: 'bar',
         plugins: [wPlugin],
         data: {
           labels: schools,
           datasets: [
-            {
-              label: 'Non-Whetstone',
-              data: national,
-              backgroundColor: '#b0b8d0',
-              borderRadius: 3,
-              barPercentage: 0.38,
-              categoryPercentage: 0.7
-            },
-            {
-              label: 'Whetstone',
-              data: whetstone,
-              backgroundColor: '#FFC247',
-              borderRadius: 3,
-              barPercentage: 0.38,
-              categoryPercentage: 0.7
-            }
+            { label: 'Non-Whetstone', data: national, backgroundColor: '#b0b8d0', borderRadius: 3, barPercentage: 0.38, categoryPercentage: 0.7 },
+            { label: 'Whetstone', data: whetstone, backgroundColor: '#FFC247', borderRadius: 3, barPercentage: 0.38, categoryPercentage: 0.7 }
           ]
         },
         options: {
@@ -165,37 +171,15 @@
           layout: { padding: { top: 28 } },
           plugins: {
             legend: { display: false },
-            tooltip: {
-              callbacks: {
-                label: function(c) { return c.dataset.label + ': ' + c.raw + '%'; }
-              }
-            }
+            tooltip: { callbacks: { label: function(c) { return c.dataset.label + ': ' + c.raw + '%'; } } }
           },
           scales: {
-            x: {
-              grid: { display: false },
-              ticks: { font: { size: 11, weight: '700' }, color: '#191970' }
-            },
-            y: {
-              beginAtZero: true,
-              min: 0,
-              max: 50,
-              ticks: {
-                callback: function(v) { return v + '%'; },
-                stepSize: 5,
-                font: { size: 11 },
-                color: '#6A7A90'
-              },
-              grid: { color: 'rgba(0,0,0,0.06)' }
-            }
+            x: { grid: { display: false }, ticks: { font: { size: 11, weight: '700' }, color: '#191970' } },
+            y: { beginAtZero: true, min: 0, max: 50, ticks: { callback: function(v) { return v + '%'; }, stepSize: 5, font: { size: 11 }, color: '#6A7A90' }, grid: { color: 'rgba(0,0,0,0.06)' } }
           }
         }
       });
-
-      // Redraw once W image loads
-      wImg.onload = function() {
-        Chart.getChart('ivyChart') && Chart.getChart('ivyChart').draw();
-      };
+      wImg.onload = function() { Chart.getChart('ivyChart') && Chart.getChart('ivyChart').draw(); };
     })();
   </script>
 
@@ -213,134 +197,93 @@
     </div>
   </section>
 
-  <!-- METHOD / SERVICES -->
-  <section class="method" id="method">
+  <!-- WHAT WE DO -->
+  <section class="page-section" id="services">
     <div class="container">
-      <p class="section-label">Our Method</p>
-      <h2 class="section-title">How Whetstone Works</h2>
-      <p class="section-sub">Whetstone shapes strong students into undeniable candidates — guided by a philosophy that nurtures virtue and excellence.</p>
+      <p class="section-label">What We Do</p>
+      <h2 class="section-title">Four Services. One Coherent Application.</h2>
+      <p class="section-sub">Every service is designed to reinforce the others — because the strongest applications are built from a single, coherent strategy.</p>
+      <div class="services-4-grid">
+        <a href="/college-admissions-counseling/" class="service-card-new">
+          <span class="service-card-num">01</span>
+          <h3>Admissions Counseling</h3>
+          <p>School list strategy, timeline planning, and a complete application roadmap — personalized to your profile from first session to final submission.</p>
+          <span class="service-card-arrow">Learn More →</span>
+        </a>
+        <a href="/college-essay-coaching/" class="service-card-new">
+          <span class="service-card-num">02</span>
+          <h3>Essay Coaching</h3>
+          <p>Personal statements and supplementals developed with Princeton's writing specialists — surprising, specific, and only you could have written them.</p>
+          <span class="service-card-arrow">Learn More →</span>
+        </a>
+        <a href="/sat-tutoring/" class="service-card-new">
+          <span class="service-card-num">03</span>
+          <h3>SAT / ACT Tutoring</h3>
+          <p>Private tutoring from 99th-percentile scorers in Manhattan, Brooklyn, and Westchester. Score guarantee included on all programs.</p>
+          <span class="service-card-arrow">Learn More →</span>
+        </a>
+        <a href="/extracurricular-mentorship/" class="service-card-new">
+          <span class="service-card-num">04</span>
+          <h3>Extracurricular &amp; Capstone Mentorship</h3>
+          <p>Build bold, distinctive projects guided by PhD mentors and industry leaders. Extracurriculars that define your application narrative.</p>
+          <span class="service-card-arrow">Learn More →</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-      <!-- Service 1 -->
-      <div class="service-row">
-        <div class="service-content">
-          <span class="service-num">01</span>
-          <h3>Discover Your Admissions Roadmap</h3>
-          <p>Match with an expert advisor and set your Top 5 schools, plan your timeline, and sharpen your competitive edge.</p>
+  <!-- HOW IT WORKS -->
+  <section class="page-section-alt" id="method">
+    <div class="container">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">A Deliberate Process, Start to Finish</h2>
+      <p class="section-sub">Every Whetstone engagement follows the same structured method — built to produce the strongest possible application, not just a finished one. <a href="/our-method/" style="color:var(--navy);font-weight:600;">Read the full method →</a></p>
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-num">1</span>
+          <h3>Profile &amp; Roadmap</h3>
+          <p>An honest assessment of your academic record, testing, and extracurricular profile — followed by a strategic school list and 12-month timeline.</p>
         </div>
-        <div class="service-card-wrap">
-          <div class="service-photo-card">
-            <img src="Drew.jpg" alt="Drew – admitted to Columbia" class="student-photo">
-            <div class="student-badge">
-              <strong>Drew</strong>
-              <span>Admitted to Columbia</span>
-            </div>
-            <div class="service-checklist-card">
-              <span class="service-tag">Admissions Roadmap</span>
-              <ul class="service-list">
-                <li>Define what sets you apart</li>
-                <li>Track milestones &amp; key dates</li>
-                <li>Keep on pace with 1:1 check-ins</li>
-              </ul>
-            </div>
-          </div>
+        <div class="step-card">
+          <span class="step-num">2</span>
+          <h3>Build the Application</h3>
+          <p>Essays, activities positioning, and school list developed in coordination — so every part of the application reinforces the same coherent story.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">3</span>
+          <h3>Raise Scores &amp; Submit</h3>
+          <p>SAT and ACT prep with 99th-percentile tutors, final application review, and submission management through every deadline.</p>
         </div>
       </div>
-
-      <!-- Service 2 -->
-      <div class="service-row">
-        <div class="service-content">
-          <span class="service-num">02</span>
-          <h3>Stand Out With a High-Impact Capstone</h3>
-          <p>Lead an original project with real-world impact, guided by PhD mentors and industry leaders from Google, JPMorgan, and Anthropic.</p>
-        </div>
-        <div class="service-card-wrap">
-          <div class="service-photo-card">
-            <img src="ClaireFrame.jpg" alt="Claire – admitted to UCLA" class="student-photo">
-            <div class="student-badge">
-              <strong>Claire</strong>
-              <span>Admitted to UCLA</span>
-            </div>
-            <div class="service-checklist-card">
-              <span class="service-tag">Capstone Project</span>
-              <ul class="service-list">
-                <li>Identify a problem</li>
-                <li>Develop a prototype</li>
-                <li>Distribute to 1,200+ students</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div style="text-align:center;margin-top:36px;">
+        <a href="/our-method/" class="btn btn-primary">See the Full Method</a>
       </div>
+    </div>
+  </section>
 
-      <!-- Service 3 -->
-      <div class="service-row">
-        <div class="service-content">
-          <span class="service-num">03</span>
-          <h3>Write Unforgettable Essays</h3>
-          <p>Craft essays that admissions officers remember — and avoid the missteps that get others overlooked.</p>
-        </div>
-        <div class="service-card-wrap">
-          <div class="service-photo-card">
-            <img src="Stephanie.jpg" alt="Stephanie – Princeton University" class="student-photo">
-            <div class="student-badge">
-              <strong>Stephanie</strong>
-              <span>Asst. Director, Princeton</span>
-            </div>
-            <div class="service-sentence-card">
-              <em><strong>1:1 Essay Refinement</strong></em> with leaders from Princeton's Writing Center.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 4 -->
-      <div class="service-row">
-        <div class="service-content">
-          <span class="service-num">04</span>
-          <h3>Elevate Your Scores</h3>
-          <p>Ace the SAT, AP, and other high-stakes exams with expert coaching from Ivy League tutors in NYC.</p>
-        </div>
-        <div class="service-card-wrap">
-          <div class="service-photo-card">
-            <img src="BoyFrame.jpg" alt="Student studying for SAT" class="student-photo">
-            <div class="student-badge">
-              <strong>Expert Coaching</strong>
-              <span>Top 0.1% SAT Scorers</span>
-            </div>
-            <div class="service-sentence-card">
-              <em><strong>SAT Prep in NYC from tutors who've scored in the top 0.1%</strong></em>
-              <div class="score-chart">
-                <img src="score-bar.png" alt="SAT score improvement chart">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 5 -->
-      <div class="service-row">
-        <div class="service-content">
-          <span class="service-num">05</span>
-          <h3>Elevate Yourself</h3>
-          <p>Master the Great Books and apply their timeless insights to a life of virtue and excellence.</p>
-        </div>
-        <div class="service-card-wrap">
-          <div class="service-photo-card">
-            <img src="ValerieFrame.jpg" alt="Valerie – admitted to Harvard" class="student-photo">
-            <div class="student-badge">
-              <strong>Valerie</strong>
-              <span>Admitted to Harvard</span>
-            </div>
-            <div class="service-checklist-card">
-              <span class="service-tag">Personal Curriculum</span>
-              <ul class="service-list">
-                <li>Meditations — Marcus Aurelius</li>
-                <li>Candide — Voltaire</li>
-                <li>The World As I See It — Einstein</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+  <!-- LOCAL -->
+  <section class="page-section">
+    <div class="container">
+      <p class="section-label">Where We Work</p>
+      <h2 class="section-title">In-Person Across New York City</h2>
+      <p class="section-sub">Serving families in Manhattan, Brooklyn, and Westchester — with online sessions available worldwide.</p>
+      <div class="local-grid">
+        <a href="/manhattan-college-admissions-counseling/" class="local-card">
+          <h3>Manhattan</h3>
+          <p>Upper East Side · Upper West Side · Tribeca · Greenwich Village · Carnegie Hill</p>
+        </a>
+        <a href="/brooklyn-college-admissions-counseling/" class="local-card">
+          <h3>Brooklyn</h3>
+          <p>Brooklyn Heights · Park Slope · Cobble Hill · DUMBO · Prospect Heights</p>
+        </a>
+        <a href="/westchester-college-admissions-counseling/" class="local-card">
+          <h3>Westchester</h3>
+          <p>Scarsdale · Bronxville · Rye · Larchmont · Chappaqua · Ardsley</p>
+        </a>
+        <a href="/new-york-city-college-admissions-counseling/" class="local-card">
+          <h3>Online</h3>
+          <p>Available to students anywhere in the United States and internationally</p>
+        </a>
       </div>
     </div>
   </section>
@@ -350,8 +293,6 @@
     <div class="container">
       <p class="section-label">Student Reviews</p>
       <h2 class="section-title">What Our Students Say</h2>
-
-      <!-- YouTube testimonial video -->
       <div class="review-video-wrap">
         <iframe
           src="https://www.youtube-nocookie.com/embed/W1MmR0eHeoE?rel=0&modestbranding=1"
@@ -362,8 +303,6 @@
           loading="lazy">
         </iframe>
       </div>
-
-      <!-- Primary testimonial -->
       <div class="review-card review-card--featured">
         <div class="stars">★★★★★</div>
         <blockquote>
@@ -375,7 +314,43 @@
           </div>
         </div>
       </div>
+      <div style="text-align:center;margin-top:32px;">
+        <a href="/reviews/" class="btn btn-outline-white">Read More Reviews</a>
+      </div>
+    </div>
+  </section>
 
+  <!-- WHY WHETSTONE -->
+  <section class="page-section-alt">
+    <div class="container">
+      <p class="section-label">Why Whetstone</p>
+      <h2 class="section-title">What Sets Us Apart</h2>
+      <div class="feature-list" style="max-width:680px;margin:32px auto 0;">
+        <div class="feature-item">
+          <span class="feature-icon">✓</span>
+          <div>
+            <h4>99th Percentile, Every Time</h4>
+            <p>Every advisor and tutor has personally scored or studied at the highest level in their field. We assign no one to subjects they don't genuinely master.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✓</span>
+          <div>
+            <h4>One Team, One Student</h4>
+            <p>We work with a deliberately small number of students per cycle. Your advisor knows your full application — your essays, your activities, your story — from day one to submission.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-icon">✓</span>
+          <div>
+            <h4>Honest Counsel</h4>
+            <p>We tell you what's realistic, not what you want to hear. The most useful admissions advice is often the most direct.</p>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:32px;">
+        <a href="/about/" class="btn btn-primary">Meet the Team</a>
+      </div>
     </div>
   </section>
 
@@ -385,10 +360,7 @@
       <div class="cform-wrap">
         <h2 class="cform-title">Book a free consultation today and<br>get access to our e-book bundle</h2>
         <p class="cform-sub">You'll receive: 10 Successful Essays and Activity Lists, a Capstone Project Case Study, and an Admissions Roadmap from alumni of the world's most selective universities.</p>
-
         <form id="consult-form" onsubmit="return false;">
-
-          <!-- STEP 1: Who + Basic Info -->
           <div class="cform-step active" id="cstep-1">
             <p class="cform-qlabel">Are you a student or a guardian?</p>
             <div class="cform-toggle">
@@ -412,8 +384,6 @@
               <span class="cdot active"></span><span class="cdot"></span><span class="cdot"></span>
             </div>
           </div>
-
-          <!-- STEP 2: Details (wording adapts to student/guardian) -->
           <div class="cform-step" id="cstep-2">
             <p class="cform-qlabel">What is your phone number?</p>
             <div class="cform-phone-wrap">
@@ -451,8 +421,6 @@
               <span class="cdot"></span><span class="cdot active"></span><span class="cdot"></span>
             </div>
           </div>
-
-          <!-- THANK YOU -->
           <div class="cform-step" id="cstep-thanks">
             <div class="cform-thanks">
               <h3>Thank you!</h3>
@@ -462,42 +430,7 @@
               <span class="cdot"></span><span class="cdot"></span><span class="cdot active"></span>
             </div>
           </div>
-
         </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- MORE SERVICES -->
-  <section class="more-services" id="services">
-    <div class="container">
-      <p class="section-label">More Services</p>
-      <h2 class="section-title">Everything You Need to Get In</h2>
-      <div class="services-grid">
-        <div class="service-tile">
-          <img src="curricular.jpg" alt="Capstone &amp; Extracurriculars">
-          <div class="service-tile-body">
-            <h3>Capstone &amp; Extracurriculars</h3>
-            <p>Launch bold projects through the Whetstone Capstone Accelerator that align with essays and activities to make you unforgettable.</p>
-            <a href="#" class="link-arrow">Learn More →</a>
-          </div>
-        </div>
-        <div class="service-tile">
-          <img src="sat-advising.jpg" alt="SAT &amp; Academic Advising">
-          <div class="service-tile-body">
-            <h3>SAT &amp; Academic Advising</h3>
-            <p>Boost scores and strengthen academics with tailored strategies that set you above the curve.</p>
-            <a href="#" class="link-arrow">Learn More →</a>
-          </div>
-        </div>
-        <div class="service-tile">
-          <img src="writing-essay.jpg" alt="Essay Writing">
-          <div class="service-tile-body">
-            <h3>Essay Writing</h3>
-            <p>Unify essays and activities into a powerful narrative that stands out in admissions.</p>
-            <a href="#" class="link-arrow">Learn More →</a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -509,58 +442,28 @@
       <h2 class="section-title">Frequently Asked Questions</h2>
       <div class="faq-list">
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            Who are Whetstone College Consulting's counselors?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            <p>Our team is made up of experienced admissions consultants, tutors, and test prep specialists who understand what it takes to succeed in today's competitive admissions landscape. Each counselor is dedicated to providing precise feedback, structured guidance, and personalized strategies to help students perform at their highest potential. Whether working on test prep, essays, or interviews, our counselors ensure every effort is intentional and aligned with long-term success.</p>
-          </div>
+          <button class="faq-q" onclick="toggleFaq(this)">Who are Whetstone's advisors?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Our team is drawn from the world's most rigorous academic institutions — Harvard, Oxford, MIT, Yale, and Princeton. Each advisor has personally navigated the admissions process at the highest level, and works with a deliberately small number of students per cycle to ensure genuine individualization.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            When should I start working with Whetstone College Consulting?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            <p>The earlier you begin, the stronger your application strategy will be. We recommend starting 6–12 months before application deadlines so there's enough time for intentional preparation—whether that means building a testing plan, developing essays, or strengthening extracurricular profiles. Early planning allows us to structure each step with precision, giving students the confidence and clarity to perform at their best when it matters most.</p>
-          </div>
+          <button class="faq-q" onclick="toggleFaq(this)">When should I start working with Whetstone?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>The spring of junior year is ideal — when testing is largely set, extracurriculars are in their final shape, and there's time to develop essay ideas without pressure. For students targeting extracurricular development or the Capstone program, sophomore year is better. We also work with seniors and late starters.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            What is your method?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            <p>Our philosophy is simple: practice doesn't make perfect—perfect practice does. Every session, whether tutoring, test preparation, or application coaching, is designed to be highly intentional. We focus on efficiency, accuracy, and results so that students maximize every effort.</p>
-          </div>
+          <button class="faq-q" onclick="toggleFaq(this)">What is your method?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Our philosophy: practice doesn't make perfect — perfect practice does. Every session is highly intentional. We begin with an honest profile assessment, build a coherent strategy across essays, activities, and testing, and track progress at every milestone. <a href="/our-method/">Read the full method →</a></p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            Who do you work with?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            <p>We support high school, undergraduate, and graduate students preparing for competitive admissions. Our team also works with international students applying to U.S. schools and programs.</p>
-          </div>
+          <button class="faq-q" onclick="toggleFaq(this)">Who do you work with?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>We work with high school students applying to undergraduate programs at selective universities, primarily from New York City (Manhattan, Brooklyn, Westchester) and internationally. We also support graduate applicants through our <a href="/graduate-admissions/">Graduate Admissions program</a>.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            How does the admissions process work with Whetstone?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            <p>We begin with a consultation to learn about your goals and challenges. Then we create a customized plan that includes tutoring, test prep strategies, essay coaching, and admissions guidance tailored to your needs.</p>
-          </div>
+          <button class="faq-q" onclick="toggleFaq(this)">How does the admissions process work?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>We begin with a free consultation to understand your goals, timeline, and profile. We then build a customized engagement — which may include admissions counseling, essay coaching, test prep, or extracurricular mentorship depending on what your application needs most.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">
-            Can you guarantee admission?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-a">
-            <p>No admissions service can guarantee acceptance. However, we can ensure that you submit the most polished and competitive application possible, supported by strong test performance and compelling essays.</p>
-          </div>
+          <button class="faq-q" onclick="toggleFaq(this)">Can you guarantee admission?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>No admissions service can guarantee acceptance — and you should be skeptical of any that claim otherwise. We can guarantee that you submit the most polished and strategic application you are capable of. Our SAT programs include score guarantees. <a href="/results/">See our results →</a></p></div>
         </div>
       </div>
     </div>
@@ -583,22 +486,29 @@
         <p class="footer-contact">hello@whetstoneadmissions.com<br>917-562-5668</p>
       </div>
       <div class="footer-col">
-        <h4>Our Services</h4>
-        <a href="/sat/">SAT / ACT Prep</a>
-        <a href="/language-learning/">Language Learning</a>
+        <h4>Services</h4>
+        <a href="/college-admissions-counseling/">Admissions Counseling</a>
+        <a href="/college-essay-coaching/">Essay Coaching</a>
+        <a href="/sat-tutoring/">SAT / ACT Prep</a>
+        <a href="/extracurricular-mentorship/">Extracurriculars</a>
         <a href="/academic-tutoring/">Academic Tutoring</a>
-        <a href="/essay-writing/">Essay Writing</a>
-        <a href="/extracurricular/">Extracurricular &amp; Leadership</a>
-      <a href="/graduate-admissions/">Graduate Admissions</a>
+        <a href="/graduate-admissions/">Graduate Admissions</a>
       </div>
       <div class="footer-col">
-        <h4>About Us</h4>
-        <a href="#">Our Team</a>
-        <a href="#">Our Reviews</a>
+        <h4>Company</h4>
+        <a href="/about/">About</a>
+        <a href="/results/">Results</a>
+        <a href="/reviews/">Reviews</a>
+        <a href="/resources/">Resources</a>
+        <a href="/contact/">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="#">University Profiles</a>
+        <h4>Locations</h4>
+        <a href="/new-york-city-college-admissions-counseling/">New York City</a>
+        <a href="/manhattan-college-admissions-counseling/">Manhattan</a>
+        <a href="/brooklyn-college-admissions-counseling/">Brooklyn</a>
+        <a href="/westchester-college-admissions-counseling/">Westchester</a>
+        <a href="/scarsdale-college-admissions-counseling/">Scarsdale</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -614,54 +524,27 @@
   </footer>
 
   <script>
-    // Sticky header + sticky CTA bar
     window.addEventListener('scroll', () => {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
       const heroH = document.querySelector('.hero').offsetHeight;
       document.getElementById('sticky-cta').classList.toggle('visible', window.scrollY > heroH * 0.6);
     });
-
-    // Hamburger menu
-    // Dropdown toggle
-    document.querySelectorAll('.nav-dropdown > a').forEach(function(a) {
-      a.addEventListener('click', function(e) {
-        e.preventDefault();
-        var dd = this.parentElement;
-        var isOpen = dd.classList.contains('open');
-        document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.classList.remove('open'); });
-        if (\!isOpen) dd.classList.add('open');
-      });
-    });
-    document.addEventListener('click', function(e) {
-      if (\!e.target.closest('.nav-dropdown')) {
-        document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.classList.remove('open'); });
-      }
-    });
-
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobile-nav').classList.toggle('open');
     });
-
-    // FAQ accordion
     function toggleFaq(btn) {
       const item = btn.parentElement;
       const isOpen = item.classList.contains('open');
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
     }
-
-    // New consultation form
     let userType = 'student';
     function selectType(type) {
       userType = type;
       document.getElementById('btn-student').classList.toggle('active', type === 'student');
       document.getElementById('btn-guardian').classList.toggle('active', type === 'guardian');
-      document.getElementById('school-label').textContent = type === 'guardian'
-        ? 'What school is your child currently attending?'
-        : 'What school do you go to?';
-      document.getElementById('grad-label').textContent = type === 'guardian'
-        ? 'What year did/will your child graduate from high school?'
-        : 'What year did/will you graduate from high school?';
+      document.getElementById('school-label').textContent = type === 'guardian' ? 'What school is your child currently attending?' : 'What school do you go to?';
+      document.getElementById('grad-label').textContent = type === 'guardian' ? 'What year did/will your child graduate from high school?' : 'What year did/will you graduate from high school?';
     }
     function goToStep2() {
       document.getElementById('cstep-1').classList.remove('active');
@@ -675,15 +558,10 @@
       document.getElementById('cstep-2').classList.remove('active');
       document.getElementById('cstep-thanks').classList.add('active');
     }
-
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
         const target = document.querySelector(a.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
+        if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
       });
     });
   </script>
