@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How Many Colleges Should You Apply To? | Whetstone Admissions</title>
+  <meta name="description" content="Applying to too few schools leaves you exposed. Too many spreads you thin. Here's how to find the right number — and build a list that actually works.">
+  <link rel="canonical" href="https://www.whetstoneadmissions.com/resources/how-many-colleges-should-i-apply-to/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../styles.css?v=4">
+  <style>
+    /* ── Blog Layout ── */
+    .blog-wrap {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 64px;
+      align-items: start;
+      padding: 72px 0 96px;
+    }
+    .blog-body { min-width: 0; }
+    .blog-sidebar { position: sticky; top: 100px; }
+
+    /* ── Article Typography ── */
+    .blog-body h2 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 28px;
+      color: var(--navy);
+      margin: 48px 0 16px;
+      padding-top: 8px;
+      border-top: 2px solid var(--border);
+    }
+    .blog-body h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 20px;
+      color: var(--navy);
+      margin: 32px 0 12px;
+    }
+    .blog-body p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .blog-body ul, .blog-body ol {
+      padding-left: 24px;
+      margin-bottom: 20px;
+    }
+    .blog-body li {
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .blog-body strong { color: var(--navy); }
+
+    /* ── Hero ── */
+    .blog-hero {
+      background: var(--navy);
+      padding: 72px 0 56px;
+    }
+    .blog-hero-inner { max-width: 760px; }
+    .blog-breadcrumb {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 20px;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .blog-breadcrumb a { color: rgba(255,255,255,0.55); text-decoration: none; }
+    .blog-breadcrumb a:hover { color: var(--gold); }
+    .blog-hero h1 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: clamp(30px, 4vw, 44px);
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .blog-hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .blog-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .blog-author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--gold);
+    }
+    .blog-author-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--white);
+    }
+    .blog-author-title {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+    }
+    .blog-meta-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.2); }
+    .blog-meta-info {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ── TOC Sidebar ── */
+    .toc-card {
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1.5px solid var(--border);
+    }
+    .toc-card h4 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 15px;
+      color: var(--navy);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .toc-card ol {
+      padding-left: 18px;
+      margin: 0;
+    }
+    .toc-card li {
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 10px;
+    }
+    .toc-card a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .toc-card a:hover { color: var(--navy); font-weight: 600; }
+
+    /* ── CTA Card (sidebar) ── */
+    .sidebar-cta {
+      margin-top: 28px;
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 28px;
+      text-align: center;
+    }
+    .sidebar-cta h4 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 18px;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .sidebar-cta p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    /* ── Callout boxes ── */
+    .callout {
+      background: var(--cream);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 20px 24px;
+      margin: 32px 0;
+    }
+    .callout p { margin: 0; font-size: 16px; line-height: 1.75; }
+    .callout strong { color: var(--navy); }
+
+    /* ── Tier table ── */
+    .tier-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 28px 0;
+      font-size: 15px;
+    }
+    .tier-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 12px 16px;
+      text-align: left;
+      font-family: 'Libre Franklin', sans-serif;
+      font-weight: 600;
+    }
+    .tier-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+    .tier-table tr:nth-child(even) td { background: var(--cream); }
+    .tier-table tr:last-child td { border-bottom: none; }
+    .tier-label {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .tier-reach { background: #fee2e2; color: #991b1b; }
+    .tier-target { background: #fef3c7; color: #92400e; }
+    .tier-safety { background: #d1fae5; color: #065f46; }
+
+    /* ── Number breakdown ── */
+    .breakdown-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .breakdown-card {
+      border-radius: var(--radius);
+      padding: 24px;
+      text-align: center;
+    }
+    .breakdown-reach { background: #fee2e2; }
+    .breakdown-target { background: #fef3c7; }
+    .breakdown-safety { background: #d1fae5; }
+    .breakdown-num {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 40px;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .breakdown-reach .breakdown-num { color: #991b1b; }
+    .breakdown-target .breakdown-num { color: #92400e; }
+    .breakdown-safety .breakdown-num { color: #065f46; }
+    .breakdown-label {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .breakdown-desc { font-size: 13px; line-height: 1.55; color: var(--text-muted); }
+
+    /* ── Inline CTA ── */
+    .inline-cta {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      margin: 48px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+    .inline-cta h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 22px;
+      color: var(--white);
+      margin: 0 0 6px;
+      border: none;
+    }
+    .inline-cta p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.7);
+      margin: 0;
+    }
+    .inline-cta-actions { flex-shrink: 0; }
+
+    /* ── Related posts ── */
+    .related-section { padding: 64px 0; background: var(--cream); border-top: 1px solid var(--border); }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 32px; }
+    .related-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1.5px solid var(--border);
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .related-card:hover { border-color: var(--navy); box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+    .related-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); display: block; margin-bottom: 10px; }
+    .related-card h4 { font-family: 'Libre Caslon Text', serif; font-size: 18px; color: var(--navy); margin-bottom: 10px; line-height: 1.35; }
+    .related-card p { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin: 0; }
+
+    @media (max-width: 960px) {
+      .blog-wrap { grid-template-columns: 1fr; gap: 40px; }
+      .blog-sidebar { position: static; }
+      .breakdown-grid { grid-template-columns: 1fr; }
+      .inline-cta { flex-direction: column; text-align: center; }
+      .related-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header scrolled" id="header">
+    <div class="header-inner">
+      <a href="/" class="logo">Whetstone</a>
+      <nav class="nav">
+        <div class="nav-dropdown">
+          <a class="nav-link" href="/college-admissions-counseling/">Services <span class="caret">▾</span></a>
+          <div class="dropdown-menu">
+            <a href="/college-admissions-counseling/">Admissions Counseling</a>
+            <a href="/college-essay-coaching/">Essay Coaching</a>
+            <a href="/sat-tutoring/">SAT / ACT Prep</a>
+            <a href="/extracurricular-mentorship/">Extracurriculars</a>
+            <a href="/academic-tutoring/">Academic Tutoring</a>
+            <a href="/graduate-admissions/">Graduate Admissions</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <a class="nav-link" href="/about/">About <span class="caret">▾</span></a>
+          <div class="dropdown-menu">
+            <a href="/our-method/">Our Method</a>
+            <a href="/about/">About</a>
+            <a href="/results/">Results</a>
+            <a href="/reviews/">Reviews</a>
+          </div>
+        </div>
+        <a href="/resources/" class="nav-link">Resources</a>
+        <a href="/contact/" class="nav-link">Contact</a>
+      </nav>
+      <a href="/contact/" class="btn btn-primary">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-nav" id="mobile-nav">
+      <a href="/college-admissions-counseling/">Admissions Counseling</a>
+      <a href="/college-essay-coaching/">Essay Coaching</a>
+      <a href="/sat-tutoring/">SAT / ACT Prep</a>
+      <a href="/extracurricular-mentorship/">Extracurriculars</a>
+      <a href="/our-method/">Our Method</a>
+      <a href="/about/">About</a>
+      <a href="/results/">Results</a>
+      <a href="/resources/">Resources</a>
+      <a href="/contact/">Contact</a>
+      <a href="/contact/" class="btn btn-primary">Get Started</a>
+    </div>
+  </header>
+
+  <!-- BLOG HERO -->
+  <section class="blog-hero">
+    <div class="container">
+      <div class="blog-hero-inner">
+        <div class="blog-breadcrumb">
+          <a href="/">Home</a> › <a href="/resources/">Resources</a> › How Many Colleges Should You Apply To?
+        </div>
+        <p class="section-label" style="color:var(--gold); margin-bottom:14px;">College Application Strategy</p>
+        <h1>How Many Colleges Should You Apply To?</h1>
+        <div class="blog-hero-meta">
+          <div class="blog-author">
+            <img src="../../Headshot_Howard-min-scaled.jpg" alt="Howard Dvorkin" class="blog-author-avatar">
+            <div>
+              <div class="blog-author-name">Howard Dvorkin</div>
+              <div class="blog-author-title">Founder, Whetstone Admissions</div>
+            </div>
+          </div>
+          <div class="blog-meta-divider"></div>
+          <div class="blog-meta-info">March 2025 · 8 min read</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG CONTENT -->
+  <div class="container">
+    <div class="blog-wrap">
+
+      <!-- MAIN ARTICLE -->
+      <article class="blog-body">
+
+        <p>There is no single right answer. But there is a right framework — and most students aren't using it.</p>
+
+        <p>The conventional wisdom says apply to 10–15 schools. Some counselors say more. Some say fewer. What almost no one tells you is that the <em>number</em> matters far less than the <em>composition</em> of your list, and that getting the composition wrong is one of the most common — and most costly — mistakes students make.</p>
+
+        <p>This guide will walk you through how to think about your college list: how many schools to include, how to sort them into tiers, and how to avoid the traps that derail even strong applicants.</p>
+
+        <div class="callout">
+          <p><strong>The short answer:</strong> Most students should apply to between <strong>10 and 14 schools</strong>, distributed thoughtfully across reach, target, and safety tiers. The exact number depends on your profile, your intended major, and how much time you can give each application.</p>
+        </div>
+
+        <h2 id="tiers">The Three-Tier Framework</h2>
+
+        <p>Before you settle on a number, you need to understand how college lists are structured. Admissions counselors — and most students — organize schools into three categories:</p>
+
+        <table class="tier-table">
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>What It Means</th>
+              <th>Admission Odds</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tier-label tier-reach">Reach</span></td>
+              <td>Schools where your stats are at or below the 50th percentile of admitted students. Getting in is possible but not probable.</td>
+              <td>Under 25% for your profile</td>
+            </tr>
+            <tr>
+              <td><span class="tier-label tier-target">Target</span></td>
+              <td>Schools where your academic profile aligns with the middle 50% of admitted students. You're competitive, but not a lock.</td>
+              <td>25–60% for your profile</td>
+            </tr>
+            <tr>
+              <td><span class="tier-label tier-safety">Safety</span></td>
+              <td>Schools where you exceed the typical academic profile. Admission is likely, but not guaranteed — there's no such thing as a true "safety."</td>
+              <td>Over 60% for your profile</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>Most students overweight reaches and underweight safeties. This is partly psychological — no one wants to think about their backup plan — but it's also a structural risk. A list with six reaches, two targets, and one safety is not a strategic list. It's a wish list.</p>
+
+        <h2 id="how-many">So How Many Schools Should You Apply To?</h2>
+
+        <p>Here's the breakdown we use with Whetstone students. This range works for most applicants — adjust based on the factors in the next section.</p>
+
+        <div class="breakdown-grid">
+          <div class="breakdown-card breakdown-reach">
+            <span class="breakdown-num">4–5</span>
+            <span class="breakdown-label">Reach Schools</span>
+            <p class="breakdown-desc">Aspirational but realistic. These are the schools that excite you most — and where you'd have a fighting chance with a strong application.</p>
+          </div>
+          <div class="breakdown-card breakdown-target">
+            <span class="breakdown-num">4–6</span>
+            <span class="breakdown-label">Target Schools</span>
+            <p class="breakdown-desc">The core of your list. Schools where you're genuinely competitive and where you'd be thrilled to attend.</p>
+          </div>
+          <div class="breakdown-card breakdown-safety">
+            <span class="breakdown-num">2–3</span>
+            <span class="breakdown-label">Safety Schools</span>
+            <p class="breakdown-desc">Schools you'd actually attend if every other school said no. Not afterthoughts — real options you've researched and can get excited about.</p>
+          </div>
+        </div>
+
+        <p>That puts your total somewhere between <strong>10 and 14 schools</strong>. For most students, 12 is about right. Some students with unusual circumstances — strong hooks, highly specialized majors, or applying from underrepresented backgrounds — can apply to fewer. Others with borderline profiles across the board may need more range.</p>
+
+        <h2 id="factors">Factors That Affect Your Number</h2>
+
+        <h3>1. How competitive is your profile?</h3>
+
+        <p>A student with a 3.95 GPA, 1560 SAT, and several years of focused extracurricular commitment has a genuinely different risk profile than a student with a 3.7 GPA, a 1430, and a broader but less defined set of activities. The stronger your profile, the less list diversity you technically need — but that doesn't mean you should get lazy about it.</p>
+
+        <p>Conversely, if your academic profile is genuinely inconsistent — strong in some areas, weak in others — you may benefit from applying to more schools, because your admission outcomes will be harder to predict.</p>
+
+        <h3>2. What are you planning to study?</h3>
+
+        <p>Major selectivity matters more than most students realize. Computer science at Carnegie Mellon has an acceptance rate under 5%. The same university's business school admits a fraction of what its College of Arts and Sciences does. If you're applying to a highly competitive program within a school, treat that school as a reach even if the overall acceptance rate seems manageable.</p>
+
+        <p>If you're undecided or targeting a less competitive major, your list can be a bit leaner.</p>
+
+        <h3>3. Are you applying Early Decision?</h3>
+
+        <p>If you have a clear first choice and you're applying Early Decision, the math changes. ED acceptance rates are typically 1.5–2x higher than regular decision rates at the same school. If you get in, your list collapses to one — and you're done. If you don't, you'll continue with your Regular Decision list.</p>
+
+        <p>A student using ED well can often build a slightly shorter list, because one of their biggest reach applications is already getting a statistical tailwind.</p>
+
+        <div class="callout">
+          <p><strong>ED strategy note:</strong> Only apply Early Decision if you'd genuinely commit to that school regardless of financial aid. ED is binding. If cost is a major factor in your family's decision, Early Action — which is non-binding — is usually the better strategic move.</p>
+        </div>
+
+        <h3>4. How much time do you realistically have?</h3>
+
+        <p>Every additional school on your list is another set of supplemental essays to write — and supplementals matter. A mediocre "Why Us?" essay can hurt more than not applying at all. Quality beats quantity. If applying to 14 schools means churning out generic essays, cut the list to 10 and write better ones.</p>
+
+        <p>This is one of the most underappreciated points in college admissions: the marginal value of a 15th application is almost always lower than the marginal value of spending that same time making your existing 12 applications stronger.</p>
+
+        <h3>5. Are you an international student?</h3>
+
+        <p>International applicants face additional layers of complexity: visa requirements, financial documentation, English proficiency scores, and — at many schools — separate international admit pools that are more selective than domestic ones. International students often benefit from applying to a wider range of schools, including some that actively recruit globally and offer strong international student support.</p>
+
+        <h2 id="mistakes">Common Mistakes to Avoid</h2>
+
+        <h3>Applying to schools you wouldn't actually attend</h3>
+
+        <p>Every school on your list should be somewhere you'd genuinely go. If you're adding a school just to hit a number — or because it sounds impressive — it's probably not worth the application fee or the essay time. Admissions officers can tell when a student hasn't done their research, and a weak supplemental to a school you don't actually care about can undermine an otherwise strong application.</p>
+
+        <h3>Treating safeties as afterthoughts</h3>
+
+        <p>Your safety schools deserve real research and real effort. Admission to your safety isn't automatic — particularly at selective safeties with 30–40% acceptance rates. And if you end up attending one, you'll want to have a genuine sense of why it's a good fit. Students who treat safeties carelessly often end up either rejected or enrolled somewhere they never gave a fair shot.</p>
+
+        <h3>Building a list around rankings instead of fit</h3>
+
+        <p>Rankings are one data point among many. The school ranked 22nd might be a much better fit for you than the school ranked 8th, depending on your academic interests, how you learn, the culture you're looking for, and where you'd thrive. The goal isn't to get into the highest-ranked school on your list. It's to end up somewhere you'll do your best work.</p>
+
+        <h3>Waiting too long to build the list</h3>
+
+        <p>Serious list-building should start at the end of sophomore year or beginning of junior year — not September of senior year. The schools on your list should inform how you spend your time: which summer programs to pursue, which extracurriculars to deepen, which teachers to develop relationships with for recommendation letters. A list built in October of 12th grade is a list built too late.</p>
+
+        <h2 id="too-many">Is There Such a Thing as Too Many?</h2>
+
+        <p>Yes. Applying to 20 schools isn't strategy — it's anxiety with a Common App login.</p>
+
+        <p>The students who apply to 20 schools tend to do so because they're not confident in their list. And they shouldn't be, because a list that requires 20 applications to feel safe is almost always a list that hasn't been built well. The solution isn't more schools. The solution is better schools — ones that actually match the student's profile, interests, and goals.</p>
+
+        <p>There are edge cases. Students from underrepresented backgrounds applying for merit scholarships at a wide range of schools. Students in unusual academic situations. International students navigating complex visa options. But for the typical high-achieving student applying from a competitive U.S. high school, 20 is too many.</p>
+
+        <h2 id="summary">The Bottom Line</h2>
+
+        <p>Apply to between 10 and 14 schools. Make sure your list is properly tiered. Choose schools you'd actually attend. Write strong essays for every single one. Start earlier than you think you need to.</p>
+
+        <p>And remember: the goal isn't to maximize the number of schools you apply to. It's to maximize the probability that you end up somewhere you'll be genuinely glad you went.</p>
+
+        <div class="inline-cta">
+          <div>
+            <h3>Not sure how to build your list?</h3>
+            <p>We help students build strategic college lists from the ground up — aligned with their profile, their goals, and what selective schools actually respond to.</p>
+          </div>
+          <div class="inline-cta-actions">
+            <a href="/contact/" class="btn btn-gold">Book a Free Consultation</a>
+          </div>
+        </div>
+
+      </article>
+
+      <!-- SIDEBAR -->
+      <aside class="blog-sidebar">
+        <div class="toc-card">
+          <h4>In This Article</h4>
+          <ol>
+            <li><a href="#tiers">The Three-Tier Framework</a></li>
+            <li><a href="#how-many">How Many Schools to Apply To</a></li>
+            <li><a href="#factors">Factors That Affect Your Number</a></li>
+            <li><a href="#mistakes">Common Mistakes to Avoid</a></li>
+            <li><a href="#too-many">Is There Such a Thing as Too Many?</a></li>
+            <li><a href="#summary">The Bottom Line</a></li>
+          </ol>
+        </div>
+        <div class="sidebar-cta">
+          <h4>Build a stronger list.</h4>
+          <p>Our advisors work with you to create a college list that's honest about your chances and ambitious about your future.</p>
+          <a href="/contact/" class="btn btn-gold" style="width:100%; text-align:center; display:block;">Talk to an Advisor</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- RELATED ARTICLES -->
+  <section class="related-section">
+    <div class="container">
+      <p class="section-label">Keep Reading</p>
+      <h2 class="section-title" style="margin-bottom:8px;">More From the Whetstone Blog</h2>
+      <div class="related-grid">
+        <a href="/college-admissions-counseling/" class="related-card">
+          <span class="related-tag">Admissions Strategy</span>
+          <h4>What Does a College Admissions Counselor Actually Do?</h4>
+          <p>The role of a great advisor goes far beyond editing essays. Here's what end-to-end admissions support really looks like.</p>
+        </a>
+        <a href="/college-essay-coaching/" class="related-card">
+          <span class="related-tag">Essays</span>
+          <h4>How to Write a College Essay That Doesn't Sound Like Everyone Else's</h4>
+          <p>Most college essays make the same mistakes. Here's how to write one that's specific, honest, and actually memorable.</p>
+        </a>
+        <a href="/extracurricular-mentorship/" class="related-card">
+          <span class="related-tag">Extracurriculars</span>
+          <h4>Why Your Extracurricular List Might Be Hurting Your Application</h4>
+          <p>More activities don't mean a stronger application. What matters is depth, commitment, and a coherent narrative.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container">
+      <h2>Book a free consultation with one of our expert advisors.</h2>
+      <a href="/contact/" class="btn btn-gold">Get Started</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo logo-light">Whetstone</a>
+        <p>Refined Method. Proven Results.</p>
+        <p class="footer-contact">hello@whetstoneadmissions.com<br>917-562-5668</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/college-admissions-counseling/">Admissions Counseling</a>
+        <a href="/college-essay-coaching/">Essay Coaching</a>
+        <a href="/sat-tutoring/">SAT / ACT Prep</a>
+        <a href="/extracurricular-mentorship/">Extracurriculars</a>
+        <a href="/academic-tutoring/">Academic Tutoring</a>
+        <a href="/graduate-admissions/">Graduate Admissions</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="/our-method/">Our Method</a>
+        <a href="/about/">About</a>
+        <a href="/results/">Results</a>
+        <a href="/reviews/">Reviews</a>
+        <a href="/resources/">Resources</a>
+        <a href="/contact/">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Locations</h4>
+        <a href="/new-york-city-college-admissions-counseling/">New York City</a>
+        <a href="/manhattan-college-admissions-counseling/">Manhattan</a>
+        <a href="/brooklyn-college-admissions-counseling/">Brooklyn</a>
+        <a href="/westchester-college-admissions-counseling/">Westchester</a>
+        <a href="/scarsdale-college-admissions-counseling/">Scarsdale</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="footer-legal">Whetstone Advisory LLC is not affiliated or associated with any university, college, or education institution mentioned on this website.</p>
+        <div class="footer-links">
+          <a href="#">Cookie Preferences</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
+    });
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobile-nav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

@@ -3,26 +3,97 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resources - Whetstone Admissions</title>
+  <title>Resources — College Admissions Guides | Whetstone Admissions</title>
+  <meta name="description" content="Strategy guides and insights for students navigating selective college admissions. Written by the Whetstone team.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles.css?v=4">
   <style>
-    .resources-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-    .resource-card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform 0.2s, box-shadow 0.2s; }
-    .resource-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    .resource-card img { width: 100%; height: 180px; object-fit: cover; }
-    .resource-body { padding: 24px; }
-    .resource-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-    .resource-body h3 { font-family: var(--font-serif); font-size: 20px; color: var(--navy); margin-bottom: 10px; }
-    .resource-body p { font-size: 14px; color: var(--text-muted); margin-bottom: 16px; }
-    @media (max-width: 900px) { .resources-grid { grid-template-columns: 1fr 1fr; } }
-    @media (max-width: 600px) { .resources-grid { grid-template-columns: 1fr; } }
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 48px;
+    }
+    .post-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .post-card:hover { border-color: var(--navy); box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+    .post-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: var(--cream);
+    }
+    .post-card-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+    .post-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+      display: block;
+    }
+    .post-card-body h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 20px;
+      color: var(--navy);
+      margin-bottom: 12px;
+      line-height: 1.35;
+    }
+    .post-card-body p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+    .post-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 14px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .coming-soon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 28px;
+    }
+    .coming-card {
+      border: 1.5px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      background: var(--cream);
+    }
+    .coming-card .post-tag { color: var(--text-muted); }
+    .coming-card h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 18px;
+      color: var(--navy);
+      opacity: 0.5;
+      margin-bottom: 8px;
+    }
+    .coming-card p { font-size: 13px; color: var(--text-muted); margin: 0; }
+    @media (max-width: 900px) { .posts-grid, .coming-soon-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .posts-grid, .coming-soon-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="header scrolled" id="header">
     <div class="header-inner">
       <a href="/" class="logo">Whetstone</a>
@@ -67,109 +138,64 @@
     </div>
   </header>
 
+  <!-- HERO -->
   <section class="page-hero">
-    <div class="page-hero-bg" style="background-image: url('../Highschool_Student_Business_Success_Project.jpg')"></div>
+    <div class="page-hero-bg" style="background-image: url('../schoolathens2.jpg')"></div>
     <div class="container">
       <p class="section-label">Resources</p>
-      <h1>University Profiles &amp;<br><em style="color:var(--gold);font-style:italic">Admissions Guides</em></h1>
-      <p>Everything you need to understand the schools you're targeting — acceptance rates, culture, what they look for, and how to stand out.</p>
+      <h1>The Whetstone <em style="color:var(--gold);font-style:italic;">Blog</em></h1>
+      <p>Strategy guides, application insights, and straight talk on what it actually takes to get into selective colleges.</p>
     </div>
   </section>
 
+  <!-- POSTS -->
   <section class="page-section">
     <div class="container">
-      <p class="section-label">University Profiles</p>
-      <h2 class="section-title">Know Your Target Schools</h2>
-      <p class="section-sub">Deep-dive profiles on the world's most selective universities.</p>
-      <div class="resources-grid">
-        <div class="resource-card">
-          <img src="../hardvard-university.png" alt="Harvard" style="object-fit:contain;padding:24px;background:var(--cream);">
-          <div class="resource-body">
-            <span class="resource-tag">Ivy League</span>
-            <h3>Harvard University</h3>
-            <p>Acceptance rate: ~3.4%. What Harvard looks for, how to frame your application, and what makes a Harvard essay stand out.</p>
-            <a href="/contact/" class="link-arrow">Get Guidance →</a>
+      <p class="section-label">Latest Articles</p>
+      <h2 class="section-title">College Admissions Strategy</h2>
+
+      <div class="posts-grid">
+
+        <!-- Post 1 -->
+        <a href="/resources/how-many-colleges-should-i-apply-to/" class="post-card">
+          <img class="post-card-img" src="../student.jpg" alt="How many colleges should I apply to">
+          <div class="post-card-body">
+            <span class="post-tag">Application Strategy</span>
+            <h3>How Many Colleges Should You Apply To?</h3>
+            <p>Applying to too few schools leaves you exposed. Too many spreads you thin. Here's how to build a list that's honest about your chances and ambitious about your future.</p>
+            <div class="post-meta">
+              <span>Howard Dvorkin</span>
+              <span>March 2025 · 8 min</span>
+            </div>
           </div>
+        </a>
+
+      </div>
+
+      <!-- Coming Soon -->
+      <p class="section-label" style="margin-top:64px;">Coming Soon</p>
+      <div class="coming-soon-grid">
+        <div class="coming-card">
+          <span class="post-tag">Essays</span>
+          <h3>How to Write a College Essay That Doesn't Sound Like Everyone Else's</h3>
+          <p>Coming soon</p>
         </div>
-        <div class="resource-card">
-          <img src="../Columbia-University.png" alt="Columbia" style="object-fit:contain;padding:24px;background:var(--cream);">
-          <div class="resource-body">
-            <span class="resource-tag">Ivy League</span>
-            <h3>Columbia University</h3>
-            <p>Acceptance rate: ~3.9%. Columbia's Core Curriculum, NYC advantage, and how to write the "Why Columbia?" essay.</p>
-            <a href="/contact/" class="link-arrow">Get Guidance →</a>
-          </div>
+        <div class="coming-card">
+          <span class="post-tag">Extracurriculars</span>
+          <h3>Why Depth Beats Breadth on Your Activities List</h3>
+          <p>Coming soon</p>
         </div>
-        <div class="resource-card">
-          <img src="../student.jpg" alt="Stanford">
-          <div class="resource-body">
-            <span class="resource-tag">Top University</span>
-            <h3>Stanford University</h3>
-            <p>Acceptance rate: ~3.7%. Stanford's unique culture, what they look for beyond grades, and how to craft a compelling application.</p>
-            <a href="/contact/" class="link-arrow">Get Guidance →</a>
-          </div>
-        </div>
-        <div class="resource-card">
-          <img src="../sat-advising.jpg" alt="MIT">
-          <div class="resource-body">
-            <span class="resource-tag">Top University</span>
-            <h3>MIT</h3>
-            <p>Acceptance rate: ~3.9%. How MIT evaluates applicants beyond STEM, their unique essay prompts, and community culture.</p>
-            <a href="/contact/" class="link-arrow">Get Guidance →</a>
-          </div>
-        </div>
-        <div class="resource-card">
-          <img src="../curricular.jpg" alt="Yale">
-          <div class="resource-body">
-            <span class="resource-tag">Ivy League</span>
-            <h3>Yale University</h3>
-            <p>Acceptance rate: ~4.6%. Yale's residential college system, what their admissions office values, and essay strategies.</p>
-            <a href="/contact/" class="link-arrow">Get Guidance →</a>
-          </div>
-        </div>
-        <div class="resource-card">
-          <img src="../writing-essay.jpg" alt="Princeton">
-          <div class="resource-body">
-            <span class="resource-tag">Ivy League</span>
-            <h3>Princeton University</h3>
-            <p>Acceptance rate: ~4.7%. Princeton's focus on service and scholarship, their unique supplemental prompts, and how to stand out.</p>
-            <a href="/contact/" class="link-arrow">Get Guidance →</a>
-          </div>
+        <div class="coming-card">
+          <span class="post-tag">Testing</span>
+          <h3>Should You Submit SAT Scores? A Test-Optional Guide for 2025</h3>
+          <p>Coming soon</p>
         </div>
       </div>
+
     </div>
   </section>
 
-  <section class="page-section-alt">
-    <div class="container">
-      <p class="section-label">Free E-Book Bundle</p>
-      <h2 class="section-title">Download Our Admissions Resources</h2>
-      <div class="two-col">
-        <div class="two-col-text">
-          <p>Book a free consultation and receive our complete e-book bundle, including:</p>
-          <div class="feature-list">
-            <div class="feature-item">
-              <span class="feature-icon">✓</span>
-              <div><h4>10 Successful Essays &amp; Activity Lists</h4><p>Real essays and activity lists from students admitted to Harvard, Stanford, and Yale.</p></div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">✓</span>
-              <div><h4>Capstone Project Case Study</h4><p>Step-by-step breakdown of a capstone that helped a student get into Columbia.</p></div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">✓</span>
-              <div><h4>Admissions Roadmap Template</h4><p>The exact timeline framework we use with every Whetstone student.</p></div>
-            </div>
-          </div>
-          <a href="/contact/" class="btn btn-gold" style="margin-top:8px;">Get the Bundle Free</a>
-        </div>
-        <div class="two-col-img">
-          <img src="../ProgramChart.png" alt="Program chart">
-        </div>
-      </div>
-    </div>
-  </section>
-
+  <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
       <h2>Book a free consultation with one of our expert advisors.</h2>
@@ -177,6 +203,7 @@
     </div>
   </section>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-grid">
       <div class="footer-brand">
@@ -184,7 +211,7 @@
         <p>Refined Method. Proven Results.</p>
         <p class="footer-contact">hello@whetstoneadmissions.com<br>917-562-5668</p>
       </div>
-            <div class="footer-col">
+      <div class="footer-col">
         <h4>Services</h4>
         <a href="/college-admissions-counseling/">Admissions Counseling</a>
         <a href="/college-essay-coaching/">Essay Coaching</a>
@@ -196,7 +223,7 @@
       <div class="footer-col">
         <h4>Company</h4>
         <a href="/our-method/">Our Method</a>
-      <a href="/about/">About</a>
+        <a href="/about/">About</a>
         <a href="/results/">Results</a>
         <a href="/reviews/">Reviews</a>
         <a href="/resources/">Resources</a>
@@ -227,10 +254,6 @@
     window.addEventListener('scroll', () => {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
     });
-    // Dropdown toggle
-    }
-    });
-
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobile-nav').classList.toggle('open');
     });
