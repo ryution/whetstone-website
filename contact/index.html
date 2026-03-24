@@ -5,10 +5,469 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Whetstone Admissions</title>
   <meta name="description" content="Book a free consultation with Whetstone Admissions. Talk to an expert advisor about college admissions counseling, SAT prep, essay coaching, and more.">
+  <link rel="canonical" href="https://whetstoneadmissions.com/contact/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css?v=4">
+  <style>
+    /* ── Contact-page overrides ── */
+    body { background: var(--cream, #faf8f4); }
+
+    .contact-hero {
+      position: relative;
+      min-height: 340px;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 0;
+      overflow: hidden;
+    }
+    .contact-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('../Contact-blue-bg.png');
+      background-size: cover;
+      background-position: center top;
+    }
+    .contact-hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(8,22,46,0.55) 0%, rgba(8,22,46,0.82) 100%);
+    }
+    .contact-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 80px 24px 56px;
+      text-align: center;
+    }
+    .contact-hero-inner .section-label {
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 12px;
+    }
+    .contact-hero-inner h1 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #fff;
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+    .contact-hero-inner h1 em {
+      color: var(--gold);
+      font-style: italic;
+    }
+    .contact-hero-inner p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.78);
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* ── Trust bar ── */
+    .trust-bar {
+      background: var(--navy);
+      padding: 14px 24px;
+    }
+    .trust-bar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.82);
+      font-size: 0.82rem;
+      font-family: 'Libre Franklin', sans-serif;
+      font-weight: 500;
+    }
+    .trust-item span.ti-icon {
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    /* ── Main contact layout ── */
+    .contact-main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 64px 24px 80px;
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 56px;
+      align-items: start;
+    }
+    @media (max-width: 960px) {
+      .contact-main { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ── Left info column ── */
+    .contact-info-col h2 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.85rem;
+      color: var(--navy);
+      margin: 0 0 12px;
+      line-height: 1.25;
+    }
+    .contact-info-col > p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin: 0 0 36px;
+      max-width: 480px;
+    }
+
+    .consult-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .consult-step {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+    .consult-step-num {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--gold);
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      text-align: center;
+      line-height: 40px;
+    }
+    .consult-step-text h4 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1rem;
+      color: var(--navy);
+      margin: 2px 0 6px;
+    }
+    .consult-step-text p {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .contact-details-block {
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+    }
+    .contact-details-block p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0 0 6px;
+    }
+    .contact-details-block strong { color: var(--navy); }
+
+    /* ── Testimonial / social proof ── */
+    .contact-quote {
+      margin-top: 36px;
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 24px 26px;
+    }
+    .contact-quote blockquote {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 0.95rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.88);
+      margin: 0 0 12px;
+      line-height: 1.65;
+    }
+    .contact-quote cite {
+      font-size: 0.8rem;
+      font-style: normal;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ── Form card ── */
+    .contact-form-card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+      padding: 36px 32px 32px;
+      position: sticky;
+      top: 100px;
+    }
+    @media (max-width: 960px) {
+      .contact-form-card { position: static; }
+    }
+    .contact-form-card h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin: 0 0 6px;
+    }
+    .contact-form-card > p.form-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0 0 24px;
+    }
+
+    /* Progress bar */
+    .form-progress {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+    .form-progress-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border);
+      transition: background 0.25s;
+    }
+    .form-progress-dot.active { background: var(--gold); }
+    .form-progress-dot.done { background: var(--navy); }
+    .form-progress-line {
+      flex: 1;
+      height: 2px;
+      background: var(--border);
+      border-radius: 2px;
+    }
+    .form-progress-line.done { background: var(--navy); }
+
+    /* Steps */
+    .form-step { display: none; }
+    .form-step.active { display: block; }
+
+    .form-step-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .form-question {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin: 0 0 16px;
+    }
+
+    .form-radio-group {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .radio-card {
+      flex: 1;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .radio-card input[type="radio"] { display: none; }
+    .radio-card .rc-icon { font-size: 1.5rem; display: block; margin-bottom: 6px; }
+    .radio-card .rc-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--navy);
+      font-family: 'Libre Franklin', sans-serif;
+    }
+    .radio-card.selected {
+      border-color: var(--gold);
+      background: var(--gold-light, #fdf5e6);
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.93rem;
+      font-family: 'Libre Franklin', sans-serif;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+      transition: border-color 0.2s;
+      box-sizing: border-box;
+    }
+    .form-group input:focus, .form-group select:focus { border-color: var(--gold); }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    @media (max-width: 420px) { .form-row { grid-template-columns: 1fr; } }
+
+    .checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+      cursor: pointer;
+      line-height: 1.4;
+    }
+    .checkbox-label input { margin-top: 2px; accent-color: var(--gold); }
+    .checkbox-label a { color: var(--gold); }
+
+    .btn-form-submit {
+      width: 100%;
+      padding: 14px;
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Libre Franklin', sans-serif;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .btn-form-submit:hover { opacity: 0.88; }
+
+    .btn-form-next {
+      width: 100%;
+      padding: 13px;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      font-family: 'Libre Franklin', sans-serif;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .btn-form-next:hover { opacity: 0.85; }
+
+    .form-back {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.83rem;
+      cursor: pointer;
+      padding: 8px 0 0;
+      font-family: 'Libre Franklin', sans-serif;
+      text-decoration: underline;
+    }
+
+    /* Thanks step */
+    .form-thanks {
+      text-align: center;
+      padding: 12px 0 4px;
+    }
+    .form-thanks .thanks-icon { font-size: 2.8rem; margin-bottom: 14px; }
+    .form-thanks h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin: 0 0 10px;
+    }
+    .form-thanks p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0 0 16px;
+    }
+    .form-thanks ul {
+      text-align: left;
+      padding-left: 20px;
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.87rem;
+      line-height: 1.8;
+    }
+
+    /* ── FAQ ── */
+    .contact-faq {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+    .contact-faq h2 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.65rem;
+      color: var(--navy);
+      margin: 0 0 6px;
+    }
+    .contact-faq > p {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      margin: 0 0 32px;
+    }
+    .faq-item {
+      border-top: 1px solid var(--border);
+      padding: 18px 0;
+    }
+    .faq-item:last-child { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      gap: 16px;
+    }
+    .faq-q h4 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 0.98rem;
+      color: var(--navy);
+      margin: 0;
+      font-weight: 700;
+    }
+    .faq-toggle {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+      line-height: 28px;
+      font-size: 1.1rem;
+      font-weight: 300;
+      transition: transform 0.2s;
+    }
+    .faq-item.open .faq-toggle { transform: rotate(45deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item.open .faq-a { max-height: 200px; }
+    .faq-a p {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin: 14px 0 0;
+      padding-right: 44px;
+    }
+  </style>
 </head>
 <body>
 
@@ -32,7 +491,7 @@
           <a class="nav-link" href="/about/">About <span class="caret">▾</span></a>
           <div class="dropdown-menu">
             <a href="/our-method/">Our Method</a>
-            <a href="/about/">About</a>
+            <a href="/about/">Our Team</a>
             <a href="/results/">Results</a>
             <a href="/reviews/">Reviews</a>
           </div>
@@ -44,13 +503,18 @@
       <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
     <div class="mobile-nav" id="mobile-nav">
+      <p class="mobile-nav-label">Services</p>
       <a href="/college-admissions-counseling/">Admissions Counseling</a>
       <a href="/college-essay-coaching/">Essay Coaching</a>
       <a href="/sat-tutoring/">SAT / ACT Prep</a>
       <a href="/extracurricular-mentorship/">Extracurriculars</a>
+      <a href="/academic-tutoring/">Academic Tutoring</a>
+      <a href="/graduate-admissions/">Graduate Admissions</a>
+      <p class="mobile-nav-label">Company</p>
       <a href="/our-method/">Our Method</a>
-      <a href="/about/">About</a>
+      <a href="/about/">Our Team</a>
       <a href="/results/">Results</a>
+      <a href="/reviews/">Reviews</a>
       <a href="/resources/">Resources</a>
       <a href="/contact/">Contact</a>
       <a href="/contact/" class="btn btn-primary">Get Started</a>
@@ -58,130 +522,313 @@
   </header>
 
   <!-- HERO -->
-  <section class="page-hero">
-    <div class="page-hero-bg" style="background-image: url('../Contact-blue-bg.png')"></div>
-    <div class="container">
+  <section class="contact-hero">
+    <div class="contact-hero-bg"></div>
+    <div class="contact-hero-inner">
       <p class="section-label">Contact Us</p>
-      <h1>Get Started With<br><em style="color:var(--gold);font-style:italic">Whetstone</em></h1>
-      <p>Fill out the form and we will be in touch to book a free meeting with one of our expert advisors.</p>
+      <h1>Get Started With <em>Whetstone</em></h1>
+      <p>Fill out the form and we'll be in touch to book a free meeting with one of our expert advisors.</p>
     </div>
   </section>
 
-  <!-- CONTACT MAIN -->
-  <section class="page-section">
-    <div class="container">
-      <div class="contact-grid">
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="ti-icon">✓</span> Free initial consultation</div>
+      <div class="trust-item"><span class="ti-icon">✓</span> Mentors from Harvard, Oxford &amp; beyond</div>
+      <div class="trust-item"><span class="ti-icon">✓</span> NYC-based &amp; fully online</div>
+      <div class="trust-item"><span class="ti-icon">✓</span> No commitment required</div>
+    </div>
+  </div>
 
-        <div class="contact-info">
-          <h2>What Happens in a Consultation?</h2>
-          <p>A consultation is your first opportunity to discuss admissions objectives with an expert.</p>
-          <div class="contact-steps">
-            <div class="contact-step">
-              <span class="contact-step-num">1</span>
-              <div class="contact-step-text">
-                <h4>Candidacy Assessment</h4>
-                <p>Get a clear picture of where you stand today — your academic profile, extracurriculars, and positioning as a competitive applicant.</p>
-              </div>
-            </div>
-            <div class="contact-step">
-              <span class="contact-step-num">2</span>
-              <div class="contact-step-text">
-                <h4>Strengths &amp; Gaps Review</h4>
-                <p>Uncover what sets you apart and what needs work, with a frank analysis of what it will take to reach your target schools.</p>
-              </div>
-            </div>
-            <div class="contact-step">
-              <span class="contact-step-num">3</span>
-              <div class="contact-step-text">
-                <h4>Roadmap Formation</h4>
-                <p>Understand how Whetstone works and the admissions roadmap we will create for you.</p>
-              </div>
-            </div>
-            <div class="contact-step">
-              <span class="contact-step-num">4</span>
-              <div class="contact-step-text">
-                <h4>Support Options</h4>
-                <p>Explore 2–3 customized options for guidance that align with your goals, needs, and budget.</p>
-              </div>
-            </div>
-          </div>
-          <div style="margin-top:40px;padding-top:32px;border-top:1px solid var(--border);">
-            <p style="font-size:15px;color:var(--text-muted);margin-bottom:8px;"><strong style="color:var(--navy);">Email:</strong> hello@whetstoneadmissions.com</p>
-            <p style="font-size:15px;color:var(--text-muted);"><strong style="color:var(--navy);">Phone:</strong> 917-562-5668</p>
+  <!-- MAIN CONTACT SECTION -->
+  <div class="contact-main">
+
+    <!-- Left: Info -->
+    <div class="contact-info-col">
+      <h2>What Happens in a Consultation?</h2>
+      <p>A consultation is a candid, no-pressure conversation with an expert who has been through the exact process your student is facing. Here's what to expect.</p>
+
+      <div class="consult-steps">
+        <div class="consult-step">
+          <div class="consult-step-num">1</div>
+          <div class="consult-step-text">
+            <h4>Candidacy Assessment</h4>
+            <p>We evaluate your student's current academic profile, extracurriculars, and overall positioning — and give you a clear, honest picture of where they stand.</p>
           </div>
         </div>
-
-        <div class="contact-form-box">
-          <h3 style="font-family:var(--font-serif);font-size:24px;color:var(--navy);margin-bottom:24px;">Book Your Free Consultation</h3>
-          <form id="contact-form">
-            <div class="form-step active" id="step-1">
-              <p class="form-question">Are you a student or a guardian?</p>
-              <div class="form-radio-group">
-                <label class="radio-label"><input type="radio" name="type" value="student"> Student</label>
-                <label class="radio-label"><input type="radio" name="type" value="guardian"> Guardian</label>
-              </div>
-              <button type="button" class="btn btn-gold next-btn" onclick="nextStep(1)">Continue →</button>
-            </div>
-            <div class="form-step" id="step-2">
-              <div class="form-row">
-                <div class="form-group">
-                  <label>First Name</label>
-                  <input type="text" placeholder="First name">
-                </div>
-                <div class="form-group">
-                  <label>Last Name</label>
-                  <input type="text" placeholder="Last name">
-                </div>
-              </div>
-              <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" placeholder="your@email.com">
-              </div>
-              <div class="form-group">
-                <label>Phone Number</label>
-                <input type="tel" placeholder="+1 (555) 000-0000">
-              </div>
-              <div class="form-group">
-                <label>State</label>
-                <input type="text" placeholder="Your state">
-              </div>
-              <button type="button" class="btn btn-gold next-btn" onclick="nextStep(2)">Continue →</button>
-            </div>
-            <div class="form-step" id="step-3">
-              <div class="form-group">
-                <label>School Name</label>
-                <input type="text" placeholder="Your high school">
-              </div>
-              <div class="form-group">
-                <label>High School Graduation Year</label>
-                <select>
-                  <option value="">Select year</option>
-                  <option>2024</option><option>2025</option><option>2026</option>
-                  <option>2027</option><option>2028</option><option>2029</option>
-                  <option>2030</option><option>2031</option><option>2032</option>
-                </select>
-              </div>
-              <label class="checkbox-label">
-                <input type="checkbox"> I agree to the <a href="#">privacy policy</a>
-              </label>
-              <button type="submit" class="btn btn-gold">Book My Free Consultation</button>
-            </div>
-            <div class="form-step" id="step-thanks">
-              <h3 style="font-family:var(--font-serif);color:var(--navy);margin-bottom:16px;">Thank you!</h3>
-              <p style="color:var(--text-muted);margin-bottom:16px;">An expert Academic Advisor will be in touch to set up your consultation. During the consultation, you will:</p>
-              <ul class="service-list">
-                <li>Get an assessment of your current academic candidacy</li>
-                <li>Discuss strengths, weaknesses, and target schools</li>
-                <li>Understand how Whetstone works</li>
-                <li>Formulate a plan that suits your needs and budget</li>
-              </ul>
-            </div>
-          </form>
+        <div class="consult-step">
+          <div class="consult-step-num">2</div>
+          <div class="consult-step-text">
+            <h4>Strengths &amp; Gaps Review</h4>
+            <p>We identify what sets your student apart and what needs work — with a frank analysis of what it will take to reach their target schools.</p>
+          </div>
         </div>
+        <div class="consult-step">
+          <div class="consult-step-num">3</div>
+          <div class="consult-step-text">
+            <h4>Roadmap Formation</h4>
+            <p>You'll leave with a clear picture of the admissions roadmap we'd build — covering essays, extracurriculars, testing, and school selection.</p>
+          </div>
+        </div>
+        <div class="consult-step">
+          <div class="consult-step-num">4</div>
+          <div class="consult-step-text">
+            <h4>Customized Support Options</h4>
+            <p>We'll walk through 2–3 options tailored to your student's goals, timeline, and needs — with transparent pricing and no pressure.</p>
+          </div>
+        </div>
+      </div>
 
+      <div class="contact-details-block">
+        <p><strong>Email:</strong> hello@whetstoneadmissions.com</p>
+        <p><strong>Phone:</strong> 917-562-5668</p>
+        <p style="margin-top:4px;"><strong>Locations:</strong> New York City &amp; Fully Online</p>
+      </div>
+
+      <div class="contact-quote">
+        <blockquote>"From the first call, they treated us like the only family they were working with. By the time decisions came out, my daughter had the confidence to back up every choice she'd made."</blockquote>
+        <cite>— Parent of admitted student, Harvard Class of 2027</cite>
       </div>
     </div>
-  </section>
+
+    <!-- Right: Form card -->
+    <div class="contact-form-card">
+      <h3>Book Your Free Consultation</h3>
+      <p class="form-sub">No commitment. Just an honest conversation.</p>
+
+      <!-- Progress indicator -->
+      <div class="form-progress" id="form-progress">
+        <div class="form-progress-dot active" id="prog-1"></div>
+        <div class="form-progress-line" id="prog-line-1"></div>
+        <div class="form-progress-dot" id="prog-2"></div>
+        <div class="form-progress-line" id="prog-line-2"></div>
+        <div class="form-progress-dot" id="prog-3"></div>
+      </div>
+
+      <form id="contact-form" novalidate>
+
+        <!-- STEP 1: Student or Guardian -->
+        <div class="form-step active" id="step-1">
+          <p class="form-step-label">Step 1 of 3</p>
+          <p class="form-question">Who are you filling this out for?</p>
+          <div class="form-radio-group">
+            <label class="radio-card" id="rc-student" onclick="selectType('student')">
+              <input type="radio" name="type" value="student" id="type-student">
+              <span class="rc-icon">🎓</span>
+              <span class="rc-label">I'm a Student</span>
+            </label>
+            <label class="radio-card" id="rc-guardian" onclick="selectType('guardian')">
+              <input type="radio" name="type" value="guardian" id="type-guardian">
+              <span class="rc-icon">👨‍👩‍👧</span>
+              <span class="rc-label">I'm a Parent / Guardian</span>
+            </label>
+          </div>
+          <button type="button" class="btn-form-next" onclick="nextStep(1)">Continue →</button>
+        </div>
+
+        <!-- STEP 2A: Student info -->
+        <div class="form-step" id="step-2-student">
+          <p class="form-step-label">Step 2 of 3 — About You</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="s-first">First Name *</label>
+              <input type="text" id="s-first" placeholder="First name" autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="s-last">Last Name *</label>
+              <input type="text" id="s-last" placeholder="Last name" autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="s-email">Email Address *</label>
+            <input type="email" id="s-email" placeholder="your@email.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="s-phone">Phone Number</label>
+            <input type="tel" id="s-phone" placeholder="+1 (555) 000-0000" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="s-state">State</label>
+            <input type="text" id="s-state" placeholder="e.g. New York">
+          </div>
+          <button type="button" class="btn-form-next" onclick="nextStep(2, 'student')">Continue →</button>
+          <br><button type="button" class="form-back" onclick="prevStep(2, 'student')">← Back</button>
+        </div>
+
+        <!-- STEP 2B: Guardian info -->
+        <div class="form-step" id="step-2-guardian">
+          <p class="form-step-label">Step 2 of 3 — About You</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="g-first">Your First Name *</label>
+              <input type="text" id="g-first" placeholder="First name" autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="g-last">Your Last Name *</label>
+              <input type="text" id="g-last" placeholder="Last name" autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="g-email">Your Email Address *</label>
+            <input type="email" id="g-email" placeholder="your@email.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="g-phone">Your Phone Number</label>
+            <input type="tel" id="g-phone" placeholder="+1 (555) 000-0000" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="g-state">State</label>
+            <input type="text" id="g-state" placeholder="e.g. New York">
+          </div>
+          <button type="button" class="btn-form-next" onclick="nextStep(2, 'guardian')">Continue →</button>
+          <br><button type="button" class="form-back" onclick="prevStep(2, 'guardian')">← Back</button>
+        </div>
+
+        <!-- STEP 3A: Student school info -->
+        <div class="form-step" id="step-3-student">
+          <p class="form-step-label">Step 3 of 3 — Your School</p>
+          <div class="form-group">
+            <label for="s-school">High School Name *</label>
+            <input type="text" id="s-school" placeholder="Your high school">
+          </div>
+          <div class="form-group">
+            <label for="s-gradyear">Graduation Year *</label>
+            <select id="s-gradyear">
+              <option value="">Select year…</option>
+              <option>2025</option><option>2026</option><option>2027</option>
+              <option>2028</option><option>2029</option><option>2030</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="s-service">Service Interested In</label>
+            <select id="s-service">
+              <option value="">Select a service…</option>
+              <option>Admissions Counseling</option>
+              <option>Essay Coaching</option>
+              <option>SAT / ACT Prep</option>
+              <option>Extracurricular &amp; Capstone</option>
+              <option>Academic Tutoring</option>
+              <option>Graduate Admissions</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <label class="checkbox-label">
+            <input type="checkbox" id="s-privacy">
+            I agree to the <a href="#">privacy policy</a>
+          </label>
+          <button type="submit" class="btn-form-submit">Book My Free Consultation</button>
+          <br><button type="button" class="form-back" onclick="prevStep(3, 'student')">← Back</button>
+        </div>
+
+        <!-- STEP 3B: Guardian → student info -->
+        <div class="form-step" id="step-3-guardian">
+          <p class="form-step-label">Step 3 of 3 — Your Student</p>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="gs-first">Student's First Name *</label>
+              <input type="text" id="gs-first" placeholder="First name">
+            </div>
+            <div class="form-group">
+              <label for="gs-last">Student's Last Name</label>
+              <input type="text" id="gs-last" placeholder="Last name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="gs-school">Student's High School *</label>
+            <input type="text" id="gs-school" placeholder="High school name">
+          </div>
+          <div class="form-group">
+            <label for="gs-gradyear">Student's Graduation Year *</label>
+            <select id="gs-gradyear">
+              <option value="">Select year…</option>
+              <option>2025</option><option>2026</option><option>2027</option>
+              <option>2028</option><option>2029</option><option>2030</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="gs-service">Service Interested In</label>
+            <select id="gs-service">
+              <option value="">Select a service…</option>
+              <option>Admissions Counseling</option>
+              <option>Essay Coaching</option>
+              <option>SAT / ACT Prep</option>
+              <option>Extracurricular &amp; Capstone</option>
+              <option>Academic Tutoring</option>
+              <option>Graduate Admissions</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <label class="checkbox-label">
+            <input type="checkbox" id="g-privacy">
+            I agree to the <a href="#">privacy policy</a>
+          </label>
+          <button type="submit" class="btn-form-submit">Book My Free Consultation</button>
+          <br><button type="button" class="form-back" onclick="prevStep(3, 'guardian')">← Back</button>
+        </div>
+
+        <!-- THANK YOU -->
+        <div class="form-step" id="step-thanks">
+          <div class="form-thanks">
+            <div class="thanks-icon">🎉</div>
+            <h3>You're all set!</h3>
+            <p>An expert advisor from the Whetstone team will be in touch within one business day to schedule your free consultation.</p>
+            <p style="font-weight:600;color:var(--navy);margin-bottom:12px;">During your consultation, you'll:</p>
+            <ul>
+              <li>Get an honest assessment of your current candidacy</li>
+              <li>Discuss strengths, gaps, and target schools</li>
+              <li>Understand how Whetstone works</li>
+              <li>Explore a plan that fits your goals and budget</li>
+            </ul>
+          </div>
+        </div>
+
+      </form>
+    </div>
+
+  </div>
+
+  <!-- FAQ -->
+  <div class="contact-faq">
+    <h2>Frequently Asked Questions</h2>
+    <p>Answers to the questions we hear most often before a first consultation.</p>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h4>Is the consultation really free?</h4>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a"><p>Yes, completely. The initial consultation is a no-commitment conversation with an expert advisor. There's no sales pressure and no obligation to continue after the call.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h4>When should we start working with Whetstone?</h4>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a"><p>The earlier, the better. Ideally, students begin in 9th or 10th grade so we can shape extracurriculars, capstone projects, and summer plans before the application window opens. That said, we work with juniors and seniors on focused essay and strategy support as well.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h4>Do you work with students outside of New York City?</h4>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a"><p>Yes. Our mentors work with students across the United States and internationally via video. We have in-person options available in New York City, Manhattan, Brooklyn, Westchester, and Scarsdale.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h4>What programs do you offer?</h4>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a"><p>We offer full admissions counseling, essay coaching, SAT/ACT prep, extracurricular and capstone mentorship, academic tutoring, and graduate admissions support. Most students combine two or more services into a cohesive engagement.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <h4>How is Whetstone different from other admissions firms?</h4>
+        <div class="faq-toggle">+</div>
+      </div>
+      <div class="faq-a"><p>Every Whetstone mentor is a verified alumnus of the world's most selective universities or a top-tier professional. We don't outsource to junior advisors. One mentor works with one student from start to finish — so the person who knows your story is the person helping you tell it.</p></div>
+    </div>
+  </div>
 
   <footer class="footer">
     <div class="container footer-grid">
@@ -190,7 +837,7 @@
         <p>Refined Method. Proven Results.</p>
         <p class="footer-contact">hello@whetstoneadmissions.com<br>917-562-5668</p>
       </div>
-            <div class="footer-col">
+      <div class="footer-col">
         <h4>Services</h4>
         <a href="/college-admissions-counseling/">Admissions Counseling</a>
         <a href="/college-essay-coaching/">Essay Coaching</a>
@@ -202,7 +849,7 @@
       <div class="footer-col">
         <h4>Company</h4>
         <a href="/our-method/">Our Method</a>
-      <a href="/about/">About</a>
+        <a href="/about/">Our Team</a>
         <a href="/results/">Results</a>
         <a href="/reviews/">Reviews</a>
         <a href="/resources/">Resources</a>
@@ -230,21 +877,87 @@
   </footer>
 
   <script>
+    // Header scroll
     window.addEventListener('scroll', () => {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
     });
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobile-nav').classList.toggle('open');
     });
-    function nextStep(step) {
-      document.getElementById('step-' + step).classList.remove('active');
-      document.getElementById('step-' + (step + 1)).classList.add('active');
+
+    // Form state
+    var selectedType = null;
+
+    function selectType(type) {
+      selectedType = type;
+      document.getElementById('rc-student').classList.toggle('selected', type === 'student');
+      document.getElementById('rc-guardian').classList.toggle('selected', type === 'guardian');
     }
-    document.getElementById('contact-form').addEventListener('submit', e => {
+
+    function updateProgress(step) {
+      for (var i = 1; i <= 3; i++) {
+        var dot = document.getElementById('prog-' + i);
+        if (i < step) { dot.className = 'form-progress-dot done'; }
+        else if (i === step) { dot.className = 'form-progress-dot active'; }
+        else { dot.className = 'form-progress-dot'; }
+      }
+      for (var j = 1; j <= 2; j++) {
+        var line = document.getElementById('prog-line-' + j);
+        line.className = 'form-progress-line' + (j < step ? ' done' : '');
+      }
+    }
+
+    function showStep(id) {
+      document.querySelectorAll('.form-step').forEach(function(s) { s.classList.remove('active'); });
+      document.getElementById(id).classList.add('active');
+    }
+
+    function nextStep(currentStep) {
+      if (currentStep === 1) {
+        if (!selectedType) { alert('Please select Student or Parent / Guardian to continue.'); return; }
+        showStep('step-2-' + selectedType);
+        updateProgress(2);
+      } else if (currentStep === 2) {
+        // Validate step 2
+        var type = selectedType;
+        var firstEl = document.getElementById(type === 'student' ? 's-first' : 'g-first');
+        var emailEl = document.getElementById(type === 'student' ? 's-email' : 'g-email');
+        if (!firstEl.value.trim() || !emailEl.value.trim() || !emailEl.value.includes('@')) {
+          if (!firstEl.value.trim()) firstEl.style.borderColor = '#c0392b';
+          if (!emailEl.value.trim() || !emailEl.value.includes('@')) emailEl.style.borderColor = '#c0392b';
+          return;
+        }
+        firstEl.style.borderColor = '';
+        emailEl.style.borderColor = '';
+        showStep('step-3-' + type);
+        updateProgress(3);
+      }
+    }
+
+    function prevStep(currentStep, type) {
+      if (currentStep === 2) {
+        showStep('step-1');
+        updateProgress(1);
+      } else if (currentStep === 3) {
+        showStep('step-2-' + type);
+        updateProgress(2);
+      }
+    }
+
+    // Form submit
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      document.getElementById('step-3').classList.remove('active');
-      document.getElementById('step-thanks').classList.add('active');
+      document.getElementById('form-progress').style.display = 'none';
+      showStep('step-thanks');
     });
+
+    // FAQ accordion
+    function toggleFaq(el) {
+      var item = el.parentElement;
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    }
   </script>
 </body>
 </html>

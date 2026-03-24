@@ -3,17 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Academic Tutoring | AP, IB &amp; Subject Tutoring - Whetstone Admissions</title>
-  <meta name="description" content="1:1 academic tutoring for high school students across all subjects. Expert tutors from Harvard, Oxford, and top universities help students excel in AP, IB, and honors courses. In-person NYC or online.">
+  <title>Academic Tutoring NYC — AP, IB &amp; Subject Tutoring | Whetstone</title>
+  <meta name="description" content="Expert 1-on-1 academic tutoring in NYC and online. Our tutors scored in the 99th percentile in every subject they teach — AP, IB, honors, and beyond. Diagnostic. Targeted. Effective.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../styles.css?v=4">
   <style>
-    .subjects-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
-    .subject-tag { background: var(--white); border: 2px solid var(--border); border-radius: 8px; padding: 14px 16px; text-align: center; font-size: 14px; font-weight: 600; color: var(--navy); transition: all 0.2s; }
-    .subject-tag:hover { border-color: var(--navy); background: var(--navy); color: var(--white); }
-    @media (max-width: 700px) { .subjects-grid { grid-template-columns: repeat(2, 1fr); } }
+    /* ── Accordion ─────────────────────────────── */
+    .accordion { border-top: 1.5px solid var(--border); }
+    .accordion details { border-bottom: 1.5px solid var(--border); }
+    .accordion summary {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      cursor: pointer;
+      list-style: none;
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      user-select: none;
+    }
+    .accordion summary::-webkit-details-marker { display: none; }
+    .accordion summary .acc-icon {
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--navy);
+      line-height: 1;
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .accordion details[open] summary .acc-icon { content: '−'; }
+    .accordion details[open] > summary .acc-icon::before { content: '−'; }
+    .accordion details:not([open]) > summary .acc-icon::before { content: '+'; }
+    .acc-icon::before { content: '+'; }
+    .accordion details[open] .acc-icon::before { content: '−'; }
+    .acc-body { padding: 4px 0 20px 0; }
+    .acc-body ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .acc-body ul li {
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 16px;
+      color: var(--navy);
+      padding: 7px 0 7px 16px;
+      opacity: 0.78;
+    }
+
+    /* ── Subject section layout ─────────────────── */
+    .subject-section { padding: 80px 0; }
+    .subject-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+    .subject-left h2 { margin-bottom: 14px; }
+    .subject-left p { color: var(--text-muted); line-height: 1.75; margin-bottom: 28px; }
+    .subject-img {
+      width: 100%;
+      border-radius: var(--radius);
+      display: block;
+      object-fit: cover;
+      max-height: 360px;
+    }
+    @media (max-width: 820px) {
+      .subject-grid { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    /* ── Pain point vs Whetstone ─────────────────── */
+    .versus-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      margin-top: 40px;
+    }
+    .versus-col h3 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .versus-col.bad h3 { color: var(--text-muted); }
+    .versus-col.good h3 { color: var(--gold); }
+    .versus-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 20px;
+    }
+    .versus-icon {
+      font-size: 16px;
+      line-height: 1.5;
+      flex-shrink: 0;
+    }
+    .versus-col.bad .versus-icon { color: var(--text-muted); }
+    .versus-col.good .versus-icon { color: var(--gold); }
+    .versus-item p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+    .versus-item strong { color: var(--navy); }
+    @media (max-width: 700px) {
+      .versus-grid { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* ── Availability strip ─────────────────────── */
+    .avail-strip {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+      padding: 18px 24px;
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+    }
+    .avail-strip strong { color: var(--gold); }
   </style>
 </head>
 <body>
@@ -23,16 +135,26 @@
       <a href="/" class="logo">Whetstone</a>
       <nav class="nav">
         <div class="nav-dropdown">
-          <a href="#" class="nav-link">Our Services <span class="caret">▾</span></a>
+          <a class="nav-link" href="/college-admissions-counseling/">Services <span class="caret">▾</span></a>
           <div class="dropdown-menu">
-            <a href="/sat/">SAT / ACT Prep</a>
-            <a href="/language-learning/">Language Learning</a>
+            <a href="/college-admissions-counseling/">Admissions Counseling</a>
+            <a href="/college-essay-coaching/">Essay Coaching</a>
+            <a href="/sat-tutoring/">SAT / ACT Prep</a>
+            <a href="/extracurricular-mentorship/">Extracurriculars</a>
+            <div class="dropdown-divider"></div>
             <a href="/academic-tutoring/">Academic Tutoring</a>
-            <a href="/essay-writing/">Essay Writing</a>
-            <a href="/extracurricular/">Extracurricular &amp; Leadership</a>
+            <a href="/graduate-admissions/">Graduate Admissions</a>
           </div>
         </div>
-        <a href="/about-us/" class="nav-link">Our Team</a>
+        <div class="nav-dropdown">
+          <a class="nav-link" href="/about/">About <span class="caret">▾</span></a>
+          <div class="dropdown-menu">
+            <a href="/our-method/">Our Method</a>
+            <a href="/about/">Our Team</a>
+            <a href="/results/">Results</a>
+            <a href="/reviews/">Reviews</a>
+          </div>
+        </div>
         <a href="/resources/" class="nav-link">Resources</a>
         <a href="/contact/" class="nav-link">Contact</a>
       </nav>
@@ -40,12 +162,18 @@
       <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
     <div class="mobile-nav" id="mobile-nav">
-      <a href="/sat/">SAT / ACT Prep</a>
-      <a href="/language-learning/">Language Learning</a>
+      <p class="mobile-nav-label">Services</p>
+      <a href="/college-admissions-counseling/">Admissions Counseling</a>
+      <a href="/college-essay-coaching/">Essay Coaching</a>
+      <a href="/sat-tutoring/">SAT / ACT Prep</a>
+      <a href="/extracurricular-mentorship/">Extracurriculars</a>
       <a href="/academic-tutoring/">Academic Tutoring</a>
-      <a href="/essay-writing/">Essay Writing</a>
-      <a href="/extracurricular/">Extracurricular &amp; Leadership</a>
-      <a href="/about-us/">Our Team</a>
+      <a href="/graduate-admissions/">Graduate Admissions</a>
+      <p class="mobile-nav-label">Company</p>
+      <a href="/our-method/">Our Method</a>
+      <a href="/about/">Our Team</a>
+      <a href="/results/">Results</a>
+      <a href="/reviews/">Reviews</a>
       <a href="/resources/">Resources</a>
       <a href="/contact/">Contact</a>
       <a href="/contact/" class="btn btn-primary">Get Started</a>
@@ -57,78 +185,153 @@
     <div class="page-hero-bg" style="background-image: url('../about-bluebg.png')"></div>
     <div class="container">
       <p class="section-label">Academic Tutoring</p>
-      <h1>Every Subject. <em style="color:var(--gold);font-style:italic">Every Level.</em></h1>
-      <p>Conquer AP and IB coursework, raise your GPA, and walk into every exam with confidence — guided by tutors from Harvard, Oxford, and MIT who have aced these courses themselves.</p>
+      <h1>Practice doesn't make perfect.<br><em style="color:var(--gold);font-style:italic">Perfect practice does.</em></h1>
+      <p>Our tutors only teach subjects in which they have tested in the top 99th percentile — so every session is built on genuine mastery, not approximate familiarity. Available in-person in New York City and online worldwide.</p>
       <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;">
         <a href="/contact/" class="btn btn-gold">Book a Free Consultation</a>
       </div>
     </div>
   </section>
 
-  <!-- OUR TUTORS -->
+  <!-- AVAILABILITY STRIP -->
+  <div class="avail-strip">
+    <strong>In-person tutoring in New York City</strong> &nbsp;·&nbsp; Online sessions available worldwide
+  </div>
+
+  <!-- THE PROBLEM -->
   <section class="page-section-alt">
     <div class="container">
-      <div class="two-col">
-        <div class="two-col-text">
-          <p class="section-label">Our Tutors</p>
-          <h2>Taught by Students Who Aced It</h2>
-          <p>Every Whetstone tutor earned A*s and 5s in the subjects they teach — at Harvard, Oxford, MIT, and other world-class institutions. They don't just know the material; they know how to teach it in a way that produces real, measurable improvement.</p>
-          <div class="feature-list">
-            <div class="feature-item">
-              <span class="feature-icon">✓</span>
-              <div>
-                <h4>AP &amp; IB Specialists</h4>
-                <p>Tutors who scored 5s and 7s cover every subject in depth — from AP Physics C to IB Higher Level Mathematics.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">✓</span>
-              <div>
-                <h4>Personalized Study Plans</h4>
-                <p>A custom plan built around your course syllabus, upcoming exam dates, and specific weak areas — not a generic curriculum.</p>
-              </div>
-            </div>
-            <div class="feature-item">
-              <span class="feature-icon">✓</span>
-              <div>
-                <h4>Grade Improvement Guarantee</h4>
-                <p>Follow the plan and improve — or we keep working with you until you do. We stand behind our results.</p>
-              </div>
-            </div>
+      <p class="section-label">Why Whetstone</p>
+      <h2 class="section-title">Most tutors teach to the test.<br>We teach you to think.</h2>
+      <p class="section-sub">The tutoring industry is full of well-meaning generalists rotating between students, covering material they barely remember, with no system for tracking whether anything is actually working. We built Whetstone to be the opposite of that.</p>
+      <div class="versus-grid">
+        <div class="versus-col bad">
+          <h3>The Typical Tutor</h3>
+          <div class="versus-item">
+            <span class="versus-icon">✗</span>
+            <p><strong>A rotating cast of strangers.</strong> Tutoring agencies assign whoever is available. Students rebuild rapport every few weeks, losing momentum.</p>
+          </div>
+          <div class="versus-item">
+            <span class="versus-icon">✗</span>
+            <p><strong>Memorization without understanding.</strong> Drilling formulas and past papers produces fragile knowledge that collapses under novel exam questions.</p>
+          </div>
+          <div class="versus-item">
+            <span class="versus-icon">✗</span>
+            <p><strong>Broad subjects, thin expertise.</strong> A tutor who "covers math" may have scraped a B in calculus. You deserve someone who aced it.</p>
+          </div>
+          <div class="versus-item">
+            <span class="versus-icon">✗</span>
+            <p><strong>No accountability loop.</strong> Sessions happen, time passes, exams approach — and nobody is tracking whether the needle has actually moved.</p>
           </div>
         </div>
-        <div class="two-col-img">
-          <img src="../sat-advising.jpg" alt="Academic tutoring session">
+        <div class="versus-col good">
+          <h3>The Whetstone Difference</h3>
+          <div class="versus-item">
+            <span class="versus-icon">✓</span>
+            <p><strong>One dedicated tutor, start to finish.</strong> Your tutor knows your history, your gaps, and your goals. Continuity compounds.</p>
+          </div>
+          <div class="versus-item">
+            <span class="versus-icon">✓</span>
+            <p><strong>Conceptual depth over surface coverage.</strong> We build the intuition behind the material so students can reason through anything the exam throws at them.</p>
+          </div>
+          <div class="versus-item">
+            <span class="versus-icon">✓</span>
+            <p><strong>99th-percentile subject specialists only.</strong> We never assign a tutor who hasn't personally scored at the highest level in the relevant subject.</p>
+          </div>
+          <div class="versus-item">
+            <span class="versus-icon">✓</span>
+            <p><strong>Structured progress reviews.</strong> Diagnostic assessment at the start, measurable milestones throughout, and ongoing adjustment when the plan needs to evolve.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SUBJECTS -->
-  <section class="page-section">
+  <!-- SUBJECT TUTORING + ACCORDION -->
+  <section class="subject-section">
     <div class="container">
-      <p class="section-label">Subjects</p>
-      <h2 class="section-title">Comprehensive Coverage Across Every Discipline</h2>
-      <p class="section-sub">From core math and science to humanities, languages, and test prep — our tutors cover it all.</p>
-      <div class="subjects-grid">
-        <div class="subject-tag">Mathematics</div>
-        <div class="subject-tag">Calculus</div>
-        <div class="subject-tag">Statistics</div>
-        <div class="subject-tag">Physics</div>
-        <div class="subject-tag">Chemistry</div>
-        <div class="subject-tag">Biology</div>
-        <div class="subject-tag">Computer Science</div>
-        <div class="subject-tag">English &amp; Writing</div>
-        <div class="subject-tag">History</div>
-        <div class="subject-tag">Economics</div>
-        <div class="subject-tag">Psychology</div>
-        <div class="subject-tag">Geography</div>
-        <div class="subject-tag">Spanish</div>
-        <div class="subject-tag">French</div>
-        <div class="subject-tag">Mandarin</div>
-        <div class="subject-tag">Latin</div>
-        <div class="subject-tag">TOEFL / IELTS</div>
-        <div class="subject-tag">SAT / ACT</div>
+      <div class="subject-grid">
+
+        <div class="subject-left">
+          <p class="section-label">Subject Tutoring</p>
+          <h2>Our tutors only teach subjects in which they have tested in the top <strong>99th</strong> percentile. We place particular emphasis on the <strong>AP</strong> and <strong>IB</strong> curricula.</h2>
+          <img src="../sat-advising.jpg" alt="Academic tutoring session at Whetstone" class="subject-img">
+        </div>
+
+        <div class="subject-right">
+          <div class="accordion">
+
+            <details open>
+              <summary>
+                Mathematics
+                <span class="acc-icon"></span>
+              </summary>
+              <div class="acc-body">
+                <ul>
+                  <li>Algebra</li>
+                  <li>Geometry</li>
+                  <li>Pre-Calculus &amp; Trigonometry</li>
+                  <li>AP Calculus AB / BC</li>
+                  <li>AP Statistics</li>
+                  <li>IB Mathematics (SL &amp; HL)</li>
+                </ul>
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                Sciences
+                <span class="acc-icon"></span>
+              </summary>
+              <div class="acc-body">
+                <ul>
+                  <li>AP Biology</li>
+                  <li>AP Chemistry</li>
+                  <li>AP Physics 1, 2 &amp; C</li>
+                  <li>AP Environmental Science</li>
+                  <li>IB Sciences (SL &amp; HL)</li>
+                </ul>
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                Language
+                <span class="acc-icon"></span>
+              </summary>
+              <div class="acc-body">
+                <ul>
+                  <li>AP English Literature &amp; Language</li>
+                  <li>TOEFL / IELTS</li>
+                  <li>Spanish</li>
+                  <li>French</li>
+                  <li>Latin</li>
+                  <li>Ancient Greek*</li>
+                </ul>
+              </div>
+            </details>
+
+            <details>
+              <summary>
+                Humanities
+                <span class="acc-icon"></span>
+              </summary>
+              <div class="acc-body">
+                <ul>
+                  <li>AP U.S. History</li>
+                  <li>AP World History</li>
+                  <li>Economics</li>
+                  <li>Philosophy</li>
+                  <li>Classics</li>
+                  <li>Writing and Composition</li>
+                </ul>
+              </div>
+            </details>
+
+          </div>
+          <p style="margin-top:20px;font-size:13px;color:var(--text-muted);">* Available with select tutors. <a href="/contact/" style="color:var(--navy);">Contact us</a> to discuss your subject.</p>
+        </div>
+
       </div>
     </div>
   </section>
@@ -137,29 +340,29 @@
   <section class="page-section-alt">
     <div class="container">
       <p class="section-label">Our Method</p>
-      <h2 class="section-title">Targeted. Measurable. Effective.</h2>
-      <p class="section-sub">Practice doesn't make perfect — perfect practice does. Every session is designed to close gaps and build mastery.</p>
+      <h2 class="section-title">Diagnostic. Targeted. Accountable.</h2>
+      <p class="section-sub">Every student begins with an honest assessment of where they are. Every session is designed to close a specific gap. Every month, we measure whether it's working.</p>
       <div class="steps-grid">
         <div class="step-card">
           <span class="step-num">1</span>
-          <h3>Diagnostic Assessment</h3>
-          <p>We identify exactly which concepts are causing trouble — so we spend time on what actually matters, not rehashing what you already know.</p>
+          <h3>Diagnose the Real Gap</h3>
+          <p>We identify precisely which concepts are causing trouble — so we spend sessions on what actually matters, not retreading ground the student already knows.</p>
         </div>
         <div class="step-card">
           <span class="step-num">2</span>
-          <h3>Targeted Lessons</h3>
-          <p>Focused sessions build mastery concept by concept, using active recall and worked examples — not just drill and hope.</p>
+          <h3>Build Genuine Mastery</h3>
+          <p>Focused sessions develop intuitive understanding concept by concept, using active recall and worked examples. The goal is comprehension, not performance during the session.</p>
         </div>
         <div class="step-card">
           <span class="step-num">3</span>
-          <h3>Progress Reviews</h3>
-          <p>Weekly check-ins track grade improvement and adjust the plan as needed, keeping you on pace for every upcoming exam and deadline.</p>
+          <h3>Track and Adjust</h3>
+          <p>Regular progress reviews track grade improvement and recalibrate the plan as needed — keeping students on pace for every exam and deadline on the horizon.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- REVIEWS -->
+  <!-- REVIEW -->
   <section class="reviews">
     <div class="container">
       <p class="section-label">Student Results</p>
@@ -189,22 +392,31 @@
         <p>Refined Method. Proven Results.</p>
         <p class="footer-contact">hello@whetstoneadmissions.com<br>917-562-5668</p>
       </div>
-      <div class="footer-col">
-        <h4>Our Services</h4>
-        <a href="/sat/">SAT / ACT Prep</a>
-        <a href="/language-learning/">Language Learning</a>
+            <div class="footer-col">
+        <h4>Services</h4>
+        <a href="/college-admissions-counseling/">Admissions Counseling</a>
+        <a href="/college-essay-coaching/">Essay Coaching</a>
+        <a href="/sat-tutoring/">SAT / ACT Prep</a>
+        <a href="/extracurricular-mentorship/">Extracurriculars</a>
         <a href="/academic-tutoring/">Academic Tutoring</a>
-        <a href="/essay-writing/">Essay Writing</a>
-        <a href="/extracurricular/">Extracurricular &amp; Leadership</a>
+        <a href="/graduate-admissions/">Graduate Admissions</a>
       </div>
       <div class="footer-col">
-        <h4>About Us</h4>
-        <a href="/about-us/">Our Team</a>
-        <a href="/#reviews">Our Reviews</a>
+        <h4>Company</h4>
+        <a href="/our-method/">Our Method</a>
+      <a href="/about/">Our Team</a>
+        <a href="/results/">Results</a>
+        <a href="/reviews/">Reviews</a>
+        <a href="/resources/">Resources</a>
+        <a href="/contact/">Contact</a>
       </div>
       <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="/resources/">University Profiles</a>
+        <h4>Locations</h4>
+        <a href="/new-york-city-college-admissions-counseling/">New York City</a>
+        <a href="/manhattan-college-admissions-counseling/">Manhattan</a>
+        <a href="/brooklyn-college-admissions-counseling/">Brooklyn</a>
+        <a href="/westchester-college-admissions-counseling/">Westchester</a>
+        <a href="/scarsdale-college-admissions-counseling/">Scarsdale</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -223,22 +435,6 @@
     window.addEventListener('scroll', () => {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 10);
     });
-    // Dropdown toggle
-    document.querySelectorAll('.nav-dropdown > a').forEach(function(a) {
-      a.addEventListener('click', function(e) {
-        e.preventDefault();
-        var dd = this.parentElement;
-        var isOpen = dd.classList.contains('open');
-        document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.classList.remove('open'); });
-        if (\!isOpen) dd.classList.add('open');
-      });
-    });
-    document.addEventListener('click', function(e) {
-      if (\!e.target.closest('.nav-dropdown')) {
-        document.querySelectorAll('.nav-dropdown').forEach(function(d){ d.classList.remove('open'); });
-      }
-    });
-
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobile-nav').classList.toggle('open');
     });
