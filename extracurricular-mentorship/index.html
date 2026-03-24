@@ -358,30 +358,59 @@
     }
     .inline-cta-band a { flex-shrink: 0; }
 
-    /* ── Ebook ribbon (slim) ── */
-    .ebook-ribbon {
-      background: var(--cream, #faf8f4);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 18px 24px;
-      text-align: center;
+    /* ── Mid-page download section ── */
+    .download-section {
+      background: var(--navy);
+      padding: 72px 24px;
     }
-    .ebook-ribbon p {
-      margin: 0;
-      font-size: 0.88rem;
-      color: var(--text-muted);
+    .download-section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
     }
-    .ebook-ribbon strong { color: var(--navy); }
-    .ebook-ribbon a.ebook-link {
-      font-size: 0.85rem;
+    @media (max-width: 680px) {
+      .download-section-inner { grid-template-columns: 1fr; text-align: center; gap: 28px; }
+      .download-section-inner .btn { width: 100%; }
+    }
+    .download-section .ds-label {
+      font-size: 0.75rem;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
       color: var(--gold);
-      text-decoration: underline;
-      margin-left: 10px;
-      white-space: nowrap;
+      margin-bottom: 10px;
     }
-    @media (max-width: 560px) {
-      .ebook-ribbon a.ebook-link { display: block; margin: 6px auto 0; }
+    .download-section h2 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: #fff;
+      margin: 0 0 14px;
+      line-height: 1.25;
+    }
+    .download-section .ds-includes {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+    .download-section .ds-includes span {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.72);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .download-section .ds-includes span::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+    @media (max-width: 680px) {
+      .download-section .ds-includes { align-items: center; }
     }
 
     /* ── Success criteria list ── */
@@ -639,14 +668,6 @@
         </div>
       </div>
 
-      <!-- Inline download CTA -->
-      <div class="inline-cta-band">
-        <div>
-          <h3>Get the Full Capstone Project Guide</h3>
-          <p>Case studies, planning templates, and examples from students admitted to Harvard, Princeton, and MIT.</p>
-        </div>
-        <a href="#" class="btn btn-gold" onclick="openModal(event)">Download Free →</a>
-      </div>
     </div>
   </section>
 
@@ -802,14 +823,21 @@
     </div>
   </section>
 
-  <!-- EBOOK RIBBON (slim) -->
-  <div class="ebook-ribbon">
-    <p>
-      <strong>Download our Admissions Roadmap.</strong>
-      You'll receive: 10 successful essays and activity lists, a capstone project case study, and an admissions roadmap from alumni of the world's most selective universities.
-      <a href="#" class="ebook-link" onclick="openModal(event)">Get Free Access →</a>
-    </p>
-  </div>
+  <!-- DOWNLOAD SECTION -->
+  <section class="download-section">
+    <div class="download-section-inner">
+      <div>
+        <p class="ds-label">Free Download</p>
+        <h2>Download the Free<br>Capstone Project Guide</h2>
+        <div class="ds-includes">
+          <span>Case studies from students admitted to Harvard, Princeton, and MIT</span>
+          <span>The full DOER Framework with planning templates</span>
+          <span>12 Project Pathway breakdowns with real examples</span>
+        </div>
+      </div>
+      <a href="#" class="btn btn-gold" onclick="openModal(event)" style="white-space:nowrap;padding:16px 32px;font-size:1rem;">Download Free →</a>
+    </div>
+  </section>
 
   <!-- FINAL CTA -->
   <section class="final-cta">

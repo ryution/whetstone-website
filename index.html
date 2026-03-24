@@ -71,6 +71,198 @@
       .hero-eyebrow { font-size: 14px !important; }
       .hero-sub { font-size: 15px !important; }
     }
+
+    /* ── Wisdom section ── */
+    .wisdom-list {
+      list-style: none;
+      padding: 0;
+      margin: 36px 0 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 640px) { .wisdom-list { grid-template-columns: 1fr; } }
+    .wisdom-list li {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .wisdom-icon {
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      background: var(--gold-light, #fdf5e6);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+    }
+    .wisdom-list li h4 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1rem;
+      color: var(--navy);
+      margin: 0 0 5px;
+    }
+    .wisdom-list li p {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── Mid-page download section ── */
+    .download-section {
+      background: var(--navy);
+      padding: 72px 24px;
+    }
+    .download-section-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 680px) {
+      .download-section-inner { grid-template-columns: 1fr; text-align: center; gap: 28px; }
+      .download-section-inner .btn { width: 100%; }
+    }
+    .download-section .ds-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .download-section h2 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: #fff;
+      margin: 0 0 14px;
+      line-height: 1.25;
+    }
+    .download-section p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.7);
+      margin: 0;
+      line-height: 1.65;
+      max-width: 580px;
+    }
+    .download-section .ds-includes {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 16px;
+    }
+    .download-section .ds-includes span {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.75);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .download-section .ds-includes span::before {
+      content: "✓";
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.8rem;
+    }
+    @media (max-width: 680px) {
+      .download-section .ds-includes { align-items: center; }
+    }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,20,40,0.65);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: #fff;
+      border-radius: 14px;
+      max-width: 480px;
+      width: 100%;
+      padding: 40px 36px 36px;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      line-height: 1;
+    }
+    .modal-close:hover { color: var(--text); }
+    .modal-box h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.45rem;
+      color: var(--navy);
+      margin: 0 0 6px;
+    }
+    .modal-box p.modal-sub {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin: 0 0 24px;
+      line-height: 1.5;
+    }
+    .modal-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 14px;
+    }
+    .modal-field label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .modal-field input, .modal-field select {
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: 'Libre Franklin', sans-serif;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .modal-field input:focus, .modal-field select:focus { border-color: var(--gold); }
+    .modal-field input.error { border-color: #c0392b; }
+    .modal-submit {
+      width: 100%;
+      margin-top: 8px;
+      padding: 14px;
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Libre Franklin', sans-serif;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .modal-submit:hover { opacity: 0.88; }
+    .modal-success { display: none; text-align: center; padding: 20px 0 8px; }
+    .modal-success .success-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .modal-success h3 { margin-bottom: 8px; }
+    .modal-success p { font-size: 0.93rem; color: var(--text-muted); }
   </style>
 </head>
 <body>
@@ -399,6 +591,61 @@
     </div>
   </section>
 
+  <!-- HABITS THAT CARRY STUDENTS FURTHER -->
+  <section class="page-section">
+    <div class="container">
+      <p class="section-label">Beyond Admissions</p>
+      <h2 class="section-title">The Habits That Carry<br>Students Further</h2>
+      <p class="section-sub" style="max-width:620px;">The students who thrive in college — and beyond — share a set of habits that have little to do with grades and everything to do with how they think. At Whetstone, we develop those habits alongside the application.</p>
+      <ul class="wisdom-list">
+        <li>
+          <div class="wisdom-icon">📖</div>
+          <div>
+            <h4>A Genuine Love of Learning</h4>
+            <p>The strongest applicants aren't performing curiosity — they have it. We help students develop real intellectual interests through books, conversation, and projects that go beyond what's assigned.</p>
+          </div>
+        </li>
+        <li>
+          <div class="wisdom-icon">🎯</div>
+          <div>
+            <h4>Deep Focus Over Constant Distraction</h4>
+            <p>Elite universities reward depth. We help students build the ability to sit with hard problems, resist the pull of shallow activity, and produce work that reflects real concentration.</p>
+          </div>
+        </li>
+        <li>
+          <div class="wisdom-icon">🗓️</div>
+          <div>
+            <h4>Time as a Resource, Not a Constraint</h4>
+            <p>How a student manages their time in high school is how they'll manage it in college. We treat time management as a teachable skill — one that compounds across every part of the process.</p>
+          </div>
+        </li>
+        <li>
+          <div class="wisdom-icon">🧠</div>
+          <div>
+            <h4>The Discipline to Think Before Acting</h4>
+            <p>Impulsivity is the enemy of quality work. We coach students to pause, question, and deliberate — building a practical edge in a world that rewards whoever thinks most clearly.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DOWNLOAD SECTION -->
+  <section class="download-section">
+    <div class="download-section-inner">
+      <div>
+        <p class="ds-label">Free Download</p>
+        <h2>Download Our Free<br>Admissions Roadmap</h2>
+        <div class="ds-includes">
+          <span>10 Successful Essays and Activity Lists</span>
+          <span>A Capstone Project Case Study</span>
+          <span>An Admissions Roadmap from alumni of the world's most selective universities</span>
+        </div>
+      </div>
+      <a href="#" class="btn btn-gold" onclick="openModal(event)" style="white-space:nowrap;padding:16px 32px;font-size:1rem;">Download Free →</a>
+    </div>
+  </section>
+
   <!-- CONSULTATION FORM -->
   <section class="form-section" id="form">
     <div class="container">
@@ -609,6 +856,91 @@
         const target = document.querySelector(a.getAttribute('href'));
         if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
       });
+    });
+  </script>
+
+  <!-- LEAD CAPTURE MODAL -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+      <div id="modal-form-area">
+        <h3 id="modal-title">Get the Free Admissions Roadmap</h3>
+        <p class="modal-sub">Enter your details and we'll send you our complete guide — including successful essays, activity lists, and the Whetstone admissions roadmap.</p>
+        <div class="modal-field">
+          <label for="modal-name">Full Name <span style="color:#c0392b">*</span></label>
+          <input type="text" id="modal-name" placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="modal-field">
+          <label for="modal-email">Email Address <span style="color:#c0392b">*</span></label>
+          <input type="email" id="modal-email" placeholder="you@email.com" autocomplete="email">
+        </div>
+        <div class="modal-field">
+          <label for="modal-phone">Phone Number</label>
+          <input type="tel" id="modal-phone" placeholder="(optional)" autocomplete="tel">
+        </div>
+        <div class="modal-field">
+          <label for="modal-grade">Current Grade</label>
+          <select id="modal-grade">
+            <option value="">Select grade…</option>
+            <option>8th Grade</option>
+            <option>9th Grade</option>
+            <option>10th Grade</option>
+            <option>11th Grade</option>
+            <option>12th Grade</option>
+            <option>College Student</option>
+            <option>Parent / Guardian</option>
+          </select>
+        </div>
+        <button class="modal-submit" onclick="submitModal()">Download Now →</button>
+      </div>
+      <div class="modal-success" id="modal-success">
+        <div class="success-icon">🎉</div>
+        <h3>Your guide is downloading!</h3>
+        <p>We'll also follow up with additional resources from the Whetstone team. Check your inbox.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    function openModal(e) {
+      if (e) e.preventDefault();
+      document.getElementById('modal-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('modal-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+      setTimeout(function() {
+        document.getElementById('modal-form-area').style.display = '';
+        document.getElementById('modal-success').style.display = 'none';
+        document.getElementById('modal-name').value = '';
+        document.getElementById('modal-email').value = '';
+        document.getElementById('modal-phone').value = '';
+        document.getElementById('modal-grade').value = '';
+        document.getElementById('modal-name').classList.remove('error');
+        document.getElementById('modal-email').classList.remove('error');
+      }, 300);
+    }
+    function submitModal() {
+      var name = document.getElementById('modal-name');
+      var email = document.getElementById('modal-email');
+      var valid = true;
+      if (!name.value.trim()) { name.classList.add('error'); valid = false; } else { name.classList.remove('error'); }
+      if (!email.value.trim() || !email.value.includes('@')) { email.classList.add('error'); valid = false; } else { email.classList.remove('error'); }
+      if (!valid) return;
+      var a = document.createElement('a');
+      a.href = '/CapstoneProject.pdf';
+      a.download = 'Whetstone-Admissions-Roadmap.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      document.getElementById('modal-form-area').style.display = 'none';
+      document.getElementById('modal-success').style.display = 'block';
+    }
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
     });
   </script>
 
