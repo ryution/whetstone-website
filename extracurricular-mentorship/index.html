@@ -4,14 +4,428 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Extracurricular &amp; Capstone Mentorship | Whetstone Admissions</title>
-  <meta name="description" content="Build standout extracurriculars, capstone projects, leadership initiatives, and high-impact student profiles with Whetstone mentorship in NYC and online.">
+  <meta name="description" content="Build standout extracurriculars and capstone projects that make admissions officers take notice. The DOER Framework from Whetstone — NYC and online.">
   <link rel="canonical" href="https://whetstoneadmissions.com/extracurricular-mentorship/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css?v=4">
+  <style>
+    /* ── Download banner ── */
+    .download-banner {
+      background: var(--gold);
+      color: #fff;
+      padding: 14px 24px;
+      text-align: center;
+      position: relative;
+      z-index: 90;
+    }
+    .download-banner p {
+      margin: 0;
+      font-size: 0.95rem;
+      font-family: 'Libre Franklin', sans-serif;
+      font-weight: 600;
+    }
+    .download-banner a.banner-btn {
+      display: inline-block;
+      margin-left: 16px;
+      background: #fff;
+      color: var(--gold);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 6px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .download-banner a.banner-btn:hover { opacity: 0.85; }
+    @media (max-width: 600px) {
+      .download-banner { padding: 12px 16px; }
+      .download-banner p { font-size: 0.88rem; }
+      .download-banner a.banner-btn { margin: 8px 0 0; display: block; width: fit-content; margin-inline: auto; }
+    }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,20,40,0.65);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-box {
+      background: #fff;
+      border-radius: 14px;
+      max-width: 480px;
+      width: 100%;
+      padding: 40px 36px 36px;
+      position: relative;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      line-height: 1;
+    }
+    .modal-close:hover { color: var(--text); }
+    .modal-box h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.45rem;
+      color: var(--navy);
+      margin: 0 0 6px;
+    }
+    .modal-box p.modal-sub {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin: 0 0 24px;
+      line-height: 1.5;
+    }
+    .modal-field {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 14px;
+    }
+    .modal-field label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .modal-field input, .modal-field select {
+      padding: 11px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: 'Libre Franklin', sans-serif;
+      color: var(--text);
+      background: #fff;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .modal-field input:focus, .modal-field select:focus {
+      border-color: var(--gold);
+    }
+    .modal-field input.error { border-color: #c0392b; }
+    .modal-submit {
+      width: 100%;
+      margin-top: 8px;
+      padding: 14px;
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: 'Libre Franklin', sans-serif;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .modal-submit:hover { opacity: 0.88; }
+    .modal-success { display: none; text-align: center; padding: 20px 0 8px; }
+    .modal-success .success-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .modal-success h3 { margin-bottom: 8px; }
+    .modal-success p { font-size: 0.93rem; color: var(--text-muted); }
+
+    /* ── DOER Framework ── */
+    .doer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    @media (max-width: 680px) { .doer-grid { grid-template-columns: 1fr; } }
+    .doer-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+    }
+    .doer-letter {
+      display: inline-block;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #fff;
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-align: center;
+      line-height: 44px;
+      margin-bottom: 14px;
+    }
+    .doer-card h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin: 0 0 10px;
+    }
+    .doer-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    /* ── 12 Pathways ── */
+    .pathway-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+    }
+    @media (max-width: 800px) { .pathway-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .pathway-grid { grid-template-columns: 1fr; } }
+    .pathway-card {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 22px 18px;
+    }
+    .pathway-card .pathway-icon {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .pathway-card h4 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1rem;
+      color: var(--navy);
+      margin: 0 0 6px;
+    }
+    .pathway-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* ── What Sets Us Apart ── */
+    .apart-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    @media (max-width: 760px) { .apart-grid { grid-template-columns: 1fr; gap: 16px; } }
+    .apart-card {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 30px 26px;
+      color: #fff;
+    }
+    .apart-card .apart-check {
+      display: inline-block;
+      width: 32px;
+      height: 32px;
+      background: var(--gold);
+      border-radius: 50%;
+      color: #fff;
+      text-align: center;
+      line-height: 32px;
+      font-size: 1rem;
+      margin-bottom: 14px;
+    }
+    .apart-card h4 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.1rem;
+      color: #fff;
+      margin: 0 0 10px;
+    }
+    .apart-card p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.72);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── Wisdom section ── */
+    .wisdom-list {
+      list-style: none;
+      padding: 0;
+      margin: 32px 0 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 640px) { .wisdom-list { grid-template-columns: 1fr; } }
+    .wisdom-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .wisdom-icon {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      background: var(--gold-light, #fdf5e6);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    .wisdom-list li h4 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 0.98rem;
+      color: var(--navy);
+      margin: 0 0 4px;
+    }
+    .wisdom-list li p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    /* ── Capstone example cards ── */
+    .example-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+    @media (max-width: 800px) { .example-grid { grid-template-columns: 1fr; } }
+    .example-card {
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px 24px 22px;
+      background: #fff;
+    }
+    .example-school {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--gold);
+      background: var(--gold-light, #fdf5e6);
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+    }
+    .example-card h4 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin: 0 0 10px;
+    }
+    .example-card p {
+      font-size: 0.87rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── Inline CTA band ── */
+    .inline-cta-band {
+      background: var(--navy);
+      border-radius: var(--radius);
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 56px;
+    }
+    @media (max-width: 640px) {
+      .inline-cta-band { flex-direction: column; text-align: center; padding: 28px 24px; }
+    }
+    .inline-cta-band h3 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.25rem;
+      color: #fff;
+      margin: 0 0 6px;
+    }
+    .inline-cta-band p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.65);
+      margin: 0;
+    }
+    .inline-cta-band a { flex-shrink: 0; }
+
+    /* ── Ebook ribbon (slim) ── */
+    .ebook-ribbon {
+      background: var(--cream, #faf8f4);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 18px 24px;
+      text-align: center;
+    }
+    .ebook-ribbon p {
+      margin: 0;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .ebook-ribbon strong { color: var(--navy); }
+    .ebook-ribbon a.ebook-link {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold);
+      text-decoration: underline;
+      margin-left: 10px;
+      white-space: nowrap;
+    }
+    @media (max-width: 560px) {
+      .ebook-ribbon a.ebook-link { display: block; margin: 6px auto 0; }
+    }
+
+    /* ── Success criteria list ── */
+    .criteria-list {
+      list-style: none;
+      padding: 0;
+      margin: 28px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .criteria-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .criteria-list li::before {
+      content: "✓";
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--gold);
+      color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 24px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+    .criteria-list li strong { color: var(--navy); }
+  </style>
 </head>
 <body>
+
+  <!-- DOWNLOAD BANNER -->
+  <div class="download-banner">
+    <p>📄 Free Guide: How to Elevate Your Application with a Capstone Project
+      <a href="#" class="banner-btn" onclick="openModal(event)">Download Free →</a>
+    </p>
+  </div>
 
   <header class="header scrolled" id="header">
     <div class="header-inner">
@@ -68,109 +482,298 @@
     <div class="page-hero-bg" style="background-image: url('../capstone-bluebg.png')"></div>
     <div class="container">
       <p class="section-label">Extracurricular &amp; Leadership</p>
-      <h1>Extracurricular and Capstone Mentorship</h1>
-      <h2 style="font-size:1.4rem;font-weight:400;color:var(--gold);font-style:italic;margin-top:4px;margin-bottom:16px;">Stand Out With Real-World Impact</h2>
-      <p>Build a distinctive student profile through original capstone projects, leadership initiatives, and high-impact extracurricular strategy — guided by mentors from Harvard, Oxford, and the world's top institutions.</p>
-      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;">
-        <a href="/contact/" class="btn btn-gold">Find Your Mentor</a>
-        <a href="#how-it-works" class="btn btn-outline-white">How It Works</a>
+      <h1>Extracurricular and Capstone<br>Mentorship</h1>
+      <h2 style="font-size:1.3rem;font-weight:400;color:var(--gold);font-style:italic;margin-top:6px;margin-bottom:18px;">Build a Profile That Speaks Before the Essay Does</h2>
+      <p style="max-width:560px;">Grades open the door. Extracurriculars and capstone projects are what pull you through it. We help students develop real-world initiatives — the kind that give admissions officers a story to tell.</p>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:24px;">
+        <a href="/contact/" class="btn btn-gold">Work With a Mentor</a>
+        <a href="#the-doer-framework" class="btn btn-outline-white">See Our Framework</a>
       </div>
     </div>
   </section>
 
-  <!-- FOUNDER QUOTE + THREE PILLARS -->
+  <!-- FOUNDER QUOTE -->
   <section class="page-section-alt">
     <div class="container">
-      <div class="quote-block" style="max-width:720px;">
-        <blockquote>"Perfect grades aren't enough anymore. With 26,000 high schools in America alone, there are more valedictorians than seats at elite universities. What stands out is leadership, creativity, and proof of impact. The right capstone makes you impossible to ignore."</blockquote>
+      <div class="quote-block" style="max-width:740px;margin-inline:auto;">
+        <blockquote>"Perfect grades aren't enough anymore. With over 26,000 high schools in America, there are more valedictorians than seats at elite universities. What separates admitted students is depth — the kind that only comes from doing something real, something yours."</blockquote>
         <cite>— Cole, Founder</cite>
       </div>
-      <div class="steps-grid" style="margin-top:48px;">
-        <div class="step-card">
-          <span class="step-num">🔬</span>
-          <h3>Capstone Projects</h3>
-          <p>Original research, nonprofits, apps, or publications that demonstrate initiative and intellect — the kind of work that gives admissions officers a story to tell.</p>
-        </div>
-        <div class="step-card">
-          <span class="step-num">🏆</span>
-          <h3>Club &amp; Leadership</h3>
-          <p>Build your role in existing clubs or found new ones with real membership and measurable outcomes that admissions offices can verify and admire.</p>
-        </div>
-        <div class="step-card">
-          <span class="step-num">🌍</span>
-          <h3>Community Impact</h3>
-          <p>Community service with documented reach, not just logged hours — projects that solve real problems and show you understand the world beyond your school.</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- THE PROCESS -->
-  <section class="page-section" id="how-it-works">
+  <!-- WHAT IS A CAPSTONE PROJECT -->
+  <section class="page-section">
     <div class="container">
-      <p class="section-label">The Process</p>
-      <h2 class="section-title">Whetstone Capstone Accelerator</h2>
-      <p class="section-sub">From idea to impact in three steps — guided by mentors from the world's leading institutions.</p>
-      <div class="steps-grid">
-        <div class="step-card">
-          <span class="step-num">1</span>
-          <h3>Tell Us About You</h3>
-          <p>Share your story, your passions, and your goals. We'll pinpoint where your interests meet real opportunities for impact.</p>
+      <p class="section-label">The Foundation</p>
+      <h2 class="section-title">What Is a Capstone Project?</h2>
+      <p class="section-sub" style="max-width:640px;">A capstone project is a self-directed, high-impact initiative a student leads over a sustained period — not a class assignment, not a club meeting, but a real undertaking with measurable outcomes. Done well, it becomes the spine of your application narrative.</p>
+      <p style="margin-top: 16px; color: var(--text-muted); font-size: 0.95rem;">The most competitive capstone projects share five traits:</p>
+      <ul class="criteria-list" style="max-width:680px;">
+        <li><span><strong>Originality.</strong> The project was conceived and driven by the student — not assigned by a teacher or designed by a program.</span></li>
+        <li><span><strong>Documented impact.</strong> There are numbers, outcomes, or artifacts that can be verified: followers, participants, funding raised, users, publications.</span></li>
+        <li><span><strong>Sustained effort.</strong> It ran over months, not days — showing discipline, not just enthusiasm.</span></li>
+        <li><span><strong>Authentic interest.</strong> The project connects to who the student genuinely is, not to what they think colleges want to hear.</span></li>
+        <li><span><strong>Transferable lessons.</strong> The student can speak about what they learned — about themselves, their field, and the world — not just what they built.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DOER FRAMEWORK -->
+  <section class="page-section-alt" id="the-doer-framework">
+    <div class="container">
+      <p class="section-label">Our Methodology</p>
+      <h2 class="section-title">The DOER Framework</h2>
+      <p class="section-sub" style="max-width:620px;">Every Whetstone capstone project is built on four pillars. They mirror what elite colleges actually evaluate — and what students remember for life, regardless of where they enroll.</p>
+      <div class="doer-grid">
+        <div class="doer-card">
+          <div class="doer-letter">D</div>
+          <h3>Direction</h3>
+          <ul>
+            <li>Define a clear, authentic goal rooted in genuine interest</li>
+            <li>Identify the audience or community the project will serve</li>
+            <li>Set milestones that create accountability without rigidity</li>
+            <li>Align the project with the student's broader academic identity</li>
+          </ul>
         </div>
-        <div class="step-card">
-          <span class="step-num">2</span>
-          <h3>Get Matched</h3>
-          <p>Match with a mentor from Harvard, JPMorgan, Microsoft, and beyond to shape your idea into an action plan you can actually execute.</p>
+        <div class="doer-card">
+          <div class="doer-letter">O</div>
+          <h3>Organization</h3>
+          <ul>
+            <li>Map out a realistic timeline from launch to completion</li>
+            <li>Identify collaborators, mentors, and resources needed</li>
+            <li>Build weekly work habits that sustain momentum over months</li>
+            <li>Create documentation systems to capture progress as it happens</li>
+          </ul>
         </div>
-        <div class="step-card">
-          <span class="step-num">3</span>
-          <h3>Start Your Project</h3>
-          <p>Build, execute, and publish a project with results admissions officers can't overlook — then weave it through your essays and activity list.</p>
+        <div class="doer-card">
+          <div class="doer-letter">E</div>
+          <h3>Execution</h3>
+          <ul>
+            <li>Move from planning to tangible, public-facing output</li>
+            <li>Handle setbacks without losing sight of the original goal</li>
+            <li>Track metrics that demonstrate real-world reach and impact</li>
+            <li>Communicate progress clearly to stakeholders and mentors</li>
+          </ul>
         </div>
-      </div>
-      <div style="text-align:center;margin-top:48px;">
-        <a href="/contact/" class="btn btn-gold">Start Your Journey</a>
+        <div class="doer-card">
+          <div class="doer-letter">R</div>
+          <h3>Reflection</h3>
+          <ul>
+            <li>Articulate what the work revealed about your intellectual interests</li>
+            <li>Connect the project's lessons to your college essays</li>
+            <li>Identify what you'd do differently — and why that matters</li>
+            <li>Translate the experience into a story only you can tell</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- SUCCESS STORIES -->
+  <!-- 12 PROJECT PATHWAYS -->
+  <section class="page-section">
+    <div class="container">
+      <p class="section-label">Find Your Path</p>
+      <h2 class="section-title">12 Project Pathways</h2>
+      <p class="section-sub" style="max-width:600px;">No two students are the same. We work across a range of formats to find the one that fits your personality, skills, and timeline — then help you build something worth writing about.</p>
+      <div class="pathway-grid">
+        <div class="pathway-card">
+          <span class="pathway-icon">🚀</span>
+          <h4>Start-Up Venture</h4>
+          <p>Launch a product or service with a real customer base. Validated by revenue, downloads, or paying users.</p>
+        </div>
+        <div class="pathway-card">
+          <span class="pathway-icon">🌱</span>
+          <h4>Nonprofit</h4>
+          <p>Build a mission-driven organization with documented membership, programming, and community reach.</p>
+        </div>
+        <div class="pathway-card">
+          <span class="pathway-icon">🎬</span>
+          <h4>Film or Documentary</h4>
+          <p>Produce original work that explores a real subject — screened, submitted, or distributed publicly.</p>
+        </div>
+        <div class="pathway-card">
+          <span class="pathway-icon">📱</span>
+          <h4>App or Platform</h4>
+          <p>Design and ship a tool that solves a specific problem. Deployed, not just prototyped.</p>
+        </div>
+        <div class="pathway-card">
+          <span class="pathway-icon">🏛️</span>
+          <h4>Club or Organization</h4>
+          <p>Found or lead a school or community group with real membership, events, and measurable outcomes.</p>
+        </div>
+        <div class="pathway-card">
+          <span class="pathway-icon">🎨</span>
+          <h4>Art or Creative Work</h4>
+          <p>Build a body of work — literary, visual, or musical — shared publicly and framed around a cohesive theme.</p>
+        </div>
+        <div class="pathway-card">
+          <span class="pathway-icon">⚙️</span>
+          <h4>Engineering Project</h4>
+          <p>Design and build something tangible — a device, system, or prototype — with documented specs and testing.</p>
+        </div>
+        <div class="pathway-card">
+          <span class="pathway-icon">🏆</span>
+          <h4>Competition &amp; Research</h4>
+          <p>Enter and place in recognized competitions — science fairs, Olympiads, policy challenges — with original work.</p>
+        </div>
+        <div class="pathway-card">
+          <span class="pathway-icon">📖</span>
+          <h4>Book or Publication</h4>
+          <p>Write and publish a long-form work — nonfiction, fiction, or research — through a verifiable platform.</p>
+        </div>
+        <div class="pathway-card">
+          <span class="pathway-icon">🎙️</span>
+          <h4>Podcast or Speaking</h4>
+          <p>Build an audience around ideas you care about — through episodes, talks, or public presentations.</p>
+        </div>
+        <div class="pathway-card">
+          <span class="pathway-icon">📚</span>
+          <h4>Curriculum or Teaching</h4>
+          <p>Design and deliver original educational content — workshops, online courses, or tutoring programs — at scale.</p>
+        </div>
+        <div class="pathway-card">
+          <span class="pathway-icon">📣</span>
+          <h4>Advocacy Campaign</h4>
+          <p>Organize around a cause with documented reach — petitions, policy proposals, or media coverage.</p>
+        </div>
+      </div>
+
+      <!-- Inline download CTA -->
+      <div class="inline-cta-band">
+        <div>
+          <h3>Get the Full Capstone Project Guide</h3>
+          <p>Case studies, planning templates, and examples from students admitted to Harvard, Princeton, and MIT.</p>
+        </div>
+        <a href="#" class="btn btn-gold" onclick="openModal(event)">Download Free →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT MAKES WHETSTONE DIFFERENT -->
   <section class="page-section-alt">
     <div class="container">
-      <p class="section-label">Student Success Stories</p>
-      <h2 class="section-title">Successful Projects</h2>
-      <p class="section-sub">Real students. Real impact. Real results.</p>
-      <div class="success-grid">
-        <div class="success-card">
-          <img src="../BoyFrame.jpg" alt="Long J.">
-          <div class="success-body">
-            <h3>Long J.</h3>
-            <span class="admit">→ Columbia University</span>
-            <p><strong>Project: Second Start</strong> — Long co-founded a nonprofit that guides newly released individuals toward housing, job training, and mental health services, lowering their risk of returning to prison.</p>
-          </div>
+      <p class="section-label">Our Approach</p>
+      <h2 class="section-title">What Makes Whetstone Different</h2>
+      <p class="section-sub" style="max-width:620px;">Most programs tell students to "join more clubs." We do something harder — and more valuable.</p>
+      <div class="steps-grid" style="margin-top:40px;">
+        <div class="step-card">
+          <span class="step-num">①</span>
+          <h3>We Don't Just Add Activities</h3>
+          <p>Anyone can stack a resume. We help students find the one or two things worth going deep on — then build something real around them that changes how they see their own potential.</p>
         </div>
-        <div class="success-card">
-          <img src="../ClaireFrame.jpg" alt="Emma A.">
-          <div class="success-body">
-            <h3>Emma A.</h3>
-            <span class="admit">→ Harvard University</span>
-            <p><strong>Project: LingualAI</strong> — Emma and her team built a chatbot trained on endangered language datasets that lets users practice phrases conversationally, simulating dialogue to revive usage.</p>
-          </div>
+        <div class="step-card">
+          <span class="step-num">②</span>
+          <h3>Hybrid Identity, Not One-Dimensional Profiles</h3>
+          <p>The strongest applications blend seemingly unrelated interests in unexpected ways. We help students develop that overlap — the filmmaker who codes, the economist who paints — into a distinctive, believable identity.</p>
         </div>
-        <div class="success-card">
-          <img src="../ValerieFrame.jpg" alt="Maya P.">
-          <div class="success-body">
-            <h3>Maya P.</h3>
-            <span class="admit">→ Stanford University</span>
-            <p><strong>Project: OpenDonor</strong> — Maya co-founded a blockchain platform to track nonprofit donations, ensuring 100% transparency for donors and recipients.</p>
-          </div>
+        <div class="step-card">
+          <span class="step-num">③</span>
+          <h3>You're Not Doing This Alone</h3>
+          <p>Our mentors have started nonprofits, published research, built products, and navigated the exact application process your student is facing. They don't just advise — they work alongside students session by session.</p>
+        </div>
+        <div class="step-card">
+          <span class="step-num">④</span>
+          <h3>Expert Mentors, Real Accountability</h3>
+          <p>We pair students with mentors from Harvard, Oxford, Google, and beyond — matched by field, not just credentials. Every session has a deliverable. Every month moves the project forward.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- CAPSTONE EXAMPLES -->
+  <section class="page-section">
+    <div class="container">
+      <p class="section-label">Student Success Stories</p>
+      <h2 class="section-title">What Our Students Build</h2>
+      <p class="section-sub" style="max-width:600px;">Real projects. Real impact. Each one built from scratch with a Whetstone mentor.</p>
+      <div class="example-grid">
+        <div class="example-card">
+          <span class="example-school">→ Harvard University</span>
+          <h4>Long-Form Journalism Platform</h4>
+          <p>A student interested in media and policy built an independent journalism publication covering criminal justice reform. Over 18 months, she published 14 original pieces, secured three interviews with public officials, and grew a readership of 3,200 subscribers — making her application essay almost irrelevant.</p>
+        </div>
+        <div class="example-card">
+          <span class="example-school">→ Princeton University</span>
+          <h4>Public Speaking Nonprofit</h4>
+          <p>Passionate about rhetoric and civic engagement, a student founded a nonprofit that trained underserved middle schoolers in debate and public speaking. He ran workshops across four schools, trained 60+ students, and raised $4,000 in program funding — giving his Princeton essays immediate, concrete texture.</p>
+        </div>
+        <div class="example-card">
+          <span class="example-school">→ MIT</span>
+          <h4>Chemotherapy Symptom App</h4>
+          <p>After watching a family member undergo cancer treatment, a student built a mobile app that helped patients track and communicate chemotherapy side effects to their care teams. She entered the project in ISEF, reaching the national stage — and anchored her entire application around it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT SETS US APART -->
+  <section class="page-section-alt">
+    <div class="container">
+      <p class="section-label">Why Whetstone</p>
+      <h2 class="section-title">What Sets Us Apart</h2>
+      <p class="section-sub" style="max-width:600px;">Every admissions firm claims results. Here's what we actually deliver.</p>
+      <div class="apart-grid">
+        <div class="apart-card">
+          <div class="apart-check">✓</div>
+          <h4>99th Percentile, Every Time</h4>
+          <p>Our mentors aren't aspiring counselors — they are alumni of the world's most selective universities, working professionals, and published researchers. We hold the same standard for every student, every session.</p>
+        </div>
+        <div class="apart-card">
+          <div class="apart-check">✓</div>
+          <h4>One Team, One Student</h4>
+          <p>We don't hand students off between advisors. The same mentor who helps you develop your project idea will guide your essays, review your activity list, and be there on decision day.</p>
+        </div>
+        <div class="apart-card">
+          <div class="apart-check">✓</div>
+          <h4>Honest Counsel</h4>
+          <p>We tell students the truth — about their profiles, their projects, and their school lists. Comfortable advice is easy to give and expensive to take. We'd rather help you build something that holds up.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WISDOM-FOCUSED SECTION -->
+  <section class="page-section">
+    <div class="container">
+      <p class="section-label">Beyond Admissions</p>
+      <h2 class="section-title">The Habits That Carry Students Further</h2>
+      <p class="section-sub" style="max-width:660px;">The students who succeed in college — and in life — share a set of habits that have little to do with their GPA and everything to do with how they think. At Whetstone, we develop those habits alongside the application.</p>
+      <ul class="wisdom-list">
+        <li>
+          <div class="wisdom-icon">📖</div>
+          <div>
+            <h4>A Genuine Love of Learning</h4>
+            <p>The strongest applicants aren't performing curiosity — they have it. We help students develop real intellectual interests through books, conversations, and projects that go beyond what's assigned.</p>
+          </div>
+        </li>
+        <li>
+          <div class="wisdom-icon">🎯</div>
+          <div>
+            <h4>Deep Focus Over Constant Distraction</h4>
+            <p>Elite universities reward depth. We help students build the ability to sit with hard problems, resist the pull of shallow activity, and produce work that reflects sustained concentration.</p>
+          </div>
+        </li>
+        <li>
+          <div class="wisdom-icon">🗓️</div>
+          <div>
+            <h4>Time as a Resource, Not a Constraint</h4>
+            <p>How a student manages their time in high school is how they'll manage it in college. We treat time management as a skill — one that can be taught, practiced, and embedded into how students actually work.</p>
+          </div>
+        </li>
+        <li>
+          <div class="wisdom-icon">🧠</div>
+          <div>
+            <h4>The Discipline to Think Before Acting</h4>
+            <p>Impulsivity is the enemy of quality. We coach students to pause, question, and deliberate — not as a philosophical exercise but as a practical edge in a world that rewards whoever thinks most clearly.</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 
   <!-- MENTOR NETWORK -->
-  <section class="page-section">
+  <section class="page-section-alt">
     <div class="container">
       <p class="section-label">Mentor Network</p>
       <h2 class="section-title">Our Mentors Come From the World's Leading Institutions</h2>
@@ -188,22 +791,32 @@
   </section>
 
   <!-- PART OF A COMPLETE STRATEGY -->
-  <section class="page-section-alt">
+  <section class="page-section">
     <div class="container">
       <p class="section-label">Part of a Complete Strategy</p>
-      <h2 class="section-title">Extracurriculars Are Stronger When They're Part of a Cohesive Application.</h2>
-      <p class="section-sub">The most effective extracurricular profiles aren't built in isolation — they reinforce the narrative that runs through your essays, your activities list, and your school list. Whetstone's admissions counseling integrates extracurricular strategy with every other part of the application.</p>
+      <h2 class="section-title">Extracurriculars Work Best as Part of<br>a Cohesive Application</h2>
+      <p class="section-sub" style="max-width:640px;">The most effective profiles don't exist in isolation — they reinforce the narrative woven through your essays, your activity list, and your school list. Whetstone integrates extracurricular strategy with every other part of the process.</p>
       <div style="margin-top:32px;">
-        <a href="/college-admissions-counseling/" class="btn btn-gold">Learn about our Admissions Counseling →</a>
+        <a href="/college-admissions-counseling/" class="btn btn-gold">Learn About Admissions Counseling →</a>
       </div>
     </div>
   </section>
+
+  <!-- EBOOK RIBBON (slim) -->
+  <div class="ebook-ribbon">
+    <p>
+      <strong>Download our Admissions Roadmap.</strong>
+      You'll receive: 10 successful essays and activity lists, a capstone project case study, and an admissions roadmap from alumni of the world's most selective universities.
+      <a href="#" class="ebook-link" onclick="openModal(event)">Get Free Access →</a>
+    </p>
+  </div>
 
   <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container">
       <h2>Book a free consultation with one of our expert advisors.</h2>
-      <a href="/contact/" class="btn btn-gold">Get Started</a>
+      <p style="color:rgba(255,255,255,0.7);margin:8px 0 28px;font-size:0.95rem;">No commitment. Just an honest conversation about where your student stands and what's possible.</p>
+      <a href="/contact/" class="btn btn-gold">Book a Free Consultation</a>
     </div>
   </section>
 
@@ -226,7 +839,7 @@
       <div class="footer-col">
         <h4>Company</h4>
         <a href="/our-method/">Our Method</a>
-      <a href="/about/">Our Team</a>
+        <a href="/about/">Our Team</a>
         <a href="/results/">Results</a>
         <a href="/reviews/">Reviews</a>
         <a href="/resources/">Resources</a>
@@ -253,12 +866,105 @@
     </div>
   </footer>
 
+  <!-- LEAD CAPTURE MODAL -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+      <div id="modal-form-area">
+        <h3 id="modal-title">Get the Free Capstone Guide</h3>
+        <p class="modal-sub">Enter your details and we'll send you our complete capstone project guide — including case studies, planning templates, and examples from admitted students.</p>
+        <div class="modal-field">
+          <label for="modal-name">Full Name <span style="color:#c0392b">*</span></label>
+          <input type="text" id="modal-name" placeholder="Your name" autocomplete="name">
+        </div>
+        <div class="modal-field">
+          <label for="modal-email">Email Address <span style="color:#c0392b">*</span></label>
+          <input type="email" id="modal-email" placeholder="you@email.com" autocomplete="email">
+        </div>
+        <div class="modal-field">
+          <label for="modal-phone">Phone Number</label>
+          <input type="tel" id="modal-phone" placeholder="(optional)" autocomplete="tel">
+        </div>
+        <div class="modal-field">
+          <label for="modal-grade">Current Grade</label>
+          <select id="modal-grade">
+            <option value="">Select grade…</option>
+            <option>8th Grade</option>
+            <option>9th Grade</option>
+            <option>10th Grade</option>
+            <option>11th Grade</option>
+            <option>12th Grade</option>
+            <option>College Student</option>
+            <option>Parent / Guardian</option>
+          </select>
+        </div>
+        <button class="modal-submit" onclick="submitModal()">Download Now →</button>
+      </div>
+      <div class="modal-success" id="modal-success">
+        <div class="success-icon">🎉</div>
+        <h3>Your guide is downloading!</h3>
+        <p>We'll also follow up with additional resources from the Whetstone team. Check your inbox.</p>
+      </div>
+    </div>
+  </div>
+
   <script>
+    // Header scroll
     window.addEventListener('scroll', () => {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
     });
+
+    // Mobile nav
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobile-nav').classList.toggle('open');
+    });
+
+    // Modal
+    function openModal(e) {
+      if (e) e.preventDefault();
+      document.getElementById('modal-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+      document.getElementById('modal-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+      // Reset form for next open
+      setTimeout(() => {
+        document.getElementById('modal-form-area').style.display = '';
+        document.getElementById('modal-success').style.display = 'none';
+        document.getElementById('modal-name').value = '';
+        document.getElementById('modal-email').value = '';
+        document.getElementById('modal-phone').value = '';
+        document.getElementById('modal-grade').value = '';
+        document.getElementById('modal-name').classList.remove('error');
+        document.getElementById('modal-email').classList.remove('error');
+      }, 300);
+    }
+    function submitModal() {
+      var name = document.getElementById('modal-name');
+      var email = document.getElementById('modal-email');
+      var valid = true;
+      if (!name.value.trim()) { name.classList.add('error'); valid = false; } else { name.classList.remove('error'); }
+      if (!email.value.trim() || !email.value.includes('@')) { email.classList.add('error'); valid = false; } else { email.classList.remove('error'); }
+      if (!valid) return;
+      // Trigger download
+      var a = document.createElement('a');
+      a.href = '/CapstoneProject.pdf';
+      a.download = 'Whetstone-Capstone-Guide.pdf';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      // Show success
+      document.getElementById('modal-form-area').style.display = 'none';
+      document.getElementById('modal-success').style.display = 'block';
+    }
+    // Close on overlay click
+    document.getElementById('modal-overlay').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+    // Close on Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeModal();
     });
   </script>
 </body>
