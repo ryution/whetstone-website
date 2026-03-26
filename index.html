@@ -10,6 +10,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=4">
   <style>
+    .apart-cols {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+      margin-top: 40px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    @media (max-width: 680px) { .apart-cols { grid-template-columns: 1fr; } }
+    .apart-col {
+      padding: 32px 36px;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .apart-col:nth-child(2n) { border-right: none; }
+    .apart-col:nth-child(3), .apart-col:nth-child(4) { border-bottom: none; }
+    @media (max-width: 680px) {
+      .apart-col { border-right: none; }
+      .apart-col:last-child { border-bottom: none; }
+      .apart-col:nth-child(3) { border-bottom: 1px solid var(--border); }
+    }
+    .apart-col h4 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin: 0 0 10px;
+    }
+    .apart-col p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin: 0;
+    }
+
     .services-4-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -437,31 +472,26 @@
     <div class="container">
       <p class="section-label">Why Whetstone</p>
       <h2 class="section-title">What Sets Us Apart</h2>
-      <p class="section-sub" style="max-width:640px;">The co-founders of Whetstone also built one of the country's largest philosophy nonprofits. We believe the habits of mind that make a great thinker — careful reasoning, honest self-examination, the discipline to focus — are the same ones that produce a great application. We are not just in the business of getting students in. We are in the business of developing them.</p>
-      <div class="feature-list" style="max-width:680px;margin:32px auto 0;">
-        <div class="feature-item">
-          <span class="feature-icon">✓</span>
-          <div>
-            <h4>99th Percentile, Every Time</h4>
-            <p>Every advisor and tutor has personally scored or studied at the highest level in their field. We assign no one to subjects they don't genuinely master.</p>
-          </div>
+      <p class="section-sub" style="max-width:700px;">Whetstone combines expert admissions strategy with close mentorship, disciplined execution, and intellectual depth to help students build applications of real substance.</p>
+      <div class="apart-cols">
+        <div class="apart-col">
+          <h4>Mentorship, Not Just Admissions</h4>
+          <p>We work closely with a deliberately small number of students, building the trust to guide not just applications, but confidence, judgment, and direction during one of the most formative periods of life.</p>
         </div>
-        <div class="feature-item">
-          <span class="feature-icon">✓</span>
-          <div>
-            <h4>One Team, One Student</h4>
-            <p>We work with a deliberately small number of students per cycle. Your advisor knows your full application — your essays, your activities, your story — from day one to submission.</p>
-          </div>
+        <div class="apart-col">
+          <h4>Disciplined Execution</h4>
+          <p>Strong strategy only matters if a student can follow through. We help students build the habits, focus, and accountability needed to make steady progress toward ambitious goals over time.</p>
         </div>
-        <div class="feature-item">
-          <span class="feature-icon">✓</span>
-          <div>
-            <h4>Honest Counsel</h4>
-            <p>We tell you what's realistic, not what you want to hear. The most useful admissions advice is often the most direct.</p>
-          </div>
+        <div class="apart-col">
+          <h4>Intellectual Depth</h4>
+          <p>Through great books, serious conversation, and honest reflection, students develop sharper thinking, stronger writing, and a depth of mind that cannot be manufactured.</p>
+        </div>
+        <div class="apart-col">
+          <h4>The Long View</h4>
+          <p>We see admissions as one important moment in a much larger journey. Our aim is not just to help students get in, but to help them grow into serious, capable young adults who keep developing long after college begins.</p>
         </div>
       </div>
-      <div style="text-align:center;margin-top:32px;">
+      <div style="text-align:center;margin-top:40px;">
         <a href="/about/" class="btn btn-primary">Meet the Team</a>
       </div>
     </div>
