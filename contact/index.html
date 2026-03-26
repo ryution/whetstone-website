@@ -944,9 +944,46 @@
       }
     }
 
-    // Form submit
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
+    // Form submit — send to Supabase via portal API
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
       e.preventDefault();
+      var btn = e.target.querySelector('.form-step.active .btn-form-submit');
+      if (btn) { btn.disabled = true; btn.textContent = 'Submitting...'; }
+
+      var payload = { type: selectedType };
+
+      if (selectedType === 'student') {
+        payload.firstName = document.getElementById('s-first').value;
+        payload.lastName = document.getElementById('s-last').value;
+        payload.email = document.getElementById('s-email').value;
+        payload.phone = document.getElementById('s-phone').value;
+        payload.state = document.getElementById('s-state').value;
+        payload.school = document.getElementById('s-school').value;
+        payload.gradYear = document.getElementById('s-gradyear').value;
+        payload.service = document.getElementById('s-service').value;
+      } else {
+        payload.firstName = document.getElementById('g-first').value;
+        payload.lastName = document.getElementById('g-last').value;
+        payload.email = document.getElementById('g-email').value;
+        payload.phone = document.getElementById('g-phone').value;
+        payload.state = document.getElementById('g-state').value;
+        payload.studentFirstName = document.getElementById('gs-first').value;
+        payload.studentLastName = document.getElementById('gs-last').value;
+        payload.school = document.getElementById('gs-school').value;
+        payload.gradYear = document.getElementById('gs-gradyear').value;
+        payload.service = document.getElementById('gs-service').value;
+      }
+
+      try {
+        await fetch('https://whetstone-portal.com/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        console.error('Submit error:', err);
+      }
+
       document.getElementById('form-progress').style.display = 'none';
       showStep('step-thanks');
     });

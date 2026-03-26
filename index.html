@@ -853,7 +853,32 @@
       document.getElementById('cstep-2').classList.remove('active');
       document.getElementById('cstep-1').classList.add('active');
     }
-    function submitCForm() {
+    async function submitCForm() {
+      var btn = document.querySelector('#cstep-2 .cform-submit-btn');
+      if (btn) { btn.disabled = true; btn.textContent = 'Submitting...'; }
+
+      var payload = {
+        type: userType,
+        firstName: document.getElementById('cf-first').value,
+        lastName: document.getElementById('cf-last').value,
+        email: document.getElementById('cf-email').value,
+        phone: document.getElementById('cf-phone').value,
+        state: document.getElementById('cf-country').value,
+        school: document.getElementById('cf-school').value,
+        gradYear: document.getElementById('cf-grad').value,
+        service: 'Homepage inquiry'
+      };
+
+      try {
+        await fetch('https://whetstone-portal.com/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        console.error('Submit error:', err);
+      }
+
       document.getElementById('cstep-2').classList.remove('active');
       document.getElementById('cstep-thanks').classList.add('active');
     }
@@ -926,13 +951,31 @@
         document.getElementById('modal-email').classList.remove('error');
       }, 300);
     }
-    function submitModal() {
+    async function submitModal() {
       var name = document.getElementById('modal-name');
       var email = document.getElementById('modal-email');
       var valid = true;
       if (!name.value.trim()) { name.classList.add('error'); valid = false; } else { name.classList.remove('error'); }
       if (!email.value.trim() || !email.value.includes('@')) { email.classList.add('error'); valid = false; } else { email.classList.remove('error'); }
       if (!valid) return;
+
+      // Send lead to Supabase
+      var nameParts = name.value.trim().split(' ');
+      try {
+        await fetch('https://whetstone-portal.com/api/leads', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            type: 'student',
+            firstName: nameParts[0] || '',
+            lastName: nameParts.slice(1).join(' ') || '',
+            email: email.value,
+            phone: document.getElementById('modal-phone').value,
+            service: 'E-book download — ' + (document.getElementById('modal-grade').value || 'Unknown grade'),
+          })
+        });
+      } catch (err) { console.error('Modal submit error:', err); }
+
       var a = document.createElement('a');
       a.href = '/CapstoneProject.pdf';
       a.download = 'Whetstone-Admissions-Roadmap.pdf';
