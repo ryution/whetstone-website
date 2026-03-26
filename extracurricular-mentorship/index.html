@@ -292,7 +292,7 @@
       line-height: 1.55;
     }
 
-    /* ── Postcard showcase ── */
+    /* ── Polaroid showcase ── */
     .postcard-layout {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -307,49 +307,56 @@
     /* Card stack */
     .postcard-wrap {
       position: relative;
-      width: 300px;
-      height: 400px;
+      width: 320px;
+      height: 460px;
       margin: 0 auto;
     }
+
+    /* Ghost cards — tilted behind the front */
     .pc-ghost {
       position: absolute;
       inset: 0;
       background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+      border-radius: 4px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.10);
     }
     .pc-ghost-1 {
-      transform: rotate(-5deg) translate(-8px, 6px);
+      transform: rotate(-6deg) translate(-6px, 4px);
       z-index: 1;
-      background: #f5f5f0;
+      background: #f2f2ee;
     }
     .pc-ghost-2 {
-      transform: rotate(-2.5deg) translate(-4px, 3px);
+      transform: rotate(-3deg) translate(-3px, 2px);
       z-index: 2;
-      background: #fafaf7;
+      background: #f8f8f5;
     }
+
+    /* Front card — straight polaroid, no rotation */
     .pc-card {
       position: absolute;
       inset: 0;
       background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+      border-radius: 4px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.16);
       z-index: 3;
-      transform: rotate(4deg);
-      overflow: hidden;
+      transform: none;
+      display: flex;
+      flex-direction: column;
       transition: opacity 0.35s ease, transform 0.35s ease;
     }
     .pc-card.pc-exit {
       opacity: 0;
-      transform: rotate(4deg) translateY(-12px);
+      transform: translateY(-14px);
     }
     .pc-card.pc-enter {
       opacity: 0;
-      transform: rotate(4deg) translateY(12px);
+      transform: translateY(14px);
     }
+
+    /* Polaroid photo — inset white border on sides and top */
     .pc-photo {
-      width: 100%;
-      height: 220px;
+      margin: 14px 14px 10px;
+      flex: 1;
       overflow: hidden;
       background: #e8eaf0;
     }
@@ -359,33 +366,35 @@
       object-fit: cover;
       display: block;
     }
+
+    /* Polaroid details — wide white bottom strip */
     .pc-details {
-      padding: 16px 18px 14px;
-      border-top: 1px solid #eee;
+      padding: 10px 20px 18px;
     }
     .pc-row {
       display: flex;
-      justify-content: space-between;
       align-items: baseline;
-      padding: 5px 0;
-      border-bottom: 1px solid #f0f0ec;
-      gap: 12px;
+      padding: 6px 0;
+      gap: 16px;
     }
-    .pc-row:last-child { border-bottom: none; }
+    .pc-row:not(:last-child) {
+      border-bottom: 1px solid #f0ede8;
+    }
     .pc-lbl {
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 0.82rem;
+      font-style: italic;
+      font-weight: 400;
       color: var(--text-muted);
       white-space: nowrap;
       flex-shrink: 0;
+      min-width: 90px;
     }
     .pc-val {
-      font-size: 0.82rem;
-      font-weight: 600;
+      font-size: 0.88rem;
+      font-weight: 700;
       color: var(--navy);
-      text-align: right;
+      text-align: left;
     }
     .pc-val.pc-admitted {
       font-weight: 700;
@@ -467,7 +476,7 @@
 
     /* ── Mid-page download section ── */
     .download-section {
-      background: var(--navy);
+      background: var(--gradient-2);
       padding: 72px 24px;
     }
     .download-section-inner {

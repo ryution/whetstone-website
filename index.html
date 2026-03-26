@@ -10,6 +10,47 @@
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css?v=4">
   <style>
+    .apart-list {
+      list-style: none;
+      padding: 0;
+      margin: 40px 0 0;
+      max-width: 720px;
+    }
+    .apart-list li {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+    }
+    .apart-list li:last-child {
+      border-bottom: 1px solid var(--border);
+    }
+    .apart-list-header {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      margin-bottom: 10px;
+    }
+    .apart-num {
+      font-family: 'Libre Franklin', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+    .apart-list h4 {
+      font-family: 'Libre Caslon Text', serif;
+      font-size: 1.15rem;
+      color: var(--navy);
+      margin: 0;
+    }
+    .apart-list p {
+      font-size: 0.93rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin: 0;
+      padding-left: 38px;
+    }
+
     .services-4-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -111,7 +152,7 @@
 
     /* ── Mid-page download section ── */
     .download-section {
-      background: var(--navy);
+      background: var(--gradient-2);
       padding: 72px 24px;
     }
     .download-section-inner {
@@ -421,13 +462,55 @@
   <!-- COMPANY LOGOS -->
   <section class="logos">
     <div class="container">
-      <p class="logos-label">Our alumni work at the world's most prestigious institutions</p>
+      <p class="logos-label">Our alumni go on to work at the world's most innovative companies</p>
       <div class="logos-row">
         <img src="Google-1.svg" alt="Google">
         <img src="Apple-2.svg" alt="Apple">
         <img src="BCG.svg" alt="BCG">
         <img src="Anthropic.svg" alt="Anthropic">
         <img src="Conde-Nast.svg" alt="Condé Nast">
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY WHETSTONE -->
+  <section class="page-section-alt">
+    <div class="container">
+      <p class="section-label">Why Whetstone</p>
+      <h2 class="section-title">What Sets Us Apart</h2>
+      <p class="section-sub" style="max-width:700px;">Whetstone combines expert admissions strategy with close mentorship, disciplined execution, and intellectual depth to help students build applications of real substance. Our founders also built one of the largest philosophy nonprofits in the country — which is why developing the whole student has always been central to what we do.</p>
+      <ul class="apart-list">
+        <li>
+          <div class="apart-list-header">
+            <span class="apart-num">01</span>
+            <h4>Mentorship, Not Just Admissions</h4>
+          </div>
+          <p>We work closely with a deliberately small number of students, building the trust to guide not just applications, but confidence, judgment, and direction during one of the most formative periods of life.</p>
+        </li>
+        <li>
+          <div class="apart-list-header">
+            <span class="apart-num">02</span>
+            <h4>Disciplined Execution</h4>
+          </div>
+          <p>Strong strategy only matters if a student can follow through. We help students build the habits, focus, and accountability needed to make steady progress toward ambitious goals over time.</p>
+        </li>
+        <li>
+          <div class="apart-list-header">
+            <span class="apart-num">03</span>
+            <h4>Intellectual Depth</h4>
+          </div>
+          <p>Through great books, serious conversation, and honest reflection, students develop sharper thinking, stronger writing, and a depth of mind that cannot be manufactured.</p>
+        </li>
+        <li>
+          <div class="apart-list-header">
+            <span class="apart-num">04</span>
+            <h4>The Long View</h4>
+          </div>
+          <p>We see admissions as one important moment in a much larger journey. Our aim is not just to help students get in, but to help them grow into serious, capable young adults who keep developing long after college begins.</p>
+        </li>
+      </ul>
+      <div style="text-align:center;margin-top:40px;">
+        <a href="/about/" class="btn btn-primary">Meet the Team</a>
       </div>
     </div>
   </section>
@@ -538,93 +621,18 @@
           loading="lazy">
         </iframe>
       </div>
-      <div class="review-card review-card--featured">
-        <div class="stars">★★★★★</div>
-        <blockquote>
-          "Ren and Cole helped me get into Princeton and I was done early in December. Working with them felt completely different from anything I'd tried before — they helped me find a genuine thread through my essays and activities that I didn't even know was there. By the time I submitted, I felt confident in every single page of my application."
-        </blockquote>
-        <div class="reviewer">
+      <div class="review-card review-card--featured" style="padding:28px 36px;display:flex;align-items:center;gap:32px;max-width:680px;">
+        <div class="stars" style="margin-bottom:0;white-space:nowrap;font-size:16px;letter-spacing:3px;">★★★★★</div>
+        <div>
+          <blockquote style="font-size:1.15rem;margin-bottom:8px;">"I was done early in December."</blockquote>
           <div class="reviewer-info">
-            <strong>— Princeton Early Action, Class of 2028</strong>
+            <strong style="font-size:14px;">— Christian C., Princeton Class of 2030</strong>
           </div>
         </div>
       </div>
       <div style="text-align:center;margin-top:32px;">
         <a href="/reviews/" class="btn btn-outline-white">Read More Reviews</a>
       </div>
-    </div>
-  </section>
-
-  <!-- WHY WHETSTONE -->
-  <section class="page-section-alt">
-    <div class="container">
-      <p class="section-label">Why Whetstone</p>
-      <h2 class="section-title">What Sets Us Apart</h2>
-      <div class="feature-list" style="max-width:680px;margin:32px auto 0;">
-        <div class="feature-item">
-          <span class="feature-icon">✓</span>
-          <div>
-            <h4>99th Percentile, Every Time</h4>
-            <p>Every advisor and tutor has personally scored or studied at the highest level in their field. We assign no one to subjects they don't genuinely master.</p>
-          </div>
-        </div>
-        <div class="feature-item">
-          <span class="feature-icon">✓</span>
-          <div>
-            <h4>One Team, One Student</h4>
-            <p>We work with a deliberately small number of students per cycle. Your advisor knows your full application — your essays, your activities, your story — from day one to submission.</p>
-          </div>
-        </div>
-        <div class="feature-item">
-          <span class="feature-icon">✓</span>
-          <div>
-            <h4>Honest Counsel</h4>
-            <p>We tell you what's realistic, not what you want to hear. The most useful admissions advice is often the most direct.</p>
-          </div>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:32px;">
-        <a href="/about/" class="btn btn-primary">Meet the Team</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CHARACTER FIRST -->
-  <section class="page-section">
-    <div class="container">
-      <p class="section-label">Character First</p>
-      <h2 class="section-title">The Inner Foundation<br>No One Can Outsource</h2>
-      <p class="section-sub" style="max-width:640px;">The students who thrive at the world's most selective universities are not the ones with the longest list of accomplishments. They are the ones with the strongest inner foundation. AI can amplify capability. It cannot manufacture character.</p>
-      <ul class="wisdom-list">
-        <li>
-          <div class="wisdom-icon">📖</div>
-          <div>
-            <h4>Curiosity Over Performance</h4>
-            <p>Real intellectual curiosity is rarer than talent. We help students develop genuine interests — through books, conversation, and problems worth caring about — so their applications reflect who they actually are, not who they think admissions wants to see.</p>
-          </div>
-        </li>
-        <li>
-          <div class="wisdom-icon">🎯</div>
-          <div>
-            <h4>Courage to Pursue the Unconventional</h4>
-            <p>The most memorable applicants don't fit the mold — they broke it deliberately. We develop the confidence to commit to ideas that are uncertain, unpopular, or hard to explain, because that's where real distinction lives.</p>
-          </div>
-        </li>
-        <li>
-          <div class="wisdom-icon">🧠</div>
-          <div>
-            <h4>Judgment in a World of Noise</h4>
-            <p>Knowing what matters — and what to ignore — is the hardest skill to develop and the most valuable to have. We train students to slow down, think before acting, and question before following. That clarity shows in every piece of their application.</p>
-          </div>
-        </li>
-        <li>
-          <div class="wisdom-icon">🌱</div>
-          <div>
-            <h4>Character That Shows in the Work</h4>
-            <p>Every essay, activity, and interview reveals the person behind the application. The most compelling candidates share a coherent moral core — a sense of what they stand for and why. We help students find that thread and build everything around it.</p>
-          </div>
-        </li>
-      </ul>
     </div>
   </section>
 
