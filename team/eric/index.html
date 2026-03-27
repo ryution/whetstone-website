@@ -9,6 +9,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../styles.css?v=4">
+  <style>
+    .page-hero--slim .page-hero-inner { padding: 100px 0 60px; }
+    .page-hero--slim h1 { color: #fff; font-family: var(--font-serif); font-size: 42px; margin-bottom: 8px; }
+    .page-hero--slim p { color: rgba(255,255,255,0.8); font-size: 18px; }
+  </style>
 </head>
 <body>
 
@@ -64,12 +69,21 @@
     </div>
   </header>
 
+  <section class="page-hero page-hero--slim">
+    <div class="page-hero-bg" style="background-image: url('../../bg-team.png')"></div>
+    <div class="page-hero-inner container">
+      <p class="section-label">Our Team</p>
+      <h1>Eric</h1>
+      <p>STEM Specialist</p>
+    </div>
+  </section>
+
   <main class="profile-page">
     <div class="container">
       <div class="profile-grid">
 
         <div class="profile-left">
-          <img src="../../Headshot_Eric-min.jpg" alt="Eric" class="profile-photo">
+          <img src="../../headshot-eric.jpg" alt="Eric, STEM Specialist at Whetstone Admissions" class="profile-photo">
           <div class="profile-education">
             <p class="profile-education-label">Education</p>
             <ul class="profile-education-list">
