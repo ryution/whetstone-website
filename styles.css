@@ -1427,3 +1427,16 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 500px) {
   .team-listing-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================
+   SCROLL REVEAL
+   ============================================ */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
