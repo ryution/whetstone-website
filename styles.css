@@ -864,7 +864,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 .faq-list { max-width: 760px; }
 
-.faq-item { border-bottom: 1px solid var(--border); }
+.faq-item { border-bottom: 1px solid var(--border); transition: padding 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
+.faq-item:hover { padding-left: 6px; }
 
 .faq-q {
   width: 100%;
@@ -881,7 +882,9 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--navy);
   text-align: left;
   gap: 16px;
+  transition: color 0.2s ease;
 }
+.faq-q:hover { color: var(--navy-light); }
 
 .faq-icon { font-size: 22px; font-weight: 300; color: var(--navy); flex-shrink: 0; transition: transform 0.25s; }
 .faq-item.open .faq-icon { transform: rotate(45deg); }
