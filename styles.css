@@ -60,7 +60,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-1.5px);
 }
 
 .btn:active {
