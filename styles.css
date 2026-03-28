@@ -114,8 +114,10 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .header.scrolled {
-  background: var(--navy);
+  background: rgba(25, 25, 112, 0.9);
   box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .header-inner {
@@ -987,7 +989,9 @@ img { max-width: 100%; height: auto; display: block; }
 .sticky-cta {
   position: fixed;
   bottom: 0; left: 0; right: 0;
-  background: var(--navy);
+  background: rgba(25, 25, 112, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-top: 1px solid rgba(255,255,255,0.12);
   z-index: 98;
   padding: 14px 0;
