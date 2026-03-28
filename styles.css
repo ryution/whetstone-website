@@ -1102,6 +1102,11 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: var(--radius);
   padding: 36px 28px;
   box-shadow: var(--shadow);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(25, 25, 112, 0.1);
 }
 
 .step-num {
