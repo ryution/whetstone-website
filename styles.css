@@ -1205,7 +1205,10 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .feature-list { display: flex; flex-direction: column; gap: 16px; margin: 24px 0; }
-.feature-item { display: flex; gap: 14px; align-items: flex-start; }
+.feature-item { display: flex; gap: 14px; align-items: flex-start; transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1); cursor: default; }
+.feature-item:hover { transform: translateX(6px); }
+.feature-item:hover h4 { color: var(--navy-light); }
+.feature-item h4 { transition: color 0.3s ease; }
 .feature-icon { color: var(--navy); font-size: 18px; flex-shrink: 0; margin-top: 2px; }
 .feature-item h4 { font-size: 16px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
 .feature-item p { font-size: 14px; color: var(--text-muted); }
