@@ -882,7 +882,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============================================
    FINAL CTA
    ============================================ */
-.final-cta { padding: 96px 0; background: var(--navy); text-align: center; }
+.final-cta { padding: 96px 0; background: url('gradientbg.jpg') center center / cover no-repeat; text-align: center; }
 
 .final-cta h2 {
   font-family: var(--font-serif);
