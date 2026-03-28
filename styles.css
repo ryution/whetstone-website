@@ -67,7 +67,7 @@ img { max-width: 100%; height: auto; display: block; }
   transform: translateY(0px);
 }
 
-.btn-primary { background: rgba(255,255,255,0.85); color: var(--navy); }
+.btn-primary { background: rgba(255,255,255,0.90); color: var(--navy); }
 .btn-primary:hover { background: rgba(255,255,255,1); box-shadow: 0 4px 16px rgba(255,255,255,0.25); }
 
 .btn-gold { background: linear-gradient(135deg, #FFD878 0%, #FFC247 55%, #E8A020 100%); color: var(--navy); }
