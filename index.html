@@ -19,9 +19,20 @@
     .apart-list li {
       padding: 28px 0;
       border-top: 1px solid var(--border);
+      transition: padding-left 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+      cursor: default;
     }
     .apart-list li:last-child {
       border-bottom: 1px solid var(--border);
+    }
+    .apart-list li:hover {
+      padding-left: 8px;
+    }
+    .apart-list li:hover h4 {
+      color: var(--navy-light);
+    }
+    .apart-list h4 {
+      transition: color 0.3s ease;
     }
     .apart-list-header {
       display: flex;
