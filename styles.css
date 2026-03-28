@@ -887,6 +887,7 @@ img { max-width: 100%; height: auto; display: block; }
 .final-cta h2 {
   font-family: var(--font-serif);
   font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 600;
   color: var(--white);
   margin-bottom: 32px;
   max-width: 600px;
