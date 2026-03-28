@@ -1,520 +1,565 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>SAT Tutoring NYC | Private Digital SAT Prep | Whetstone</title>
-<meta content="Private SAT tutoring for students in NYC, Westchester, and remotely. Diagnostic-driven prep, custom study plans, and premium 1:1 coaching. Score guarantee included." name="description"/>
-<link href="https://whetstoneadmissions.com/sat-tutoring/" rel="canonical"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Libre+Franklin:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="../styles.css?v=4" rel="stylesheet"/>
+<meta name="description" content="Private SAT & ACT tutoring for students in NYC, Westchester, and remotely. Diagnostic-driven prep, custom study plans, and premium 1:1 coaching. Score guarantee included."/>
+<link rel="canonical" href="https://whetstoneadmissions.com/sat-tutoring/"/>
+<meta property="og:title" content="SAT Tutoring NYC | Private Digital SAT Prep | Whetstone"/>
+<meta property="og:description" content="Private SAT & ACT tutoring for students in NYC, Westchester, and remotely. 99th percentile tutors. Score guarantee included."/>
+<meta property="og:url" content="https://whetstoneadmissions.com/sat-tutoring/"/>
+<meta property="og:type" content="website"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          primary: "#191970",
+          accent: "#FFC247",
+          "bg-alt": "#F6F6F9",
+          "text-muted": "#6A7A90",
+        },
+        fontFamily: {
+          "headline": ["Libre Caslon Text", "serif"],
+          "body": ["Libre Franklin", "sans-serif"],
+        },
+        borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+      },
+    },
+  }
+</script>
 <style>
-    /* ── Program table ──────────────────────────── */
-    .program-table { width: 100%; border-collapse: collapse; margin-top: 32px; }
-    .program-table th { background: var(--navy); color: var(--white); padding: 14px 20px; text-align: left; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
-    .program-table td { padding: 18px 20px; border-bottom: 1px solid var(--border); font-size: 15px; color: var(--text-muted); vertical-align: top; }
-    .program-table tr:last-child td { border-bottom: none; }
-    .program-table tr:nth-child(even) td { background: var(--cream); }
-    .program-table td:first-child { font-family: 'Libre Caslon Text', serif; font-weight: 700; color: var(--navy); font-size: 16px; }
-    .program-table td .guarantee { color: var(--gold); font-weight: 700; font-size: 13px; display: block; margin-top: 5px; font-family: 'Libre Franklin', sans-serif; }
+  .font-serif { font-family: 'Libre Caslon Text', serif; }
+  .font-sans  { font-family: 'Libre Franklin', sans-serif; }
+  details summary::-webkit-details-marker { display: none; }
 
-    /* ── Schools mosaic ─────────────────────────── */
-    .schools-mosaic {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
-    }
-    .school-pill {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: 4px;
-      padding: 8px 16px;
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--navy);
-      white-space: nowrap;
-    }
+  /* ── Button shine sweep ── */
+  .btn-shine {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn-shine::after {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: -75%;
+    width: 50%;
+    height: 120%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+    transform: skewX(-15deg);
+    transition: none;
+  }
+  .btn-shine:hover::after {
+    animation: shine-sweep 0.55s ease forwards;
+  }
+  .btn-shine:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 28px rgba(255, 194, 71, 0.45);
+  }
+  .btn-shine-outline:hover {
+    box-shadow: 0 6px 24px rgba(255,255,255,0.2);
+    transform: translateY(-2px) scale(1.02);
+  }
+  @keyframes shine-sweep {
+    0%   { left: -75%; }
+    100% { left: 130%;  }
+  }
 
-    /* ── Geo grid ───────────────────────────────── */
-    .geo-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 40px;
-    }
-    .geo-card {
-      border-top: 3px solid var(--gold);
-      padding-top: 20px;
-    }
-    .geo-card h3 {
-      font-size: 18px;
-      color: var(--navy);
-      margin-bottom: 14px;
-    }
-    .geo-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .geo-card ul li {
-      font-size: 14px;
-      color: var(--text-muted);
-      padding: 5px 0;
-      border-bottom: 1px solid var(--border);
-      line-height: 1.4;
-    }
-    .geo-card ul li:last-child { border-bottom: none; }
-    @media (max-width: 700px) {
-      .geo-grid { grid-template-columns: 1fr; }
-    }
+  /* ── Section gradients ── */
+  .bg-navy-grad {
+    background: linear-gradient(120deg, #1a2464 0%, #2a3d8c 45%, #1e2d78 75%, #131a5c 100%);
+  }
+  .bg-light-grad {
+    background: linear-gradient(160deg, #eef1fb 0%, #F6F6F9 55%, #ffffff 100%);
+  }
+  .bg-white-grad {
+    background: linear-gradient(180deg, #ffffff 0%, #eef1fb 100%);
+  }
+  .bg-cta-grad {
+    background: linear-gradient(140deg, #131a5c 0%, #1e2d78 30%, #2a3d8c 65%, #1a2464 100%);
+  }
 
-    /* ── Stat strip ─────────────────────────────── */
-    .stat-strip {
-      background: var(--navy);
-      padding: 48px 0;
-    }
-    .stat-strip-inner {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      text-align: center;
-    }
-    .stat-item .stat-num {
-      font-family: 'Libre Caslon Text', serif;
-      font-size: 48px;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-      display: block;
-    }
-    .stat-item .stat-label {
-      font-family: 'Libre Franklin', sans-serif;
-      font-size: 14px;
-      color: rgba(255,255,255,0.7);
-      margin-top: 8px;
-      display: block;
-      letter-spacing: 0.02em;
-    }
-    @media (max-width: 600px) {
-      .stat-strip-inner { grid-template-columns: 1fr; gap: 32px; }
-    }
-
-    /* ── Context callout ─────────────────────────── */
-    .context-callout {
-      border-left: 4px solid var(--gold);
-      padding: 20px 28px;
-      background: var(--cream);
-      margin: 32px 0 0;
-      border-radius: 0 var(--radius) var(--radius) 0;
-    }
-    .context-callout p {
-      margin: 0;
-      font-size: 16px;
-      line-height: 1.75;
-      color: var(--text);
-    }
-    .context-callout strong { color: var(--navy); }
-  </style>
-<link href="/favicon.png" rel="icon" type="image/png"/><meta content="SAT Tutoring NYC | Private Digital SAT Prep | Whetstone" property="og:title"/><meta content="Private SAT tutoring for students in NYC, Westchester, and remotely. Diagnostic-driven prep, custom study plans, and premium 1:1 coaching. Score guarantee included." property="og:description"/><meta content="https://whetstoneadmissions.com/sat-tutoring/" property="og:url"/><meta content="https://whetstoneadmissions.com/whetstone_iconY.png" property="og:image"/><meta content="website" property="og:type"/><meta content="Whetstone Admissions" property="og:site_name"/><meta content="summary" name="twitter:card"/><meta content="SAT Tutoring NYC | Private Digital SAT Prep | Whetstone" name="twitter:title"/><meta content="Private SAT tutoring for students in NYC, Westchester, and remotely. Diagnostic-driven prep, custom study plans, and premium 1:1 coaching. Score guarantee included." name="twitter:description"/><meta content="https://whetstoneadmissions.com/whetstone_iconY.png" name="twitter:image"/><script type="application/ld+json">{
+  /* ── Subtle section divider glow ── */
+  .section-glow {
+    box-shadow: 0 -1px 0 0 rgba(255,194,71,0.15), 0 1px 40px rgba(25,25,112,0.06);
+  }
+</style>
+<script type="application/ld+json">
+{
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
+  "@type": "FAQPage",
+  "mainEntity": [
     {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Home",
-      "item": "https://whetstoneadmissions.com"
+      "@type": "Question",
+      "name": "When should my student start SAT or ACT tutoring?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most students begin in the fall or winter of their junior year to prepare for the March or May exams. We recommend starting with a diagnostic as early as sophomore summer to allow the most time for improvement."
+      }
     },
     {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Sat Tutoring",
-      "item": "https://whetstoneadmissions.com/sat-tutoring/"
+      "@type": "Question",
+      "name": "Should my child take the SAT or the ACT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Both tests are accepted equally by every major college and university. We administer a diagnostic for both and recommend the test where the student has a larger natural advantage."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the Digital SAT different from the old paper test?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The Digital SAT is shorter (2 hours 14 minutes), adaptive by module, and delivered on a computer or tablet. Our tutors are trained specifically on Digital SAT strategy and official College Board practice materials."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are Whetstone instructors selected?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our instructors are exclusively recruited from Ivy League and top-10 universities. Each must score in the 99th percentile and undergo a rigorous pedagogical training process before working with students."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the score guarantee work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each program tier includes a specific score guarantee. If your student completes the program in good standing and does not hit the target score, we extend tutoring at no additional charge until they do."
+      }
     }
   ]
-}</script></head>
-<body>
-<header class="header scrolled" id="header">
-<div class="header-inner">
-<a class="logo" href="/">Whetstone</a>
-<nav class="nav">
-<div class="nav-dropdown">
-<a class="nav-link" href="/college-admissions-counseling/">Services <span class="caret">▾</span></a>
-<div class="dropdown-menu">
-<a href="/college-admissions-counseling/">Admissions Counseling</a>
-<a href="/college-essay-coaching/">Essay Coaching</a>
-<a href="/sat-tutoring/">SAT / ACT Prep</a>
-<a href="/extracurricular-mentorship/">Extracurriculars</a>
-<div class="dropdown-divider"></div>
-<a href="/academic-tutoring/">Academic Tutoring</a>
-<a href="/graduate-admissions/">Graduate Admissions</a>
-</div>
-</div>
-<div class="nav-dropdown">
-<a class="nav-link" href="/about/">About <span class="caret">▾</span></a>
-<div class="dropdown-menu">
-<a href="/our-method/">Our Method</a>
-<a href="/about/">Our Team</a>
-<a href="/results/">Results</a>
-<a href="/reviews/">Reviews</a>
-</div>
-</div>
-<a class="nav-link" href="/resources/">Resources</a>
-<a class="nav-link" href="/contact/">Contact</a>
-</nav>
-<a class="btn btn-primary" href="/contact/">Get Started</a>
-<button aria-label="Menu" class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-</div>
-<div class="mobile-nav" id="mobile-nav">
-<p class="mobile-nav-label">Services</p>
-<a href="/college-admissions-counseling/">Admissions Counseling</a>
-<a href="/college-essay-coaching/">Essay Coaching</a>
-<a href="/sat-tutoring/">SAT / ACT Prep</a>
-<a href="/extracurricular-mentorship/">Extracurriculars</a>
-<a href="/academic-tutoring/">Academic Tutoring</a>
-<a href="/graduate-admissions/">Graduate Admissions</a>
-<p class="mobile-nav-label">Company</p>
-<a href="/our-method/">Our Method</a>
-<a href="/about/">Our Team</a>
-<a href="/results/">Results</a>
-<a href="/reviews/">Reviews</a>
-<a href="/resources/">Resources</a>
-<a href="/contact/">Contact</a>
-<a class="btn btn-primary" href="/contact/">Get Started</a>
-</div>
-</header>
-<!-- HERO -->
-<section class="page-hero">
-<div class="page-hero-bg" style="background-image: url('../SAT-banner-bg.png')"></div>
-<div class="container">
-<p class="section-label">SAT &amp; ACT Tutoring · New York City</p>
-<h1>Private SAT Tutoring for NYC Families</h1>
-<p>1-on-1 SAT and ACT tutoring for students in Manhattan, Brooklyn, and Westchester. Our tutors scored in the 99th percentile — and our score guarantee means we keep working with you until you hit your target.</p>
-<div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:8px;">
-<a class="btn btn-gold" href="/contact/">Book a Free Consultation</a>
-<a class="btn btn-outline-white" href="#programs">View Programs</a>
-</div>
-</div>
-</section>
-<!-- STAT STRIP -->
-<div class="stat-strip">
-<div class="container">
-<div class="stat-strip-inner">
-<div class="stat-item">
-<span class="stat-num">99th</span>
-<span class="stat-label">Percentile — every tutor, every subject</span>
-</div>
-<div class="stat-item">
-<span class="stat-num">+200</span>
-<span class="stat-label">Average point gain, Collegiate program</span>
-</div>
-<div class="stat-item">
-<span class="stat-num">1500+</span>
-<span class="stat-label">Target score, our top-tier program</span>
-</div>
-</div>
-</div>
-</div>
-<!-- NYC CONTEXT -->
-<section class="page-section-alt">
-<div class="container">
-<div class="two-col">
-<div class="two-col-text">
-<p class="section-label">The NYC Standard</p>
-<h2>In New York, a Good Score Isn't Enough.</h2>
-<p>Students at Manhattan's top independent schools and Westchester's most competitive districts aren't competing against the national average — they're competing against each other. At Dalton, Collegiate, Spence, and Horace Mann, a 1400 is the floor, not the ceiling.</p>
-<p>Generic test prep centers weren't designed for this environment. They run students through the same course regardless of baseline, assign rotating instructors who don't know the student, and offer no real accountability when scores plateau.</p>
-<div class="context-callout">
-<p><strong>Whetstone was built differently.</strong> Every engagement begins with a full diagnostic, pairs the student with a single dedicated tutor for the duration, and doesn't end until the target score is reached — or we extend the program at no additional cost.</p>
-</div>
-</div>
-<div class="two-col-img">
-<img alt="Private SAT tutoring in New York City" src="../guarantee-img.png"/>
-</div>
-</div>
-</div>
-</section>
-<!-- WHERE WE SERVE -->
-<section class="page-section">
-<div class="container">
-<p class="section-label">Where We Work</p>
-<h2 class="section-title">In-Person Across New York City &amp; Westchester</h2>
-<p class="section-sub">Sessions are available in person across Manhattan, Brooklyn, and Westchester — as well as online for students studying anywhere in the world.</p>
-<div class="geo-grid">
-<div class="geo-card">
-<h3>Manhattan</h3>
-<ul>
-<li>Upper East Side</li>
-<li>Upper West Side</li>
-<li>Midtown &amp; Murray Hill</li>
-<li>Tribeca &amp; SoHo</li>
-<li>Greenwich Village</li>
-<li>Carnegie Hill</li>
-<li>Harvard Club (group sessions)</li>
-</ul>
-</div>
-<div class="geo-card">
-<h3>Brooklyn</h3>
-<ul>
-<li>Brooklyn Heights</li>
-<li>Park Slope</li>
-<li>Cobble Hill &amp; Carroll Gardens</li>
-<li>DUMBO</li>
-<li>Prospect Heights</li>
-<li>Williamsburg</li>
-</ul>
-</div>
-<div class="geo-card">
-<h3>Westchester</h3>
-<ul>
-<li>Scarsdale</li>
-<li>Bronxville</li>
-<li>Rye &amp; Rye Brook</li>
-<li>Larchmont &amp; Mamaroneck</li>
-<li>Chappaqua</li>
-<li>Ardsley &amp; Dobbs Ferry</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<!-- SCHOOLS WE SERVE -->
-<section class="page-section-alt">
-<div class="container">
-<p class="section-label">Schools We Serve</p>
-<h2 class="section-title">Built for New York's Most Competitive Students</h2>
-<p class="section-sub">Our students come from New York City's top independent schools, specialized public schools, and competitive suburban districts — where the bar is already exceptionally high.</p>
-<div class="schools-mosaic">
-<span class="school-pill">Dalton</span>
-<span class="school-pill">Collegiate</span>
-<span class="school-pill">Trinity</span>
-<span class="school-pill">Spence</span>
-<span class="school-pill">Brearley</span>
-<span class="school-pill">Chapin</span>
-<span class="school-pill">Nightingale-Bamford</span>
-<span class="school-pill">Sacred Heart</span>
-<span class="school-pill">Horace Mann</span>
-<span class="school-pill">Riverdale Country School</span>
-<span class="school-pill">Ethical Culture Fieldston</span>
-<span class="school-pill">Poly Prep</span>
-<span class="school-pill">St. Ann's</span>
-<span class="school-pill">Packer Collegiate</span>
-<span class="school-pill">Stuyvesant</span>
-<span class="school-pill">Bronx Science</span>
-<span class="school-pill">Brooklyn Tech</span>
-<span class="school-pill">Hunter College HS</span>
-<span class="school-pill">Scarsdale High School</span>
-<span class="school-pill">Bronxville School</span>
-<span class="school-pill">Rye Country Day</span>
-<span class="school-pill">Hackley</span>
-<span class="school-pill">Masters School</span>
-</div>
-</div>
-</section>
-<!-- PROGRAMS -->
-<section class="page-section" id="programs">
-<div class="container">
-<p class="section-label">Programs</p>
-<h2 class="section-title">Choose Your Program</h2>
-<p class="section-sub">Three tiers built for different timelines and score targets — each with a score guarantee and a single dedicated tutor for the full duration.</p>
-<table class="program-table">
-<thead>
-<tr>
-<th>Program</th>
-<th>Length</th>
-<th>Score Guarantee</th>
-<th>What's Included</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Foundations
-              <span class="guarantee">Best for: starting baseline</span>
-</td>
-<td>8 weeks</td>
-<td><span class="guarantee">1350+ or +120 pts</span></td>
-<td>Full diagnostic, targeted weekly sessions, homework review, office hours, parent progress updates</td>
-</tr>
-<tr>
-<td>Scholar
-              <span class="guarantee">Best for: strong students pushing higher</span>
-</td>
-<td>12 weeks</td>
-<td><span class="guarantee">1425+ or +160 pts</span></td>
-<td>Everything in Foundations + concierge admissions guidance, Harvard Club blitz sessions, Great Books curriculum</td>
-</tr>
-<tr>
-<td>Collegiate
-              <span class="guarantee">Best for: elite score targets</span>
-</td>
-<td>16 weeks</td>
-<td><span class="guarantee">1500+ or +200 pts</span></td>
-<td>Everything in Scholar + priority scheduling, extended office hours, full college application review</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<!-- METHOD -->
-<section class="page-section-alt">
-<div class="container">
-<p class="section-label">Our Method</p>
-<h2 class="section-title">Perfect Practice Makes Perfect</h2>
-<p class="section-sub">Most students practice ineffectively — repetition without correction. We fix that from session one.</p>
-<div class="steps-grid">
-<div class="step-card">
-<span class="step-num">1</span>
-<h3>Full Diagnostic</h3>
-<p>A complete practice test followed by detailed error analysis reveals exactly where points are being lost — by question type, timing, and error pattern.</p>
-</div>
-<div class="step-card">
-<span class="step-num">2</span>
-<h3>Custom Study Plan</h3>
-<p>Your dedicated tutor builds a plan targeting the highest-leverage skills — using active recall and spaced repetition, not volume drilling.</p>
-</div>
-<div class="step-card">
-<span class="step-num">3</span>
-<h3>Accountable Progress</h3>
-<p>Weekly 1:1 sessions, homework review, and monthly score projections keep the student on pace. Parents receive regular updates throughout.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- SCORE CHART -->
-<section class="page-section">
-<div class="container" style="text-align:center">
-<p class="section-label">Results</p>
-<h2 class="section-title">Our Students' Score Gains</h2>
-<img alt="SAT score improvement chart — Whetstone students average 120–200+ point gains" src="../score-bar.png" style="max-width:600px;width:100%;margin:32px auto 0;display:block;border-radius:var(--radius);"/>
-</div>
-</section>
-<!-- REVIEWS -->
-<section class="reviews">
-<div class="container">
-<p class="section-label">Student Results</p>
-<h2 class="section-title" style="color:var(--white)">What NYC Families Say</h2>
-<div class="review-card">
-<div class="stars">★★★★★</div>
-<blockquote>"Cole worked with my son for twelve weeks before his SAT. The structure was unlike anything we'd tried before — every session had a purpose, and the homework was actually reviewed. He went from a 1310 to a 1520 and was admitted Early Decision to his first-choice school."</blockquote>
-<div class="reviewer-info">
-<strong>Parent of a Dalton School graduate</strong>
-<span>Admitted Early Decision — Top 10 University</span>
-</div>
-</div>
-</div>
-</section>
-<!-- INLINE CONTACT FORM -->
-<section class="final-cta" id="form" style="padding: 60px 0 70px;">
-<div class="container" style="max-width: 620px;">
-<h2 style="font-family: 'Libre Caslon Text', serif; font-size: clamp(1.6rem, 3.5vw, 2.2rem); color: #fff; margin: 0 0 8px; text-align: center;">Get Started with SAT Prep</h2>
-<p style="color: rgba(255,255,255,0.7); font-size: 0.95rem; margin: 0 0 28px; text-align: center;">Fill out the form and we'll be in touch to schedule your free consultation.</p>
-<form id="sat-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-  <div style="grid-column: span 2; display: flex; gap: 10px;">
-    <label style="flex:1; display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); cursor:pointer; color:#fff; font-size:14px; font-weight:600;">
-      <input type="radio" name="sat-type" value="student" checked style="accent-color:#d4a74a;"> I'm a Student
-    </label>
-    <label style="flex:1; display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); cursor:pointer; color:#fff; font-size:14px; font-weight:600;">
-      <input type="radio" name="sat-type" value="guardian" style="accent-color:#d4a74a;"> I'm a Parent
-    </label>
-  </div>
-  <input name="sat-first" placeholder="First Name *" required style="padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); color:#fff; font-size:14px; outline:none;" />
-  <input name="sat-last" placeholder="Last Name" style="padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); color:#fff; font-size:14px; outline:none;" />
-  <input name="sat-email" type="email" placeholder="Email Address *" required style="grid-column:span 2; padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); color:#fff; font-size:14px; outline:none;" />
-  <input name="sat-phone" type="tel" placeholder="Phone Number" style="padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); color:#fff; font-size:14px; outline:none;" />
-  <select name="sat-grad" style="padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.7); font-size:14px; outline:none;">
-    <option value="">Graduation Year</option>
-    <option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option>
-  </select>
-  <button type="submit" style="grid-column:span 2; padding:14px; border-radius:10px; border:none; background:#d4a74a; color:#191970; font-size:15px; font-weight:700; cursor:pointer; letter-spacing:0.03em;">Book My Free Consultation</button>
-</form>
-<div id="sat-thanks" style="display:none; text-align:center; padding:32px 0;">
-  <div style="font-size:2.5rem; margin-bottom:12px;">🎉</div>
-  <h3 style="color:#fff; font-size:1.3rem; margin:0 0 8px;">You're all set!</h3>
-  <p style="color:rgba(255,255,255,0.7); font-size:0.9rem; margin:0;">An expert advisor will be in touch within one business day.</p>
-</div>
-</div>
-</section>
-<script>
-document.getElementById('sat-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  var btn = this.querySelector('button[type="submit"]');
-  btn.disabled = true; btn.textContent = 'Submitting...';
-  var f = this;
-  try {
-    await fetch('https://whetstone-portal.com/api/leads', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        type: f.querySelector('input[name="sat-type"]:checked').value === 'guardian' ? 'guardian' : 'student',
-        firstName: f.querySelector('[name="sat-first"]').value,
-        lastName: f.querySelector('[name="sat-last"]').value,
-        email: f.querySelector('[name="sat-email"]').value,
-        phone: f.querySelector('[name="sat-phone"]').value,
-        gradYear: f.querySelector('[name="sat-grad"]').value,
-        service: 'SAT / ACT Prep'
-      })
-    });
-  } catch (err) { console.error(err); }
-  f.style.display = 'none';
-  document.getElementById('sat-thanks').style.display = 'block';
-});
+}
 </script>
-<footer class="footer">
-<div class="container footer-grid">
-<div class="footer-brand">
-<a class="logo logo-light" href="/">Whetstone</a>
-<p>Refined Method. Proven Results.</p>
-<p class="footer-contact">hello@whetstoneadmissions.com<br/>917-562-5668</p>
-</div>
-<div class="footer-col">
-<h4>Services</h4>
-<a href="/college-admissions-counseling/">Admissions Counseling</a>
-<a href="/college-essay-coaching/">Essay Coaching</a>
-<a href="/sat-tutoring/">SAT / ACT Prep</a>
-<a href="/extracurricular-mentorship/">Extracurriculars</a>
-<a href="/academic-tutoring/">Academic Tutoring</a>
-<a href="/graduate-admissions/">Graduate Admissions</a>
-</div>
-<div class="footer-col">
-<h4>Company</h4>
-<a href="/our-method/">Our Method</a>
-<a href="/about/">Our Team</a>
-<a href="/results/">Results</a>
-<a href="/reviews/">Reviews</a>
-<a href="/resources/">Resources</a>
-<a href="/contact/">Contact</a>
-</div>
-<div class="footer-col">
-<h4>Locations</h4>
-<a href="/new-york-city-college-admissions-counseling/">New York City</a>
-<a href="/manhattan-college-admissions-counseling/">Manhattan</a>
-<a href="/brooklyn-college-admissions-counseling/">Brooklyn</a>
-<a href="/westchester-college-admissions-counseling/">Westchester</a>
-<a href="/scarsdale-college-admissions-counseling/">Scarsdale</a>
-</div>
-</div>
-<div class="footer-bottom">
-<div class="container footer-bottom-inner">
-<p class="footer-legal">Whetstone Advisory LLC is not affiliated or associated with any university, college, or education institution mentioned on this website.</p>
-<div class="footer-links">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Whetstone Admissions",
+  "description": "Private SAT & ACT tutoring and college admissions counseling for students in New York City and Westchester.",
+  "url": "https://whetstoneadmissions.com",
+  "telephone": "917-562-5668",
+  "email": "hello@whetstoneadmissions.com",
+  "areaServed": ["Manhattan", "Brooklyn", "Westchester", "New York City"],
+  "priceRange": "$$$$",
+  "serviceType": "SAT Tutoring, ACT Tutoring, College Admissions Counseling"
+}
+</script>
+</head>
+<body class="bg-white text-primary font-sans antialiased">
 
+<!-- Nav -->
+<nav class="bg-navy-grad sticky top-0 z-50 border-b border-white/10 shadow-lg">
+  <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+    <a href="/" class="text-[22px] font-serif font-bold text-white no-underline">Whetstone</a>
+    <div class="hidden md:flex space-x-8 items-center">
+      <a class="text-white/80 hover:text-white transition-colors text-sm font-semibold" href="/college-admissions-counseling/">Services</a>
+      <a class="text-white/80 hover:text-white transition-colors text-sm font-semibold" href="/our-method/">Our Method</a>
+      <a class="text-white/80 hover:text-white transition-colors text-sm font-semibold" href="/results/">Results</a>
+      <a class="text-white/80 hover:text-white transition-colors text-sm font-semibold" href="/about/">About</a>
+      <a class="text-white/80 hover:text-white transition-colors text-sm font-semibold" href="/resources/">Resources</a>
+    </div>
+    <a href="/contact/" class="btn-shine bg-[#FFC247] text-[#191970] px-6 py-2 rounded-sm font-bold uppercase tracking-wider text-xs">
+      Book a Consultation
+    </a>
+  </div>
+</nav>
 
-<a href="/privacy/">Privacy Policy</a>
-</div>
-</div>
-</div>
+<!-- Hero -->
+<section class="relative min-h-[820px] flex items-center overflow-hidden" style="background: linear-gradient(140deg, #131a5c 0%, #1e2d78 35%, #2a3d8c 65%, #1a2464 100%);">
+  <div class="absolute inset-0">
+    <img alt="Student studying for the SAT in New York City" class="w-full h-full object-cover object-top opacity-20" src="../sat-advising.jpg"/>
+    <div class="absolute inset-0" style="background: linear-gradient(100deg, rgba(19,26,92,0.88) 0%, rgba(30,45,120,0.65) 50%, rgba(42,61,140,0.25) 100%);"></div>
+  </div>
+  <!-- Decorative radial glow -->
+  <div class="absolute top-1/3 right-1/4 w-96 h-96 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(255,194,71,0.08) 0%, transparent 70%);"></div>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+    <div class="max-w-2xl">
+      <span class="text-[#FFC247] font-bold uppercase tracking-[0.15em] text-xs mb-4 block">SAT &amp; ACT Tutoring · New York City</span>
+      <h1 class="text-5xl md:text-6xl font-serif text-white leading-tight mb-6">
+        Private SAT &amp; ACT Tutoring for NYC Families
+      </h1>
+      <p class="text-white/80 text-lg md:text-xl mb-10 font-light leading-relaxed">
+        The Whetstone SAT &amp; ACT Blitz Intensive — held at the Harvard Club of New York and online. Every instructor scored in the 99th percentile. Our score guarantee means you hit your target score or we keep working together for free until you do.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact/" class="btn-shine bg-[#FFC247] text-[#191970] px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-sm text-center">
+          Book a Free Consultation
+        </a>
+        <a href="#programs" class="btn-shine-outline border border-white/70 text-white px-8 py-4 rounded-sm font-bold uppercase tracking-widest text-sm text-center transition-all">
+          View Programs
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NYC Context -->
+<section class="py-24" style="background: linear-gradient(160deg, #eaedfa 0%, #f2f4fb 55%, #ffffff 100%);">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <span class="text-[#6A7A90] font-bold uppercase tracking-[0.15em] text-xs mb-4 block">The NYC Standard</span>
+    <h2 class="text-4xl font-serif mb-10 leading-tight">In New York, Your SAT &amp; ACT Score Sets the Stage.</h2>
+    <div class="space-y-5 text-slate-700 leading-relaxed text-lg text-left max-w-3xl mx-auto">
+      <p>At Dalton, Collegiate, Spence, and Horace Mann, a 1490 SAT or a 34 ACT isn't exceptional — it's expected. Students from Manhattan's top independent schools and Westchester's most competitive districts are applying to the same elite colleges. Test scores don't open doors — but they will certainly close them.</p>
+      <p>Generic test prep centers weren't built for this. They cycle students through the same course regardless of baseline, rotate instructors who never get to know the student, and have no real answer when scores stall. The SAT and ACT reward precision — not repetition.</p>
+      <div class="border-l-4 border-[#FFC247] pl-6 py-2 bg-white shadow-sm" style="box-shadow: 0 2px 16px rgba(25,25,112,0.07);">
+        <p class="font-serif italic text-primary text-lg"><strong class="not-italic font-bold">Whetstone was built for this.</strong> Every student starts with a full SAT <em>and</em> ACT diagnostic. We recommend the test based on where you have the largest natural advantage. Then we build the plan and don't stop until you hit your number.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Environment -->
+<section class="bg-white">
+  <!-- Full-width image, no overlay -->
+  <div class="w-full" style="height: 480px; overflow: hidden;">
+    <img alt="Students studying at the Harvard Club of New York City" class="w-full h-full object-cover object-center" src="../sat-harvard-1.jpg" loading="lazy"/>
+  </div>
+  <!-- Text content -->
+  <div class="max-w-4xl mx-auto px-6 py-20 text-center">
+    <span class="text-[#6A7A90] font-bold uppercase tracking-[0.15em] text-xs mb-4 block">The Environment</span>
+    <h2 class="text-4xl font-serif mb-8 leading-tight">Distraction-Free. Built for Serious Work.</h2>
+    <div class="space-y-5 text-slate-600 text-lg leading-relaxed max-w-3xl mx-auto text-left">
+      <p>Students work in one of New York's most storied institutions, surrounded by others who are serious about their goals. The environment alone changes how students show up.</p>
+      <p>No phones on desks. No background noise. Just the work. Students who have tried prep centers and tutors at home consistently say the Harvard Club sessions feel more focused, and productive.</p>
+      <div class="border-l-4 border-[#FFC247] pl-5 py-1">
+        <p class="font-serif italic text-primary text-lg">The cohort matters. Students in the program push each other. There's a team element — shared goals, shared standards, shared results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Programs -->
+<section class="py-24" id="programs" style="background: linear-gradient(180deg, #f4f6fc 0%, #eef0f8 50%, #f4f6fc 100%);">
+  <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+    <span class="text-[#6A7A90] font-bold uppercase tracking-[0.15em] text-xs mb-4 block">Programs</span>
+    <h2 class="text-4xl font-serif">Choose Your Program</h2>
+    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Three tiers built around the Harvard Club Intensive. Every program covers both SAT and ACT. Hit your target score or we keep working together for free until you do.</p>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+
+    <!-- Foundations -->
+    <div class="bg-white border border-slate-200/80 flex flex-col rounded-sm shadow-md">
+      <div class="p-8 border-b border-slate-100">
+        <h3 class="font-serif text-2xl mb-1">Foundations</h3>
+        <p class="text-slate-500 text-sm italic">Best for: students establishing a baseline</p>
+      </div>
+      <div class="p-8 flex-1">
+        <div class="flex gap-8 mb-6">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Duration</div>
+            <div class="font-serif text-xl">8 weeks</div>
+          </div>
+        </div>
+        <div class="rounded-sm p-4 mb-6 text-sm" style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1px solid #fcd34d;">
+          <span class="font-bold text-amber-800">Score Guarantee:</span> 1450+ or +120 pts — hit your target or we keep working for free until you do.
+        </div>
+        <ul class="text-slate-600 text-sm space-y-3">
+          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> 64 hrs Harvard Club Blitz sessions</li>
+          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> SAT &amp; ACT diagnostic + test selection</li>
+          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Targeted SAT/ACT homework assignments</li>
+          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Winning Applications Walkthrough</li>
+          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Parent progress updates</li>
+        </ul>
+      </div>
+      <div class="p-8 border-t border-slate-100">
+        <a href="/contact/" class="btn-shine block w-full text-center bg-[#191970] text-white py-3 font-bold uppercase tracking-widest text-xs rounded-sm">Book a Consultation</a>
+      </div>
+    </div>
+
+    <!-- Scholar (featured) -->
+    <div class="flex flex-col rounded-sm shadow-2xl relative" style="background: linear-gradient(160deg, #1a2464 0%, #2a3d8c 55%, #1e2d78 100%);">
+      <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#FFC247] text-[#191970] px-4 py-1 text-xs font-bold uppercase tracking-widest rounded-sm shadow-md">Most Popular</div>
+      <div class="p-8 border-b border-white/10">
+        <h3 class="font-serif text-2xl mb-1 text-white">Scholar</h3>
+        <p class="text-white/60 text-sm italic">Best for: strong students pushing higher</p>
+      </div>
+      <div class="p-8 flex-1">
+        <div class="flex gap-8 mb-6">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-widest text-white/40 mb-1">Duration</div>
+            <div class="font-serif text-xl text-white">12 weeks</div>
+          </div>
+        </div>
+        <div class="rounded-sm p-4 mb-6 text-sm" style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1px solid #fcd34d;">
+          <span class="font-bold text-amber-800">Score Guarantee:</span> 1490+ or +160 pts — hit your target or we keep working for free until you do.
+        </div>
+        <ul class="text-white/80 text-sm space-y-3">
+          <li class="flex gap-2"><span class="text-[#FFC247] font-bold">✓</span> 96 hrs Harvard Club Blitz sessions</li>
+          <li class="flex gap-2"><span class="text-[#FFC247] font-bold">✓</span> SAT &amp; ACT diagnostic + test selection</li>
+          <li class="flex gap-2"><span class="text-[#FFC247] font-bold">✓</span> Targeted SAT/ACT homework assignments</li>
+          <li class="flex gap-2"><span class="text-[#FFC247] font-bold">✓</span> Capstone Discovery Session</li>
+          <li class="flex gap-2"><span class="text-[#FFC247] font-bold">✓</span> Essay Writing Blitz (1 pass)</li>
+          <li class="flex gap-2"><span class="text-[#FFC247] font-bold">✓</span> Winning Applications Walkthrough</li>
+        </ul>
+      </div>
+      <div class="p-8 border-t border-white/10">
+        <a href="/contact/" class="btn-shine block w-full text-center bg-[#FFC247] text-[#191970] py-3 font-bold uppercase tracking-widest text-xs rounded-sm">Book a Consultation</a>
+      </div>
+    </div>
+
+    <!-- Collegiate -->
+    <div class="bg-white border border-slate-200/80 flex flex-col rounded-sm shadow-md">
+      <div class="p-8 border-b border-slate-100">
+        <h3 class="font-serif text-2xl mb-1">Collegiate</h3>
+        <p class="text-slate-500 text-sm italic">Best for: elite score targets</p>
+      </div>
+      <div class="p-8 flex-1">
+        <div class="flex gap-8 mb-6">
+          <div>
+            <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Duration</div>
+            <div class="font-serif text-xl">16 weeks</div>
+          </div>
+        </div>
+        <div class="rounded-sm p-4 mb-6 text-sm" style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1px solid #fcd34d;">
+          <span class="font-bold text-amber-800">Score Guarantee:</span> 1530+ or +200 pts — hit your target or we keep working for free until you do.
+        </div>
+        <ul class="text-slate-600 text-sm space-y-3">
+          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> 128 hrs Harvard Club Blitz sessions</li>
+          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> SAT &amp; ACT diagnostic + test selection</li>
+          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Targeted SAT/ACT homework assignments</li>
+          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Capstone Discovery Session</li>
+          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Essay Writing Blitz (1 pass)</li>
+          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Winning Applications Walkthrough</li>
+        </ul>
+      </div>
+      <div class="p-8 border-t border-slate-100">
+        <a href="/contact/" class="btn-shine block w-full text-center bg-[#191970] text-white py-3 font-bold uppercase tracking-widest text-xs rounded-sm">Book a Consultation</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Method -->
+<section class="py-24" style="background: linear-gradient(180deg, #ffffff 0%, #f0f2fb 60%, #F6F6F9 100%);">
+  <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+    <span class="text-[#6A7A90] font-bold uppercase tracking-[0.15em] text-xs mb-4 block">Our Method</span>
+    <h2 class="text-4xl font-serif">How Whetstone Students Actually Improve</h2>
+    <p class="text-slate-500 mt-4 max-w-xl mx-auto">Repetition without understanding doesn't move scores. We build mastery — then test it relentlessly under real conditions.</p>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="bg-white p-10 text-center shadow-md relative pt-16" style="box-shadow: 0 4px 24px rgba(25,25,112,0.08);">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 text-primary flex items-center justify-center font-serif text-3xl font-bold" style="background: linear-gradient(135deg, #FFC247 0%, #f5a800 100%); box-shadow: 0 4px 14px rgba(255,194,71,0.4);">1</div>
+      <h3 class="font-serif text-xl mb-4">SAT &amp; ACT Diagnostic</h3>
+      <p class="text-slate-600">Every student takes a full-length SAT <em>and</em> ACT diagnostic. We identify error patterns by question type and recommend the test where you have the largest natural edge.</p>
+    </div>
+    <div class="bg-white p-10 text-center shadow-md relative pt-16" style="box-shadow: 0 4px 24px rgba(25,25,112,0.08);">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 text-primary flex items-center justify-center font-serif text-3xl font-bold" style="background: linear-gradient(135deg, #FFC247 0%, #f5a800 100%); box-shadow: 0 4px 14px rgba(255,194,71,0.4);">2</div>
+      <h3 class="font-serif text-xl mb-4">Active Recall &amp; the Feynman Method</h3>
+      <p class="text-slate-600">We don't re-read notes or re-watch videos. Students learn by retrieving — and by explaining concepts back in their own words until there are no gaps. Spaced repetition locks it in.</p>
+    </div>
+    <div class="bg-white p-10 text-center shadow-md relative pt-16" style="box-shadow: 0 4px 24px rgba(25,25,112,0.08);">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 text-primary flex items-center justify-center font-serif text-3xl font-bold" style="background: linear-gradient(135deg, #FFC247 0%, #f5a800 100%); box-shadow: 0 4px 14px rgba(255,194,71,0.4);">3</div>
+      <h3 class="font-serif text-xl mb-4">Heavy Testing Under Real Conditions</h3>
+      <p class="text-slate-600">Students take timed full-length practice tests throughout the program — not at the end. Every test is debriefed question by question to convert errors into mastered concepts.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Where We Work -->
+<section class="py-24" style="background: linear-gradient(160deg, #f0f2fb 0%, #F6F6F9 55%, #eef0f8 100%);">
+  <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+    <span class="text-[#6A7A90] font-bold uppercase tracking-[0.15em] text-xs mb-4 block">Where We Teach</span>
+    <h2 class="text-4xl font-serif">The Harvard Club of New York — or Online</h2>
+    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">All sessions take place at the Harvard Club of New York City (44th Street) or via online video. Our students come from across Manhattan, Brooklyn, Westchester, and beyond.</p>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="border-t-4 border-[#FFC247] p-8 bg-white shadow-sm" style="box-shadow: 0 2px 16px rgba(25,25,112,0.06);">
+      <h3 class="font-serif text-2xl mb-4">Manhattan</h3>
+      <ul class="text-slate-600 space-y-2 text-sm">
+        <li>Upper East Side</li>
+        <li>Upper West Side</li>
+        <li>Midtown &amp; Murray Hill</li>
+        <li>Tribeca &amp; SoHo</li>
+        <li>Greenwich Village</li>
+        <li>Carnegie Hill</li>
+      </ul>
+    </div>
+    <div class="border-t-4 border-[#FFC247] p-8 bg-white shadow-sm" style="box-shadow: 0 2px 16px rgba(25,25,112,0.06);">
+      <h3 class="font-serif text-2xl mb-4">Brooklyn</h3>
+      <ul class="text-slate-600 space-y-2 text-sm">
+        <li>Brooklyn Heights</li>
+        <li>Park Slope</li>
+        <li>Cobble Hill &amp; Carroll Gardens</li>
+        <li>DUMBO</li>
+        <li>Prospect Heights</li>
+        <li>Williamsburg</li>
+      </ul>
+    </div>
+    <div class="border-t-4 border-[#FFC247] p-8 bg-white shadow-sm" style="box-shadow: 0 2px 16px rgba(25,25,112,0.06);">
+      <h3 class="font-serif text-2xl mb-4">Westchester</h3>
+      <ul class="text-slate-600 space-y-2 text-sm">
+        <li>Scarsdale</li>
+        <li>Bronxville</li>
+        <li>Rye &amp; Rye Brook</li>
+        <li>Larchmont &amp; Mamaroneck</li>
+        <li>Chappaqua</li>
+        <li>Ardsley &amp; Dobbs Ferry</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Schools We Serve -->
+<section class="py-24" style="background: linear-gradient(180deg, #ffffff 0%, #f4f6fc 100%);">
+  <div class="max-w-7xl mx-auto px-6">
+    <span class="text-[#6A7A90] font-bold uppercase tracking-[0.15em] text-xs mb-4 block text-center">Schools We Serve</span>
+    <h2 class="text-4xl font-serif text-center mb-12">Built for New York's Most Competitive Students</h2>
+    <div class="flex flex-wrap justify-center gap-3">
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Dalton</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Collegiate</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Trinity</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Spence</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Brearley</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Chapin</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Horace Mann</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Riverdale</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Ethical Culture Fieldston</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Stuyvesant</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Bronx Science</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Brooklyn Tech</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Hunter College HS</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Scarsdale High School</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Avenues</span>
+      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Léman Manhattan</span>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-24" style="background: linear-gradient(160deg, #f0f2fb 0%, #F6F6F9 55%, #eef0f8 100%);">
+  <div class="max-w-3xl mx-auto px-6">
+    <span class="text-[#6A7A90] font-bold uppercase tracking-[0.15em] text-xs mb-4 block text-center">Common Questions</span>
+    <h2 class="text-4xl font-serif text-center mb-16">Frequently Asked Questions</h2>
+    <div class="space-y-3">
+
+      <details class="group bg-white rounded-sm" style="box-shadow: 0 2px 12px rgba(25,25,112,0.07);">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-primary font-serif text-lg">
+          When should my student start tutoring?
+          <span class="text-2xl text-[#FFC247] group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+          Most students begin in the fall or winter of their junior year to prepare for the March or May exams. We recommend starting with a diagnostic as early as sophomore summer to allow the most time for improvement.
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-sm" style="box-shadow: 0 2px 12px rgba(25,25,112,0.07);">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-primary font-serif text-lg">
+          Should my child take the SAT or the ACT?
+          <span class="text-2xl text-[#FFC247] group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+          Both tests are accepted equally by every major college and university. The right choice depends on the student's strengths. We administer a diagnostic for both and recommend the test where the student has a larger natural advantage.
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-sm" style="box-shadow: 0 2px 12px rgba(25,25,112,0.07);">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-primary font-serif text-lg">
+          How is the Digital SAT different from the old paper test?
+          <span class="text-2xl text-[#FFC247] group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+          The Digital SAT (launched March 2024) is shorter (2 hours 14 minutes vs. 3 hours), adaptive by module, and delivered on a computer or tablet. The adaptive format means early performance heavily influences your final score. Our tutors are trained specifically on Digital SAT strategy and official College Board practice materials.
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-sm" style="box-shadow: 0 2px 12px rgba(25,25,112,0.07);">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-primary font-serif text-lg">
+          How are Whetstone instructors selected?
+          <span class="text-2xl text-[#FFC247] group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+          Our instructors are exclusively recruited from Ivy League and top-10 universities. Each must score in the 99th percentile and undergo a rigorous pedagogical training process before working with students.
+        </div>
+      </details>
+
+      <details class="group bg-white rounded-sm" style="box-shadow: 0 2px 12px rgba(25,25,112,0.07);">
+        <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-primary font-serif text-lg">
+          How does the score guarantee work?
+          <span class="text-2xl text-[#FFC247] group-open:rotate-45 transition-transform">+</span>
+        </summary>
+        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+          Each program tier includes a specific score guarantee. If your student completes the program in good standing — attending sessions, completing assigned practice, and sitting for a real exam — and does not hit the target, we extend tutoring at no additional charge until they do. Details are outlined in the enrollment agreement.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="py-24 text-center bg-cta-grad relative overflow-hidden">
+  <!-- Decorative glows -->
+  <div class="absolute top-0 left-1/4 w-80 h-80 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(255,194,71,0.1) 0%, transparent 70%);"></div>
+  <div class="absolute bottom-0 right-1/4 w-96 h-96 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(30,29,130,0.6) 0%, transparent 70%);"></div>
+  <div class="relative z-10 max-w-4xl mx-auto px-6">
+    <h2 class="text-4xl font-serif text-white mb-6">Book a free consultation with one of our expert advisors.</h2>
+    <p class="text-white/70 text-lg mb-10">Consultations for the upcoming testing season are filling quickly.</p>
+    <a href="/contact/" class="btn-shine inline-block bg-[#FFC247] text-[#191970] px-12 py-5 rounded-sm font-bold uppercase tracking-[0.2em] text-sm shadow-xl">
+      Get Started
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#191970] border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
+    <div>
+      <a href="/" class="text-[22px] font-serif font-bold text-white mb-3 block no-underline">Whetstone</a>
+      <p class="text-white/50 text-sm mb-4">Refined Method. Proven Results.</p>
+      <p class="text-white/50 text-sm">hello@whetstoneadmissions.com<br/>917-562-5668</p>
+    </div>
+    <div>
+      <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-4">Services</h4>
+      <div class="flex flex-col gap-2">
+        <a href="/college-admissions-counseling/" class="text-white/60 hover:text-white text-sm transition-colors">Admissions Counseling</a>
+        <a href="/college-essay-coaching/" class="text-white/60 hover:text-white text-sm transition-colors">Essay Coaching</a>
+        <a href="/sat-tutoring/" class="text-white/60 hover:text-white text-sm transition-colors">SAT / ACT Prep</a>
+        <a href="/extracurricular-mentorship/" class="text-white/60 hover:text-white text-sm transition-colors">Extracurriculars</a>
+        <a href="/academic-tutoring/" class="text-white/60 hover:text-white text-sm transition-colors">Academic Tutoring</a>
+        <a href="/graduate-admissions/" class="text-white/60 hover:text-white text-sm transition-colors">Graduate Admissions</a>
+      </div>
+    </div>
+    <div>
+      <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-4">Company</h4>
+      <div class="flex flex-col gap-2">
+        <a href="/our-method/" class="text-white/60 hover:text-white text-sm transition-colors">Our Method</a>
+        <a href="/about/" class="text-white/60 hover:text-white text-sm transition-colors">Our Team</a>
+        <a href="/results/" class="text-white/60 hover:text-white text-sm transition-colors">Results</a>
+        <a href="/reviews/" class="text-white/60 hover:text-white text-sm transition-colors">Reviews</a>
+        <a href="/resources/" class="text-white/60 hover:text-white text-sm transition-colors">Resources</a>
+        <a href="/contact/" class="text-white/60 hover:text-white text-sm transition-colors">Contact</a>
+      </div>
+    </div>
+    <div>
+      <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-4">Locations</h4>
+      <div class="flex flex-col gap-2">
+        <a href="/new-york-city-college-admissions-counseling/" class="text-white/60 hover:text-white text-sm transition-colors">New York City</a>
+        <a href="/manhattan-college-admissions-counseling/" class="text-white/60 hover:text-white text-sm transition-colors">Manhattan</a>
+        <a href="/brooklyn-college-admissions-counseling/" class="text-white/60 hover:text-white text-sm transition-colors">Brooklyn</a>
+        <a href="/westchester-college-admissions-counseling/" class="text-white/60 hover:text-white text-sm transition-colors">Westchester</a>
+        <a href="/scarsdale-college-admissions-counseling/" class="text-white/60 hover:text-white text-sm transition-colors">Scarsdale</a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10 py-6 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-white/40 text-xs">Whetstone Advisory LLC is not affiliated or associated with any university, college, or education institution mentioned on this website.</p>
+      <div class="flex gap-6">
+        <a href="#" class="text-white/40 hover:text-white text-xs transition-colors">Cookie Preferences</a>
+        <a href="#" class="text-white/40 hover:text-white text-xs transition-colors">Terms of Use</a>
+        <a href="#" class="text-white/40 hover:text-white text-xs transition-colors">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
 </footer>
-<script>
-    window.addEventListener('scroll', () => {
-      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
-    });
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('mobile-nav').classList.toggle('open');
-    });
-  </script>
+
 </body>
 </html>
