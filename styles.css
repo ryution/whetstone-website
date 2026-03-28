@@ -564,7 +564,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .review-video-wrap {
   max-width: 760px;
-  margin-bottom: 32px;
+  margin: 0 auto 32px;
   border-radius: var(--radius);
   overflow: hidden;
   position: relative;
@@ -586,7 +586,7 @@ img { max-width: 100%; height: auto; display: block; }
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: var(--radius);
   padding: 48px;
-  margin-bottom: 24px;
+  margin: 0 auto 24px;
 }
 
 .review-card--featured {
