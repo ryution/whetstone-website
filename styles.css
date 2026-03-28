@@ -1025,7 +1025,7 @@ img { max-width: 100%; height: auto; display: block; }
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.18;
+  opacity: 1;
 }
 
 .page-hero .container { position: relative; z-index: 1; }
