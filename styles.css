@@ -43,7 +43,9 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ---- BUTTONS ---- */
 .btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 14px 32px;
   border-radius: 6px;
   font-family: var(--font-sans);
@@ -51,9 +53,10 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 15px;
   text-decoration: none;
   cursor: pointer;
-  border: none;
+  border: 2px solid transparent;
   transition: all 0.2s;
   letter-spacing: 0.02em;
+  box-sizing: border-box;
 }
 
 .btn-primary { background: var(--white); color: var(--navy); }
