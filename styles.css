@@ -558,7 +558,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============================================
    REVIEWS
    ============================================ */
-.reviews { padding: 96px 0; background: url('gradientbg2.jpg') center center / cover no-repeat; }
+.reviews { padding: 96px 0; background: url('gradientbg.jpg') center center / cover no-repeat; }
 .reviews .section-label { color: rgba(255,255,255,0.55); }
 .reviews .section-title { color: var(--white); }
 
@@ -882,7 +882,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============================================
    FINAL CTA
    ============================================ */
-.final-cta { padding: 96px 0; background: url('gradientbg.jpg') center center / cover no-repeat; text-align: center; }
+.final-cta { padding: 96px 0; background: url('gradientbg2.jpg') center center / cover no-repeat; text-align: center; }
 
 .final-cta h2 {
   font-family: var(--font-serif);
