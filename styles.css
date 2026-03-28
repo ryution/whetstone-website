@@ -410,8 +410,9 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .logos-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; }
-.logos-row img { height: 28px; width: auto; opacity: 0.55; filter: grayscale(100%); transition: opacity 0.2s; }
-.logos-row img:hover { opacity: 0.85; }
+.logo-cell { display: flex; align-items: center; justify-content: center; height: 48px; }
+.logo-cell img { width: auto; opacity: 0.55; filter: grayscale(100%); transition: opacity 0.2s; }
+.logo-cell img:hover { opacity: 0.85; }
 
 /* ============================================
    METHOD / SERVICES
