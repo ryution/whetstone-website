@@ -59,8 +59,8 @@ img { max-width: 100%; height: auto; display: block; }
 .btn-primary { background: var(--white); color: var(--navy); }
 .btn-primary:hover { background: rgba(255,255,255,0.88); }
 
-.btn-gold { background: var(--gold); color: var(--navy); }
-.btn-gold:hover { background: var(--gold-light); color: var(--navy); }
+.btn-gold { background: linear-gradient(135deg, #FFD878 0%, #FFC247 55%, #E8A020 100%); color: var(--navy); }
+.btn-gold:hover { background: linear-gradient(135deg, #FFE090 0%, #FFD068 55%, #F0AA30 100%); color: var(--navy); }
 
 .btn-outline-white { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.6); }
 .btn-outline-white:hover { background: rgba(255,255,255,0.12); }
