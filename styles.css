@@ -308,19 +308,14 @@ img { max-width: 100%; height: auto; display: block; }
 .stats-layout {
   display: grid;
   grid-template-columns: 2fr 3fr;
+  grid-template-rows: 1fr 1fr;
   gap: 24px;
   align-items: stretch;
 }
 
-/* Left column: two cards that together fill the height */
-.stats-left {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  min-width: 0;
-}
-
-.stats-right { min-width: 0; }
+.stat-primary { grid-column: 1; grid-row: 1; }
+.stats-right { grid-column: 2; grid-row: 1 / 3; min-width: 0; }
+.stat-secondary { grid-column: 1; grid-row: 2; }
 
 .stat-card-v2 {
   background: var(--white);
@@ -417,14 +412,14 @@ img { max-width: 100%; height: auto; display: block; }
     display: table;
     width: 100%;
     border-collapse: collapse;
-    font-size: 14px;
+    font-size: 12px;
     margin-top: 8px;
   }
   .ivy-table thead tr { background: var(--cream); }
   .ivy-table th {
     padding: 10px 12px;
     text-align: left;
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -438,7 +433,7 @@ img { max-width: 100%; height: auto; display: block; }
     font-weight: 500;
   }
   .ivy-table tbody tr:nth-child(even) { background: var(--cream); }
-  .ivy-table .ivy-rate { color: var(--gold); font-weight: 700; font-size: 15px; }
+  .ivy-table .ivy-rate { color: var(--gold); font-weight: 700; font-size: 13px; }
 }
 
 /* Legacy stat classes */
@@ -1011,8 +1006,10 @@ img { max-width: 100%; height: auto; display: block; }
   .cform-sub { font-size: 14px; }
   .form-wrap { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
-  .stats-layout { grid-template-columns: 1fr; }
-  .stats-left { flex-direction: row; }
+  .stats-layout { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .stat-primary { grid-column: 1; grid-row: 1; }
+  .stats-right { grid-column: 1; grid-row: 2; }
+  .stat-secondary { grid-column: 1; grid-row: 3; }
   .stat-card-v2 { padding: 20px; }
   .stat-num-v2 { font-size: 42px !important; margin-bottom: 8px; }
   .stats-grid { flex-direction: column; }
