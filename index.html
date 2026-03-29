@@ -602,6 +602,15 @@
               <span class="cdot"></span><span class="cdot active"></span><span class="cdot"></span>
             </div>
           </div>
+          <div class="cform-step" id="cstep-thanks">
+            <div class="cform-thanks">
+              <h3>Thank you!</h3>
+              <p>An expert advisor will be in touch shortly to set up your free consultation. We look forward to speaking with you.</p>
+            </div>
+            <div class="cform-dots">
+              <span class="cdot"></span><span class="cdot"></span><span class="cdot active"></span>
+            </div>
+          </div>
         </form>
       </div>
     </div>
@@ -810,7 +819,8 @@
         console.error('Submit error:', err);
       }
 
-      window.location.href = '/contact/';
+      document.getElementById('cstep-2').classList.remove('active');
+      document.getElementById('cstep-thanks').classList.add('active');
     }
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
