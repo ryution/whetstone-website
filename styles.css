@@ -430,14 +430,15 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 28px;
 }
 
-.logos-row { display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; gap: 32px; overflow: visible; }
+.logos { overflow: hidden; }
+.logos .container { overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.logos .container::-webkit-scrollbar { display: none; }
+.logos-row { display: inline-flex; align-items: center; min-width: 100%; justify-content: center; flex-wrap: nowrap; gap: 40px; }
 .logo-cell { display: flex; align-items: center; justify-content: center; height: 48px; flex-shrink: 0; }
 .logo-cell img { width: auto; opacity: 0.55; filter: grayscale(100%); transition: opacity 0.2s; }
 .logo-cell img:hover { opacity: 0.85; }
 @media (max-width: 900px) {
-  .logos .container { overflow-x: auto; padding-bottom: 6px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-  .logos .container::-webkit-scrollbar { display: none; }
-  .logos-row { justify-content: flex-start; gap: 28px; }
+  .logos-row { gap: 28px; justify-content: flex-start; }
 }
 
 /* ============================================
