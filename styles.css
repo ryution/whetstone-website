@@ -1165,6 +1165,66 @@ img { max-width: 100%; height: auto; display: block; }
 
 .page-section { padding: 80px 0; }
 .page-section-alt { padding: 80px 0; background: var(--cream); }
+
+/* ============================================
+   WHY WHETSTONE SECTION
+   ============================================ */
+.why-section {
+  padding: 96px 0;
+  background: url('assets/gradientbg.jpg') center center / cover no-repeat;
+  overflow: hidden;
+}
+.why-section .section-label { color: rgba(255,255,255,0.55); }
+.why-section .section-title { color: var(--white); }
+.why-section .section-sub { color: rgba(255,255,255,0.72); }
+
+.why-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.why-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 20px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background 0.2s;
+}
+.why-card:hover { background: rgba(255,255,255,0.13); }
+.why-num {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+.why-card-title {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.25;
+  margin: 0;
+}
+.why-card-body {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  margin: 0;
+}
+.why-card-body strong { color: rgba(255,255,255,0.95); font-weight: 700; }
+
+@media (max-width: 900px) {
+  .why-cards { grid-template-columns: 1fr; gap: 16px; }
+  .why-card { padding: 28px 24px; }
+}
 .page-section-dark { padding: 80px 0; background: var(--navy); }
 .page-section-dark .section-label { color: var(--gold); }
 .page-section-dark .section-title { color: var(--white); }
