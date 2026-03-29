@@ -38,6 +38,18 @@
   .font-sans  { font-family: 'Libre Franklin', sans-serif; }
   details summary::-webkit-details-marker { display: none; }
 
+  /* Accordion */
+  .accordion { border-top: 1.5px solid var(--border); }
+  .accordion details { border-bottom: 1.5px solid var(--border); }
+  .accordion summary { display:flex; justify-content:space-between; align-items:center; padding:18px 0; cursor:pointer; list-style:none; font-family:'Libre Caslon Text',serif; font-size:20px; font-weight:700; color:var(--navy); user-select:none; }
+  .accordion summary::-webkit-details-marker { display:none; }
+  .acc-icon::before { content:'+'; }
+  .accordion details[open] .acc-icon::before { content:'−'; }
+  .acc-icon { font-size:22px; font-weight:300; color:var(--navy); line-height:1; transition:transform 0.2s; flex-shrink:0; }
+  .acc-body { padding:4px 0 20px; }
+  .acc-body ul { list-style:none; padding:0; margin:0; }
+  .acc-body ul li { font-family:'Libre Franklin',sans-serif; font-size:16px; color:var(--navy); padding:7px 0 7px 16px; opacity:0.78; }
+
   /* ── Button shine sweep ── */
   .btn-shine {
     position: relative;
@@ -168,7 +180,6 @@
 <a href="/sat-tutoring/">SAT / ACT Prep</a>
 <a href="/extracurricular-mentorship/">Extracurriculars</a>
 <div class="dropdown-divider"></div>
-<a href="/academic-tutoring/">Academic Tutoring</a>
 <a href="/graduate-admissions/">Graduate Admissions</a>
 </div>
 </div>
@@ -190,7 +201,6 @@
 <a href="/college-essay-coaching/">Essay Coaching</a>
 <a href="/sat-tutoring/">SAT / ACT Prep</a>
 <a href="/extracurricular-mentorship/">Extracurriculars</a>
-<a href="/academic-tutoring/">Academic Tutoring</a>
 <a href="/graduate-admissions/">Graduate Admissions</a>
 <p class="mobile-nav-label">Company</p>
 <a href="/about/">Our Team</a>
@@ -582,6 +592,45 @@ document.getElementById('sat-form').addEventListener('submit', async function(e)
 });
 </script>
 
+<!-- SUBJECT ACCORDION -->
+<section style="padding: 80px 0; background: #fff;">
+  <div class="container" style="max-width: 760px;">
+    <p class="section-label" style="color: var(--text-muted);">Subject Tutoring</p>
+    <h2 style="font-family: var(--font-serif); font-size: clamp(24px,3vw,36px); color: var(--navy); margin-bottom: 40px; line-height: 1.25;">Beyond test prep — our tutors cover the full academic curriculum.</h2>
+    <div class="accordion">
+      <details open>
+        <summary>Mathematics <span class="acc-icon"></span></summary>
+        <div class="acc-body"><ul>
+          <li>Algebra</li><li>Geometry</li><li>Pre-Calculus &amp; Trigonometry</li>
+          <li>AP Calculus AB / BC</li><li>AP Statistics</li><li>IB Mathematics (SL &amp; HL)</li>
+        </ul></div>
+      </details>
+      <details>
+        <summary>Sciences <span class="acc-icon"></span></summary>
+        <div class="acc-body"><ul>
+          <li>AP Biology</li><li>AP Chemistry</li><li>AP Physics 1, 2 &amp; C</li>
+          <li>AP Environmental Science</li><li>IB Sciences (SL &amp; HL)</li>
+        </ul></div>
+      </details>
+      <details>
+        <summary>Language <span class="acc-icon"></span></summary>
+        <div class="acc-body"><ul>
+          <li>AP English Literature &amp; Language</li><li>TOEFL / IELTS</li>
+          <li>Spanish</li><li>French</li><li>Latin</li><li>Ancient Greek*</li>
+        </ul></div>
+      </details>
+      <details>
+        <summary>Humanities <span class="acc-icon"></span></summary>
+        <div class="acc-body"><ul>
+          <li>AP U.S. History</li><li>AP World History</li><li>Economics</li>
+          <li>Philosophy</li><li>Classics</li><li>Writing and Composition</li>
+        </ul></div>
+      </details>
+    </div>
+    <p style="margin-top:20px;font-size:13px;color:var(--text-muted);">* Available with select tutors. <a href="/contact/" style="color:var(--navy);">Contact us</a> to discuss your subject.</p>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer class="footer">
 <div class="container footer-grid">
@@ -596,7 +645,6 @@ document.getElementById('sat-form').addEventListener('submit', async function(e)
 <a href="/college-essay-coaching/">Essay Coaching</a>
 <a href="/sat-tutoring/">SAT / ACT Prep</a>
 <a href="/extracurricular-mentorship/">Extracurriculars</a>
-<a href="/academic-tutoring/">Academic Tutoring</a>
 <a href="/graduate-admissions/">Graduate Admissions</a>
 </div>
 <div class="footer-col">
