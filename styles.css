@@ -299,6 +299,15 @@ img { max-width: 100%; height: auto; display: block; }
 .stats { padding: 96px 0; background: url('assets/gradientbg.jpg') center center / cover no-repeat; overflow: hidden; }
 .stats .section-label { color: rgba(255,255,255,0.55); }
 .stats .section-title { color: var(--white); }
+.stats .stat-card-v2 { background: rgba(255,255,255,0.10); box-shadow: none; }
+.stats .stat-card-v2 .stat-num-v2 { color: var(--gold); }
+.stats .stat-card-v2 .stat-desc-v2 { color: rgba(255,255,255,0.85); }
+.stats .chart-card { background: rgba(255,255,255,0.10); box-shadow: none; }
+.stats .chart-card-title { color: rgba(255,255,255,0.9); }
+.stats .chart-card .chart-label { color: rgba(255,255,255,0.75); }
+.stats .chart-legend { color: rgba(255,255,255,0.7); }
+.stats .ivy-table th, .stats .ivy-table td { color: rgba(255,255,255,0.85); border-color: rgba(255,255,255,0.15); }
+.stats .ivy-table thead th { background: rgba(255,255,255,0.08); }
 
 .stats-header {
   margin-bottom: 40px;
