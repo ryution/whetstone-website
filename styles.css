@@ -2,6 +2,9 @@
    WHETSTONE ADMISSIONS — STYLES
    ========================================= */
 
+html { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar { display: none; }
+
 :root {
   --navy: #191970;
   --navy-light: #2a2a9a;
