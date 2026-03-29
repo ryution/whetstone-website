@@ -1077,8 +1077,8 @@ img { max-width: 100%; height: auto; display: block; }
 
 @media (max-width: 600px) {
   .sticky-cta-inner { flex-direction: row; gap: 12px; align-items: center; }
-  .sticky-cta p { font-size: 13px; }
-  .sticky-cta .btn { white-space: nowrap; flex-shrink: 0; font-size: 13px; padding: 10px 16px; }
+  .sticky-cta p { font-size: 11px; line-height: 1.4; }
+  .sticky-cta .btn { white-space: nowrap; flex-shrink: 0; font-size: 12px; padding: 10px 14px; }
 }
 
 /* ============================================
