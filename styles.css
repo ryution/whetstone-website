@@ -408,6 +408,39 @@ img { max-width: 100%; height: auto; display: block; }
 .legend-dot--gray { background: #b0b8d0; }
 .legend-dot--gold { background: var(--gold); }
 
+/* Ivy table — mobile only */
+.ivy-table { display: none; }
+@media (max-width: 768px) {
+  .chart-wrap { display: none; }
+  .chart-legend { display: none; }
+  .ivy-table {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  .ivy-table thead tr { background: var(--cream); }
+  .ivy-table th {
+    padding: 10px 12px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+    border-bottom: 2px solid var(--border);
+  }
+  .ivy-table td {
+    padding: 11px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--navy);
+    font-weight: 500;
+  }
+  .ivy-table tbody tr:nth-child(even) { background: var(--cream); }
+  .ivy-table .ivy-rate { color: var(--gold); font-weight: 700; font-size: 15px; }
+}
+
 /* Legacy stat classes */
 .stats-grid { display: flex; align-items: center; background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; margin-bottom: 48px; }
 .stat-card { flex: 1; padding: 48px; text-align: center; }
