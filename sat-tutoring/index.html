@@ -12,6 +12,7 @@
 <meta property="og:type" content="website"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"/>
+<link href="../styles.css?v=12" rel="stylesheet"/>
 <script id="tailwind-config">
   tailwind.config = {
     darkMode: "class",
@@ -154,22 +155,50 @@
 </head>
 <body class="bg-white text-primary font-sans antialiased">
 
-<!-- Nav -->
-<nav class="bg-navy-grad sticky top-0 z-50 border-b border-white/10 shadow-lg">
-  <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
-    <a href="/" class="text-[22px] font-serif font-bold text-white no-underline">Whetstone</a>
-    <div class="hidden md:flex space-x-8 items-center">
-      <a class="text-white/80 hover:text-white transition-colors text-sm font-semibold" href="/college-admissions-counseling/">Services</a>
-      <a class="text-white/80 hover:text-white transition-colors text-sm font-semibold" href="/our-method/">Our Method</a>
-      <a class="text-white/80 hover:text-white transition-colors text-sm font-semibold" href="/results/">Results</a>
-      <a class="text-white/80 hover:text-white transition-colors text-sm font-semibold" href="/about/">About</a>
-      <a class="text-white/80 hover:text-white transition-colors text-sm font-semibold" href="/resources/">Resources</a>
-    </div>
-    <a href="/contact/" class="btn-shine bg-[#FFC247] text-[#191970] px-6 py-2 rounded-sm font-bold uppercase tracking-wider text-xs">
-      Book a Consultation
-    </a>
-  </div>
+<!-- Header -->
+<header class="header scrolled" id="header">
+<div class="header-inner">
+<a class="logo" href="/">Whetstone</a>
+<nav class="nav">
+<div class="nav-dropdown">
+<a class="nav-link" href="#" onclick="return false;">Services <span class="caret">▾</span></a>
+<div class="dropdown-menu">
+<a href="/college-admissions-counseling/">Admissions Counseling</a>
+<a href="/college-essay-coaching/">Essay Coaching</a>
+<a href="/sat-tutoring/">SAT / ACT Prep</a>
+<a href="/extracurricular-mentorship/">Extracurriculars</a>
+<div class="dropdown-divider"></div>
+<a href="/academic-tutoring/">Academic Tutoring</a>
+<a href="/graduate-admissions/">Graduate Admissions</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<a class="nav-link" href="#" onclick="return false;">About <span class="caret">▾</span></a>
+<div class="dropdown-menu">
+<a href="/about/">Our Team</a>
+</div>
+</div>
+<a class="nav-link" href="/resources/">Resources</a>
+<a class="nav-link" href="/contact/">Contact</a>
 </nav>
+<a class="btn btn-primary" href="/contact/">Get Started</a>
+<button aria-label="Menu" class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</div>
+<div class="mobile-nav" id="mobile-nav">
+<p class="mobile-nav-label">Services</p>
+<a href="/college-admissions-counseling/">Admissions Counseling</a>
+<a href="/college-essay-coaching/">Essay Coaching</a>
+<a href="/sat-tutoring/">SAT / ACT Prep</a>
+<a href="/extracurricular-mentorship/">Extracurriculars</a>
+<a href="/academic-tutoring/">Academic Tutoring</a>
+<a href="/graduate-admissions/">Graduate Admissions</a>
+<p class="mobile-nav-label">Company</p>
+<a href="/about/">Our Team</a>
+<a href="/resources/">Resources</a>
+<a href="/contact/">Contact</a>
+<a class="btn btn-primary" href="/contact/">Get Started</a>
+</div>
+</header>
 
 <!-- Hero -->
 <section class="relative min-h-[820px] flex items-center overflow-hidden" style="background: linear-gradient(140deg, #131a5c 0%, #1e2d78 35%, #2a3d8c 65%, #1a2464 100%);">
@@ -554,57 +583,56 @@ document.getElementById('sat-form').addEventListener('submit', async function(e)
 </script>
 
 <!-- Footer -->
-<footer class="bg-[#191970] border-t border-white/10">
-  <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10">
-    <div>
-      <a href="/" class="text-[22px] font-serif font-bold text-white mb-3 block no-underline">Whetstone</a>
-      <p class="text-white/50 text-sm mb-4">Refined Method. Proven Results.</p>
-      <p class="text-white/50 text-sm">hello@whetstoneadmissions.com<br/>917-562-5668</p>
-    </div>
-    <div>
-      <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-4">Services</h4>
-      <div class="flex flex-col gap-2">
-        <a href="/college-admissions-counseling/" class="text-white/60 hover:text-white text-sm transition-colors">Admissions Counseling</a>
-        <a href="/college-essay-coaching/" class="text-white/60 hover:text-white text-sm transition-colors">Essay Coaching</a>
-        <a href="/sat-tutoring/" class="text-white/60 hover:text-white text-sm transition-colors">SAT / ACT Prep</a>
-        <a href="/extracurricular-mentorship/" class="text-white/60 hover:text-white text-sm transition-colors">Extracurriculars</a>
-        <a href="/academic-tutoring/" class="text-white/60 hover:text-white text-sm transition-colors">Academic Tutoring</a>
-        <a href="/graduate-admissions/" class="text-white/60 hover:text-white text-sm transition-colors">Graduate Admissions</a>
-      </div>
-    </div>
-    <div>
-      <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-4">Company</h4>
-      <div class="flex flex-col gap-2">
-        <a href="/our-method/" class="text-white/60 hover:text-white text-sm transition-colors">Our Method</a>
-        <a href="/about/" class="text-white/60 hover:text-white text-sm transition-colors">Our Team</a>
-        <a href="/results/" class="text-white/60 hover:text-white text-sm transition-colors">Results</a>
-        <a href="/reviews/" class="text-white/60 hover:text-white text-sm transition-colors">Reviews</a>
-        <a href="/resources/" class="text-white/60 hover:text-white text-sm transition-colors">Resources</a>
-        <a href="/contact/" class="text-white/60 hover:text-white text-sm transition-colors">Contact</a>
-      </div>
-    </div>
-    <div>
-      <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-4">Locations</h4>
-      <div class="flex flex-col gap-2">
-        <a href="/new-york-city-college-admissions-counseling/" class="text-white/60 hover:text-white text-sm transition-colors">New York City</a>
-        <a href="/manhattan-college-admissions-counseling/" class="text-white/60 hover:text-white text-sm transition-colors">Manhattan</a>
-        <a href="/brooklyn-college-admissions-counseling/" class="text-white/60 hover:text-white text-sm transition-colors">Brooklyn</a>
-        <a href="/westchester-college-admissions-counseling/" class="text-white/60 hover:text-white text-sm transition-colors">Westchester</a>
-        <a href="/scarsdale-college-admissions-counseling/" class="text-white/60 hover:text-white text-sm transition-colors">Scarsdale</a>
-      </div>
-    </div>
-  </div>
-  <div class="border-t border-white/10 py-6 px-6">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-white/40 text-xs">Whetstone Advisory LLC is not affiliated or associated with any university, college, or education institution mentioned on this website.</p>
-      <div class="flex gap-6">
-        <a href="#" class="text-white/40 hover:text-white text-xs transition-colors">Cookie Preferences</a>
-        <a href="#" class="text-white/40 hover:text-white text-xs transition-colors">Terms of Use</a>
-        <a href="#" class="text-white/40 hover:text-white text-xs transition-colors">Privacy Policy</a>
-      </div>
-    </div>
-  </div>
+<footer class="footer">
+<div class="container footer-grid">
+<div class="footer-brand">
+<a class="logo logo-light" href="/">Whetstone</a>
+<p>Refined Method. Proven Results.</p>
+<p class="footer-contact">team@whetstoneadmissions.com<br/>917-562-5668</p>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<a href="/college-admissions-counseling/">Admissions Counseling</a>
+<a href="/college-essay-coaching/">Essay Coaching</a>
+<a href="/sat-tutoring/">SAT / ACT Prep</a>
+<a href="/extracurricular-mentorship/">Extracurriculars</a>
+<a href="/academic-tutoring/">Academic Tutoring</a>
+<a href="/graduate-admissions/">Graduate Admissions</a>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<a href="/about/">Our Team</a>
+<a href="/resources/">Resources</a>
+<a href="/contact/">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Locations</h4>
+<a href="/new-york-city-college-admissions-counseling/">New York City</a>
+<a href="/manhattan-college-admissions-counseling/">Manhattan</a>
+<a href="/brooklyn-college-admissions-counseling/">Brooklyn</a>
+<a href="/westchester-college-admissions-counseling/">Westchester</a>
+<a href="/scarsdale-college-admissions-counseling/">Scarsdale</a>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="container footer-bottom-inner">
+<p class="footer-legal">Whetstone Advisory LLC is not affiliated or associated with any university, college, or education institution mentioned on this website.</p>
+<div class="footer-links">
+
+
+<a href="/privacy/">Privacy Policy</a>
+</div>
+</div>
+</div>
 </footer>
 
+<script>
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobile-nav').classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
