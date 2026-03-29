@@ -246,7 +246,7 @@ img { max-width: 100%; height: auto; display: block; }
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(25,25,112,0.72) 0%, rgba(15,15,80,0.55) 100%);
+  background: linear-gradient(135deg, rgba(25,25,112,0.57) 0%, rgba(15,15,80,0.40) 100%);
   z-index: 1;
 }
 
