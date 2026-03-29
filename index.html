@@ -540,7 +540,7 @@
     <div class="container">
       <div class="cform-wrap">
         <h2 class="cform-title">Want to see what a successful application actually looks like?</h2>
-        <p class="cform-sub">Book a consultation and get access to <strong>3 winning Ivy League applications</strong> (full essays, activities, stats). On the call, we'll match you with a student like you who got in and show you what worked.</p>
+        <p class="cform-sub">On the call, we'll match you with a student like you who got in and break down how they did it.</p>
         <form id="consult-form" onsubmit="return false;">
           <div class="cform-step active" id="cstep-1">
             <p class="cform-qlabel">Are you a student or a guardian?</p>
@@ -600,16 +600,6 @@
             </div>
             <div class="cform-dots">
               <span class="cdot"></span><span class="cdot active"></span><span class="cdot"></span>
-            </div>
-          </div>
-          <div class="cform-step" id="cstep-thanks">
-            <div class="cform-thanks">
-              <h3>Thank you!</h3>
-              <p>An expert advisor will be in touch shortly to set up your free consultation. We look forward to speaking with you.</p>
-              <p style="margin-top:12px;">On the call, we'll match you with a student like you who got in and break down how they did it.</p>
-            </div>
-            <div class="cform-dots">
-              <span class="cdot"></span><span class="cdot"></span><span class="cdot active"></span>
             </div>
           </div>
         </form>
@@ -820,8 +810,7 @@
         console.error('Submit error:', err);
       }
 
-      document.getElementById('cstep-2').classList.remove('active');
-      document.getElementById('cstep-thanks').classList.add('active');
+      window.location.href = '/contact/';
     }
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => {
