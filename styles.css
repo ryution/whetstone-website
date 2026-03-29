@@ -291,7 +291,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============================================
    STATS
    ============================================ */
-.stats { padding: 96px 0; background: var(--cream); }
+.stats { padding: 96px 0; background: var(--cream); overflow: hidden; }
 
 .stats-header {
   margin-bottom: 40px;
@@ -363,6 +363,14 @@ img { max-width: 100%; height: auto; display: block; }
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+.chart-wrap {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .chart-card-title {
@@ -422,14 +430,14 @@ img { max-width: 100%; height: auto; display: block; }
   margin-bottom: 28px;
 }
 
-.logos-row { display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; gap: 48px; }
+.logos-row { display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; gap: 32px; overflow: visible; }
 .logo-cell { display: flex; align-items: center; justify-content: center; height: 48px; flex-shrink: 0; }
 .logo-cell img { width: auto; opacity: 0.55; filter: grayscale(100%); transition: opacity 0.2s; }
 .logo-cell img:hover { opacity: 0.85; }
 @media (max-width: 900px) {
-  .logos-row { justify-content: flex-start; overflow-x: auto; gap: 36px; padding-bottom: 6px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-  .logos-row::-webkit-scrollbar { display: none; }
-  .logo-cell { flex-shrink: 0; }
+  .logos .container { overflow-x: auto; padding-bottom: 6px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .logos .container::-webkit-scrollbar { display: none; }
+  .logos-row { justify-content: flex-start; gap: 28px; }
 }
 
 /* ============================================
