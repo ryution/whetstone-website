@@ -101,6 +101,13 @@
   .section-glow {
     box-shadow: 0 -1px 0 0 rgba(255,194,71,0.15), 0 1px 40px rgba(25,25,112,0.06);
   }
+
+  /* ── Subject Accordion dark overrides ── */
+  .sat-accordion .accordion { border-top-color: rgba(255,255,255,0.15); }
+  .sat-accordion .accordion details { border-bottom-color: rgba(255,255,255,0.15); }
+  .sat-accordion .accordion summary { color: #fff; }
+  .sat-accordion .acc-body ul li { color: rgba(255,255,255,0.75); opacity:1; }
+  .sat-accordion .acc-icon { color: rgba(255,255,255,0.8); }
 </style>
 <script type="application/ld+json">
 {
@@ -240,15 +247,15 @@
 </section>
 
 <!-- NYC Context -->
-<section class="py-24" style="background: linear-gradient(160deg, #eaedfa 0%, #f2f4fb 55%, #ffffff 100%);">
+<section class="py-24" style="background: url('../assets/gradientbg.jpg') center center / cover no-repeat;">
   <div class="max-w-4xl mx-auto px-6 text-center">
-    <span class="text-[#6A7A90] font-bold uppercase tracking-[0.15em] text-xs mb-4 block">The NYC Standard</span>
-    <h2 class="text-4xl font-serif mb-10 leading-tight">In New York, Your SAT &amp; ACT Score Sets the Stage.</h2>
-    <div class="space-y-5 text-slate-700 leading-relaxed text-lg text-left max-w-3xl mx-auto">
+    <span style="color:rgba(255,255,255,0.55);" class="font-bold uppercase tracking-[0.15em] text-xs mb-4 block">The NYC Standard</span>
+    <h2 class="text-4xl font-serif mb-10 leading-tight" style="color:#fff;">In New York, Your SAT &amp; ACT Score Sets the Stage.</h2>
+    <div class="space-y-5 leading-relaxed text-lg text-left max-w-3xl mx-auto" style="color:rgba(255,255,255,0.78);">
       <p>At Dalton, Collegiate, Spence, and Horace Mann, a 1490 SAT or a 34 ACT isn't exceptional — it's expected. Students from Manhattan's top independent schools and Westchester's most competitive districts are applying to the same elite colleges. Test scores don't open doors — but they will certainly close them.</p>
       <p>Generic test prep centers weren't built for this. They cycle students through the same course regardless of baseline, rotate instructors who never get to know the student, and have no real answer when scores stall. The SAT and ACT reward precision — not repetition.</p>
-      <div class="border-l-4 border-[#FFC247] pl-6 py-2 bg-white shadow-sm" style="box-shadow: 0 2px 16px rgba(25,25,112,0.07);">
-        <p class="font-serif italic text-primary text-lg"><strong class="not-italic font-bold">Whetstone was built for this.</strong> Every student starts with a full SAT <em>and</em> ACT diagnostic. We recommend the test based on where you have the largest natural advantage. Then we build the plan and don't stop until you hit your number.</p>
+      <div class="border-l-4 border-[#FFC247] pl-6 py-2" style="background:rgba(255,255,255,0.08); border-radius:4px;">
+        <p class="font-serif italic text-lg" style="color:rgba(255,255,255,0.92);"><strong class="not-italic font-bold" style="color:#fff;">Whetstone was built for this.</strong> Every student starts with a full SAT <em>and</em> ACT diagnostic. We recommend the test based on where you have the largest natural advantage. Then we build the plan and don't stop until you hit your number.</p>
       </div>
     </div>
   </div>
@@ -275,40 +282,40 @@
 </section>
 
 <!-- Programs -->
-<section class="py-24" id="programs" style="background: linear-gradient(180deg, #f4f6fc 0%, #eef0f8 50%, #f4f6fc 100%);">
+<section class="py-24" id="programs" style="background: var(--navy);">
   <div class="max-w-7xl mx-auto px-6 text-center mb-16">
-    <span class="text-[#6A7A90] font-bold uppercase tracking-[0.15em] text-xs mb-4 block">Programs</span>
-    <h2 class="text-4xl font-serif">Choose Your Program</h2>
-    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">Three tiers built around the Harvard Club Intensive. Every program covers both SAT and ACT. Hit your target score or we keep working together for free until you do.</p>
+    <span style="color:rgba(255,255,255,0.55);" class="font-bold uppercase tracking-[0.15em] text-xs mb-4 block">Programs</span>
+    <h2 class="text-4xl font-serif" style="color:#fff;">Choose Your Program</h2>
+    <p class="mt-4 max-w-2xl mx-auto" style="color:rgba(255,255,255,0.65);">Three tiers built around the Harvard Club Intensive. Every program covers both SAT and ACT. Hit your target score or we keep working together for free until you do.</p>
   </div>
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
 
     <!-- Foundations -->
-    <div class="bg-white border border-slate-200/80 flex flex-col rounded-sm shadow-md">
-      <div class="p-8 border-b border-slate-100">
-        <h3 class="font-serif text-2xl mb-1">Foundations</h3>
-        <p class="text-slate-500 text-sm italic">Best for: students establishing a baseline</p>
+    <div class="flex flex-col rounded-sm" style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); backdrop-filter:blur(6px);">
+      <div class="p-8" style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <h3 class="font-serif text-2xl mb-1" style="color:#fff;">Foundations</h3>
+        <p class="text-sm italic" style="color:rgba(255,255,255,0.55);">Best for: students establishing a baseline</p>
       </div>
       <div class="p-8 flex-1">
         <div class="flex gap-8 mb-6">
           <div>
-            <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Duration</div>
-            <div class="font-serif text-xl">8 weeks</div>
+            <div class="text-xs font-bold uppercase tracking-widest mb-1" style="color:rgba(255,255,255,0.4);">Duration</div>
+            <div class="font-serif text-xl" style="color:#fff;">8 weeks</div>
           </div>
         </div>
-        <div class="rounded-sm p-4 mb-6 text-sm" style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1px solid #fcd34d;">
-          <span class="font-bold text-amber-800">Score Guarantee:</span> 1450+ or +120 pts — hit your target or we keep working for free until you do.
+        <div class="rounded-sm p-4 mb-6 text-sm" style="background:rgba(255,194,71,0.15); border:1px solid rgba(255,194,71,0.4);">
+          <span class="font-bold" style="color:#FFC247;">Score Guarantee:</span> <span style="color:rgba(255,255,255,0.85);">1450+ or +120 pts — hit your target or we keep working for free until you do.</span>
         </div>
-        <ul class="text-slate-600 text-sm space-y-3">
-          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> 64 hrs Harvard Club Blitz sessions</li>
-          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> SAT &amp; ACT diagnostic + test selection</li>
-          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Targeted SAT/ACT homework assignments</li>
-          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Winning Applications Walkthrough</li>
-          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Parent progress updates</li>
+        <ul class="text-sm space-y-3" style="color:rgba(255,255,255,0.75);">
+          <li class="flex gap-2"><span style="color:#FFC247;" class="font-bold">✓</span> 64 hrs Harvard Club Blitz sessions</li>
+          <li class="flex gap-2"><span style="color:#FFC247;" class="font-bold">✓</span> SAT &amp; ACT diagnostic + test selection</li>
+          <li class="flex gap-2"><span style="color:#FFC247;" class="font-bold">✓</span> Targeted SAT/ACT homework assignments</li>
+          <li class="flex gap-2"><span style="color:#FFC247;" class="font-bold">✓</span> Winning Applications Walkthrough</li>
+          <li class="flex gap-2"><span style="color:#FFC247;" class="font-bold">✓</span> Parent progress updates</li>
         </ul>
       </div>
-      <div class="p-8 border-t border-slate-100">
-        <a href="/contact/" class="btn-shine block w-full text-center bg-[#191970] text-white py-3 font-bold uppercase tracking-widest text-xs rounded-sm">Book a Consultation</a>
+      <div class="p-8" style="border-top:1px solid rgba(255,255,255,0.1);">
+        <a href="/contact/" class="btn-shine block w-full text-center py-3 font-bold uppercase tracking-widest text-xs rounded-sm" style="background:rgba(255,255,255,0.12); color:#fff; border:1px solid rgba(255,255,255,0.25);">Book a Consultation</a>
       </div>
     </div>
 
@@ -344,32 +351,32 @@
     </div>
 
     <!-- Collegiate -->
-    <div class="bg-white border border-slate-200/80 flex flex-col rounded-sm shadow-md">
-      <div class="p-8 border-b border-slate-100">
-        <h3 class="font-serif text-2xl mb-1">Collegiate</h3>
-        <p class="text-slate-500 text-sm italic">Best for: elite score targets</p>
+    <div class="flex flex-col rounded-sm" style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15); backdrop-filter:blur(6px);">
+      <div class="p-8" style="border-bottom:1px solid rgba(255,255,255,0.1);">
+        <h3 class="font-serif text-2xl mb-1" style="color:#fff;">Collegiate</h3>
+        <p class="text-sm italic" style="color:rgba(255,255,255,0.55);">Best for: elite score targets</p>
       </div>
       <div class="p-8 flex-1">
         <div class="flex gap-8 mb-6">
           <div>
-            <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Duration</div>
-            <div class="font-serif text-xl">16 weeks</div>
+            <div class="text-xs font-bold uppercase tracking-widest mb-1" style="color:rgba(255,255,255,0.4);">Duration</div>
+            <div class="font-serif text-xl" style="color:#fff;">16 weeks</div>
           </div>
         </div>
-        <div class="rounded-sm p-4 mb-6 text-sm" style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1px solid #fcd34d;">
-          <span class="font-bold text-amber-800">Score Guarantee:</span> 1530+ or +200 pts — hit your target or we keep working for free until you do.
+        <div class="rounded-sm p-4 mb-6 text-sm" style="background:rgba(255,194,71,0.15); border:1px solid rgba(255,194,71,0.4);">
+          <span class="font-bold" style="color:#FFC247;">Score Guarantee:</span> <span style="color:rgba(255,255,255,0.85);">1530+ or +200 pts — hit your target or we keep working for free until you do.</span>
         </div>
-        <ul class="text-slate-600 text-sm space-y-3">
-          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> 128 hrs Harvard Club Blitz sessions</li>
-          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> SAT &amp; ACT diagnostic + test selection</li>
-          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Targeted SAT/ACT homework assignments</li>
-          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Capstone Discovery Session</li>
-          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Essay Writing Blitz (1 pass)</li>
-          <li class="flex gap-2"><span class="text-primary font-bold">✓</span> Winning Applications Walkthrough</li>
+        <ul class="text-sm space-y-3" style="color:rgba(255,255,255,0.75);">
+          <li class="flex gap-2"><span style="color:#FFC247;" class="font-bold">✓</span> 128 hrs Harvard Club Blitz sessions</li>
+          <li class="flex gap-2"><span style="color:#FFC247;" class="font-bold">✓</span> SAT &amp; ACT diagnostic + test selection</li>
+          <li class="flex gap-2"><span style="color:#FFC247;" class="font-bold">✓</span> Targeted SAT/ACT homework assignments</li>
+          <li class="flex gap-2"><span style="color:#FFC247;" class="font-bold">✓</span> Capstone Discovery Session</li>
+          <li class="flex gap-2"><span style="color:#FFC247;" class="font-bold">✓</span> Essay Writing Blitz (1 pass)</li>
+          <li class="flex gap-2"><span style="color:#FFC247;" class="font-bold">✓</span> Winning Applications Walkthrough</li>
         </ul>
       </div>
-      <div class="p-8 border-t border-slate-100">
-        <a href="/contact/" class="btn-shine block w-full text-center bg-[#191970] text-white py-3 font-bold uppercase tracking-widest text-xs rounded-sm">Book a Consultation</a>
+      <div class="p-8" style="border-top:1px solid rgba(255,255,255,0.1);">
+        <a href="/contact/" class="btn-shine block w-full text-center py-3 font-bold uppercase tracking-widest text-xs rounded-sm" style="background:rgba(255,255,255,0.12); color:#fff; border:1px solid rgba(255,255,255,0.25);">Book a Consultation</a>
       </div>
     </div>
 
@@ -377,42 +384,42 @@
 </section>
 
 <!-- Method -->
-<section class="py-24" style="background: linear-gradient(180deg, #ffffff 0%, #f0f2fb 60%, #F6F6F9 100%);">
+<section class="py-24" style="background: url('../assets/gradientbg.jpg') center center / cover no-repeat;">
   <div class="max-w-7xl mx-auto px-6 text-center mb-16">
-    <span class="text-[#6A7A90] font-bold uppercase tracking-[0.15em] text-xs mb-4 block">Our Method</span>
-    <h2 class="text-4xl font-serif">How Whetstone Students Actually Improve</h2>
-    <p class="text-slate-500 mt-4 max-w-xl mx-auto">Repetition without understanding doesn't move scores. We build mastery — then test it relentlessly under real conditions.</p>
+    <span style="color:rgba(255,255,255,0.55);" class="font-bold uppercase tracking-[0.15em] text-xs mb-4 block">Our Method</span>
+    <h2 class="text-4xl font-serif" style="color:#fff;">How Whetstone Students Actually Improve</h2>
+    <p class="mt-4 max-w-xl mx-auto" style="color:rgba(255,255,255,0.65);">Repetition without understanding doesn't move scores. We build mastery — then test it relentlessly under real conditions.</p>
   </div>
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div class="bg-white p-10 text-center shadow-md relative pt-16" style="box-shadow: 0 4px 24px rgba(25,25,112,0.08);">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 text-primary flex items-center justify-center font-serif text-3xl font-bold" style="background: linear-gradient(135deg, #FFC247 0%, #f5a800 100%); box-shadow: 0 4px 14px rgba(255,194,71,0.4);">1</div>
-      <h3 class="font-serif text-xl mb-4">SAT &amp; ACT Diagnostic</h3>
-      <p class="text-slate-600">Every student takes a full-length SAT <em>and</em> ACT diagnostic. We identify error patterns by question type and recommend the test where you have the largest natural edge.</p>
+    <div class="p-10 text-center relative pt-16" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:16px; backdrop-filter:blur(6px);">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center font-serif text-3xl font-bold" style="background: linear-gradient(135deg, #FFC247 0%, #f5a800 100%); color:#191970; box-shadow: 0 4px 14px rgba(255,194,71,0.4);">1</div>
+      <h3 class="font-serif text-xl mb-4" style="color:#fff;">SAT &amp; ACT Diagnostic</h3>
+      <p style="color:rgba(255,255,255,0.72);">Every student takes a full-length SAT <em>and</em> ACT diagnostic. We identify error patterns by question type and recommend the test where you have the largest natural edge.</p>
     </div>
-    <div class="bg-white p-10 text-center shadow-md relative pt-16" style="box-shadow: 0 4px 24px rgba(25,25,112,0.08);">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 text-primary flex items-center justify-center font-serif text-3xl font-bold" style="background: linear-gradient(135deg, #FFC247 0%, #f5a800 100%); box-shadow: 0 4px 14px rgba(255,194,71,0.4);">2</div>
-      <h3 class="font-serif text-xl mb-4">Active Recall &amp; the Feynman Method</h3>
-      <p class="text-slate-600">We don't re-read notes or re-watch videos. Students learn by retrieving — and by explaining concepts back in their own words until there are no gaps. Spaced repetition locks it in.</p>
+    <div class="p-10 text-center relative pt-16" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:16px; backdrop-filter:blur(6px);">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center font-serif text-3xl font-bold" style="background: linear-gradient(135deg, #FFC247 0%, #f5a800 100%); color:#191970; box-shadow: 0 4px 14px rgba(255,194,71,0.4);">2</div>
+      <h3 class="font-serif text-xl mb-4" style="color:#fff;">Active Recall &amp; the Feynman Method</h3>
+      <p style="color:rgba(255,255,255,0.72);">We don't re-read notes or re-watch videos. Students learn by retrieving — and by explaining concepts back in their own words until there are no gaps. Spaced repetition locks it in.</p>
     </div>
-    <div class="bg-white p-10 text-center shadow-md relative pt-16" style="box-shadow: 0 4px 24px rgba(25,25,112,0.08);">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 text-primary flex items-center justify-center font-serif text-3xl font-bold" style="background: linear-gradient(135deg, #FFC247 0%, #f5a800 100%); box-shadow: 0 4px 14px rgba(255,194,71,0.4);">3</div>
-      <h3 class="font-serif text-xl mb-4">Heavy Testing Under Real Conditions</h3>
-      <p class="text-slate-600">Students take timed full-length practice tests throughout the program — not at the end. Every test is debriefed question by question to convert errors into mastered concepts.</p>
+    <div class="p-10 text-center relative pt-16" style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:16px; backdrop-filter:blur(6px);">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 flex items-center justify-center font-serif text-3xl font-bold" style="background: linear-gradient(135deg, #FFC247 0%, #f5a800 100%); color:#191970; box-shadow: 0 4px 14px rgba(255,194,71,0.4);">3</div>
+      <h3 class="font-serif text-xl mb-4" style="color:#fff;">Heavy Testing Under Real Conditions</h3>
+      <p style="color:rgba(255,255,255,0.72);">Students take timed full-length practice tests throughout the program — not at the end. Every test is debriefed question by question to convert errors into mastered concepts.</p>
     </div>
   </div>
 </section>
 
 <!-- Where We Work -->
-<section class="py-24" style="background: linear-gradient(160deg, #f0f2fb 0%, #F6F6F9 55%, #eef0f8 100%);">
+<section class="py-24" style="background: var(--navy);">
   <div class="max-w-7xl mx-auto px-6 text-center mb-16">
-    <span class="text-[#6A7A90] font-bold uppercase tracking-[0.15em] text-xs mb-4 block">Where We Teach</span>
-    <h2 class="text-4xl font-serif">The Harvard Club of New York — or Online</h2>
-    <p class="text-slate-500 mt-4 max-w-2xl mx-auto">All sessions take place at the Harvard Club of New York City (44th Street) or via online video. Our students come from across Manhattan, Brooklyn, Westchester, and beyond.</p>
+    <span style="color:rgba(255,255,255,0.55);" class="font-bold uppercase tracking-[0.15em] text-xs mb-4 block">Where We Teach</span>
+    <h2 class="text-4xl font-serif" style="color:#fff;">The Harvard Club of New York — or Online</h2>
+    <p style="color:rgba(255,255,255,0.65);" class="mt-4 max-w-2xl mx-auto">All sessions take place at the Harvard Club of New York City (44th Street) or via online video. Our students come from across Manhattan, Brooklyn, Westchester, and beyond.</p>
   </div>
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div class="border-t-4 border-[#FFC247] p-8 bg-white shadow-sm" style="box-shadow: 0 2px 16px rgba(25,25,112,0.06);">
-      <h3 class="font-serif text-2xl mb-4">Manhattan</h3>
-      <ul class="text-slate-600 space-y-2 text-sm">
+    <div style="border-top:4px solid #FFC247; background:rgba(255,255,255,0.07); border-radius:0 0 12px 12px; padding:32px;">
+      <h3 class="font-serif text-2xl mb-4" style="color:#fff;">Manhattan</h3>
+      <ul style="color:rgba(255,255,255,0.7); list-style:none; padding:0;" class="space-y-2 text-sm">
         <li>Upper East Side</li>
         <li>Upper West Side</li>
         <li>Midtown &amp; Murray Hill</li>
@@ -421,9 +428,9 @@
         <li>Carnegie Hill</li>
       </ul>
     </div>
-    <div class="border-t-4 border-[#FFC247] p-8 bg-white shadow-sm" style="box-shadow: 0 2px 16px rgba(25,25,112,0.06);">
-      <h3 class="font-serif text-2xl mb-4">Brooklyn</h3>
-      <ul class="text-slate-600 space-y-2 text-sm">
+    <div style="border-top:4px solid #FFC247; background:rgba(255,255,255,0.07); border-radius:0 0 12px 12px; padding:32px;">
+      <h3 class="font-serif text-2xl mb-4" style="color:#fff;">Brooklyn</h3>
+      <ul style="color:rgba(255,255,255,0.7); list-style:none; padding:0;" class="space-y-2 text-sm">
         <li>Brooklyn Heights</li>
         <li>Park Slope</li>
         <li>Cobble Hill &amp; Carroll Gardens</li>
@@ -432,9 +439,9 @@
         <li>Williamsburg</li>
       </ul>
     </div>
-    <div class="border-t-4 border-[#FFC247] p-8 bg-white shadow-sm" style="box-shadow: 0 2px 16px rgba(25,25,112,0.06);">
-      <h3 class="font-serif text-2xl mb-4">Westchester</h3>
-      <ul class="text-slate-600 space-y-2 text-sm">
+    <div style="border-top:4px solid #FFC247; background:rgba(255,255,255,0.07); border-radius:0 0 12px 12px; padding:32px;">
+      <h3 class="font-serif text-2xl mb-4" style="color:#fff;">Westchester</h3>
+      <ul style="color:rgba(255,255,255,0.7); list-style:none; padding:0;" class="space-y-2 text-sm">
         <li>Scarsdale</li>
         <li>Bronxville</li>
         <li>Rye &amp; Rye Brook</li>
@@ -447,84 +454,84 @@
 </section>
 
 <!-- Schools We Serve -->
-<section class="py-24" style="background: linear-gradient(180deg, #ffffff 0%, #f4f6fc 100%);">
+<section class="py-24" style="background: var(--navy);">
   <div class="max-w-7xl mx-auto px-6">
-    <span class="text-[#6A7A90] font-bold uppercase tracking-[0.15em] text-xs mb-4 block text-center">Schools We Serve</span>
-    <h2 class="text-4xl font-serif text-center mb-12">Built for New York's Most Competitive Students</h2>
+    <span style="color:rgba(255,255,255,0.55);" class="font-bold uppercase tracking-[0.15em] text-xs mb-4 block text-center">Schools We Serve</span>
+    <h2 class="text-4xl font-serif text-center mb-12" style="color:#fff;">Built for New York's Most Competitive Students</h2>
     <div class="flex flex-wrap justify-center gap-3">
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Dalton</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Collegiate</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Trinity</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Spence</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Brearley</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Chapin</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Horace Mann</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Riverdale</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Ethical Culture Fieldston</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Stuyvesant</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Bronx Science</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Brooklyn Tech</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Hunter College HS</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Scarsdale High School</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Avenues</span>
-      <span class="px-5 py-2 bg-white border border-slate-200 text-slate-700 text-sm font-semibold rounded-sm shadow-sm hover:border-[#FFC247] hover:shadow-md transition-all cursor-default">Léman Manhattan</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Dalton</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Collegiate</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Trinity</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Spence</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Brearley</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Chapin</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Horace Mann</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Riverdale</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Ethical Culture Fieldston</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Stuyvesant</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Bronx Science</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Brooklyn Tech</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Hunter College HS</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Scarsdale High School</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Avenues</span>
+      <span style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18); color:rgba(255,255,255,0.85); padding:8px 20px; border-radius:4px; font-size:14px; font-weight:600; display:inline-block;">Léman Manhattan</span>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="py-24" style="background: linear-gradient(160deg, #f0f2fb 0%, #F6F6F9 55%, #eef0f8 100%);">
+<section class="py-24" style="background: url('../assets/gradientbg.jpg') center center / cover no-repeat;">
   <div class="max-w-3xl mx-auto px-6">
-    <span class="text-[#6A7A90] font-bold uppercase tracking-[0.15em] text-xs mb-4 block text-center">Common Questions</span>
-    <h2 class="text-4xl font-serif text-center mb-16">Frequently Asked Questions</h2>
+    <span style="color:rgba(255,255,255,0.55);" class="font-bold uppercase tracking-[0.15em] text-xs mb-4 block text-center">Common Questions</span>
+    <h2 class="text-4xl font-serif text-center mb-16" style="color:#fff;">Frequently Asked Questions</h2>
     <div class="space-y-3">
 
-      <details class="group bg-white rounded-sm" style="box-shadow: 0 2px 12px rgba(25,25,112,0.07);">
-        <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-primary font-serif text-lg">
+      <details style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:8px; margin-bottom:8px;">
+        <summary style="display:flex; justify-content:space-between; align-items:center; padding:20px 24px; cursor:pointer; list-style:none; font-family:'Libre Caslon Text',serif; font-size:18px; font-weight:700; color:#fff;">
           When should my student start tutoring?
           <span class="text-2xl text-[#FFC247] group-open:rotate-45 transition-transform">+</span>
         </summary>
-        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+        <div style="padding:0 24px 20px; color:rgba(255,255,255,0.72); line-height:1.7;">
           Most students begin in the fall or winter of their junior year to prepare for the March or May exams. We recommend starting with a diagnostic as early as sophomore summer to allow the most time for improvement.
         </div>
       </details>
 
-      <details class="group bg-white rounded-sm" style="box-shadow: 0 2px 12px rgba(25,25,112,0.07);">
-        <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-primary font-serif text-lg">
+      <details style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:8px; margin-bottom:8px;">
+        <summary style="display:flex; justify-content:space-between; align-items:center; padding:20px 24px; cursor:pointer; list-style:none; font-family:'Libre Caslon Text',serif; font-size:18px; font-weight:700; color:#fff;">
           Should my child take the SAT or the ACT?
           <span class="text-2xl text-[#FFC247] group-open:rotate-45 transition-transform">+</span>
         </summary>
-        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+        <div style="padding:0 24px 20px; color:rgba(255,255,255,0.72); line-height:1.7;">
           Both tests are accepted equally by every major college and university. The right choice depends on the student's strengths. We administer a diagnostic for both and recommend the test where the student has a larger natural advantage.
         </div>
       </details>
 
-      <details class="group bg-white rounded-sm" style="box-shadow: 0 2px 12px rgba(25,25,112,0.07);">
-        <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-primary font-serif text-lg">
+      <details style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:8px; margin-bottom:8px;">
+        <summary style="display:flex; justify-content:space-between; align-items:center; padding:20px 24px; cursor:pointer; list-style:none; font-family:'Libre Caslon Text',serif; font-size:18px; font-weight:700; color:#fff;">
           How is the Digital SAT different from the old paper test?
           <span class="text-2xl text-[#FFC247] group-open:rotate-45 transition-transform">+</span>
         </summary>
-        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+        <div style="padding:0 24px 20px; color:rgba(255,255,255,0.72); line-height:1.7;">
           The Digital SAT (launched March 2024) is shorter (2 hours 14 minutes vs. 3 hours), adaptive by module, and delivered on a computer or tablet. The adaptive format means early performance heavily influences your final score. Our tutors are trained specifically on Digital SAT strategy and official College Board practice materials.
         </div>
       </details>
 
-      <details class="group bg-white rounded-sm" style="box-shadow: 0 2px 12px rgba(25,25,112,0.07);">
-        <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-primary font-serif text-lg">
+      <details style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:8px; margin-bottom:8px;">
+        <summary style="display:flex; justify-content:space-between; align-items:center; padding:20px 24px; cursor:pointer; list-style:none; font-family:'Libre Caslon Text',serif; font-size:18px; font-weight:700; color:#fff;">
           How are Whetstone instructors selected?
           <span class="text-2xl text-[#FFC247] group-open:rotate-45 transition-transform">+</span>
         </summary>
-        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+        <div style="padding:0 24px 20px; color:rgba(255,255,255,0.72); line-height:1.7;">
           Our instructors are exclusively recruited from Ivy League and top-10 universities. Each must score in the 99th percentile and undergo a rigorous pedagogical training process before working with students.
         </div>
       </details>
 
-      <details class="group bg-white rounded-sm" style="box-shadow: 0 2px 12px rgba(25,25,112,0.07);">
-        <summary class="flex justify-between items-center p-6 cursor-pointer list-none font-bold text-primary font-serif text-lg">
+      <details style="background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:8px; margin-bottom:8px;">
+        <summary style="display:flex; justify-content:space-between; align-items:center; padding:20px 24px; cursor:pointer; list-style:none; font-family:'Libre Caslon Text',serif; font-size:18px; font-weight:700; color:#fff;">
           How does the score guarantee work?
           <span class="text-2xl text-[#FFC247] group-open:rotate-45 transition-transform">+</span>
         </summary>
-        <div class="px-6 pb-6 text-slate-600 leading-relaxed">
+        <div style="padding:0 24px 20px; color:rgba(255,255,255,0.72); line-height:1.7;">
           Each program tier includes a specific score guarantee. If your student completes the program in good standing — attending sessions, completing assigned practice, and sitting for a real exam — and does not hit the target, we extend tutoring at no additional charge until they do. Details are outlined in the enrollment agreement.
         </div>
       </details>
@@ -593,10 +600,10 @@ document.getElementById('sat-form').addEventListener('submit', async function(e)
 </script>
 
 <!-- SUBJECT ACCORDION -->
-<section style="padding: 80px 0; background: #fff;">
-  <div class="container" style="max-width: 760px;">
-    <p class="section-label" style="color: var(--text-muted);">Subject Tutoring</p>
-    <h2 style="font-family: var(--font-serif); font-size: clamp(24px,3vw,36px); color: var(--navy); margin-bottom: 40px; line-height: 1.25;">Beyond test prep — our tutors cover the full academic curriculum.</h2>
+<section style="padding: 80px 0; background: var(--navy);">
+  <div class="container sat-accordion" style="max-width: 760px;">
+    <p class="section-label" style="color: rgba(255,255,255,0.55);">Subject Tutoring</p>
+    <h2 style="font-family: var(--font-serif); font-size: clamp(24px,3vw,36px); color: #fff; margin-bottom: 40px; line-height: 1.25;">Beyond test prep — our tutors cover the full academic curriculum.</h2>
     <div class="accordion">
       <details open>
         <summary>Mathematics <span class="acc-icon"></span></summary>
@@ -627,7 +634,7 @@ document.getElementById('sat-form').addEventListener('submit', async function(e)
         </ul></div>
       </details>
     </div>
-    <p style="margin-top:20px;font-size:13px;color:var(--text-muted);">* Available with select tutors. <a href="/contact/" style="color:var(--navy);">Contact us</a> to discuss your subject.</p>
+    <p style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.55);">* Available with select tutors. <a href="/contact/" style="color:rgba(255,255,255,0.85);">Contact us</a> to discuss your subject.</p>
   </div>
 </section>
 
