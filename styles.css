@@ -4,6 +4,8 @@
 
 html { scrollbar-width: none; -ms-overflow-style: none; }
 html::-webkit-scrollbar { display: none; }
+.desktop-only { display: inline; }
+@media (max-width: 768px) { .desktop-only { display: none; } }
 
 :root {
   --navy: #191970;
