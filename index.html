@@ -671,18 +671,11 @@
       <h2 class="section-title">What Our Students Say</h2>
       <div class="story-cards">
         <div class="story-card">
-          <div class="story-card-media">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/W1MmR0eHeoE?rel=0&modestbranding=1"
-              title="Christian's Princeton EA Story"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy">
-            </iframe>
+          <div class="story-card-media" id="story-christian">
+            <img src="https://img.youtube.com/vi/W1MmR0eHeoE/maxresdefault.jpg" alt="Christian's Princeton EA Story" class="story-thumb">
             <div class="story-card-overlay">
               <p class="story-card-title">Done in December! Christian's journey to early acceptance at Princeton.</p>
-              <span class="story-card-btn">Watch</span>
+              <span class="story-card-btn" onclick="playStory('story-christian','W1MmR0eHeoE')">Watch</span>
             </div>
           </div>
         </div>
@@ -787,6 +780,10 @@
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobile-nav').classList.toggle('open');
     });
+    function playStory(cardId, videoId) {
+      var card = document.getElementById(cardId);
+      card.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    }
     function toggleFaq(btn) {
       const item = btn.parentElement;
       const isOpen = item.classList.contains('open');
