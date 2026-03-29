@@ -466,13 +466,15 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .logos { overflow: hidden; }
-.logos-row { display: flex; align-items: center; justify-content: center; flex-wrap: nowrap; gap: 40px; }
+.logos-row { overflow: hidden; display: flex; }
+.logos-track { display: flex; align-items: center; gap: 60px; animation: marquee 22s linear infinite; will-change: transform; }
+.logos-track:hover { animation-play-state: paused; }
 .logo-cell { display: flex; align-items: center; justify-content: center; height: 48px; flex-shrink: 0; }
 .logo-cell img { width: auto; opacity: 0.55; filter: grayscale(100%); transition: opacity 0.2s; }
 .logo-cell img:hover { opacity: 0.85; }
-@media (max-width: 900px) {
-  .logos-row { justify-content: flex-start; gap: 28px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; padding-bottom: 4px; }
-  .logos-row::-webkit-scrollbar { display: none; }
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* ============================================
