@@ -974,6 +974,8 @@ img { max-width: 100%; height: auto; display: block; }
   .service-row { grid-template-columns: 1fr; gap: 32px; }
   .service-content h3 { font-size: 28px; }
   .section-sub { font-size: 15px; }
+  .cform-title { font-size: 22px; }
+  .cform-sub { font-size: 14px; }
   .form-wrap { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .stats-layout { grid-template-columns: 1fr; }
