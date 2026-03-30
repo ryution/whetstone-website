@@ -632,6 +632,11 @@ img { max-width: 100%; height: auto; display: block; }
 .reviews { padding: 96px 0; background: url('assets/gradientbg.jpg') center center / cover no-repeat; }
 .reviews .section-label { color: rgba(255,255,255,0.55); }
 .reviews .section-title { color: var(--white); }
+.reviews .review-card { color: var(--white); }
+.reviews .review-card .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 16px; }
+.reviews .review-card blockquote { color: rgba(255,255,255,0.9); font-style: italic; margin: 0 0 20px; line-height: 1.75; }
+.reviews .review-card .reviewer strong { color: var(--white); }
+.reviews .review-card .reviewer span { color: rgba(255,255,255,0.6); }
 
 /* Story video cards */
 .story-cards {
