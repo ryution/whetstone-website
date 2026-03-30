@@ -291,7 +291,7 @@
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
 
     <!-- Foundations -->
-    <div class="flex flex-col" style="background: #1e2d78; border:1px solid rgba(255,255,255,0.1); border-radius:5px;">
+    <div class="flex flex-col program-side-card" style="background: #1e2d78; border:1px solid rgba(255,255,255,0.1); border-radius:5px;">
       <div class="p-8" style="border-bottom:1px solid rgba(255,255,255,0.1);">
         <h3 class="font-serif text-2xl mb-1" style="color:#fff;">Foundations</h3>
         <p class="text-sm italic" style="color:rgba(255,255,255,0.55);">Best for: students establishing a baseline</p>
@@ -351,7 +351,7 @@
     </div>
 
     <!-- Collegiate -->
-    <div class="flex flex-col" style="background: #1e2d78; border:1px solid rgba(255,255,255,0.1); border-radius:5px;">
+    <div class="flex flex-col program-side-card" style="background: #1e2d78; border:1px solid rgba(255,255,255,0.1); border-radius:5px;">
       <div class="p-6" style="border-bottom:1px solid rgba(255,255,255,0.1);">
         <h3 class="font-serif text-2xl mb-1" style="color:#fff;">Collegiate</h3>
         <p class="text-sm italic" style="color:rgba(255,255,255,0.55);">Best for: elite score targets</p>
@@ -382,6 +382,14 @@
 
   </div>
 </section>
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    var cards = document.querySelectorAll('.program-side-card');
+    var maxH = 0;
+    cards.forEach(function(c) { maxH = Math.max(maxH, c.offsetHeight); });
+    cards.forEach(function(c) { c.style.height = maxH + 'px'; });
+  });
+</script>
 
 <!-- Method -->
 <section class="py-24" style="background: url('../assets/gradientbg.jpg') center center / cover no-repeat;">
