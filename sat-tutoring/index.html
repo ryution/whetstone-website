@@ -41,11 +41,13 @@
   /* Accordion */
   .accordion { border-top: 1.5px solid var(--border); }
   .accordion details { border-bottom: 1.5px solid var(--border); }
-  .accordion summary { display:flex; justify-content:space-between; align-items:center; padding:18px 0; cursor:pointer; list-style:none; font-family:'Libre Caslon Text',serif; font-size:20px; font-weight:700; color:var(--navy); user-select:none; }
+  .accordion summary { display:flex; justify-content:space-between; align-items:center; padding:18px 0; cursor:pointer; list-style:none; font-family:'Libre Caslon Text',serif; font-size:20px; font-weight:700; color:var(--navy); user-select:none; transition: opacity 0.25s ease, letter-spacing 0.25s ease; }
+  .accordion summary:hover { opacity: 0.75; letter-spacing: 0.01em; }
   .accordion summary::-webkit-details-marker { display:none; }
   .acc-icon::before { content:'+'; }
   .accordion details[open] .acc-icon::before { content:'−'; }
-  .acc-icon { font-size:22px; font-weight:300; color:var(--navy); line-height:1; transition:transform 0.2s; flex-shrink:0; }
+  .acc-icon { font-size:22px; font-weight:300; color:var(--navy); line-height:1; transition: transform 0.25s ease; flex-shrink:0; }
+  .accordion summary:hover .acc-icon { transform: rotate(90deg); }
   .acc-body { padding:4px 0 20px; }
   .acc-body ul { list-style:none; padding:0; margin:0; }
   .acc-body ul li { font-family:'Libre Franklin',sans-serif; font-size:16px; color:var(--navy); padding:7px 0 7px 16px; opacity:0.78; }
