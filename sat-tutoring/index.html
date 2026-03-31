@@ -110,6 +110,12 @@
   .sat-accordion .accordion summary { color: #fff; }
   .sat-accordion .acc-body ul li { color: rgba(255,255,255,0.75); opacity:1; }
   .sat-accordion .acc-icon { color: rgba(255,255,255,0.8); }
+
+  .sat-faq details { transition: background 0.2s ease; border-radius: 4px; }
+  .sat-faq details summary { transition: opacity 0.25s ease, letter-spacing 0.25s ease; }
+  .sat-faq details summary:hover { opacity: 0.7; letter-spacing: 0.01em; }
+  .sat-faq details summary span { transition: transform 0.25s ease; display: inline-block; }
+  .sat-faq details summary:hover span { transform: rotate(90deg); }
 </style>
 <script type="application/ld+json">
 {
@@ -533,7 +539,7 @@
   <div class="max-w-3xl mx-auto px-6">
     <span style="color: var(--text-muted);" class="font-bold uppercase tracking-[0.15em] text-xs mb-4 block">Common Questions</span>
     <h2 class="text-4xl font-serif mb-10" style="color: var(--navy);">Frequently Asked Questions</h2>
-    <div style="border-top: 1px solid var(--border);">
+    <div class="sat-faq" style="border-top: 1px solid var(--border);">
 
       <details style="border-bottom: 1px solid var(--border);">
         <summary style="display:flex; justify-content:space-between; align-items:center; padding:18px 0; cursor:pointer; list-style:none; font-family:'Libre Caslon Text',serif; font-size:17px; font-weight:700; color: var(--navy);">
