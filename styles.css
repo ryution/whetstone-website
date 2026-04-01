@@ -296,7 +296,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============================================
    STATS
    ============================================ */
-.stats { padding: 96px 0; background: #EEEEF4; overflow: hidden; }
+.stats { padding: 96px 0; background: #fff; overflow: hidden; }
 .stats .section-label { color: var(--text-muted); }
 .stats .section-title { color: var(--navy); }
 /* stat/chart cards stay white on gradient background */
