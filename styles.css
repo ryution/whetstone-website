@@ -524,7 +524,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .service-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-.service-card-wrap { position: relative; z-index: 1; max-width: 420px; }
+.service-card-wrap { position: relative; z-index: 1; width: 100%; }
 
 .service-num {
   display: inline-block;
