@@ -450,18 +450,18 @@ img { max-width: 100%; height: auto; display: block; }
   /* Mobile carousel: scrollable, side padding allows centering any card */
   .story-carousel {
     justify-content: flex-start;
-    padding-left: calc(50% - 110px);
-    padding-right: calc(50% - 110px);
+    padding-left: calc(50% - 120px);
+    padding-right: calc(50% - 120px);
   }
 
   .story-card {
-    flex: 0 0 160px;
+    flex: 0 0 150px;
     transform: scale(0.85);
     opacity: 0.5;
   }
 
   .story-card-active {
-    flex: 0 0 220px;
+    flex: 0 0 240px;
     transform: scale(1);
     opacity: 1;
   }
@@ -681,21 +681,15 @@ img { max-width: 100%; height: auto; display: block; }
 .story-card {
   flex: 0 0 200px;
   cursor: pointer;
-  background: #fff;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  padding: 12px;
-  box-shadow: none;
   transform: scale(0.82);
   opacity: 0.45;
   transform-origin: center center;
-  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.45s ease, box-shadow 0.4s ease;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.45s ease;
 }
 
 .story-card-active {
   transform: scale(1);
   opacity: 1;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
 }
 
 .story-card:not(.story-card-active):hover {
@@ -705,7 +699,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .story-card-media {
   position: relative;
-  border-radius: 4px;
+  border-radius: 18px;
   overflow: hidden;
   aspect-ratio: 4 / 5;
   background: #000;
@@ -760,10 +754,11 @@ img { max-width: 100%; height: auto; display: block; }
 .story-card-title {
   color: #3d4f63;
   font-family: var(--font-sans);
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 1.5;
-  margin: 18px 0 6px;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.45;
+  margin: 10px 0 0;
+  text-align: center;
 }
 
 .story-card-title-placeholder {
