@@ -1171,12 +1171,14 @@ img { max-width: 100%; height: auto; display: block; }
    ============================================ */
 .why-section {
   padding: 96px 0;
-  background: url('assets/gradientbg.jpg') center center / cover no-repeat;
+  background: #EEEEF4;
   overflow: hidden;
 }
-.why-section .section-label { color: rgba(255,255,255,0.55); }
-.why-section .section-title { color: var(--white); }
-.why-section .section-sub { color: rgba(255,255,255,0.72); }
+.why-section .section-label { color: var(--text-muted); }
+.why-section .section-title { color: var(--navy); }
+.why-section .section-sub { color: var(--text-muted); }
+.why-section .btn-primary { background: var(--navy); color: var(--white); }
+.why-section .btn-primary:hover { background: var(--navy-light); box-shadow: 0 4px 16px rgba(25,25,112,0.2); }
 
 .why-cards {
   display: grid;
@@ -1185,18 +1187,17 @@ img { max-width: 100%; height: auto; display: block; }
   margin-top: 48px;
 }
 .why-card {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.14);
+  background: #fff;
+  border: 1px solid rgba(25,25,112,0.08);
   border-radius: 20px;
   padding: 36px 32px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: background 0.2s;
+  box-shadow: 0 2px 12px rgba(25,25,112,0.07);
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease;
 }
-.why-card:hover { background: rgba(255,255,255,0.13); }
+.why-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(25,25,112,0.12); }
 .why-num {
   font-family: var(--font-serif);
   font-size: 13px;
@@ -1208,7 +1209,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: var(--font-serif);
   font-size: 22px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--navy);
   line-height: 1.25;
   margin: 0;
 }
@@ -1216,10 +1217,10 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: var(--font-sans);
   font-size: 15px;
   line-height: 1.7;
-  color: rgba(255,255,255,0.75);
+  color: #3d4f63;
   margin: 0;
 }
-.why-card-body strong { color: rgba(255,255,255,0.95); font-weight: 700; }
+.why-card-body strong { color: var(--navy); font-weight: 700; }
 
 @media (max-width: 900px) {
   .why-cards { grid-template-columns: 1fr; gap: 16px; }
