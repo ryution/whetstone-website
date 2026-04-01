@@ -1571,7 +1571,7 @@ img { max-width: 100%; height: auto; display: block; }
 .team-card {
   background: var(--white);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 5px;
   overflow: hidden;
   text-decoration: none;
   transition: box-shadow 0.2s, transform 0.2s;
