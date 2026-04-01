@@ -670,16 +670,16 @@ img { max-width: 100%; height: auto; display: block; }
   min-width: 280px;
   cursor: pointer;
   background: #fff;
-  border: 1px solid rgba(0,0,0,0.08);
+  border: 1px solid transparent;
   border-radius: 5px;
   padding: 24px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  box-shadow: none;
   transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
 }
 
 .story-card:hover {
-  border-color: rgba(0,0,0,0.18);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  border-color: rgba(0,0,0,0.08);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
   transform: scale(1.03);
 }
 
@@ -694,8 +694,8 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .story-card-placeholder:hover {
-  border-color: rgba(0,0,0,0.08);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  border-color: transparent;
+  box-shadow: none;
   transform: none;
 }
 
