@@ -556,7 +556,12 @@
           }
         });
       }, { threshold: 0.15 });
-      whyEls.forEach(function(el) { whyObserver.observe(el); });
+      whyEls.forEach(function(el) {
+        whyObserver.observe(el);
+        el.addEventListener('transitionend', function() {
+          el.style.transitionDelay = '0s';
+        }, { once: true });
+      });
     })();
   </script>
 
