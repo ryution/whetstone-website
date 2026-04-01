@@ -673,12 +673,18 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 5px;
   padding: 24px;
   box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
 }
 
 .story-card:hover {
   border-color: rgba(0,0,0,0.18);
   box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transform: scale(1.03);
+}
+
+.story-card:active {
+  transform: scale(1.015);
+  transition-duration: 0.1s;
 }
 
 .story-card-placeholder {
@@ -687,8 +693,9 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .story-card-placeholder:hover {
-  border-color: var(--border);
-  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-color: rgba(0,0,0,0.08);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  transform: none;
 }
 
 .story-card-media {
