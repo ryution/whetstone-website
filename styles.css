@@ -450,18 +450,18 @@ img { max-width: 100%; height: auto; display: block; }
   /* Mobile carousel: scrollable, side padding allows centering any card */
   .story-carousel {
     justify-content: flex-start;
-    padding-left: calc(50% - 120px);
-    padding-right: calc(50% - 120px);
+    padding-left: calc(50% - 130px);
+    padding-right: calc(50% - 130px);
   }
 
   .story-card {
-    flex: 0 0 150px;
+    flex: 0 0 180px;
     transform: scale(0.85);
     opacity: 0.5;
   }
 
   .story-card-active {
-    flex: 0 0 240px;
+    flex: 0 0 260px;
     transform: scale(1);
     opacity: 1;
   }
@@ -666,9 +666,10 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  margin-top: 48px;
-  padding: 16px 48px 56px;
+  gap: 24px;
+  margin: 48px auto 0;
+  padding: 16px 24px 56px;
+  max-width: 1120px;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -679,7 +680,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .story-card {
-  flex: 0 0 200px;
+  flex: 0 0 330px;
   cursor: pointer;
   transform: scale(0.82);
   opacity: 0.45;
@@ -699,7 +700,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .story-card-media {
   position: relative;
-  border-radius: 18px;
+  border-radius: 5px;
   overflow: hidden;
   aspect-ratio: 4 / 5;
   background: #000;
@@ -758,7 +759,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 400;
   line-height: 1.45;
   margin: 10px 0 0;
-  text-align: center;
+  text-align: left;
 }
 
 .story-card-title-placeholder {
