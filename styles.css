@@ -700,7 +700,7 @@ img { max-width: 100%; height: auto; display: block; }
   position: relative;
   border-radius: 5px;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 9 / 16;
   background: #000;
 }
 
@@ -751,12 +751,19 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .story-card-title {
-  color: #3d4f63;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
   font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.45;
-  margin: 10px 0 0;
+  margin: 0;
+  padding: 32px 14px 14px;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 100%);
+  border-radius: 0 0 5px 5px;
   text-align: left;
 }
 
