@@ -690,9 +690,9 @@
       <p class="section-label">Student Stories</p>
       <h2 class="section-title">What Our Students Say</h2>
     </div>
-    <div class="story-cards">
+    <div class="story-carousel">
         <!-- Placeholder left -->
-        <div class="story-card story-card-placeholder">
+        <div class="story-card story-card-placeholder" onclick="carouselFocus(this)">
           <div class="story-card-media story-card-empty">
             <div class="story-card-play story-card-play-placeholder">
               <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -704,7 +704,7 @@
           <p class="story-card-title story-card-title-placeholder">Coming soon</p>
         </div>
         <!-- Active card -->
-        <div class="story-card" onclick="playStory('story-christian','W1MmR0eHeoE')">
+        <div class="story-card story-card-active" onclick="carouselFocus(this); playStory('story-christian','W1MmR0eHeoE')">
           <div class="story-card-media" id="story-christian">
             <img src="https://img.youtube.com/vi/W1MmR0eHeoE/maxresdefault.jpg" alt="Christian's Princeton EA Story" class="story-thumb">
             <div class="story-card-play">
@@ -717,7 +717,7 @@
           <p class="story-card-title">Done in December! Christian's journey to early acceptance at Princeton.</p>
         </div>
         <!-- Placeholder right -->
-        <div class="story-card story-card-placeholder">
+        <div class="story-card story-card-placeholder" onclick="carouselFocus(this)">
           <div class="story-card-media story-card-empty">
             <div class="story-card-play story-card-play-placeholder">
               <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -826,14 +826,23 @@
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobile-nav').classList.toggle('open');
     });
-    // Scroll hovered story card to center
-    document.querySelectorAll('.story-card').forEach(function(card) {
-      card.addEventListener('mouseenter', function() {
-        var container = document.querySelector('.story-cards');
-        var cardCenter = card.offsetLeft + card.offsetWidth / 2;
-        var containerCenter = container.clientWidth / 2;
-        container.scrollTo({ left: cardCenter - containerCenter, behavior: 'smooth' });
+    // Carousel: click any card to make it active
+    function carouselFocus(el, instant) {
+      document.querySelectorAll('.story-card').forEach(function(c) {
+        c.classList.remove('story-card-active');
       });
+      el.classList.add('story-card-active');
+      // Scroll card to center of carousel viewport
+      var container = document.querySelector('.story-carousel');
+      var containerRect = container.getBoundingClientRect();
+      var cardRect = el.getBoundingClientRect();
+      var scrollLeft = container.scrollLeft + cardRect.left - containerRect.left - (containerRect.width - cardRect.width) / 2;
+      container.scrollTo({ left: scrollLeft, behavior: instant ? 'instant' : 'smooth' });
+    }
+    // Auto-center the active card on load
+    document.addEventListener('DOMContentLoaded', function() {
+      var active = document.querySelector('.story-card-active');
+      if (active) carouselFocus(active, true);
     });
 
     function playStory(cardId, videoId) {
