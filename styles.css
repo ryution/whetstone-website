@@ -450,6 +450,10 @@ img { max-width: 100%; height: auto; display: block; }
   .story-card {
     flex: 0 0 280px;
   }
+
+  .story-card:not(.story-card-placeholder) {
+    order: -1;
+  }
 }
 
 /* Legacy stat classes */
