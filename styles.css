@@ -712,7 +712,9 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============================================
    FORM SECTION
    ============================================ */
-.form-section { padding: 96px 0; background: var(--navy); }
+.form-section { padding: 96px 0; background: url('assets/gradientbg.jpg') center center / cover no-repeat; position: relative; }
+.form-section::before { content: ''; position: absolute; inset: 0; background: rgba(25,25,112,0.50); pointer-events: none; }
+.form-section .container { position: relative; z-index: 1; }
 
 /* New consultation form */
 .cform-wrap { max-width: 680px; margin: 0 auto; text-align: center; }
