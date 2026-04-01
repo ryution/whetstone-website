@@ -629,7 +629,9 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============================================
    REVIEWS
    ============================================ */
-.reviews { padding: 96px 0; background: url('assets/gradientbg.jpg') center center / cover no-repeat; }
+.reviews { padding: 77px 0; background: url('assets/gradientbg.jpg') center center / cover no-repeat; position: relative; }
+.reviews::before { content: ''; position: absolute; inset: 0; background: rgba(25,25,112,0.50); pointer-events: none; }
+.reviews .container { position: relative; z-index: 1; }
 .reviews .section-label { color: rgba(255,255,255,0.55); }
 .reviews .section-title { color: var(--white); }
 .reviews .review-card { color: var(--white); }
@@ -648,7 +650,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .story-card {
-  width: 300px;
+  width: 240px;
   flex-shrink: 0;
 }
 
