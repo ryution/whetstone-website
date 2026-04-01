@@ -695,6 +695,14 @@ img { max-width: 100%; height: auto; display: block; }
   transform: scale(0.88);
   opacity: 0.7;
 }
+.story-card:first-child:not(.story-card-active):hover {
+  transform: scale(0.88) translateX(32px);
+  opacity: 0.7;
+}
+.story-card:last-child:not(.story-card-active):hover {
+  transform: scale(0.88) translateX(-32px);
+  opacity: 0.7;
+}
 
 .story-card-media {
   position: relative;
