@@ -587,7 +587,6 @@ img { max-width: 100%; height: auto; display: block; }
   object-position: top;
   border-radius: var(--radius);
   display: block;
-  background: var(--cream);
 }
 
 .student-badge {
