@@ -296,9 +296,9 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============================================
    STATS
    ============================================ */
-.stats { padding: 96px 0; background: url('assets/gradientbg.jpg') center center / cover no-repeat; overflow: hidden; }
-.stats .section-label { color: rgba(255,255,255,0.55); }
-.stats .section-title { color: var(--white); }
+.stats { padding: 96px 0; background: #EEEEF4; overflow: hidden; }
+.stats .section-label { color: var(--text-muted); }
+.stats .section-title { color: var(--navy); }
 /* stat/chart cards stay white on gradient background */
 
 .stats-header {
