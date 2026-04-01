@@ -447,12 +447,19 @@ img { max-width: 100%; height: auto; display: block; }
     padding: 0 20px 16px;
   }
 
-  .story-card {
+  .story-card:not(.story-card-placeholder) {
     flex: 0 0 280px;
+    order: -1;
   }
 
-  .story-card:not(.story-card-placeholder) {
-    order: -1;
+  .story-card-placeholder {
+    flex: 0 0 180px;
+  }
+
+  /* Disable flex-swap effect on mobile (touch, no hover) */
+  .story-cards:has(.story-card-placeholder:hover) .story-card:not(.story-card-placeholder) {
+    flex: 0 0 280px;
+    opacity: 1;
   }
 }
 
@@ -666,37 +673,44 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .story-card {
-  flex: 1;
-  min-width: 280px;
+  flex: 1.5;
+  min-width: 200px;
   cursor: pointer;
   background: #fff;
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 24px;
   box-shadow: none;
-  transition: box-shadow 0.35s ease, border-color 0.35s ease, transform 0.35s ease;
+  transition: flex 0.5s ease, box-shadow 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
 }
 
-.story-card:hover {
-  border-color: rgba(0,0,0,0.08);
+.story-card:not(.story-card-placeholder):hover {
   box-shadow: 0 8px 32px rgba(0,0,0,0.12);
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .story-card:active {
-  transform: scale(1.015);
+  transform: scale(1.01);
   transition-duration: 0.1s;
 }
 
 .story-card-placeholder {
-  cursor: default;
-  opacity: 0.45;
+  flex: 0.75;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: flex 0.5s ease, opacity 0.4s ease, box-shadow 0.35s ease;
 }
 
 .story-card-placeholder:hover {
-  border-color: transparent;
-  box-shadow: none;
-  transform: none;
+  flex: 1.5;
+  opacity: 0.85;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+}
+
+/* Shrink active card when a placeholder is hovered */
+.story-cards:has(.story-card-placeholder:hover) .story-card:not(.story-card-placeholder) {
+  flex: 0.75;
+  opacity: 0.6;
 }
 
 .story-card-media {
