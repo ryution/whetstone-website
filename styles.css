@@ -741,7 +741,7 @@ img { max-width: 100%; height: auto; display: block; }
   position: relative;
   border-radius: 4px;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 4;
   background: #000;
 }
 
