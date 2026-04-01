@@ -85,6 +85,11 @@
     .service-card-arrow { font-size: 14px; font-weight: 600; color: var(--navy); }
     @media (max-width: 680px) { .services-4-grid { grid-template-columns: 1fr; } }
 
+    /* Scroll-reveal animations */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .service-card-new.reveal { transition-delay: var(--delay, 0s); }
+
     .local-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -651,29 +656,29 @@
   <!-- WHAT WE DO -->
   <section class="page-section" id="services" style="background: #EEEEF4;">
     <div class="container">
-      <p class="section-label">What We Do</p>
-      <h2 class="section-title">The Best Applications Are Built Backwards</h2>
-      <p class="section-sub" style="max-width: none;">We start with the end in mind and build each piece to support a clear student narrative.</p>
+      <p class="section-label reveal">What We Do</p>
+      <h2 class="section-title reveal">The Best Applications Are Built Backwards</h2>
+      <p class="section-sub reveal" style="max-width: none;">We start with the end in mind and build each piece to support a clear student narrative.</p>
       <div class="services-4-grid">
-        <a href="/college-admissions-counseling/" class="service-card-new">
+        <a href="/college-admissions-counseling/" class="service-card-new reveal" style="--delay: 0.05s">
           <span class="service-card-num">01</span>
           <h3>Admissions Counseling</h3>
           <p>A personalized application roadmap from first session to final submission.</p>
           <span class="service-card-arrow">Learn More →</span>
         </a>
-        <a href="/college-essay-coaching/" class="service-card-new">
+        <a href="/college-essay-coaching/" class="service-card-new reveal" style="--delay: 0.15s">
           <span class="service-card-num">02</span>
           <h3>Essay Writing</h3>
           <p>Unforgettable college essays and supplements developed with expert writing coaches.</p>
           <span class="service-card-arrow">Learn More →</span>
         </a>
-        <a href="/sat-tutoring/" class="service-card-new">
+        <a href="/sat-tutoring/" class="service-card-new reveal" style="--delay: 0.25s">
           <span class="service-card-num">03</span>
           <h3>SAT &amp; ACT Intensives</h3>
           <p>SAT, ACT, and AP testing system from 99th percentile scorers.</p>
           <span class="service-card-arrow">Learn More →</span>
         </a>
-        <a href="/extracurricular-mentorship/" class="service-card-new">
+        <a href="/extracurricular-mentorship/" class="service-card-new reveal" style="--delay: 0.35s">
           <span class="service-card-num">04</span>
           <h3>Extracurricular &amp; Capstone Mentorship</h3>
           <p>Build bold, distinctive projects that demonstrate leadership and impact.</p>
@@ -1009,6 +1014,17 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeModal();
     });
+  </script>
+
+  <script>
+    (function() {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.reveal').forEach(function(el) { obs.observe(el); });
+    })();
   </script>
 
   <!-- STICKY BOTTOM CTA -->
