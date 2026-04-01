@@ -519,32 +519,46 @@
   <!-- WHY WHETSTONE -->
   <section class="why-section">
     <div class="container">
-      <p class="section-label">Why Whetstone</p>
-      <h2 class="section-title">What Makes Whetstone Different</h2>
-      <p class="section-sub" style="max-width:760px;">Before Whetstone, our founders built the New York Philosophical Society, now one of the country's largest philosophy and education nonprofits. The values behind that work shape Whetstone.</p>
+      <p class="section-label why-fade">Why Whetstone</p>
+      <h2 class="section-title why-fade" style="transition-delay:0.08s;">What Makes Whetstone Different</h2>
+      <p class="section-sub why-fade" style="max-width:760px; transition-delay:0.16s;">Before Whetstone, our founders built the New York Philosophical Society, now one of the country's largest philosophy and education nonprofits. The values behind that work shape Whetstone.</p>
       <div class="why-cards">
-        <div class="why-card">
+        <div class="why-card why-fade" style="transition-delay:0.24s;">
           <span class="why-num">01</span>
           <h4 class="why-card-title" style="white-space:nowrap;">Mentors, Not Consultants</h4>
           <p class="why-card-body">We see admissions as one important moment in a much larger journey. Our aim is to become <strong>trusted mentors during some of life's most formative years.</strong></p>
         </div>
-        <div class="why-card">
+        <div class="why-card why-fade" style="transition-delay:0.38s;">
           <span class="why-num">02</span>
           <h4 class="why-card-title">Disciplined Execution</h4>
           <p class="why-card-body">Strong strategy means little without follow-through. We use <strong>science-backed systems</strong> to help students build good habits and break bad ones.</p>
         </div>
-        <div class="why-card">
+        <div class="why-card why-fade" style="transition-delay:0.52s;">
           <span class="why-num">03</span>
           <h4 class="why-card-title">Character First</h4>
           <p class="why-card-body">We believe that <strong>admissions success should grow out of strong character</strong> – and not the other way around. All of our students are taught not only how to succeed, but the why behind virtue.</p>
         </div>
       </div>
-      <div style="display:flex;justify-content:center;gap:16px;margin-top:48px;flex-wrap:nowrap;max-width:100%;overflow:hidden;">
+      <div class="why-fade" style="display:flex;justify-content:center;gap:16px;margin-top:48px;flex-wrap:nowrap;max-width:100%;overflow:hidden;transition-delay:0.62s;">
         <a href="/about/" class="btn btn-primary" style="white-space:nowrap;flex:1;text-align:center;min-width:0;">Meet the Team</a>
         <a href="#consult" class="btn btn-gold" style="white-space:nowrap;flex:1;text-align:center;min-width:0;">Book a Consultation</a>
       </div>
     </div>
   </section>
+  <script>
+    (function() {
+      var whyEls = document.querySelectorAll('.why-fade');
+      var whyObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('why-visible');
+            whyObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      whyEls.forEach(function(el) { whyObserver.observe(el); });
+    })();
+  </script>
 
   <!-- CONSULTATION FORM -->
   <section class="form-section" id="form">
