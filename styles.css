@@ -1557,7 +1557,7 @@ img { max-width: 100%; height: auto; display: block; }
    TEAM PAGE — GLASS CARD DESIGN
    ============================================ */
 .team-glass-section {
-  background: url('../assets/gradientbg.jpg') center center / cover no-repeat;
+  background: var(--white);
   padding: 80px 0 120px;
 }
 
@@ -1569,20 +1569,18 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .team-card {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: var(--white);
+  border: 1px solid var(--border);
   border-radius: 16px;
   overflow: hidden;
   text-decoration: none;
-  transition: background 0.2s, transform 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s;
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
 }
 
 .team-card:hover {
-  background: rgba(255,255,255,0.12);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
   transform: translateY(-3px);
 }
 
@@ -1597,17 +1595,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .team-card-photo-wrap::before {
-  content: '';
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 70%;
-  aspect-ratio: 1;
-  background: radial-gradient(circle, rgba(255,194,71,0.55) 0%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 0;
+  display: none;
 }
 
 .team-card-photo {
@@ -1632,7 +1620,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-family: var(--font-serif);
   font-size: 20px;
   font-weight: 700;
-  color: var(--white);
+  color: var(--navy);
   margin-bottom: 2px;
 }
 
@@ -1655,7 +1643,7 @@ img { max-width: 100%; height: auto; display: block; }
 .team-card-edu li {
   font-family: var(--font-sans);
   font-size: 13px;
-  color: rgba(255,255,255,0.65);
+  color: var(--text-muted);
   line-height: 1.6;
   padding: 1px 0;
 }
@@ -1664,8 +1652,8 @@ img { max-width: 100%; height: auto; display: block; }
   display: block;
   text-align: center;
   margin-top: auto;
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.25);
+  background: var(--navy);
+  border: 1px solid var(--navy);
   color: var(--white) !important;
   padding: 10px 20px;
   border-radius: 8px;
@@ -1673,11 +1661,11 @@ img { max-width: 100%; height: auto; display: block; }
   font-weight: 700;
   font-size: 14px;
   text-decoration: none;
-  transition: background 0.2s;
+  transition: background 0.2s, opacity 0.2s;
 }
 
 .team-card-btn:hover {
-  background: rgba(255,255,255,0.22);
+  opacity: 0.85;
 }
 
 @media (max-width: 1000px) {
