@@ -3,10 +3,9 @@
   "configurations": [
     {
       "name": "Whetstone Admissions",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server"],
-      "port": 3001,
-      "autoPort": true
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["/tmp/whetstone_serve.sh"],
+      "port": 8080
     }
   ]
 }
