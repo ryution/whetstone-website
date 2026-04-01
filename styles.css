@@ -583,22 +583,63 @@ img { max-width: 100%; height: auto; display: block; }
 .student-photo {
   width: 100%;
   max-height: 460px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: top;
-  border-radius: 5px;
+  border-radius: var(--radius);
   display: block;
+  background: var(--cream);
 }
 
 .student-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(4px);
+  padding: 10px 16px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  padding: 12px 0 0;
+  box-shadow: var(--shadow);
 }
 .student-badge strong { font-family: var(--font-serif); font-size: 16px; color: var(--navy); }
-.student-badge span { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+.student-badge span { font-size: 13px; color: var(--text-muted); }
 
-.service-checklist-card { display: none; }
-.service-sentence-card { display: none; }
+.service-checklist-card {
+  position: absolute;
+  bottom: -60px;
+  left: -24px;
+  background: var(--white);
+  padding: 20px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  min-width: 260px;
+  z-index: 2;
+}
+
+.service-checklist-card--right {
+  left: auto;
+  right: -24px;
+}
+
+.service-checklist-card .service-tag { margin-bottom: 14px; display: block; }
+.service-checklist-card .service-list { margin-bottom: 0; }
+
+.service-sentence-card {
+  position: absolute;
+  bottom: -60px;
+  left: -24px;
+  background: var(--white);
+  padding: 20px 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  width: 260px;
+  z-index: 2;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--navy);
+  line-height: 1.55;
+}
 
 .service-sentence-card .score-chart img {
   width: 100%;
