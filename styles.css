@@ -511,7 +511,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============================================
    METHOD / SERVICES
    ============================================ */
-.method { padding: 96px 0; background: var(--white); }
+.method { padding: 96px 0 160px; background: var(--white); }
 
 .service-row {
   display: grid;
