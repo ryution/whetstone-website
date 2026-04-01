@@ -997,7 +997,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============================================
    FAQ
    ============================================ */
-.faq { padding: 96px 0; background: var(--cream); }
+.faq { padding: 72px 0; background: var(--cream); }
 
 .faq-list { max-width: 760px; }
 
@@ -1009,7 +1009,7 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 0;
+  padding: 14px 0;
   background: none;
   border: none;
   cursor: pointer;
