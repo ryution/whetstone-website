@@ -654,7 +654,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* ============================================
    REVIEWS
    ============================================ */
-.reviews { padding: 77px 0; background: #fff; }
+.reviews { padding: 77px 0; background: var(--cream); }
 .reviews .section-label { color: var(--gold); }
 .reviews .section-title { color: var(--navy); }
 .reviews .review-card { color: var(--navy); }
