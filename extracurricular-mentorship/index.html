@@ -540,42 +540,76 @@
       transform: translateY(0);
     }
 
-    /* ── What Makes Whetstone Different — editorial rows ── */
+    /* ── What Makes Whetstone Different — navy + ghost numbers ── */
+    .diff-section { background: var(--navy); padding: 80px 0; }
+    .diff-section .section-label { color: rgba(255,255,255,0.45); }
+    .diff-section .section-title { color: #fff; }
+    .diff-section .section-sub { color: rgba(255,255,255,0.62); }
+
     .diff-list { display: flex; flex-direction: column; margin-top: 48px; }
     .diff-item {
       display: grid;
-      grid-template-columns: 88px 1fr;
-      gap: 48px;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
       padding: 40px 0;
-      border-top: 1px solid var(--border);
-      align-items: start;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      align-items: center;
+      position: relative;
     }
-    .diff-item:last-child { border-bottom: 1px solid var(--border); }
-    .diff-num {
+    .diff-item:last-child { border-bottom: 1px solid rgba(255,255,255,0.1); }
+
+    .diff-left {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .diff-ghost-num {
       font-family: var(--font-serif);
-      font-size: 3rem;
+      font-size: clamp(5rem, 10vw, 8rem);
+      font-weight: 700;
+      color: rgba(255,194,71,0.12);
+      line-height: 1;
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      user-select: none;
+    }
+    .diff-tag {
+      font-family: var(--font-serif);
+      font-size: 0.78rem;
       font-weight: 700;
       color: var(--gold);
-      line-height: 1;
-      padding-top: 4px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      background: rgba(255,194,71,0.12);
+      border: 1px solid rgba(255,194,71,0.25);
+      padding: 5px 14px;
+      border-radius: 2px;
+      position: relative;
+      z-index: 1;
+    }
+    .diff-content {
+      position: relative;
+      z-index: 1;
     }
     .diff-content h3 {
       font-family: var(--font-serif);
-      font-size: 1.35rem;
-      color: var(--navy);
-      margin: 0 0 12px;
+      font-size: clamp(1.2rem, 2vw, 1.45rem);
+      color: #fff;
+      margin: 0 0 14px;
       line-height: 1.3;
     }
     .diff-content p {
-      color: var(--text-muted);
+      color: rgba(255,255,255,0.65);
       line-height: 1.75;
       margin: 0;
-      font-size: 0.95rem;
-      max-width: 640px;
+      font-size: 0.93rem;
     }
-    @media (max-width: 600px) {
-      .diff-item { grid-template-columns: 1fr; gap: 12px; padding: 28px 0; }
-      .diff-num { font-size: 2rem; }
+    @media (max-width: 680px) {
+      .diff-item { grid-template-columns: 1fr; gap: 16px; padding: 32px 0; }
+      .diff-ghost-num { font-size: 4rem; }
     }
 
     /* ── Hover animations ── */
@@ -858,35 +892,47 @@
 </div>
 </section>
 <!-- WHAT MAKES WHETSTONE DIFFERENT -->
-<section class="page-section-alt">
+<section class="diff-section">
 <div class="container">
 <p class="scroll-reveal section-label">Our Approach</p>
 <h2 class="scroll-reveal section-title" style="transition-delay:80ms;">What Makes Whetstone Different</h2>
 <p class="scroll-reveal section-sub" style="max-width:620px;transition-delay:160ms;">Most programs tell students to "join more clubs." We do something harder — and more valuable.</p>
 <div class="diff-list">
 <div class="scroll-reveal diff-item" style="transition-delay:260ms;">
-  <div class="diff-num">01</div>
+  <div class="diff-left">
+    <div class="diff-ghost-num">01</div>
+    <span class="diff-tag">Depth over breadth</span>
+  </div>
   <div class="diff-content">
     <h3>We Don't Just Add Activities</h3>
     <p>Anyone can stack a resume. We help students find the one or two things worth going deep on — then build something real around them that changes how they see their own potential.</p>
   </div>
 </div>
 <div class="scroll-reveal diff-item" style="transition-delay:360ms;">
-  <div class="diff-num">02</div>
+  <div class="diff-left">
+    <div class="diff-ghost-num">02</div>
+    <span class="diff-tag">Identity strategy</span>
+  </div>
   <div class="diff-content">
     <h3>Hybrid Identity, Not One-Dimensional Profiles</h3>
     <p>The strongest applications blend seemingly unrelated interests in unexpected ways. We help students develop that overlap — the filmmaker who codes, the economist who paints — into a distinctive, believable identity.</p>
   </div>
 </div>
 <div class="scroll-reveal diff-item" style="transition-delay:460ms;">
-  <div class="diff-num">03</div>
+  <div class="diff-left">
+    <div class="diff-ghost-num">03</div>
+    <span class="diff-tag">Real partnership</span>
+  </div>
   <div class="diff-content">
     <h3>You're Not Doing This Alone</h3>
     <p>Our mentors have started nonprofits, published research, built products, and navigated the exact application process your student is facing. They don't just advise — they work alongside students session by session.</p>
   </div>
 </div>
 <div class="scroll-reveal diff-item" style="transition-delay:560ms;">
-  <div class="diff-num">04</div>
+  <div class="diff-left">
+    <div class="diff-ghost-num">04</div>
+    <span class="diff-tag">Elite mentorship</span>
+  </div>
   <div class="diff-content">
     <h3>Expert Mentors, Real Accountability</h3>
     <p>We pair students with mentors from Harvard, Oxford, Google, and beyond — matched by field, not just credentials. Every session has a deliverable. Every month moves the project forward.</p>
