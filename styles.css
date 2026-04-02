@@ -7,6 +7,10 @@ html::-webkit-scrollbar { display: none; }
 .desktop-only { display: inline; }
 @media (max-width: 768px) { .desktop-only { display: none; } }
 
+/* ── Typography: prevent orphaned words site-wide ── */
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
+p, li, blockquote { text-wrap: pretty; }
+
 :root {
   --navy: #191970;
   --navy-light: #2a2a9a;
