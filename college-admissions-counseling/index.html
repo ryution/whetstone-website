@@ -257,16 +257,16 @@
 <div class="container" style="position:relative;z-index:1;">
 <p class="section-label" style="color:var(--gold);">Our Students</p>
 <h2 class="section-title" style="color:#fff;">Built for Students Who Take the Process Seriously.</h2>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:40px;">
+<div class="students-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:40px;">
 <div>
 <p style="font-size:17px;color:rgba(255,255,255,0.8);line-height:1.75;margin-bottom:20px;">Our students come from New York City's most competitive high schools, Westchester's top districts, and families around the world. What they share is ambition, intellectual seriousness, and a willingness to do the work.</p>
-<p style="font-size:17px;line-height:1.75;margin-bottom:12px;font-weight:600;color:#fff;">Distraction-Free. Built for Serious Work.</p>
+<p style="font-size:20px;line-height:1.75;margin-bottom:12px;font-weight:600;color:#fff;">Distraction-Free. Built for Serious Work.</p>
 <p style="font-size:17px;color:rgba(255,255,255,0.8);line-height:1.75;margin-bottom:12px;">Students work in one of New York's most storied institutions, surrounded by others who are serious about their goals. The environment alone changes how students show up.</p>
 <p style="font-size:17px;color:rgba(255,255,255,0.8);line-height:1.75;margin-bottom:20px;">No phones on desks. No distractions or notifications. Students who have tried prep centers and tutors at home consistently say the Harvard Club sessions feel more focused, and productive.</p>
 <p style="font-size:17px;color:rgba(255,255,255,0.8);line-height:1.75;margin-bottom:24px;">We also support transfer applicants and, through our graduate admissions program, students applying to law school, MBA programs, and PhD programs.</p>
 <p style="font-size:16px;color:rgba(255,255,255,0.8);">We serve students in <a href="/manhattan-college-admissions-counseling/" style="color:var(--gold);font-weight:600;">Manhattan</a>, <a href="/brooklyn-college-admissions-counseling/" style="color:var(--gold);font-weight:600;">Brooklyn</a>, and <a href="/westchester-college-admissions-counseling/" style="color:var(--gold);font-weight:600;">Westchester</a>, as well as online worldwide.</p>
 </div>
-<div>
+<div class="students-img">
 <img src="../assets/sat-harvard-1.jpg" alt="Students working at the Harvard Club" style="width:100%;border-radius:14px;display:block;"/>
 </div>
 </div>
@@ -374,8 +374,16 @@
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          revealObserver.unobserve(entry.target);
+          const el = entry.target;
+          el.classList.add('is-visible');
+          revealObserver.unobserve(el);
+          // After reveal animation completes, remove scroll-reveal class and clear
+          // transition-delay so hover animations are immediate and use the correct duration
+          const delayMs = parseFloat(el.style.transitionDelay) || 0;
+          setTimeout(() => {
+            el.style.transitionDelay = '';
+            el.classList.remove('scroll-reveal');
+          }, delayMs + 950);
         }
       });
     }, { threshold: 0.15 });

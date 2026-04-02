@@ -90,15 +90,15 @@
 <div class="container">
 <div class="two-col">
 <div class="two-col-text">
-<p class="section-label">Led by Princeton's Best</p>
-<h2>1:1 Essay Refinement with Leaders from Princeton's Writing Center</h2>
-<p>Work 1:1 with the team that's guided Rhodes scholars and astrophysicists. Led by Stephanie, Whetstone's team has guided students to early admission at Harvard, Cambridge, and many of the world's most selective universities.</p>
-<div class="quote-block">
+<p class="section-label scroll-reveal" style="transition-delay:0ms;">Led by Princeton's Best</p>
+<h2 class="scroll-reveal" style="transition-delay:80ms;">1:1 Essay Refinement with Leaders from Princeton's Writing Center</h2>
+<p class="scroll-reveal" style="transition-delay:180ms;">Work 1:1 with the team that's guided Rhodes scholars and astrophysicists. Led by Stephanie, Whetstone's team has guided students to early admission at Harvard, Cambridge, and many of the world's most selective universities.</p>
+<div class="quote-block scroll-reveal" style="transition-delay:280ms;">
 <blockquote>"Admissions go to the voices they remember and can't find anywhere else — the essay is your chance to prove you belong."</blockquote>
 <cite>— Stephanie, Asst. Director, Princeton University</cite>
 </div>
 </div>
-<div class="two-col-img">
+<div class="two-col-img scroll-reveal" style="transition-delay:200ms;">
 <img alt="Stephanie" src="../assets/Headshot_Stephanie-min.jpg"/>
 </div>
 </div>
@@ -303,6 +303,21 @@ document.getElementById('essay-form').addEventListener('submit', async function(
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobile-nav').classList.toggle('open');
     });
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.classList.add('is-visible');
+          revealObserver.unobserve(el);
+          const delayMs = parseFloat(el.style.transitionDelay) || 0;
+          setTimeout(() => {
+            el.style.transitionDelay = '';
+            el.classList.remove('scroll-reveal');
+          }, delayMs + 950);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.scroll-reveal').forEach(el => revealObserver.observe(el));
   </script>
 </body>
 </html>

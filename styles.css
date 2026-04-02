@@ -1354,7 +1354,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .step-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(25, 25, 112, 0.1);
+  box-shadow: var(--shadow-lg);
 }
 
 .step-num {
@@ -1471,6 +1471,8 @@ img { max-width: 100%; height: auto; display: block; }
 @media (max-width: 900px) {
   .two-col, .contact-grid { grid-template-columns: 1fr; }
   .steps-grid, .team-grid, .success-grid { grid-template-columns: 1fr 1fr; }
+  .students-grid { grid-template-columns: 1fr !important; }
+  .students-grid .students-img { order: -1; }
 }
 @media (max-width: 600px) {
   .steps-grid, .team-grid, .success-grid { grid-template-columns: 1fr; }
