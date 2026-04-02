@@ -1335,7 +1335,7 @@ img { max-width: 100%; height: auto; display: block; }
 
 .two-col-text p { color: var(--text-muted); font-size: 17px; margin-bottom: 16px; }
 
-.two-col-img { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); }
+.two-col-img { border-radius: 5px; overflow: hidden; box-shadow: var(--shadow-lg); }
 .two-col-img img { width: 100%; height: 420px; object-fit: cover; }
 
 .steps-grid {
