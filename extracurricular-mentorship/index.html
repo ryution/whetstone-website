@@ -569,9 +569,13 @@
       font-family: var(--font-serif);
       font-size: clamp(3.5rem, 7vw, 5.5rem);
       font-weight: 700;
-      color: rgba(255,194,71,0.65);
       line-height: 1;
       letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #FFC247 0%, #f5a800 50%, #e8901a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0.65;
     }
     .diff-tag {
       font-family: var(--font-sans);
