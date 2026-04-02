@@ -559,37 +559,31 @@
     .diff-item:last-child { border-bottom: 1px solid rgba(255,255,255,0.1); }
 
     .diff-left {
-      position: relative;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+      justify-content: center;
     }
     .diff-ghost-num {
       font-family: var(--font-serif);
-      font-size: clamp(5rem, 10vw, 8rem);
+      font-size: clamp(3.5rem, 7vw, 5.5rem);
       font-weight: 700;
-      color: rgba(255,194,71,0.12);
+      color: rgba(255,194,71,0.55);
       line-height: 1;
-      position: absolute;
-      left: -12px;
-      top: 50%;
-      transform: translateY(-50%);
-      pointer-events: none;
-      user-select: none;
-      z-index: 0;
+      letter-spacing: -0.02em;
     }
     .diff-tag {
-      font-family: var(--font-serif);
-      font-size: 0.78rem;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
       font-weight: 700;
       color: var(--gold);
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      background: rgba(255,194,71,0.12);
-      border: 1px solid rgba(255,194,71,0.25);
-      padding: 5px 14px;
+      background: rgba(255,194,71,0.1);
+      border: 1px solid rgba(255,194,71,0.3);
+      padding: 5px 12px;
       border-radius: 2px;
-      position: relative;
-      z-index: 1;
     }
     .diff-content {
       position: relative;
