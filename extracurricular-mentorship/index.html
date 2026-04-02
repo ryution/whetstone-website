@@ -530,6 +530,16 @@
       .download-section .ds-includes { align-items: center; }
     }
 
+    /* ── DOER card scroll-reveal override — smoother, shorter lift ── */
+    .doer-card.scroll-reveal {
+      transform: translateY(14px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .doer-card.scroll-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     /* ── Hover animations ── */
     .doer-card {
       transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -693,7 +703,7 @@
 <h2 class="scroll-reveal section-title" style="transition-delay:80ms;">The DOER Framework</h2>
 <p class="scroll-reveal section-sub" style="max-width:620px;transition-delay:160ms;">Every Whetstone capstone project is built on four pillars. They mirror what elite colleges actually evaluate — and what students remember for life, regardless of where they enroll.</p>
 <div class="doer-grid">
-<div class="scroll-reveal doer-card" style="transition-delay:260ms;">
+<div class="scroll-reveal doer-card" style="transition-delay:200ms;">
 <div class="doer-letter">D</div>
 <h3>Direction</h3>
 <ul>
@@ -703,7 +713,7 @@
 <li>Align the project with the student's broader academic identity</li>
 </ul>
 </div>
-<div class="scroll-reveal doer-card" style="transition-delay:380ms;">
+<div class="scroll-reveal doer-card" style="transition-delay:270ms;">
 <div class="doer-letter">O</div>
 <h3>Organization</h3>
 <ul>
@@ -713,7 +723,7 @@
 <li>Create documentation systems to capture progress as it happens</li>
 </ul>
 </div>
-<div class="scroll-reveal doer-card" style="transition-delay:500ms;">
+<div class="scroll-reveal doer-card" style="transition-delay:340ms;">
 <div class="doer-letter">E</div>
 <h3>Execution</h3>
 <ul>
@@ -723,7 +733,7 @@
 <li>Communicate progress clearly to stakeholders and mentors</li>
 </ul>
 </div>
-<div class="scroll-reveal doer-card" style="transition-delay:620ms;">
+<div class="scroll-reveal doer-card" style="transition-delay:410ms;">
 <div class="doer-letter">R</div>
 <h3>Reflection</h3>
 <ul>
