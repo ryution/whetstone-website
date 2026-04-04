@@ -86,9 +86,8 @@
     @media (max-width: 680px) { .services-4-grid { grid-template-columns: 1fr; } }
 
     /* Scroll-reveal animations */
-    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; transition-delay: var(--delay, 0s); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-    .service-card-new.reveal { transition-delay: var(--delay, 0s); }
 
     .local-grid {
       display: grid;
@@ -389,16 +388,16 @@
   <section class="stats" id="track-record">
     <div class="container">
       <div class="stats-header">
-        <p class="section-label" style="text-align:left;">Proof in Every Acceptance.</p>
-        <h2 class="section-title" style="text-align:left; margin-bottom:12px;">Our Track Record</h2>
+        <p class="section-label reveal" style="text-align:left;">Proof in Every Acceptance.</p>
+        <h2 class="section-title reveal" style="text-align:left; margin-bottom:12px; --delay: 0.08s;">Our Track Record</h2>
       </div>
       <div class="stats-layout">
-        <div class="stat-card-v2 stat-primary">
+        <div class="stat-card-v2 stat-primary reveal" style="--delay: 0.16s;">
           <span class="stat-num-v2" style="color:var(--gold);font-size:60px;">7.2x</span>
           <p class="stat-desc-v2">Whetstone student's chances to get into the Ivy League and Top 15 colleges.</p>
         </div>
         <div class="stats-right">
-          <div class="chart-card">
+          <div class="chart-card reveal" style="--delay: 0.24s;">
             <p class="chart-card-title">Whetstone students acceptance rates into the Ivy League</p>
             <div class="chart-legend">
               <span class="legend-item"><span class="legend-dot legend-dot--gray"></span>Non-Whetstone Admission Rates</span>
@@ -417,19 +416,19 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><td>Harvard</td><td>3.4%</td><td class="ivy-rate">21%</td></tr>
-                <tr><td>Princeton</td><td>3.5%</td><td class="ivy-rate">29.3%</td></tr>
-                <tr><td>Columbia</td><td>3.9%</td><td class="ivy-rate">34.7%</td></tr>
-                <tr><td>Yale</td><td>3.7%</td><td class="ivy-rate">26%</td></tr>
-                <tr><td>Dartmouth</td><td>6.2%</td><td class="ivy-rate">42.1%</td></tr>
-                <tr><td>Cornell</td><td>7.3%</td><td class="ivy-rate">51.2%</td></tr>
-                <tr><td>UPenn</td><td>5.9%</td><td class="ivy-rate">33%</td></tr>
-                <tr><td>Brown</td><td>5.4%</td><td class="ivy-rate">36.4%</td></tr>
+                <tr class="reveal" style="--delay: 0.3s;"><td>Harvard</td><td>3.4%</td><td class="ivy-rate">21%</td></tr>
+                <tr class="reveal" style="--delay: 0.38s;"><td>Princeton</td><td>3.5%</td><td class="ivy-rate">29.3%</td></tr>
+                <tr class="reveal" style="--delay: 0.46s;"><td>Columbia</td><td>3.9%</td><td class="ivy-rate">34.7%</td></tr>
+                <tr class="reveal" style="--delay: 0.54s;"><td>Yale</td><td>3.7%</td><td class="ivy-rate">26%</td></tr>
+                <tr class="reveal" style="--delay: 0.62s;"><td>Dartmouth</td><td>6.2%</td><td class="ivy-rate">42.1%</td></tr>
+                <tr class="reveal" style="--delay: 0.7s;"><td>Cornell</td><td>7.3%</td><td class="ivy-rate">51.2%</td></tr>
+                <tr class="reveal" style="--delay: 0.78s;"><td>UPenn</td><td>5.9%</td><td class="ivy-rate">33%</td></tr>
+                <tr class="reveal" style="--delay: 0.86s;"><td>Brown</td><td>5.4%</td><td class="ivy-rate">36.4%</td></tr>
               </tbody>
             </table>
           </div>
         </div>
-        <div class="stat-card-v2 stat-secondary">
+        <div class="stat-card-v2 stat-secondary reveal" style="--delay: 0.32s;">
           <span class="stat-num-v2" style="color:var(--gold);font-size:60px;">97%</span>
           <p class="stat-desc-v2">Of Whetstone students are admitted to a school in their Top 5.</p>
         </div>
