@@ -3,9 +3,9 @@
   "configurations": [
     {
       "name": "Whetstone Admissions",
-      "runtimeExecutable": "/bin/bash",
-      "runtimeArgs": ["/tmp/whetstone_serve.sh"],
-      "port": 8080
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": [".claude/server.js"],
+      "port": 3001
     }
   ]
 }

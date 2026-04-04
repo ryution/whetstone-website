@@ -429,7 +429,7 @@
 <section style="padding: 80px 0; background: var(--navy);">
   <div class="container sat-accordion" style="max-width: 760px;">
     <p class="scroll-reveal section-label" style="color: rgba(255,255,255,0.55);">Subject Tutoring</p>
-    <h2 class="scroll-reveal" style="font-family: var(--font-serif); font-size: clamp(24px,3vw,36px); color: #fff; margin-bottom: 40px; line-height: 1.25; transition-delay: 80ms;">We cover the full AP curriculum</h2>
+    <h2 class="scroll-reveal" style="font-family: var(--font-serif); font-size: clamp(24px,3vw,36px); color: #fff; margin-bottom: 40px; line-height: 1.25; transition-delay: 80ms;">We cover most AP and IB subjects</h2>
     <div class="accordion">
       <details open>
         <summary>Mathematics <span class="acc-icon"></span></summary>
@@ -552,63 +552,12 @@
 </section>
 
 <!-- Final CTA -->
-<section class="py-24 bg-cta-grad relative overflow-hidden" id="form">
-  <div class="absolute top-0 left-1/4 w-80 h-80 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(255,194,71,0.1) 0%, transparent 70%);"></div>
-  <div class="absolute bottom-0 right-1/4 w-96 h-96 rounded-full pointer-events-none" style="background: radial-gradient(circle, rgba(30,29,130,0.6) 0%, transparent 70%);"></div>
-  <div class="relative z-10 max-w-lg mx-auto px-6">
-    <h2 class="text-4xl font-serif text-white mb-3 text-center">Get Started with SAT Prep</h2>
-    <p class="text-white/70 text-base mb-8 text-center">Fill out the form and we'll be in touch to schedule your free consultation.</p>
-    <form id="sat-form" style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-      <div style="grid-column:span 2; display:flex; gap:10px;">
-        <label style="flex:1; display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); cursor:pointer; color:#fff; font-size:14px; font-weight:600;">
-          <input type="radio" name="sat-type" value="student" checked style="accent-color:#FFC247;"> I'm a Student
-        </label>
-        <label style="flex:1; display:flex; align-items:center; gap:10px; padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); cursor:pointer; color:#fff; font-size:14px; font-weight:600;">
-          <input type="radio" name="sat-type" value="guardian" style="accent-color:#FFC247;"> I'm a Parent
-        </label>
-      </div>
-      <input name="sat-first" placeholder="First Name *" required style="padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); color:#fff; font-size:14px; outline:none;" />
-      <input name="sat-last" placeholder="Last Name" style="padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); color:#fff; font-size:14px; outline:none;" />
-      <input name="sat-email" type="email" placeholder="Email Address *" required style="grid-column:span 2; padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); color:#fff; font-size:14px; outline:none;" />
-      <input name="sat-phone" type="tel" placeholder="Phone Number" style="padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); color:#fff; font-size:14px; outline:none;" />
-      <select name="sat-grad" style="padding:12px 16px; border-radius:10px; border:1.5px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.7); font-size:14px; outline:none;">
-        <option value="">Graduation Year</option>
-        <option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option>
-      </select>
-      <button type="submit" style="grid-column:span 2; padding:14px; border-radius:5px; border:none; background:#FFC247; color:#191970; font-size:15px; font-weight:700; cursor:pointer; letter-spacing:0.03em;">Book My Free Consultation</button>
-    </form>
-    <div id="sat-thanks" style="display:none; text-align:center; padding:32px 0;">
-      <div style="font-size:2.5rem; margin-bottom:12px;">🎉</div>
-      <h3 style="color:#fff; font-size:1.3rem; margin:0 0 8px;">You're all set!</h3>
-      <p style="color:rgba(255,255,255,0.7); font-size:0.9rem; margin:0;">An expert advisor will be in touch within one business day.</p>
-    </div>
+<section class="final-cta">
+  <div class="container">
+    <h2>Book a free consultation<br>with one of our expert<br>advisors.</h2>
+    <a href="/contact/" class="btn btn-gold">Get Started</a>
   </div>
 </section>
-<script>
-document.getElementById('sat-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  var btn = this.querySelector('button[type="submit"]');
-  btn.disabled = true; btn.textContent = 'Submitting...';
-  var f = this;
-  try {
-    await fetch('https://whetstone-portal.com/api/leads', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        type: f.querySelector('input[name="sat-type"]:checked').value === 'guardian' ? 'guardian' : 'student',
-        firstName: f.querySelector('[name="sat-first"]').value,
-        lastName: f.querySelector('[name="sat-last"]').value,
-        email: f.querySelector('[name="sat-email"]').value,
-        phone: f.querySelector('[name="sat-phone"]').value,
-        gradYear: f.querySelector('[name="sat-grad"]').value,
-        service: 'SAT / ACT Prep'
-      })
-    });
-  } catch (err) { console.error(err); }
-  f.style.display = 'none';
-  document.getElementById('sat-thanks').style.display = 'block';
-});
-</script>
 
 <!-- Footer -->
 <footer class="footer">
