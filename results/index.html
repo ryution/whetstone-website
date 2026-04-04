@@ -8,7 +8,7 @@
 <meta content="Hear directly from Whetstone students about their journey to top colleges and universities." name="description"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Libre+Franklin:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="../styles.css?v=14" rel="stylesheet"/>
 <link href="/assets/favicon.png" rel="icon" type="image/png"/>
 <link href="https://whetstoneadmissions.com/results/" rel="canonical"/>
@@ -60,26 +60,24 @@
 <a class="btn btn-primary" href="/contact/">Get Started</a>
 </div>
 </header>
-
 <!-- STUDENT STORIES -->
 <section class="reviews" id="reviews" style="padding-top: 140px;">
-  <div class="container">
-    <p class="section-label">Student Stories</p>
-    <h1 class="section-title" style="color:var(--white);">What Our Students Say</h1>
-    <div class="story-cards">
-      <div class="story-card">
-        <div class="story-card-media" id="story-christian">
-          <img src="https://img.youtube.com/vi/W1MmR0eHeoE/maxresdefault.jpg" alt="Christian's Princeton EA Story" class="story-thumb">
-          <div class="story-card-overlay">
-            <p class="story-card-title">Done in December! Christian's journey to early acceptance at Princeton.</p>
-            <span class="story-card-btn" onclick="playStory('story-christian','W1MmR0eHeoE')">Watch</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<p class="section-label scroll-reveal" style="transition-delay: 0ms">Student Stories</p>
+<h1 class="section-title" style="color:var(--white);">What Our Students Say</h1>
+<div class="story-cards">
+<div class="story-card scroll-reveal" style="transition-delay: 80ms">
+<div class="story-card-media" id="story-christian">
+<img alt="Christian's Princeton EA Story" class="story-thumb" src="https://img.youtube.com/vi/W1MmR0eHeoE/maxresdefault.jpg"/>
+<div class="story-card-overlay">
+<p class="story-card-title">Done in December! Christian's journey to early acceptance at Princeton.</p>
+<span class="story-card-btn" onclick="playStory('story-christian','W1MmR0eHeoE')">Watch</span>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- FINAL CTA -->
 <section class="final-cta">
 <div class="container" style="text-align:center;">
@@ -87,7 +85,6 @@
 <a class="btn btn-gold" href="/contact/">Get Started</a>
 </div>
 </section>
-
 <footer class="footer">
 <div class="container footer-grid">
 <div class="footer-brand">
@@ -127,7 +124,6 @@
 </div>
 </div>
 </footer>
-
 <script>
   window.addEventListener('scroll', () => {
     document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
@@ -139,6 +135,25 @@
     var card = document.getElementById(cardId);
     card.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
   }
+
+  // Scroll-reveal animations
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        el.classList.add('is-visible');
+        revealObserver.unobserve(el);
+        var delayMs = parseFloat(el.style.transitionDelay) || 0;
+        setTimeout(function() {
+          el.style.transitionDelay = '';
+          el.classList.remove('scroll-reveal');
+        }, delayMs + 950);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.scroll-reveal').forEach(function(el) {
+    revealObserver.observe(el);
+  });
 </script>
 </body>
 </html>

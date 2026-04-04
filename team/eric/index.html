@@ -81,7 +81,7 @@
 <main class="profile-page">
 <div class="container">
 <div class="profile-grid">
-<div class="profile-left">
+<div class="profile-left scroll-reveal" style="transition-delay: 0ms">
 <img alt="Eric" class="profile-photo" src="../../assets/Headshot_Eric-min.jpg"/>
 <div class="profile-education">
 <p class="profile-education-label">Education</p>
@@ -92,7 +92,7 @@
 </ul>
 </div>
 </div>
-<div class="profile-right">
+<div class="profile-right scroll-reveal" style="transition-delay: 160ms">
 <h1 class="profile-name">Eric</h1>
 <p class="profile-role">Elite Tutor</p>
 <div class="profile-bio">
@@ -139,8 +139,6 @@
 <div class="container footer-bottom-inner">
 <p class="footer-legal">Whetstone Advisory LLC is not affiliated or associated with any university, college, or education institution mentioned on this website.</p>
 <div class="footer-links">
-
-
 <a href="/privacy/">Privacy Policy</a>
 </div>
 </div>
@@ -153,6 +151,25 @@
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobile-nav').classList.toggle('open');
     });
-  </script>
+
+  // Scroll-reveal animations
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        el.classList.add('is-visible');
+        revealObserver.unobserve(el);
+        var delayMs = parseFloat(el.style.transitionDelay) || 0;
+        setTimeout(function() {
+          el.style.transitionDelay = '';
+          el.classList.remove('scroll-reveal');
+        }, delayMs + 950);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.scroll-reveal').forEach(function(el) {
+    revealObserver.observe(el);
+  });
+</script>
 </body>
 </html>

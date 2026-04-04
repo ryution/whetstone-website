@@ -75,7 +75,7 @@
 <!-- PAGE HERO -->
 <section style="background: var(--navy); padding: 140px 0 80px;">
 <div class="container" style="text-align: center;">
-<p class="section-label" style="color: var(--gold); margin-bottom: 16px;">Meet the Team</p>
+<p class="section-label scroll-reveal" style="color: var(--gold); margin-bottom: 16px;; transition-delay: 0ms">Meet the Team</p>
 <h1 style="font-family: var(--font-serif); font-size: 52px; color: #fff; margin-bottom: 20px; line-height: 1.15;">Harvard. Oxford. MIT. Yale.<br/>All Here for You.</h1>
 <p style="font-size: 18px; color: rgba(255,255,255,0.75); max-width: 600px; margin: 0 auto; line-height: 1.7;">Every Whetstone mentor has walked the path your student is on — and knows exactly what it takes to stand out.</p>
 </div>
@@ -84,7 +84,7 @@
 <section style="background: var(--cream); padding: 80px 0 120px;">
 <div class="container">
 <div class="team-listing-grid">
-<div class="team-card">
+<div class="team-card scroll-reveal" style="transition-delay: 0ms">
 <img alt="Cole" class="team-card-photo" src="../assets/cole.jpg"/>
 <div class="team-card-body">
 <p class="team-card-name">Cole</p>
@@ -96,7 +96,7 @@
 <a class="btn btn-primary team-card-btn" href="/team/cole/">Meet Cole</a>
 </div>
 </div>
-<div class="team-card">
+<div class="team-card scroll-reveal" style="transition-delay: 80ms">
 <img alt="Stephanie" class="team-card-photo" src="../assets/Headshot_Stephanie-min.jpg"/>
 <div class="team-card-body">
 <p class="team-card-name">Stephanie</p>
@@ -109,7 +109,7 @@
 <a class="btn btn-primary team-card-btn" href="/team/stephanie/">Meet Stephanie</a>
 </div>
 </div>
-<div class="team-card">
+<div class="team-card scroll-reveal" style="transition-delay: 160ms">
 <img alt="Ren" class="team-card-photo" src="../assets/Headshot_Ren-min.jpg"/>
 <div class="team-card-body">
 <p class="team-card-name">Ren</p>
@@ -120,7 +120,7 @@
 <a class="btn btn-primary team-card-btn" href="/team/ren/">Meet Ren</a>
 </div>
 </div>
-<div class="team-card">
+<div class="team-card scroll-reveal" style="transition-delay: 240ms">
 <img alt="Eric" class="team-card-photo" src="../assets/Headshot_Eric-min.jpg"/>
 <div class="team-card-body">
 <p class="team-card-name">Eric</p>
@@ -133,7 +133,7 @@
 <a class="btn btn-primary team-card-btn" href="/team/eric/">Meet Eric</a>
 </div>
 </div>
-<div class="team-card">
+<div class="team-card scroll-reveal" style="transition-delay: 320ms">
 <img alt="Christopher" class="team-card-photo" src="../assets/christopher.png"/>
 <div class="team-card-body">
 <p class="team-card-name">Christopher</p>
@@ -146,7 +146,7 @@
 <a class="btn btn-primary team-card-btn" href="/team/christopher/">Meet Christopher</a>
 </div>
 </div>
-<div class="team-card">
+<div class="team-card scroll-reveal" style="transition-delay: 400ms">
 <img alt="Howard" class="team-card-photo" src="../assets/Headshot_Howard-min-scaled.jpg"/>
 <div class="team-card-body">
 <p class="team-card-name">Howard</p>
@@ -195,8 +195,6 @@
 <div class="container footer-bottom-inner">
 <p class="footer-legal">Whetstone Advisory LLC is not affiliated or associated with any university, college, or education institution mentioned on this website.</p>
 <div class="footer-links">
-
-
 <a href="/privacy/">Privacy Policy</a>
 </div>
 </div>
@@ -209,6 +207,25 @@
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobile-nav').classList.toggle('open');
     });
-  </script>
+
+  // Scroll-reveal animations
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        el.classList.add('is-visible');
+        revealObserver.unobserve(el);
+        var delayMs = parseFloat(el.style.transitionDelay) || 0;
+        setTimeout(function() {
+          el.style.transitionDelay = '';
+          el.classList.remove('scroll-reveal');
+        }, delayMs + 950);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.scroll-reveal').forEach(function(el) {
+    revealObserver.observe(el);
+  });
+</script>
 </body>
 </html>

@@ -341,7 +341,7 @@
 <div class="blog-breadcrumb">
 <a href="/">Home</a> › <a href="/resources/">Resources</a> › How Many Colleges Should You Apply To?
         </div>
-<p class="section-label" style="color:var(--gold); margin-bottom:14px;">Application Advice</p>
+<p class="section-label scroll-reveal" style="color:var(--gold); margin-bottom:14px;; transition-delay: 0ms">Application Advice</p>
 <h1>How Many Colleges Should You Apply To: Finding Your Ideal Number</h1>
 <div class="blog-hero-meta">
 <div class="blog-author">
@@ -575,7 +575,7 @@
 <h2 id="summary">Final Thoughts</h2>
 <p>The answer to "how many colleges should I apply to?" comes down to your individual circumstances. Your academic profile, your major, your timeline, and your goals all factor in. There's no single right number, but there is a right framework — and now you have it.</p>
 <p>If you're putting in the time to think through this carefully, you're already ahead of most applicants. The students who struggle most in this process are the ones who build their list based on name recognition and rankings rather than fit, strategy, and honest self-assessment.</p>
-<p>Take the process seriously, build a balanced list, and put your best work into every application on&nbsp;it.</p>
+<p>Take the process seriously, build a balanced list, and put your best work into every application on it.</p>
 </article>
 <!-- SIDEBAR -->
 <aside class="blog-sidebar">
@@ -604,8 +604,8 @@
 <!-- RELATED ARTICLES -->
 <section class="related-section">
 <div class="container">
-<p class="section-label">Keep Reading</p>
-<h2 class="section-title" style="margin-bottom:8px;">More From the Whetstone Blog</h2>
+<p class="section-label scroll-reveal" style="transition-delay: 0ms">Keep Reading</p>
+<h2 class="section-title scroll-reveal" style="margin-bottom:8px;; transition-delay: 80ms">More From the Whetstone Blog</h2>
 <div class="related-grid">
 <a class="related-card" href="/college-admissions-counseling/">
 <span class="related-tag">Admissions Strategy</span>
@@ -667,8 +667,6 @@
 <div class="container footer-bottom-inner">
 <p class="footer-legal">Whetstone Advisory LLC is not affiliated or associated with any university, college, or education institution mentioned on this website.</p>
 <div class="footer-links">
-
-
 <a href="/privacy/">Privacy Policy</a>
 </div>
 </div>
@@ -681,6 +679,25 @@
     document.getElementById('hamburger').addEventListener('click', () => {
       document.getElementById('mobile-nav').classList.toggle('open');
     });
-  </script>
+
+  // Scroll-reveal animations
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        el.classList.add('is-visible');
+        revealObserver.unobserve(el);
+        var delayMs = parseFloat(el.style.transitionDelay) || 0;
+        setTimeout(function() {
+          el.style.transitionDelay = '';
+          el.classList.remove('scroll-reveal');
+        }, delayMs + 950);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.scroll-reveal').forEach(function(el) {
+    revealObserver.observe(el);
+  });
+</script>
 </body>
 </html>
