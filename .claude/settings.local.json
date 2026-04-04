@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(git clone:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(GIT_EDITOR=true git rebase --continue)"
     ]
   }
 }
