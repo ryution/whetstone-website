@@ -15,7 +15,7 @@ SITE_ROOT = os.path.dirname(os.path.abspath(__file__))
 DOMAIN = "https://whetstoneadmissions.com"
 OG_IMAGE = f"{DOMAIN}/assets/whetstone_iconY.png"
 SITE_NAME = "Whetstone Admissions"
-FAVICON_PATH = "/assets/favicon.png"
+FAVICON_PATH = "/assets/whetstone-favicon.png"
 
 # Pages that are duplicates — canonical points to the primary version
 CANONICAL_OVERRIDES = {
