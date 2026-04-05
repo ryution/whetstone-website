@@ -138,8 +138,15 @@
 <style>
   #form { overflow-x: hidden; }
   @media (max-width: 768px) {
-    #form .container { grid-template-columns: 1fr !important; gap: 24px !important; }
-    #form .container > div:last-child { padding: 36px 24px !important; }
+    #form { padding: 32px 16px !important; }
+    #form .container { grid-template-columns: 1fr 1fr !important; gap: 12px !important; padding: 0 !important; max-width: 100% !important; }
+    #form .container > div:last-child { padding: 16px 12px !important; font-size: 13px; }
+    #form .container > div:last-child h2 { font-size: 0.95rem !important; margin-bottom: 4px !important; }
+    #form .container > div:last-child p { font-size: 0.7rem !important; margin-bottom: 12px !important; }
+    #form .container > div:last-child input,
+    #form .container > div:last-child select { padding: 7px 8px !important; font-size: 11px !important; }
+    #form .container > div:last-child button { padding: 9px 4px !important; font-size: 11px !important; margin-top: 6px !important; }
+    #form .container > div:last-child .scroll-reveal > div { margin-bottom: 16px !important; }
   }
 </style>
 </section>
