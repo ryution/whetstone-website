@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Athena — Strategy &amp; Technology | Whetstone Admissions</title>
+<meta content="Meet Athena at Whetstone Admissions. Cornell MEng, UC Berkeley BS. Strategy, technology, and capstone mentorship." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;family=Libre+Franklin:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="../../styles.css?v=14" rel="stylesheet"/>
+<link href="/assets/favicon.png" rel="icon" type="image/png"/>
+</head>
+<body>
+<header class="header scrolled" id="header">
+<div class="header-inner">
+<a class="logo" href="/">Whetstone</a>
+<nav class="nav">
+<div class="nav-dropdown">
+<a class="nav-link" href="#" onclick="return false;">Services <span class="caret">▾</span></a>
+<div class="dropdown-menu">
+<a href="/college-admissions-counseling/">Admissions Counseling</a>
+<a href="/college-essay-coaching/">Essay Coaching</a>
+<a href="/sat-tutoring/">SAT / ACT Prep</a>
+<a href="/extracurricular-mentorship/">Extracurriculars</a>
+<div class="dropdown-divider"></div>
+<a href="/graduate-admissions/">Graduate Admissions</a>
+</div>
+</div>
+<div class="nav-dropdown">
+<a class="nav-link" href="#" onclick="return false;">About <span class="caret">▾</span></a>
+<div class="dropdown-menu">
+<a href="/about/">Our Team</a>
+</div>
+</div>
+<a class="nav-link" href="/resources/">Resources</a>
+<a class="nav-link" href="/contact/">Contact</a>
+</nav>
+<a class="btn btn-primary" href="/contact/">Get Started</a>
+<button aria-label="Menu" class="hamburger" id="hamburger">
+<span></span><span></span><span></span>
+</button>
+</div>
+<div class="mobile-nav" id="mobile-nav">
+<p class="mobile-nav-label">Services</p>
+<a href="/college-admissions-counseling/">Admissions Counseling</a>
+<a href="/college-essay-coaching/">Essay Coaching</a>
+<a href="/sat-tutoring/">SAT / ACT Prep</a>
+<a href="/extracurricular-mentorship/">Extracurriculars</a>
+<a href="/graduate-admissions/">Graduate Admissions</a>
+<p class="mobile-nav-label">Company</p>
+<a href="/about/">Our Team</a>
+<a href="/resources/">Resources</a>
+<a href="/contact/">Contact</a>
+<a class="btn btn-primary" href="/contact/">Get Started</a>
+</div>
+</header>
+<main class="profile-page">
+<div class="container">
+<div class="profile-grid">
+<!-- LEFT: Photo + Education -->
+<div class="profile-left scroll-reveal" style="transition-delay: 0ms">
+<img alt="Athena" class="profile-photo" src="../../assets/athena.png"/>
+<div class="profile-education">
+<p class="profile-education-label">Education</p>
+<ul class="profile-education-list">
+<li>MEng Cornell University</li>
+<li>BS UC Berkeley</li>
+</ul>
+</div>
+</div>
+<!-- RIGHT: Bio -->
+<div class="profile-right scroll-reveal" style="transition-delay: 160ms">
+<h1 class="profile-name">Athena</h1>
+<p class="profile-role">Strategy &amp; Technology</p>
+<div class="profile-bio">
+<p>Athena graduated with a Master's degree in Engineering at Cornell University and previously studied Data Science and Technology Entrepreneurship at UC Berkeley. Her work sits at the intersection of technology, creativity, and strategic thinking. Across startups, analytics roles, and independent ventures, she has helped build products, analyze complex datasets, and design projects that move from idea to execution.</p>
+<p>Athena believes that the most compelling applications are built around authentic intellectual exploration. Rather than chasing generic achievements, she hopes to help students identify the questions that genuinely interest them and turn those interests into real-world impact.</p>
+</div>
+<hr class="profile-divider"/>
+</div>
+</div>
+</div>
+</main>
+<footer class="footer">
+<div class="container footer-grid">
+<div class="footer-brand">
+<a class="logo logo-light" href="/">Whetstone</a>
+<p>Refined Method. Proven Results.</p>
+<p class="footer-contact">team@whetstoneadmissions.com<br/>917-562-5668</p>
+</div>
+<div class="footer-col">
+<h4>Services</h4>
+<a href="/college-admissions-counseling/">Admissions Counseling</a>
+<a href="/college-essay-coaching/">Essay Coaching</a>
+<a href="/sat-tutoring/">SAT / ACT Prep</a>
+<a href="/extracurricular-mentorship/">Extracurriculars</a>
+<a href="/graduate-admissions/">Graduate Admissions</a>
+</div>
+<div class="footer-col">
+<h4>Company</h4>
+<a href="/about/">Our Team</a>
+<a href="/resources/">Resources</a>
+<a href="/contact/">Contact</a>
+</div>
+<div class="footer-col">
+<h4>Locations</h4>
+<a href="/new-york-city-college-admissions-counseling/">New York City</a>
+<a href="/manhattan-college-admissions-counseling/">Manhattan</a>
+<a href="/brooklyn-college-admissions-counseling/">Brooklyn</a>
+<a href="/westchester-college-admissions-counseling/">Westchester</a>
+<a href="/scarsdale-college-admissions-counseling/">Scarsdale</a>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="container footer-bottom-inner">
+<p class="footer-legal">Whetstone Advisory LLC is not affiliated or associated with any university, college, or education institution mentioned on this website.</p>
+<div class="footer-links">
+<a href="/privacy/">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+    document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+    window.addEventListener('scroll', () => {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('mobile-nav').classList.toggle('open');
+    });
+
+  // Scroll-reveal animations
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        el.classList.add('is-visible');
+        revealObserver.unobserve(el);
+        var delayMs = parseFloat(el.style.transitionDelay) || 0;
+        setTimeout(function() {
+          el.style.transitionDelay = '';
+          el.classList.remove('scroll-reveal');
+        }, delayMs + 950);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.scroll-reveal').forEach(function(el) {
+    revealObserver.observe(el);
+  });
+</script>
+</body>
+</html>
