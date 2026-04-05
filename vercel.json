@@ -1,0 +1,14 @@
+{
+    "redirects": [
+      { "source": "/about-us", "destination": "/about/", "permanent": true },
+      { "source": "/about-us/", "destination": "/about/", "permanent": true },
+      { "source": "/essay-writing", "destination": "/college-essay-coaching/", "permanent": true },
+      { "source": "/essay-writing/", "destination": "/college-essay-coaching/", "permanent": true },
+      { "source": "/extracurricular", "destination": "/extracurricular-mentorship/", "permanent": true },
+      { "source": "/extracurricular/", "destination": "/extracurricular-mentorship/", "permanent": true },
+      { "source": "/sat", "destination": "/sat-tutoring/", "permanent": true },
+      { "source": "/sat/", "destination": "/sat-tutoring/", "permanent": true },
+      { "source": "/academic-tutoring", "destination": "/sat-tutoring/", "permanent": true },
+      { "source": "/academic-tutoring/", "destination": "/sat-tutoring/", "permanent": true }
+    ]
+  }
