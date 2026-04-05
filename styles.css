@@ -1459,14 +1459,23 @@ img { max-width: 100%; height: auto; display: block; }
 .feature-item p { font-size: 14px; color: var(--text-muted); }
 
 .quote-block {
-  border-left: 4px solid var(--gold);
-  padding: 20px 28px;
-  background: var(--cream);
-  border-radius: 0 var(--radius) var(--radius) 0;
-  margin: 32px 0;
+  position: relative;
+  padding: 32px 0 0;
+  margin: 36px 0 0;
+  border-top: 2px solid var(--gold);
 }
-.quote-block blockquote { font-family: var(--font-serif); font-size: 19px; font-style: italic; color: var(--navy); margin-bottom: 12px; }
-.quote-block cite { font-size: 14px; color: var(--text-muted); }
+.quote-block::before {
+  content: '\201C';
+  font-family: var(--font-serif);
+  font-size: 64px;
+  line-height: 1;
+  color: var(--gold);
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+.quote-block blockquote { font-family: var(--font-serif); font-size: 17px; font-style: italic; color: var(--navy); margin: 0 0 12px; padding-left: 40px; line-height: 1.7; }
+.quote-block cite { font-size: 13px; color: var(--text-muted); font-style: normal; padding-left: 40px; letter-spacing: 0.02em; }
 
 @media (max-width: 900px) {
   .two-col, .contact-grid { grid-template-columns: 1fr; }
