@@ -17,20 +17,16 @@
 
     .contact-hero {
       position: relative;
-      min-height: 340px;
-      display: flex;
-      align-items: flex-end;
-      padding-bottom: 0;
+      padding: 160px 0 80px;
       overflow: hidden;
+      background: var(--navy);
     }
     .contact-hero-bg {
       position: absolute;
       inset: 0;
       background: url('../assets/harvardclub.png') center center / cover no-repeat;
-      opacity: 0.75;
     }
-    .contact-hero-bg::after {
-      content: '';
+    .contact-hero-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(135deg, rgba(25,25,112,0.7) 0%, rgba(15,15,80,0.6) 100%);
@@ -572,6 +568,7 @@
 <!-- HERO -->
 <section class="contact-hero">
 <div class="contact-hero-bg"></div>
+<div class="contact-hero-overlay"></div>
 <div class="contact-hero-inner">
 <p class="section-label">Contact Us</p>
 <h1>Get Started With <em>Whetstone</em></h1>
