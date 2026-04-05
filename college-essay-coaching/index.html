@@ -95,7 +95,7 @@
 <p class="scroll-reveal" style="transition-delay:180ms;">Work 1:1 with the team that's guided Rhodes scholars and astrophysicists. Led by Stephanie, Whetstone's team has guided students to early admission at Harvard, Cambridge, and many of the world's most selective universities.</p>
 <div class="quote-block scroll-reveal" style="transition-delay:280ms;">
 <blockquote>"Admissions go to the voices they remember and can't find anywhere else — the essay is your chance to prove you belong."</blockquote>
-<cite>— Stephanie, Asst. Director, Princeton University</cite>
+<cite>— Stephanie, Asst. Director, <span style="white-space:nowrap">Princeton University</span></cite>
 </div>
 </div>
 <div class="two-col-img scroll-reveal" style="transition-delay:200ms;">
@@ -104,6 +104,68 @@
 </div>
 </div>
 </section>
+<!-- GET STARTED — two-column: image + form -->
+<section class="page-section" id="form" style="padding: 70px 0 80px; background: var(--cream, #faf8f4);">
+<div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; max-width: 1060px;">
+  <!-- Left: Image -->
+  <div class="scroll-reveal" style="transition-delay: 0ms;">
+    <img src="../assets/whetstonefile.png" alt="Whetstone admissions file" style="width: 100%; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.10);" />
+  </div>
+  <!-- Right: Form -->
+  <div class="scroll-reveal" style="transition-delay: 200ms; background: var(--navy, #191970); border-radius: 5px; padding: 52px 36px 52px; box-shadow: 0 8px 32px rgba(0,0,0,0.15);">
+    <p style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold, #d4a74a); margin: 0 0 10px;">Get Started</p>
+    <h2 style="font-family: 'Libre Caslon Text', serif; font-size: clamp(1.3rem, 2.8vw, 1.65rem); color: #fff; margin: 0 0 6px; line-height: 1.2;">What Does a Successful Essay Look Like?</h2>
+    <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin: 0 0 28px; line-height: 1.55;">We'll show you the exact essay that got a student into Princeton.</p>
+    <div style="width: 40px; height: 2px; background: var(--gold, #d4a74a); margin-bottom: 28px;"></div>
+    <form id="essay-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+      <input type="hidden" name="essay-type" value="student" checked />
+      <input name="essay-first" placeholder="First Name *" required style="padding:12px 16px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#fff; font-size:13px; outline:none; font-family:'Libre Franklin',sans-serif; transition: border-color 0.2s, background 0.2s;" onfocus="this.style.borderColor='rgba(212,167,74,0.6)'; this.style.background='rgba(255,255,255,0.18)'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.background='rgba(255,255,255,0.12)'" />
+      <input name="essay-last" placeholder="Last Name" style="padding:12px 16px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#fff; font-size:13px; outline:none; font-family:'Libre Franklin',sans-serif; transition: border-color 0.2s, background 0.2s;" onfocus="this.style.borderColor='rgba(212,167,74,0.6)'; this.style.background='rgba(255,255,255,0.18)'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.background='rgba(255,255,255,0.12)'" />
+      <input name="essay-email" type="email" placeholder="Email Address *" required style="grid-column:span 2; padding:12px 16px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#fff; font-size:13px; outline:none; font-family:'Libre Franklin',sans-serif; transition: border-color 0.2s, background 0.2s;" onfocus="this.style.borderColor='rgba(212,167,74,0.6)'; this.style.background='rgba(255,255,255,0.18)'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.background='rgba(255,255,255,0.12)'" />
+      <input name="essay-phone" type="tel" placeholder="(555) 555-5555" maxlength="14" style="padding:12px 16px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#fff; font-size:13px; outline:none; font-family:'Libre Franklin',sans-serif; transition: border-color 0.2s, background 0.2s;" onfocus="this.style.borderColor='rgba(212,167,74,0.6)'; this.style.background='rgba(255,255,255,0.18)'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.background='rgba(255,255,255,0.12)'" oninput="var x=this.value.replace(/\D/g,'').substring(0,10);var a=x.substring(0,3);var b=x.substring(3,6);var c=x.substring(6,10);this.value=x.length>6?'('+a+') '+b+'-'+c:x.length>3?'('+a+') '+b:x.length>0?'('+a:'';" />
+      <select name="essay-grad" size="1" style="padding:12px 16px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:rgba(255,255,255,0.5); font-size:13px; outline:none; font-family:'Libre Franklin',sans-serif;">
+        <option value="">Graduation Year</option>
+        <option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031</option><option>2032</option><option>2033</option><option>2034</option><option>2035</option>
+      </select>
+      <button type="submit" style="grid-column:span 2; padding:14px; border-radius:4px; border:none; background:linear-gradient(135deg, #e6b44a 0%, #FFC247 50%, #e6b44a 100%); color:var(--navy, #191970); font-size:14px; font-weight:700; cursor:pointer; letter-spacing:0.04em; font-family:'Libre Franklin',sans-serif; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease; margin-top: 14px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 28px rgba(255,194,71,0.45)'; this.style.background='linear-gradient(135deg, #FFC247 0%, #FFD060 50%, #FFC247 100%)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.background='linear-gradient(135deg, #e6b44a 0%, #FFC247 50%, #e6b44a 100%)';">Book My Free Consultation</button>
+    </form>
+    <div id="essay-thanks" style="display:none; text-align:center; padding:24px 0;">
+      <h3 style="color:#fff; font-size:1.2rem; margin:0 0 6px;">You're all set!</h3>
+      <p style="color:rgba(255,255,255,0.6); font-size:0.88rem; margin:0;">An expert advisor will be in touch within one business day.</p>
+    </div>
+  </div>
+</div>
+<style>
+  @media (max-width: 768px) {
+    #form .container { grid-template-columns: 1fr !important; gap: 32px !important; }
+  }
+</style>
+</section>
+<script>
+document.getElementById('essay-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  var btn = this.querySelector('button[type="submit"]');
+  btn.disabled = true; btn.textContent = 'Submitting...';
+  var f = this;
+  try {
+    await fetch('https://whetstone-portal.com/api/leads', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: (f.querySelector('input[name="essay-type"]').value) || 'student',
+        firstName: f.querySelector('[name="essay-first"]').value,
+        lastName: f.querySelector('[name="essay-last"]').value,
+        email: f.querySelector('[name="essay-email"]').value,
+        phone: f.querySelector('[name="essay-phone"]').value,
+        gradYear: f.querySelector('[name="essay-grad"]').value,
+        service: 'Essay Coaching'
+      })
+    });
+  } catch (err) { console.error(err); }
+  f.style.display = 'none';
+  document.getElementById('essay-thanks').style.display = 'block';
+});
+</script>
 <!-- WHAT WE DO -->
 <section class="page-section-alt">
 <div class="container">
@@ -183,68 +245,12 @@
 </div>
 </div>
 </section>
-<!-- GET STARTED — two-column: image + form -->
-<section class="page-section" id="form" style="padding: 70px 0 80px; background: var(--cream, #faf8f4);">
-<div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; max-width: 1060px;">
-  <!-- Left: Image -->
-  <div class="scroll-reveal" style="transition-delay: 0ms;">
-    <img src="../assets/whetstonefile.png" alt="Whetstone admissions file" style="width: 100%; border-radius: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.10);" />
-  </div>
-  <!-- Right: Form -->
-  <div class="scroll-reveal" style="transition-delay: 200ms; background: var(--navy, #191970); border-radius: 5px; padding: 52px 36px 52px; box-shadow: 0 8px 32px rgba(0,0,0,0.15);">
-    <p style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--gold, #d4a74a); margin: 0 0 10px;">Get Started</p>
-    <h2 style="font-family: 'Libre Caslon Text', serif; font-size: clamp(1.3rem, 2.8vw, 1.65rem); color: #fff; margin: 0 0 6px; line-height: 1.2;">What Does a Successful Essay Look Like?</h2>
-    <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; margin: 0 0 28px; line-height: 1.55;">We'll show you the exact essay that got a student into Princeton.</p>
-    <div style="width: 40px; height: 2px; background: var(--gold, #d4a74a); margin-bottom: 28px;"></div>
-    <form id="essay-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-      <input type="hidden" name="essay-type" value="student" checked />
-      <input name="essay-first" placeholder="First Name *" required style="padding:12px 16px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#fff; font-size:13px; outline:none; font-family:'Libre Franklin',sans-serif; transition: border-color 0.2s, background 0.2s;" onfocus="this.style.borderColor='rgba(212,167,74,0.6)'; this.style.background='rgba(255,255,255,0.18)'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.background='rgba(255,255,255,0.12)'" />
-      <input name="essay-last" placeholder="Last Name" style="padding:12px 16px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#fff; font-size:13px; outline:none; font-family:'Libre Franklin',sans-serif; transition: border-color 0.2s, background 0.2s;" onfocus="this.style.borderColor='rgba(212,167,74,0.6)'; this.style.background='rgba(255,255,255,0.18)'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.background='rgba(255,255,255,0.12)'" />
-      <input name="essay-email" type="email" placeholder="Email Address *" required style="grid-column:span 2; padding:12px 16px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#fff; font-size:13px; outline:none; font-family:'Libre Franklin',sans-serif; transition: border-color 0.2s, background 0.2s;" onfocus="this.style.borderColor='rgba(212,167,74,0.6)'; this.style.background='rgba(255,255,255,0.18)'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.background='rgba(255,255,255,0.12)'" />
-      <input name="essay-phone" type="tel" placeholder="(555) 555-5555" maxlength="14" style="padding:12px 16px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:#fff; font-size:13px; outline:none; font-family:'Libre Franklin',sans-serif; transition: border-color 0.2s, background 0.2s;" onfocus="this.style.borderColor='rgba(212,167,74,0.6)'; this.style.background='rgba(255,255,255,0.18)'" onblur="this.style.borderColor='rgba(255,255,255,0.2)'; this.style.background='rgba(255,255,255,0.12)'" oninput="var x=this.value.replace(/\D/g,'').substring(0,10);var a=x.substring(0,3);var b=x.substring(3,6);var c=x.substring(6,10);this.value=x.length>6?'('+a+') '+b+'-'+c:x.length>3?'('+a+') '+b:x.length>0?'('+a:'';" />
-      <select name="essay-grad" size="1" style="padding:12px 16px; border-radius:4px; border:1px solid rgba(255,255,255,0.2); background:rgba(255,255,255,0.12); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); color:rgba(255,255,255,0.5); font-size:13px; outline:none; font-family:'Libre Franklin',sans-serif;">
-        <option value="">Graduation Year</option>
-        <option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031</option><option>2032</option><option>2033</option><option>2034</option><option>2035</option>
-      </select>
-      <button type="submit" style="grid-column:span 2; padding:14px; border-radius:4px; border:none; background:linear-gradient(135deg, #e6b44a 0%, #FFC247 50%, #e6b44a 100%); color:var(--navy, #191970); font-size:14px; font-weight:700; cursor:pointer; letter-spacing:0.04em; font-family:'Libre Franklin',sans-serif; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease; margin-top: 14px;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 8px 28px rgba(255,194,71,0.45)'; this.style.background='linear-gradient(135deg, #FFC247 0%, #FFD060 50%, #FFC247 100%)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'; this.style.background='linear-gradient(135deg, #e6b44a 0%, #FFC247 50%, #e6b44a 100%)';">Book My Free Consultation</button>
-    </form>
-    <div id="essay-thanks" style="display:none; text-align:center; padding:24px 0;">
-      <h3 style="color:#fff; font-size:1.2rem; margin:0 0 6px;">You're all set!</h3>
-      <p style="color:rgba(255,255,255,0.6); font-size:0.88rem; margin:0;">An expert advisor will be in touch within one business day.</p>
-    </div>
-  </div>
+<section class="final-cta">
+<div class="container">
+<h2>Book a free consultation<br>with one of our expert<br>advisors.</h2>
+<a href="/contact/" class="btn btn-gold">Get Started</a>
 </div>
-<style>
-  @media (max-width: 768px) {
-    #form .container { grid-template-columns: 1fr !important; gap: 32px !important; }
-  }
-</style>
 </section>
-<script>
-document.getElementById('essay-form').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  var btn = this.querySelector('button[type="submit"]');
-  btn.disabled = true; btn.textContent = 'Submitting...';
-  var f = this;
-  try {
-    await fetch('https://whetstone-portal.com/api/leads', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        type: (f.querySelector('input[name="essay-type"]').value) || 'student',
-        firstName: f.querySelector('[name="essay-first"]').value,
-        lastName: f.querySelector('[name="essay-last"]').value,
-        email: f.querySelector('[name="essay-email"]').value,
-        phone: f.querySelector('[name="essay-phone"]').value,
-        gradYear: f.querySelector('[name="essay-grad"]').value,
-        service: 'Essay Coaching'
-      })
-    });
-  } catch (err) { console.error(err); }
-  f.style.display = 'none';
-  document.getElementById('essay-thanks').style.display = 'block';
-});
-</script>
 <footer class="footer">
 <div class="container footer-grid">
 <div class="footer-brand">
