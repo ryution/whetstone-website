@@ -803,7 +803,7 @@ img { max-width: 100%; height: auto; display: block; }
   line-height: 1.3;
 }
 
-.cform-sub { font-size: 18px; color: rgba(255,255,255,0.75); margin-bottom: 40px; line-height: 1.6; }
+.cform-sub { font-size: 18px; color: rgba(255,255,255,0.75); margin-bottom: 40px; line-height: 1.6; text-wrap: balance; }
 
 .cform-step { display: none; text-align: left; }
 .cform-step.active { display: block; }
