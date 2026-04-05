@@ -1,143 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://whetstoneadmissions.com/about/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://whetstoneadmissions.com/</loc>
+    <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://whetstoneadmissions.com/academic-tutoring/</loc>
-    <changefreq>monthly</changefreq>
+    <loc>https://whetstoneadmissions.com/about/</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/brooklyn-college-admissions-counseling/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/college-admissions-counseling/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/college-essay-coaching/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/contact/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/extracurricular-mentorship/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/graduate-admissions/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://whetstoneadmissions.com/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/language-learning/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/manhattan-college-admissions-counseling/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/new-york-city-college-admissions-counseling/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/our-method/</loc>
-    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://whetstoneadmissions.com/privacy/</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://whetstoneadmissions.com/resources/</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/resources/harvard-supplemental-essays/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/resources/how-many-colleges-should-i-apply-to/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://whetstoneadmissions.com/resources/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://whetstoneadmissions.com/resources/princeton-supplemental-essays/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/results/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/reviews/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/sat-tutoring/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/scarsdale-college-admissions-counseling/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://whetstoneadmissions.com/team/athena/</loc>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/team/christopher/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/team/cole/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/team/eric/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/team/howard/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/team/ren/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/team/stephanie/</loc>
-    <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://whetstoneadmissions.com/westchester-college-admissions-counseling/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
