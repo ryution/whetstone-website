@@ -26,15 +26,14 @@
     .contact-hero-bg {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, #0a1628 0%, #191970 40%, #2a2a9a 70%, #191970 100%);
-      background-size: cover;
-      background-position: center top;
+      background: url('../assets/harvardclub.png') center center / cover no-repeat;
+      opacity: 0.75;
     }
     .contact-hero-bg::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(8,22,46,0.55) 0%, rgba(8,22,46,0.82) 100%);
+      background: linear-gradient(135deg, rgba(25,25,112,0.7) 0%, rgba(15,15,80,0.6) 100%);
     }
     .contact-hero-inner {
       position: relative;
@@ -409,7 +408,7 @@
     .contact-faq {
       max-width: 760px;
       margin: 0 auto;
-      padding: 0 24px 80px;
+      padding: 0 24px 72px;
     }
     .contact-faq h2 {
       font-family: 'Libre Caslon Text', serif;
@@ -420,11 +419,11 @@
     .contact-faq > p {
       font-size: 0.93rem;
       color: var(--text-muted);
-      margin: 0 0 32px;
+      margin: 0 0 24px;
     }
     .faq-item {
-      border-top: 1px solid var(--border);
-      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+      padding: 0;
     }
     .faq-item:last-child { border-bottom: 1px solid var(--border); }
     .faq-q {
@@ -433,38 +432,34 @@
       align-items: center;
       cursor: pointer;
       gap: 16px;
+      padding: 14px 0;
     }
+    .faq-q:hover { color: var(--navy-light); }
     .faq-q h4 {
-      font-family: 'Libre Caslon Text', serif;
-      font-size: 0.98rem;
-      color: var(--navy);
+      font-family: var(--font-sans);
+      font-size: 17px;
+      color: inherit;
       margin: 0;
-      font-weight: 700;
+      font-weight: 600;
     }
     .faq-toggle {
       flex-shrink: 0;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: var(--navy);
-      color: #fff;
-      text-align: center;
-      line-height: 28px;
-      font-size: 1.1rem;
+      font-size: 22px;
       font-weight: 300;
-      transition: transform 0.2s;
+      color: var(--navy);
+      background: none;
+      transition: transform 0.25s;
     }
     .faq-item.open .faq-toggle { transform: rotate(45deg); }
     .faq-a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
+      display: none;
+      padding-bottom: 20px;
     }
-    .faq-item.open .faq-a { max-height: 200px; }
+    .faq-item.open .faq-a { display: block; max-height: none; }
     .faq-a p {
-      font-size: 0.88rem;
+      font-size: 16px;
       color: var(--text-muted);
-      line-height: 1.65;
+      line-height: 1.7;
       margin: 14px 0 0;
       padding-right: 44px;
     }
