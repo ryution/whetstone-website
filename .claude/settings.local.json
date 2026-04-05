@@ -4,7 +4,9 @@
       "Bash(git clone:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(find \"/Users/foixyu/Library/Mobile Documents/com~apple~CloudDocs/Downloads/Github/whetstone-website/.git/worktrees/quirky-brown/\" -name \"*.lock\" -delete)",
+      "Bash(xargs sed:*)"
     ]
   }
 }
