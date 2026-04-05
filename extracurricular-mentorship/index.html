@@ -802,7 +802,7 @@
 <div class="pc-ghost pc-ghost-2"></div>
 <div class="pc-card" id="pc-card">
 <div class="pc-photo">
-<img alt="Long J. — Second Start project" id="pc-img" src="../assets/longstartup.png"/>
+<img alt="Long J. — Second Start project" id="pc-img" src="../assets/longstartup.png" style="object-position: 40% center;"/>
 </div>
 <div class="pc-body">
 <p class="pc-admitted-tag" id="pc-admitted-tag">→ Columbia University</p>
@@ -830,21 +830,24 @@
         school: 'Columbia University',
         desc: 'Long co-founded a nonprofit that guides newly released individuals toward housing, job training, and mental health services — lowering their risk of returning to prison.',
         img: '../assets/longstartup.png',
-        alt: 'Long J. — Second Start project'
+        alt: 'Long J. — Second Start project',
+        imgStyle: 'object-position: 40% center;'
       },
       {
         name: 'Emma A.', location: 'New York', project: 'LinguaAI',
         school: 'Harvard University',
         desc: 'Emma built a chatbot trained on endangered language datasets that lets users practice phrases conversationally — simulating dialogue to revive usage before it disappears.',
         img: '../assets/emmachatbot.png',
-        alt: 'Emma A. — LinguaAI project'
+        alt: 'Emma A. — LinguaAI project',
+        imgStyle: 'object-fit: contain; background: #f0f2f8; padding: 8px;'
       },
       {
         name: 'Maya R.', location: 'New Jersey', project: 'OpenDonor',
         school: 'Stanford University',
         desc: 'Maya co-founded a blockchain platform to track nonprofit donations, creating full transparency between donors and recipients at every step of the giving process.',
         img: '../assets/mayadonation.png',
-        alt: 'Maya R. — OpenDonor project'
+        alt: 'Maya R. — OpenDonor project',
+        imgStyle: 'object-fit: contain; background: #f0f2f8; padding: 8px;'
       }
     ];
     var pcCurrent = 0;
@@ -869,8 +872,10 @@
 
       setTimeout(function() {
         var s = pcStudents[nextIdx];
-        document.getElementById('pc-img').src = s.img;
-        document.getElementById('pc-img').alt = s.alt;
+        var pcImg = document.getElementById('pc-img');
+        pcImg.src = s.img;
+        pcImg.alt = s.alt;
+        pcImg.style.cssText = 'width:100%;height:100%;object-fit:cover;display:block;' + (s.imgStyle || '');
         document.getElementById('pc-name').textContent = s.name;
         document.getElementById('pc-location').textContent = s.location;
         document.getElementById('pc-project').textContent = s.project;
