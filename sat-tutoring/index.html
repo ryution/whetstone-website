@@ -41,13 +41,13 @@
   /* Accordion */
   .accordion { border-top: 1.5px solid var(--border); }
   .accordion details { border-bottom: 1.5px solid var(--border); }
-  .accordion summary { display:flex; justify-content:space-between; align-items:center; padding:18px 0; cursor:pointer; list-style:none; font-family:'Libre Caslon Text',serif; font-size:20px; font-weight:700; color:var(--navy); user-select:none; transition: opacity 0.25s ease, letter-spacing 0.25s ease; }
-  .accordion summary:hover { opacity: 0.75; letter-spacing: 0.01em; }
+  .accordion summary { display:flex; justify-content:space-between; align-items:center; padding:18px 12px; margin:0 -12px; cursor:pointer; list-style:none; font-family:'Libre Caslon Text',serif; font-size:20px; font-weight:700; color:var(--navy); user-select:none; transition: opacity 0.25s ease, letter-spacing 0.25s ease, background 0.25s ease, padding-left 0.25s ease; border-radius:4px; }
+  .accordion summary:hover { opacity: 0.85; letter-spacing: 0.01em; background: rgba(255,255,255,0.06); padding-left: 18px; }
   .accordion summary::-webkit-details-marker { display:none; }
   .acc-icon::before { content:'+'; }
   .accordion details[open] .acc-icon::before { content:'−'; }
-  .acc-icon { font-size:22px; font-weight:300; color:var(--navy); line-height:1; transition: transform 0.25s ease; flex-shrink:0; }
-  .accordion summary:hover .acc-icon { transform: rotate(90deg); }
+  .acc-icon { font-size:22px; font-weight:300; color:var(--navy); line-height:1; transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), color 0.25s ease; flex-shrink:0; }
+  .accordion summary:hover .acc-icon { transform: rotate(90deg); color: var(--gold); }
   .acc-body { padding:4px 0 20px; }
   .acc-body ul { list-style:none; padding:0; margin:0; }
   .acc-body ul li { font-family:'Libre Franklin',sans-serif; font-size:16px; color:var(--navy); padding:7px 0 7px 16px; opacity:0.78; }
@@ -431,28 +431,28 @@
     <p class="scroll-reveal section-label" style="color: rgba(255,255,255,0.55);">Subject Tutoring</p>
     <h2 class="scroll-reveal" style="font-family: var(--font-serif); font-size: clamp(24px,3vw,36px); color: #fff; margin-bottom: 40px; line-height: 1.25; transition-delay: 80ms;">We cover most AP and IB subjects</h2>
     <div class="accordion">
-      <details open>
+      <details class="scroll-reveal" style="transition-delay: 160ms;">
         <summary>Mathematics <span class="acc-icon"></span></summary>
         <div class="acc-body"><ul>
           <li>Algebra</li><li>Geometry</li><li>Pre-Calculus &amp; Trigonometry</li>
           <li>AP Calculus AB / BC</li><li>AP Statistics</li><li>IB Mathematics (SL &amp; HL)</li>
         </ul></div>
       </details>
-      <details>
+      <details class="scroll-reveal" style="transition-delay: 240ms;">
         <summary>Sciences <span class="acc-icon"></span></summary>
         <div class="acc-body"><ul>
           <li>AP Biology</li><li>AP Chemistry</li><li>AP Physics 1, 2 &amp; C</li>
           <li>AP Environmental Science</li><li>IB Sciences (SL &amp; HL)</li>
         </ul></div>
       </details>
-      <details>
+      <details class="scroll-reveal" style="transition-delay: 320ms;">
         <summary>Language <span class="acc-icon"></span></summary>
         <div class="acc-body"><ul>
           <li>AP English Literature &amp; Language</li><li>TOEFL / IELTS</li>
           <li>Spanish</li><li>French</li><li>Latin</li><li>Ancient Greek*</li>
         </ul></div>
       </details>
-      <details>
+      <details class="scroll-reveal" style="transition-delay: 400ms;">
         <summary>Humanities <span class="acc-icon"></span></summary>
         <div class="acc-body"><ul>
           <li>AP U.S. History</li><li>AP World History</li><li>Economics</li>
