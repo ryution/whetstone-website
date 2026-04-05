@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "Whetstone Admissions",
-      "runtimeExecutable": "/usr/local/bin/node",
-      "runtimeArgs": [".claude/server.js"],
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["-c", "cd /Users/karenyoo/Desktop/Whetstone_git && /usr/bin/ruby -run -e httpd . -p 3001"],
       "port": 3001
     }
   ]

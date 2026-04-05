@@ -720,17 +720,15 @@
           </div>
         </div>
         <!-- Active card -->
-        <div class="story-card story-card-active" onclick="carouselFocus(this); playStory('story-christian','W1MmR0eHeoE')">
+        <div class="story-card story-card-active" onclick="carouselFocus(this);">
           <div class="story-card-media" id="story-christian">
             <img src="https://img.youtube.com/vi/W1MmR0eHeoE/maxresdefault.jpg" alt="Christian's Princeton EA Story" class="story-thumb">
-            <div class="story-card-play">
-              <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="36" cy="36" r="36" fill="white" fill-opacity="0.22"/>
-                <polygon points="29,22 55,36 29,50" fill="white"/>
-              </svg>
-            </div>
             <p class="story-card-title">Done in December! Christian's journey to early acceptance at Princeton.</p>
           </div>
+          <button class="story-play-btn" onclick="event.stopPropagation(); playStory('story-christian','W1MmR0eHeoE');" style="display:flex; align-items:center; justify-content:center; gap:8px; margin:16px auto 0; padding:12px 28px; background:none; border:1.5px solid rgba(255,255,255,0.4); border-radius:5px; color:#fff; font-size:14px; font-weight:600; font-family:'Libre Franklin',sans-serif; cursor:pointer; transition: background 0.2s, border-color 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)'; this.style.borderColor='rgba(255,255,255,0.7)';" onmouseout="this.style.background='none'; this.style.borderColor='rgba(255,255,255,0.4)';">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+            Play Video
+          </button>
         </div>
         <!-- Placeholder right -->
         <div class="story-card story-card-placeholder" onclick="carouselFocus(this)">

@@ -3,15 +3,8 @@
     "allow": [
       "Bash(git clone:*)",
       "Bash(git add:*)",
-      "mcp__Claude_Preview__preview_start",
-      "Read(//usr/local/bin/**)",
-      "Read(//opt/homebrew/**)",
-      "Read(//usr/bin/**)",
-      "Read(//usr/local/**)",
-      "Bash(/usr/local/bin/node /usr/local/bin/npx serve --version)",
-      "Bash(/usr/local/bin/npx serve:*)",
-      "Bash(/usr/local/bin/node -e \"console.log\\(''node ok''\\)\")",
-      "Bash(xargs sed:*)"
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
     ]
   }
 }
