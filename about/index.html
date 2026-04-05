@@ -91,7 +91,7 @@
 <li>BA Harvard University</li>
 <li>MSt University of Oxford</li>
 </ul>
-<a class="team-card-btn" href="/team/cole/">Meet Cole</a>
+<a class="team-card-btn" href="#" onclick="event.preventDefault(); openProfile(0);">Meet Cole</a>
 </div>
 </div>
 <div class="team-card scroll-reveal" style="transition-delay: 80ms">
@@ -104,7 +104,7 @@
 <li>MFA Univ. North Carolina</li>
 <li>Asst. Director, Princeton University</li>
 </ul>
-<a class="team-card-btn" href="/team/stephanie/">Meet Stephanie</a>
+<a class="team-card-btn" href="#" onclick="event.preventDefault(); openProfile(1);">Meet Stephanie</a>
 </div>
 </div>
 <div class="team-card scroll-reveal" style="transition-delay: 160ms">
@@ -115,7 +115,7 @@
 <ul class="team-card-edu">
 <li>BS New York University</li>
 </ul>
-<a class="team-card-btn" href="/team/ren/">Meet Ren</a>
+<a class="team-card-btn" href="#" onclick="event.preventDefault(); openProfile(2);">Meet Ren</a>
 </div>
 </div>
 <div class="team-card scroll-reveal" style="transition-delay: 240ms">
@@ -128,7 +128,7 @@
 <li>Physics Fellow at Peking University</li>
 <li>Physicist at Harvard &amp; MIT</li>
 </ul>
-<a class="team-card-btn" href="/team/eric/">Meet Eric</a>
+<a class="team-card-btn" href="#" onclick="event.preventDefault(); openProfile(3);">Meet Eric</a>
 </div>
 </div>
 <div class="team-card scroll-reveal" style="transition-delay: 320ms">
@@ -141,7 +141,7 @@
 <li>MSt University of Oxford</li>
 <li>DPhil University of Oxford</li>
 </ul>
-<a class="team-card-btn" href="/team/christopher/">Meet Christopher</a>
+<a class="team-card-btn" href="#" onclick="event.preventDefault(); openProfile(4);">Meet Christopher</a>
 </div>
 </div>
 <div class="team-card scroll-reveal" style="transition-delay: 400ms">
@@ -153,7 +153,7 @@
 <li>BA Yale University</li>
 <li>JD Harvard Law School</li>
 </ul>
-<a class="team-card-btn" href="/team/howard/">Meet Howard</a>
+<a class="team-card-btn" href="#" onclick="event.preventDefault(); openProfile(5);">Meet Howard</a>
 </div>
 </div>
 <div class="team-card scroll-reveal" style="transition-delay: 480ms">
@@ -165,7 +165,7 @@
 <li>MEng Cornell University</li>
 <li>BS UC Berkeley</li>
 </ul>
-<a class="team-card-btn" href="/team/athena/">Meet Athena</a>
+<a class="team-card-btn" href="#" onclick="event.preventDefault(); openProfile(6);">Meet Athena</a>
 </div>
 </div>
 </div>
@@ -217,6 +217,97 @@
 </div>
 </div>
 </div>
+<!-- PROFILE MODAL OVERLAY -->
+<div class="profile-overlay" id="profile-overlay" onclick="if(event.target===this)closeProfile();">
+  <div class="profile-modal">
+    <button class="profile-modal-close" onclick="closeProfile();">&times;</button>
+    <div class="profile-modal-grid">
+      <div class="profile-modal-left">
+        <img id="pm-photo" src="" alt="" />
+        <div class="profile-modal-edu">
+          <p class="profile-modal-edu-label">Education</p>
+          <ul id="pm-edu"></ul>
+        </div>
+      </div>
+      <div class="profile-modal-right">
+        <h2 id="pm-name"></h2>
+        <p class="profile-modal-role" id="pm-role"></p>
+        <div id="pm-bio"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .profile-overlay {
+    position: fixed; inset: 0; z-index: 2000;
+    background: rgba(10,20,40,0.6);
+    backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+    display: none; align-items: center; justify-content: center;
+    padding: 24px;
+    opacity: 0; transition: opacity 0.3s ease;
+  }
+  .profile-overlay.open { display: flex; }
+  .profile-overlay.visible { opacity: 1; }
+
+  .profile-modal {
+    background: #fff; border-radius: 8px; max-width: 800px; width: 100%;
+    max-height: 85vh; overflow-y: auto; position: relative;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.2);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.35s cubic-bezier(0.22,1,0.36,1);
+    padding: 48px 44px 44px;
+  }
+  .profile-overlay.visible .profile-modal {
+    transform: translateY(0) scale(1);
+  }
+
+  .profile-modal-close {
+    position: absolute; top: 16px; right: 20px;
+    border: none; background: none; font-size: 1.6rem;
+    cursor: pointer; color: var(--text-muted); transition: color 0.2s;
+    line-height: 1; padding: 4px 8px;
+  }
+  .profile-modal-close:hover { color: var(--navy); }
+
+  .profile-modal-grid {
+    display: grid; grid-template-columns: 220px 1fr; gap: 40px; align-items: start;
+  }
+  @media (max-width: 680px) {
+    .profile-modal-grid { grid-template-columns: 1fr; gap: 24px; }
+    .profile-modal { padding: 36px 24px 28px; }
+  }
+
+  .profile-modal-left img {
+    width: 100%; border-radius: 6px; object-fit: cover; aspect-ratio: 4/5;
+  }
+
+  .profile-modal-edu { margin-top: 20px; }
+  .profile-modal-edu-label {
+    font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--text-muted); margin: 0 0 8px;
+  }
+  .profile-modal-edu ul {
+    list-style: none; padding: 0; margin: 0;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .profile-modal-edu li {
+    font-size: 0.82rem; font-weight: 600; color: var(--navy);
+  }
+
+  .profile-modal-right h2 {
+    font-family: 'Libre Caslon Text', serif; font-size: 2rem;
+    color: var(--navy); margin: 0 0 2px; font-weight: 700;
+  }
+  .profile-modal-role {
+    font-size: 0.85rem; color: var(--gold); font-weight: 600;
+    margin: 0 0 20px; letter-spacing: 0.02em;
+  }
+  .profile-modal-right p {
+    font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; margin: 0 0 14px;
+  }
+</style>
+
 </footer>
 <script>
     window.addEventListener('scroll', () => {
@@ -243,6 +334,124 @@
   }, { threshold: 0.15 });
   document.querySelectorAll('.scroll-reveal').forEach(function(el) {
     revealObserver.observe(el);
+  });
+
+  // Team profile data
+  var teamData = [
+    {
+      name: 'Cole', role: 'Founder & Head Tutor',
+      photo: '../assets/cole.jpg',
+      edu: ['BA Harvard University', 'MSt University of Oxford'],
+      bio: [
+        'After completing his undergraduate years at Harvard University, Cole received a full scholarship to study Ancient Philosophy at the University of Oxford, where he taught Ancient Greek after graduation.',
+        'Drawing on his own system for learning languages\u2014through which he mastered seven languages after the age of 20\u2014Cole has helped students approach education with both curiosity and confidence. His research has been published in academic journals, including work contributing to breakthroughs in the treatment of Parkinson\u2019s and Alzheimer\u2019s disease.',
+        'With over a decade of college consulting experience, Cole has guided students to admission at Ivy League and top-tier universities, most recently mentoring a student over four years to Early Acceptance at Harvard.'
+      ]
+    },
+    {
+      name: 'Stephanie', role: 'Essay Specialist',
+      photo: '../assets/Headshot_Stephanie-min.jpg',
+      edu: ['BA Duke University', 'MFA Univ. North Carolina', 'Asst. Director, Princeton University'],
+      bio: [
+        'For the last ten years, Stephanie has taught, written with, and edited for the staff and students at Princeton University. Prior to her work at Princeton Writes, she taught composition, world literature, and creative writing courses at the university level.',
+        'As an experienced writing coach, Stephanie has guided several students to successful applications for the Rhodes, Marshall, and Knight Hennessy Scholarships, as well as to admissions at Columbia, Harvard, Oxford, and Stanford.',
+        'Stephanie brings both rigor and warmth to the process, ensuring every draft is clear, compelling, and true to the student.'
+      ]
+    },
+    {
+      name: 'Ren', role: 'Partner & Capstone Mentor',
+      photo: '../assets/Headshot_Ren-min.jpg',
+      edu: ['BS New York University'],
+      bio: [
+        'After graduating high school early, Ren received a merit scholarship to Brandeis University, where he began studying philosophy and economics on a pre-law track. He later transferred to NYU to study and accept a job opportunity in finance.',
+        'Ren and Cole met by chance in New York and co-founded the New York Philosophical Society, a 501(c)(3) charity with over 6,000 members dedicated to promoting civil dialogue in America.',
+        'Ren considers philosophy and mentorship the chief joys of his life.'
+      ]
+    },
+    {
+      name: 'Eric', role: 'Elite Tutor',
+      photo: '../assets/Headshot_Eric-min.jpg',
+      edu: ['BS Massachusetts Institute of Technology', 'Physics Fellow at Peking University', 'Physicist at Harvard & MIT'],
+      bio: [
+        'After graduating from MIT with a degree in physics, Eric worked at Harvard, MIT, and Peking University as a researcher specializing in string theory and black holes.',
+        'Eric\u2019s teaching philosophy emphasizes intuitive understanding over rote memorization, tailoring his approach to each student\u2019s goals and learning style. With over 10 years of tutoring experience, Eric loves teaching students to understand and appreciate the elegant simplicity underlying math and physics.',
+        'Eric is currently working on writing a philosophical novel. He also loves linguistics and playing billiards.'
+      ]
+    },
+    {
+      name: 'Christopher', role: 'Elite Tutor',
+      photo: '../assets/christopher.png',
+      edu: ['BA Harvard University', 'MSt University of Oxford', 'DPhil University of Oxford'],
+      bio: [
+        'Christopher is a DPhil candidate at the University of Oxford, studying Classical Languages and Literature. In addition to his studies in Ancient Greek and Music, he also teaches at Jesus College as a tutor, and has hands-on experience with assisting the Oxford admissions process.',
+        'Christopher graduated from Harvard College in 2020, Cum Laude, studying Music and Classics. He has helped students achieve research goals before application submission, as well as provided tailored coaching, yielding top admissions to Harvard, Cornell, and Northwestern.'
+      ]
+    },
+    {
+      name: 'Howard', role: 'Capstone Mentor',
+      photo: '../assets/Headshot_Howard-min-scaled.jpg',
+      edu: ['BA Yale University', 'JD Harvard Law School'],
+      bio: [
+        'Howard has been a lawyer in New York specializing in litigation for more than thirty years. He has worked at prestigious firms in the city, and is recognized as a polished and forceful writer and advocate.',
+        'After graduating summa cum laude in History from Yale University, Howard went on to pursue his Juris Doctor at Harvard Law School. Howard has a logical and incisive mind that enables him to diagnose any academic problem, and to suggest practical solutions for improvement.',
+        'At Whetstone, Howard enjoys mentoring the next generation of ambitious and talented students.'
+      ]
+    },
+    {
+      name: 'Athena', role: 'Strategy & Technology',
+      photo: '../assets/athena.png',
+      edu: ['MEng Cornell University', 'BS UC Berkeley'],
+      bio: [
+        'Athena graduated with a Master\u2019s degree in Engineering at Cornell University and previously studied Data Science and Technology Entrepreneurship at UC Berkeley. Her work sits at the intersection of technology, creativity, and strategic thinking.',
+        'Athena believes that the most compelling applications are built around authentic intellectual exploration. Rather than chasing generic achievements, she hopes to help students identify the questions that genuinely interest them and turn those interests into real-world impact.'
+      ]
+    }
+  ];
+
+  function openProfile(idx) {
+    var m = teamData[idx];
+    document.getElementById('pm-photo').src = m.photo;
+    document.getElementById('pm-photo').alt = m.name;
+    document.getElementById('pm-name').textContent = m.name;
+    document.getElementById('pm-role').textContent = m.role;
+
+    var eduUl = document.getElementById('pm-edu');
+    eduUl.innerHTML = '';
+    m.edu.forEach(function(e) {
+      var li = document.createElement('li');
+      li.textContent = e;
+      eduUl.appendChild(li);
+    });
+
+    var bioDiv = document.getElementById('pm-bio');
+    bioDiv.innerHTML = '';
+    m.bio.forEach(function(b) {
+      var p = document.createElement('p');
+      p.textContent = b;
+      bioDiv.appendChild(p);
+    });
+
+    var overlay = document.getElementById('profile-overlay');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function() {
+      requestAnimationFrame(function() {
+        overlay.classList.add('visible');
+      });
+    });
+  }
+
+  function closeProfile() {
+    var overlay = document.getElementById('profile-overlay');
+    overlay.classList.remove('visible');
+    setTimeout(function() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+    }, 300);
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeProfile();
   });
 </script>
 </body>
