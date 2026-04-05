@@ -659,7 +659,7 @@ img { max-width: 100%; height: auto; display: block; }
 .reviews .section-title { color: var(--navy); }
 .reviews .review-card { color: var(--navy); }
 .reviews .review-card .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 16px; }
-.reviews .review-card blockquote { color: #3d4f63; font-style: italic; margin: 0 0 20px; line-height: 1.75; }
+.reviews .review-card blockquote { color: var(--gold); font-style: italic; margin: 0 0 20px; line-height: 1.75; }
 .reviews .review-card .reviewer strong { color: var(--navy); }
 .reviews .review-card .reviewer span { color: #3d4f63; }
 
