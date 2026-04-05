@@ -17,14 +17,14 @@
 
     .contact-hero {
       position: relative;
-      padding: 160px 0 80px;
+      padding: 160px 0 120px;
       overflow: hidden;
       background: var(--navy);
     }
     .contact-hero-bg {
       position: absolute;
       inset: 0;
-      background: url('../assets/harvardclub.png') center top / cover no-repeat;
+      background: url('../assets/harvardclub.png') center center / cover no-repeat;
     }
     .contact-hero-overlay {
       position: absolute;
@@ -65,8 +65,16 @@
 
     /* ── Trust bar ── */
     .trust-bar {
-      background: var(--navy);
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
       padding: 14px 24px;
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid rgba(255,255,255,0.15);
     }
     .trust-bar-inner {
       max-width: 1120px;
@@ -573,9 +581,6 @@
 <p class="section-label">Contact Us</p>
 <h1>Get Started With <em>Whetstone</em></h1>
 <p>Fill out the form and we'll be in touch to book a free meeting with one of our expert advisors.</p>
-</div>
-</section>
-<!-- TRUST BAR -->
 <div class="trust-bar">
 <div class="trust-bar-inner">
 <div class="trust-item"><span class="ti-icon">✓</span> Free initial consultation</div>
@@ -584,6 +589,8 @@
 <div class="trust-item"><span class="ti-icon">✓</span> No commitment required</div>
 </div>
 </div>
+</div>
+</section>
 <!-- MAIN CONTACT SECTION -->
 <div class="contact-main">
 <!-- Left: Info -->
